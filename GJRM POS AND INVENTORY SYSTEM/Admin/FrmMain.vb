@@ -183,17 +183,6 @@
         End With
     End Sub
 
-    Private Sub btnCriticalStock_Click(sender As Object, e As EventArgs) Handles btnCriticalStock.Click
-        With FrmCriticalStock
-            .WindowState = FormWindowState.Maximized
-            .TopLevel = False
-            panelOutput.Controls.Add(FrmCriticalStock)
-            .BringToFront()
-            .LoadCriticalStocks()
-            .Show()
-        End With
-    End Sub
-
     Private Sub btnInventoryList_Click(sender As Object, e As EventArgs) Handles btnInventoryList.Click
         With FrmInventoryList
             .WindowState = FormWindowState.Maximized
@@ -260,5 +249,9 @@
             .LoadName()
             .Show()
         End With
+    End Sub
+
+    Private Sub btnStockAdjustment_Click(sender As Object, e As EventArgs) Handles btnStockAdjustment.Click
+
     End Sub
 End Class

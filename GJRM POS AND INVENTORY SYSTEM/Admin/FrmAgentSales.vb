@@ -1,6 +1,7 @@
 ﻿Public Class FrmAgentSales
     Dim sdate1 As String
     Dim sdate2 As String
+    Dim sql As String
     Sub LoadAgentSales()
         Try
             dgvDailySales.Rows.Clear()
@@ -75,5 +76,17 @@
 
     Private Sub cboAgent_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboAgent.SelectedIndexChanged
         LoadAgentSales()
+    End Sub
+
+    Private Sub btnSPrint_Click(sender As Object, e As EventArgs) Handles btnSPrint.Click
+        If cboAgent.Text = "ALL AGENT" Then
+            sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and agent <> 'NO AGENT' and transno like '" & txtSearch.Text & "%' order by sdate desc"
+        Else
+            sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and agent like '" & cboAgent.Text & "' and pdesc like '" & txtSearch.Text & "%' order by sdate desc"
+        End If
+        With FrmPrintAgentSales
+            .PrintPreview(sql)
+            .ShowDialog()
+        End With
     End Sub
 End Class

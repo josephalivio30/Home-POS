@@ -56,7 +56,6 @@ Partial Class FrmMain
         Me.btnRecord = New System.Windows.Forms.Button()
         Me.panelStock = New System.Windows.Forms.Panel()
         Me.btnInventoryList = New System.Windows.Forms.Button()
-        Me.btnCriticalStock = New System.Windows.Forms.Button()
         Me.btnStockAdjustment = New System.Windows.Forms.Button()
         Me.btnStockInHistory = New System.Windows.Forms.Button()
         Me.btnStockEntry = New System.Windows.Forms.Button()
@@ -273,7 +272,7 @@ Partial Class FrmMain
         Me.btnSql.ForeColor = System.Drawing.Color.White
         Me.btnSql.Image = CType(resources.GetObject("btnSql.Image"), System.Drawing.Image)
         Me.btnSql.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSql.Location = New System.Drawing.Point(0, 1196)
+        Me.btnSql.Location = New System.Drawing.Point(0, 1155)
         Me.btnSql.Name = "btnSql"
         Me.btnSql.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnSql.Size = New System.Drawing.Size(280, 45)
@@ -294,7 +293,7 @@ Partial Class FrmMain
         Me.btnAccount.ForeColor = System.Drawing.Color.White
         Me.btnAccount.Image = CType(resources.GetObject("btnAccount.Image"), System.Drawing.Image)
         Me.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAccount.Location = New System.Drawing.Point(0, 1151)
+        Me.btnAccount.Location = New System.Drawing.Point(0, 1110)
         Me.btnAccount.Name = "btnAccount"
         Me.btnAccount.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnAccount.Size = New System.Drawing.Size(280, 45)
@@ -315,7 +314,7 @@ Partial Class FrmMain
         Me.btnSetting.ForeColor = System.Drawing.Color.White
         Me.btnSetting.Image = CType(resources.GetObject("btnSetting.Image"), System.Drawing.Image)
         Me.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSetting.Location = New System.Drawing.Point(0, 1106)
+        Me.btnSetting.Location = New System.Drawing.Point(0, 1065)
         Me.btnSetting.Name = "btnSetting"
         Me.btnSetting.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnSetting.Size = New System.Drawing.Size(280, 45)
@@ -330,7 +329,7 @@ Partial Class FrmMain
         Me.panelDebt.Controls.Add(Me.btnHDebt)
         Me.panelDebt.Controls.Add(Me.btnRDebt)
         Me.panelDebt.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelDebt.Location = New System.Drawing.Point(0, 1015)
+        Me.panelDebt.Location = New System.Drawing.Point(0, 974)
         Me.panelDebt.Name = "panelDebt"
         Me.panelDebt.Size = New System.Drawing.Size(280, 91)
         Me.panelDebt.TabIndex = 45
@@ -388,7 +387,7 @@ Partial Class FrmMain
         Me.btnDebt.ForeColor = System.Drawing.Color.White
         Me.btnDebt.Image = CType(resources.GetObject("btnDebt.Image"), System.Drawing.Image)
         Me.btnDebt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDebt.Location = New System.Drawing.Point(0, 970)
+        Me.btnDebt.Location = New System.Drawing.Point(0, 929)
         Me.btnDebt.Name = "btnDebt"
         Me.btnDebt.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnDebt.Size = New System.Drawing.Size(280, 45)
@@ -409,7 +408,7 @@ Partial Class FrmMain
         Me.panelSales.Controls.Add(Me.btnAgentSales)
         Me.panelSales.Controls.Add(Me.btnSales)
         Me.panelSales.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelSales.Location = New System.Drawing.Point(0, 660)
+        Me.panelSales.Location = New System.Drawing.Point(0, 619)
         Me.panelSales.Name = "panelSales"
         Me.panelSales.Size = New System.Drawing.Size(280, 310)
         Me.panelSales.TabIndex = 39
@@ -572,7 +571,7 @@ Partial Class FrmMain
         Me.btnRecord.ForeColor = System.Drawing.Color.White
         Me.btnRecord.Image = CType(resources.GetObject("btnRecord.Image"), System.Drawing.Image)
         Me.btnRecord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnRecord.Location = New System.Drawing.Point(0, 615)
+        Me.btnRecord.Location = New System.Drawing.Point(0, 574)
         Me.btnRecord.Name = "btnRecord"
         Me.btnRecord.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnRecord.Size = New System.Drawing.Size(280, 45)
@@ -586,14 +585,13 @@ Partial Class FrmMain
         '
         Me.panelStock.BackColor = System.Drawing.Color.Gray
         Me.panelStock.Controls.Add(Me.btnInventoryList)
-        Me.panelStock.Controls.Add(Me.btnCriticalStock)
         Me.panelStock.Controls.Add(Me.btnStockAdjustment)
         Me.panelStock.Controls.Add(Me.btnStockInHistory)
         Me.panelStock.Controls.Add(Me.btnStockEntry)
         Me.panelStock.Dock = System.Windows.Forms.DockStyle.Top
         Me.panelStock.Location = New System.Drawing.Point(0, 387)
         Me.panelStock.Name = "panelStock"
-        Me.panelStock.Size = New System.Drawing.Size(280, 228)
+        Me.panelStock.Size = New System.Drawing.Size(280, 187)
         Me.panelStock.TabIndex = 37
         '
         'btnInventoryList
@@ -607,36 +605,15 @@ Partial Class FrmMain
         Me.btnInventoryList.ForeColor = System.Drawing.Color.White
         Me.btnInventoryList.Image = CType(resources.GetObject("btnInventoryList.Image"), System.Drawing.Image)
         Me.btnInventoryList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnInventoryList.Location = New System.Drawing.Point(0, 180)
+        Me.btnInventoryList.Location = New System.Drawing.Point(0, 135)
         Me.btnInventoryList.Name = "btnInventoryList"
         Me.btnInventoryList.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnInventoryList.Size = New System.Drawing.Size(280, 45)
         Me.btnInventoryList.TabIndex = 33
-        Me.btnInventoryList.Text = "   INVENTORY LISTS"
+        Me.btnInventoryList.Text = "   STOCK INVENTORY"
         Me.btnInventoryList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnInventoryList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnInventoryList.UseVisualStyleBackColor = False
-        '
-        'btnCriticalStock
-        '
-        Me.btnCriticalStock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnCriticalStock.BackColor = System.Drawing.Color.Gray
-        Me.btnCriticalStock.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCriticalStock.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnCriticalStock.FlatAppearance.BorderSize = 0
-        Me.btnCriticalStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCriticalStock.ForeColor = System.Drawing.Color.White
-        Me.btnCriticalStock.Image = CType(resources.GetObject("btnCriticalStock.Image"), System.Drawing.Image)
-        Me.btnCriticalStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCriticalStock.Location = New System.Drawing.Point(0, 135)
-        Me.btnCriticalStock.Name = "btnCriticalStock"
-        Me.btnCriticalStock.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnCriticalStock.Size = New System.Drawing.Size(280, 45)
-        Me.btnCriticalStock.TabIndex = 32
-        Me.btnCriticalStock.Text = "   CRITICAL STOCKS"
-        Me.btnCriticalStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCriticalStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCriticalStock.UseVisualStyleBackColor = False
         '
         'btnStockAdjustment
         '
@@ -733,7 +710,7 @@ Partial Class FrmMain
         Me.btnLogout.ForeColor = System.Drawing.Color.White
         Me.btnLogout.Image = CType(resources.GetObject("btnLogout.Image"), System.Drawing.Image)
         Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLogout.Location = New System.Drawing.Point(0, 1241)
+        Me.btnLogout.Location = New System.Drawing.Point(0, 1200)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnLogout.Size = New System.Drawing.Size(280, 45)
@@ -1006,6 +983,5 @@ Partial Class FrmMain
     Friend WithEvents lblShopName As Label
     Friend WithEvents btnStockAdjustment As Button
     Friend WithEvents btnAgent As Button
-    Friend WithEvents btnCriticalStock As Button
     Friend WithEvents btnInventoryList As Button
 End Class

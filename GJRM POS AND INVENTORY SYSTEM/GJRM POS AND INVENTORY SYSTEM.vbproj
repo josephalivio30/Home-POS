@@ -77,6 +77,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -98,6 +99,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\PrintData\FrmPrintDebtHistory.Designer.vb">
+      <DependentUpon>FrmPrintDebtHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PrintData\FrmPrintDebtHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Admin\FrmAccount.Designer.vb">
       <DependentUpon>FrmAccount.vb</DependentUpon>
     </Compile>
@@ -122,16 +129,16 @@
     <Compile Include="Admin\FrmAgentSales.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Admin\PrintData\FrmPrintBestSelling.Designer.vb">
+      <DependentUpon>FrmPrintBestSelling.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PrintData\FrmPrintBestSelling.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Admin\FrmCancelledOrder.Designer.vb">
       <DependentUpon>FrmCancelledOrder.vb</DependentUpon>
     </Compile>
     <Compile Include="Admin\FrmCancelledOrder.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\FrmCriticalStock.Designer.vb">
-      <DependentUpon>FrmCriticalStock.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\FrmCriticalStock.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin\FrmDebtPayment.Designer.vb">
@@ -144,6 +151,42 @@
       <DependentUpon>FrmInventoryList.vb</DependentUpon>
     </Compile>
     <Compile Include="Admin\FrmInventoryList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PrintData\FrmPrintExpense.Designer.vb">
+      <DependentUpon>FrmPrintExpense.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PrintData\FrmPrintExpense.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PrintData\FrmPrintLogHistory.Designer.vb">
+      <DependentUpon>FrmPrintLogHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PrintData\FrmPrintLogHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PrintData\FrmPrintAgentSales.Designer.vb">
+      <DependentUpon>FrmPrintAgentSales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PrintData\FrmPrintAgentSales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PrintData\FrmPrintCancelledOrder.Designer.vb">
+      <DependentUpon>FrmPrintCancelledOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PrintData\FrmPrintCancelledOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PrintData\FrmPrintStockHistory.Designer.vb">
+      <DependentUpon>FrmPrintStockHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PrintData\FrmPrintStockHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PrintData\FrmPrintStockInventory.Designer.vb">
+      <DependentUpon>FrmPrintStockInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PrintData\FrmPrintStockInventory.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin\FrmRAuditTrail.Designer.vb">
@@ -171,10 +214,10 @@
     <Compile Include="Admin\FrmCategoryList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\FrmPrintSales.Designer.vb">
+    <Compile Include="Admin\PrintData\FrmPrintSales.Designer.vb">
       <DependentUpon>FrmPrintSales.vb</DependentUpon>
     </Compile>
-    <Compile Include="Admin\FrmPrintSales.vb">
+    <Compile Include="Admin\PrintData\FrmPrintSales.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin\FrmProduct.Designer.vb">
@@ -315,6 +358,14 @@
     <Compile Include="Cashier\FrmStartMenu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.vb">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmForgotPassword.Designer.vb">
       <DependentUpon>FrmForgotPassword.vb</DependentUpon>
     </Compile>
@@ -363,6 +414,9 @@
     <EmbeddedResource Include="Admin\FrmAgentSales.resx">
       <DependentUpon>FrmAgentSales.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PrintData\FrmPrintBestSelling.resx">
+      <DependentUpon>FrmPrintBestSelling.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\FrmCancelledOrder.resx">
       <DependentUpon>FrmCancelledOrder.vb</DependentUpon>
     </EmbeddedResource>
@@ -372,20 +426,38 @@
     <EmbeddedResource Include="Admin\FrmBrandList.resx">
       <DependentUpon>FrmBrandList.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\FrmCriticalStock.resx">
-      <DependentUpon>FrmCriticalStock.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Admin\FrmDebtPayment.resx">
       <DependentUpon>FrmDebtPayment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\FrmInventoryList.resx">
       <DependentUpon>FrmInventoryList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PrintData\FrmPrintDebtHistory.resx">
+      <DependentUpon>FrmPrintDebtHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PrintData\FrmPrintExpense.resx">
+      <DependentUpon>FrmPrintExpense.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PrintData\FrmPrintLogHistory.resx">
+      <DependentUpon>FrmPrintLogHistory.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\FrmMain.resx">
       <DependentUpon>FrmMain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\FrmPrintSales.resx">
+    <EmbeddedResource Include="Admin\PrintData\FrmPrintAgentSales.resx">
+      <DependentUpon>FrmPrintAgentSales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PrintData\FrmPrintCancelledOrder.resx">
+      <DependentUpon>FrmPrintCancelledOrder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PrintData\FrmPrintSales.resx">
       <DependentUpon>FrmPrintSales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PrintData\FrmPrintStockHistory.resx">
+      <DependentUpon>FrmPrintStockHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PrintData\FrmPrintStockInventory.resx">
+      <DependentUpon>FrmPrintStockInventory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\FrmProduct.resx">
       <DependentUpon>FrmProduct.vb</DependentUpon>
@@ -426,6 +498,15 @@
     <EmbeddedResource Include="Admin\FrmStoreSetting.resx">
       <DependentUpon>FrmStoreSetting.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PrintData\RptAgentSales.rdlc" />
+    <EmbeddedResource Include="Admin\PrintData\RptBestingSelling.rdlc" />
+    <EmbeddedResource Include="Admin\PrintData\RptCancelledOrder.rdlc" />
+    <EmbeddedResource Include="Admin\PrintData\RptDebtHistory.rdlc" />
+    <EmbeddedResource Include="Admin\PrintData\RptExpense.rdlc" />
+    <EmbeddedResource Include="Admin\PrintData\RptLogHistory.rdlc" />
+    <EmbeddedResource Include="Admin\PrintData\rptSales.rdlc" />
+    <EmbeddedResource Include="Admin\PrintData\rptStockHistory.rdlc" />
+    <EmbeddedResource Include="Admin\PrintData\rptStockInventory.rdlc" />
     <EmbeddedResource Include="Cashier\FrmCancelAdminPass.resx">
       <DependentUpon>FrmCancelAdminPass.vb</DependentUpon>
     </EmbeddedResource>
@@ -473,6 +554,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

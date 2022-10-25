@@ -6,7 +6,11 @@
         dgvInventoryList.Rows.Clear()
         cn.Open()
         Dim i As Integer
-        cm = New OleDb.OleDbCommand("select * from tblinventorylist", cn)
+        If cboList.Text = "Inventory List" Then
+            cm = New OleDb.OleDbCommand("select * from tblinventorylist", cn)
+        ElseIf cboList.Text = "Critical Stocks" Then
+            cm = New OleDb.OleDbCommand("select * from tblinventorylist WHERE (((tblproduct.[qty])<=[reorder]))", cn)
+        End If
         dr = cm.ExecuteReader
         While dr.Read
             i += 1
@@ -14,5 +18,13 @@
         End While
         dr.Close()
         cn.Close()
+    End Sub
+
+    Private Sub cboList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboList.SelectedIndexChanged
+        LoadInventory()
+    End Sub
+
+    Private Sub cboList_KeyDown(sender As Object, e As KeyEventArgs) Handles cboList.KeyDown
+        e.Handled = True
     End Sub
 End Class

@@ -198,9 +198,9 @@ Partial Class FrmRDebtHistory
         Me.Label16.Font = New System.Drawing.Font("Comic Sans MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.Location = New System.Drawing.Point(7, 1)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(251, 29)
+        Me.Label16.Size = New System.Drawing.Size(260, 29)
         Me.Label16.TabIndex = 48
-        Me.Label16.Text = "AGENT SALES REPORT"
+        Me.Label16.Text = "DEBT HISTORY REPORT"
         '
         'dgvDebtHistory
         '
