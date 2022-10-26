@@ -113,7 +113,7 @@
         e.Handled = True
     End Sub
 
-    Private Sub txtSearchAgent_TextChanged(sender As Object, e As EventArgs) Handles txtSearchAgent.TextChanged
+    Private Sub txtSearchAgent_TextChanged(sender As Object, e As EventArgs) 
         LoadSale()
     End Sub
 

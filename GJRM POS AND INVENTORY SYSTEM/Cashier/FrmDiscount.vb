@@ -72,4 +72,5 @@
     Private Sub FrmDiscount_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.KeyPreview = True
     End Sub
+
 End Class

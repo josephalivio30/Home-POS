@@ -32,7 +32,6 @@ Partial Class FrmRAuditTrail
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnSPrint = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Adt2 = New System.Windows.Forms.DateTimePicker()
         Me.Adt1 = New System.Windows.Forms.DateTimePicker()
@@ -53,7 +52,6 @@ Partial Class FrmRAuditTrail
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
-        Me.Panel1.Controls.Add(Me.btnSPrint)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Adt2)
         Me.Panel1.Controls.Add(Me.Adt1)
@@ -63,29 +61,11 @@ Partial Class FrmRAuditTrail
         Me.Panel1.Size = New System.Drawing.Size(1205, 30)
         Me.Panel1.TabIndex = 53
         '
-        'btnSPrint
-        '
-        Me.btnSPrint.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSPrint.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSPrint.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSPrint.FlatAppearance.BorderSize = 0
-        Me.btnSPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSPrint.ForeColor = System.Drawing.Color.White
-        Me.btnSPrint.Image = CType(resources.GetObject("btnSPrint.Image"), System.Drawing.Image)
-        Me.btnSPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSPrint.Location = New System.Drawing.Point(1114, 3)
-        Me.btnSPrint.Name = "btnSPrint"
-        Me.btnSPrint.Size = New System.Drawing.Size(78, 24)
-        Me.btnSPrint.TabIndex = 8
-        Me.btnSPrint.Text = "   PRINT"
-        Me.btnSPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSPrint.UseVisualStyleBackColor = False
-        '
         'Label3
         '
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(724, 8)
+        Me.Label3.Location = New System.Drawing.Point(808, 9)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(124, 15)
         Me.Label3.TabIndex = 5
@@ -95,7 +75,7 @@ Partial Class FrmRAuditTrail
         '
         Me.Adt2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Adt2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Adt2.Location = New System.Drawing.Point(984, 2)
+        Me.Adt2.Location = New System.Drawing.Point(1068, 3)
         Me.Adt2.Name = "Adt2"
         Me.Adt2.Size = New System.Drawing.Size(124, 23)
         Me.Adt2.TabIndex = 3
@@ -104,7 +84,7 @@ Partial Class FrmRAuditTrail
         '
         Me.Adt1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Adt1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Adt1.Location = New System.Drawing.Point(854, 2)
+        Me.Adt1.Location = New System.Drawing.Point(938, 3)
         Me.Adt1.Name = "Adt1"
         Me.Adt1.Size = New System.Drawing.Size(124, 23)
         Me.Adt1.TabIndex = 1
@@ -255,7 +235,6 @@ Partial Class FrmRAuditTrail
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents btnSPrint As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Adt2 As DateTimePicker
     Friend WithEvents Adt1 As DateTimePicker

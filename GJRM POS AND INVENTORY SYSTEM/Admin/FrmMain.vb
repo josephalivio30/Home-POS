@@ -1,10 +1,13 @@
-﻿Public Class FrmMain
+﻿Imports System.Windows.Forms.DataVisualization.Charting
+Public Class FrmMain
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles Me.Load
         panelManage.Visible = False
         panelStock.Visible = False
         panelSales.Visible = False
         panelDebt.Visible = False
+        NotifyCriticalItems()
+        LoadChart()
     End Sub
     Private Sub Main_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         Dim intX As Integer = Screen.PrimaryScreen.Bounds.Width
@@ -15,6 +18,7 @@
         Me.Left = 0
 
         pDashBoard.Left = (panelOutput.Width - pDashBoard.Width) / 2
+        Chart1.Left = (panelOutput.Width - pDashBoard.Width) / 2
     End Sub
     Sub hideSubMenu()
         If panelSales.Visible = True Then
@@ -251,7 +255,36 @@
         End With
     End Sub
 
-    Private Sub btnStockAdjustment_Click(sender As Object, e As EventArgs) Handles btnStockAdjustment.Click
+    Private Sub btnVendor_Click(sender As Object, e As EventArgs) Handles btnVendor.Click
+        With FrmVendorList
+            .WindowState = FormWindowState.Maximized
+            .TopLevel = False
+            panelOutput.Controls.Add(FrmVendorList)
+            .BringToFront()
+            .LoadVendor()
+            .Show()
+        End With
+    End Sub
+    Sub LoadChart()
+        cn.Open()
+        Dim sql As String = "Select Year([sdate]) As sYear, IIf(IsNull(sum(totalbill)), '0.00', sum(totalbill)) as total FROM tblsales where remarks Like 'Paid' GROUP BY Year([sdate])"
+        da = New OleDb.OleDbDataAdapter(sql, cn)
+        Dim ds As New DataSet
+
+        da.Fill(ds, "Sales")
+        Chart1.DataSource = ds.Tables("Sales")
+        Dim series1 As Series
+        series1 = Chart1.Series("Series1")
+        series1.ChartType = SeriesChartType.Doughnut
+
+        series1.Name = "SALES"
+
+        Dim chart = Chart1
+        chart.Series(series1.Name).XValueMember = "sYear"
+        chart.Series(series1.Name).YValueMembers = "total"
+        chart.Series(0).IsValueShownAsLabel = True
+        cn.Close()
 
     End Sub
+
 End Class

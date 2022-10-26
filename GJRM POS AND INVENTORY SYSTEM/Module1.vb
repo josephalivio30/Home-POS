@@ -1,8 +1,10 @@
 ﻿Imports System.Data.OleDb
+Imports Tulpep.NotificationWindow
 Module Module1
     Public cn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\User\OneDrive\Documents\POS.accdb")
     Public cm As New OleDbCommand
     Public dr As OleDbDataReader
+    Public da As OleDbDataAdapter
     Public roundT As String = ".0"
     Public str_user, str_pass, str_name, str_role As String
     Public startid As String
@@ -37,6 +39,32 @@ Module Module1
         cn.Close()
         Return found
     End Function
+    Sub NotifyCriticalItems()
+        Dim critical As String = ""
+        Dim count As String
+        cn.Open()
+        cm = New OleDbCommand("select count(*) from tblinventorylist WHERE tblproduct.qty <= reorder", cn)
+        count = CDbl(cm.ExecuteScalar).ToString
+        cn.Close()
+
+        Dim i As Integer = 0
+        cn.Open()
+        cm = New OleDbCommand("select * from tblinventorylist WHERE tblproduct.qty <= reorder", cn)
+        dr = cm.ExecuteReader
+        While dr.Read
+            i += 1
+            critical += i & ". " & dr.Item("pdesc").ToString & Environment.NewLine
+        End While
+        cn.Close()
+        dr.Close()
+
+        Dim popup As PopupNotifier = New PopupNotifier()
+        popup.Image = My.Resources._error
+        popup.TitleText = " " & count & " CRITICAL ITEM(S)"
+        popup.ContentText = critical
+        popup.Popup()
+
+    End Sub
     Sub SumOfAll()
         Dim sdate1 As String = Now.ToString("yyyy-MM-dd")
         Dim sdate2 As String = Now.ToString("yyyy-MM-dd")

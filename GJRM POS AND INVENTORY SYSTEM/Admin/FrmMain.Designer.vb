@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmMain
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,23 +20,34 @@ Partial Class FrmMain
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMain))
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.panelOutput = New System.Windows.Forms.Panel()
         Me.pDashBoard = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.lblWeeklySales = New System.Windows.Forms.Label()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Panel16 = New System.Windows.Forms.Panel()
-        Me.lblMonthlySales = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblWeeklySales = New System.Windows.Forms.Label()
         Me.Panel17 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.lblTotalProduct = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblMonthlySales = New System.Windows.Forms.Label()
         Me.Panel18 = New System.Windows.Forms.Panel()
-        Me.lblDailySales = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblDailySales = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnSql = New System.Windows.Forms.Button()
         Me.btnAccount = New System.Windows.Forms.Button()
@@ -72,12 +83,17 @@ Partial Class FrmMain
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblName = New System.Windows.Forms.Label()
         Me.lblShopName = New System.Windows.Forms.Label()
+        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.panelOutput.SuspendLayout()
         Me.pDashBoard.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.Panel16.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel17.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel16.SuspendLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel18.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.panelDebt.SuspendLayout()
         Me.panelSales.SuspendLayout()
@@ -85,6 +101,7 @@ Partial Class FrmMain
         Me.panelManage.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panelOutput
@@ -92,7 +109,7 @@ Partial Class FrmMain
         Me.panelOutput.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.panelOutput.BackColor = System.Drawing.Color.Silver
+        Me.panelOutput.BackColor = System.Drawing.Color.White
         Me.panelOutput.Controls.Add(Me.pDashBoard)
         Me.panelOutput.Location = New System.Drawing.Point(296, 0)
         Me.panelOutput.Name = "panelOutput"
@@ -101,142 +118,228 @@ Partial Class FrmMain
         '
         'pDashBoard
         '
+        Me.pDashBoard.BackColor = System.Drawing.Color.White
+        Me.pDashBoard.Controls.Add(Me.Chart1)
         Me.pDashBoard.Controls.Add(Me.Panel3)
-        Me.pDashBoard.Controls.Add(Me.Panel16)
         Me.pDashBoard.Controls.Add(Me.Panel17)
+        Me.pDashBoard.Controls.Add(Me.Panel16)
         Me.pDashBoard.Controls.Add(Me.Panel18)
         Me.pDashBoard.Location = New System.Drawing.Point(5, 58)
         Me.pDashBoard.Name = "pDashBoard"
-        Me.pDashBoard.Size = New System.Drawing.Size(1064, 141)
+        Me.pDashBoard.Size = New System.Drawing.Size(1064, 634)
         Me.pDashBoard.TabIndex = 2
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.Panel3.Controls.Add(Me.lblWeeklySales)
+        Me.Panel3.Controls.Add(Me.PictureBox4)
         Me.Panel3.Controls.Add(Me.Label3)
+        Me.Panel3.Controls.Add(Me.Label7)
+        Me.Panel3.Controls.Add(Me.lblWeeklySales)
         Me.Panel3.Location = New System.Drawing.Point(534, 17)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(257, 109)
         Me.Panel3.TabIndex = 2
         '
-        'lblWeeklySales
+        'PictureBox4
         '
-        Me.lblWeeklySales.Font = New System.Drawing.Font("Calibri", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWeeklySales.ForeColor = System.Drawing.Color.White
-        Me.lblWeeklySales.Location = New System.Drawing.Point(0, 0)
-        Me.lblWeeklySales.Name = "lblWeeklySales"
-        Me.lblWeeklySales.Size = New System.Drawing.Size(254, 52)
-        Me.lblWeeklySales.TabIndex = 1
-        Me.lblWeeklySales.Text = "0.00"
-        Me.lblWeeklySales.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+        Me.PictureBox4.Location = New System.Drawing.Point(14, 26)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(34, 35)
+        Me.PictureBox4.TabIndex = 9
+        Me.PictureBox4.TabStop = False
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(3, 85)
+        Me.Label3.Location = New System.Drawing.Point(86, 66)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(103, 19)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "WEEKLY SALES"
+        Me.Label3.Size = New System.Drawing.Size(168, 38)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "Total stock on hand recorded in the database"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(86, 51)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(99, 15)
+        Me.Label7.TabIndex = 6
+        Me.Label7.Text = "STOCK ON HAND"
+        '
+        'lblWeeklySales
+        '
+        Me.lblWeeklySales.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWeeklySales.ForeColor = System.Drawing.Color.White
+        Me.lblWeeklySales.Location = New System.Drawing.Point(83, 16)
+        Me.lblWeeklySales.Name = "lblWeeklySales"
+        Me.lblWeeklySales.Size = New System.Drawing.Size(139, 36)
+        Me.lblWeeklySales.TabIndex = 1
+        Me.lblWeeklySales.Text = "0.00"
+        Me.lblWeeklySales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Panel17
+        '
+        Me.Panel17.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(118, Byte), Integer), CType(CType(117, Byte), Integer))
+        Me.Panel17.Controls.Add(Me.Label1)
+        Me.Panel17.Controls.Add(Me.PictureBox2)
+        Me.Panel17.Controls.Add(Me.lblTotalProduct)
+        Me.Panel17.Controls.Add(Me.Label4)
+        Me.Panel17.Location = New System.Drawing.Point(271, 17)
+        Me.Panel17.Name = "Panel17"
+        Me.Panel17.Size = New System.Drawing.Size(257, 109)
+        Me.Panel17.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(86, 66)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(168, 38)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Total product line recorded in the database"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(13, 26)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(34, 35)
+        Me.PictureBox2.TabIndex = 4
+        Me.PictureBox2.TabStop = False
+        '
+        'lblTotalProduct
+        '
+        Me.lblTotalProduct.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalProduct.ForeColor = System.Drawing.Color.White
+        Me.lblTotalProduct.Location = New System.Drawing.Point(84, 15)
+        Me.lblTotalProduct.Name = "lblTotalProduct"
+        Me.lblTotalProduct.Size = New System.Drawing.Size(170, 36)
+        Me.lblTotalProduct.TabIndex = 3
+        Me.lblTotalProduct.Text = "0"
+        Me.lblTotalProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(86, 51)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(96, 15)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "TOTAL PRODUCT"
         '
         'Panel16
         '
         Me.Panel16.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(203, Byte), Integer), CType(CType(110, Byte), Integer))
-        Me.Panel16.Controls.Add(Me.lblMonthlySales)
+        Me.Panel16.Controls.Add(Me.PictureBox5)
         Me.Panel16.Controls.Add(Me.Label6)
+        Me.Panel16.Controls.Add(Me.Label8)
+        Me.Panel16.Controls.Add(Me.lblMonthlySales)
         Me.Panel16.Location = New System.Drawing.Point(797, 17)
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(257, 109)
         Me.Panel16.TabIndex = 2
         '
-        'lblMonthlySales
+        'PictureBox5
         '
-        Me.lblMonthlySales.Font = New System.Drawing.Font("Calibri", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMonthlySales.ForeColor = System.Drawing.Color.White
-        Me.lblMonthlySales.Location = New System.Drawing.Point(7, 0)
-        Me.lblMonthlySales.Name = "lblMonthlySales"
-        Me.lblMonthlySales.Size = New System.Drawing.Size(250, 52)
-        Me.lblMonthlySales.TabIndex = 3
-        Me.lblMonthlySales.Text = "0.00"
-        Me.lblMonthlySales.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
+        Me.PictureBox5.Location = New System.Drawing.Point(13, 26)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(34, 35)
+        Me.PictureBox5.TabIndex = 9
+        Me.PictureBox5.TabStop = False
         '
         'Label6
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(3, 85)
+        Me.Label6.Location = New System.Drawing.Point(86, 66)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(117, 19)
-        Me.Label6.TabIndex = 2
-        Me.Label6.Text = "MONTHLY SALES"
+        Me.Label6.Size = New System.Drawing.Size(168, 38)
+        Me.Label6.TabIndex = 8
+        Me.Label6.Text = "Total critical item(s) recorded in the database"
         '
-        'Panel17
+        'Label8
         '
-        Me.Panel17.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(118, Byte), Integer), CType(CType(117, Byte), Integer))
-        Me.Panel17.Controls.Add(Me.lblTotalProduct)
-        Me.Panel17.Controls.Add(Me.Label4)
-        Me.Panel17.Location = New System.Drawing.Point(8, 17)
-        Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(257, 109)
-        Me.Panel17.TabIndex = 1
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(86, 51)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(97, 15)
+        Me.Label8.TabIndex = 6
+        Me.Label8.Text = "CRITICAL ITEM(S)"
         '
-        'lblTotalProduct
+        'lblMonthlySales
         '
-        Me.lblTotalProduct.Font = New System.Drawing.Font("Calibri", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotalProduct.ForeColor = System.Drawing.Color.White
-        Me.lblTotalProduct.Location = New System.Drawing.Point(7, 0)
-        Me.lblTotalProduct.Name = "lblTotalProduct"
-        Me.lblTotalProduct.Size = New System.Drawing.Size(247, 52)
-        Me.lblTotalProduct.TabIndex = 3
-        Me.lblTotalProduct.Text = "0"
-        Me.lblTotalProduct.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(3, 85)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(120, 19)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "TOTAL PRODUCT"
+        Me.lblMonthlySales.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMonthlySales.ForeColor = System.Drawing.Color.White
+        Me.lblMonthlySales.Location = New System.Drawing.Point(83, 15)
+        Me.lblMonthlySales.Name = "lblMonthlySales"
+        Me.lblMonthlySales.Size = New System.Drawing.Size(150, 36)
+        Me.lblMonthlySales.TabIndex = 3
+        Me.lblMonthlySales.Text = "0.00"
+        Me.lblMonthlySales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel18
         '
         Me.Panel18.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(148, Byte), Integer))
-        Me.Panel18.Controls.Add(Me.lblDailySales)
+        Me.Panel18.Controls.Add(Me.PictureBox3)
         Me.Panel18.Controls.Add(Me.Label2)
-        Me.Panel18.Location = New System.Drawing.Point(271, 17)
+        Me.Panel18.Controls.Add(Me.Label5)
+        Me.Panel18.Controls.Add(Me.lblDailySales)
+        Me.Panel18.Location = New System.Drawing.Point(8, 17)
         Me.Panel18.Name = "Panel18"
         Me.Panel18.Size = New System.Drawing.Size(257, 109)
         Me.Panel18.TabIndex = 0
         '
-        'lblDailySales
+        'PictureBox3
         '
-        Me.lblDailySales.Font = New System.Drawing.Font("Calibri", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDailySales.ForeColor = System.Drawing.Color.White
-        Me.lblDailySales.Location = New System.Drawing.Point(0, 0)
-        Me.lblDailySales.Name = "lblDailySales"
-        Me.lblDailySales.Size = New System.Drawing.Size(254, 52)
-        Me.lblDailySales.TabIndex = 1
-        Me.lblDailySales.Text = "0.00"
-        Me.lblDailySales.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(13, 26)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(34, 35)
+        Me.PictureBox3.TabIndex = 9
+        Me.PictureBox3.TabStop = False
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(3, 85)
+        Me.Label2.Location = New System.Drawing.Point(86, 66)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(88, 19)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "DAILY SALES"
+        Me.Label2.Size = New System.Drawing.Size(168, 38)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "Total daily sales recorded in the database"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(86, 51)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(73, 15)
+        Me.Label5.TabIndex = 6
+        Me.Label5.Text = "DAILY SALES"
+        '
+        'lblDailySales
+        '
+        Me.lblDailySales.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDailySales.ForeColor = System.Drawing.Color.White
+        Me.lblDailySales.Location = New System.Drawing.Point(83, 15)
+        Me.lblDailySales.Name = "lblDailySales"
+        Me.lblDailySales.Size = New System.Drawing.Size(111, 36)
+        Me.lblDailySales.TabIndex = 1
+        Me.lblDailySales.Text = "0.00"
+        Me.lblDailySales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel1
         '
@@ -902,6 +1005,29 @@ Partial Class FrmMain
         Me.lblShopName.Text = "SHOP NAME"
         Me.lblShopName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'Chart1
+        '
+        Me.Chart1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Chart1.BackImageTransparentColor = System.Drawing.Color.Silver
+        Me.Chart1.BackSecondaryColor = System.Drawing.Color.Silver
+        Me.Chart1.BorderlineColor = System.Drawing.Color.Silver
+        Me.Chart1.BorderSkin.BackSecondaryColor = System.Drawing.Color.Silver
+        Me.Chart1.BorderSkin.BorderColor = System.Drawing.Color.Silver
+        Me.Chart1.BorderSkin.PageColor = System.Drawing.Color.Silver
+        ChartArea2.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend2)
+        Me.Chart1.Location = New System.Drawing.Point(72, 147)
+        Me.Chart1.Name = "Chart1"
+        Series2.ChartArea = "ChartArea1"
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Me.Chart1.Series.Add(Series2)
+        Me.Chart1.Size = New System.Drawing.Size(772, 459)
+        Me.Chart1.TabIndex = 3
+        Me.Chart1.Text = "Chart1"
+        '
         'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -918,12 +1044,16 @@ Partial Class FrmMain
         Me.pDashBoard.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        Me.Panel16.ResumeLayout(False)
-        Me.Panel16.PerformLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel17.ResumeLayout(False)
         Me.Panel17.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel16.ResumeLayout(False)
+        Me.Panel16.PerformLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel18.ResumeLayout(False)
         Me.Panel18.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.panelDebt.ResumeLayout(False)
         Me.panelSales.ResumeLayout(False)
@@ -931,6 +1061,7 @@ Partial Class FrmMain
         Me.panelManage.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -939,16 +1070,13 @@ Partial Class FrmMain
     Friend WithEvents pDashBoard As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents lblWeeklySales As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Panel16 As Panel
     Friend WithEvents lblMonthlySales As Label
-    Friend WithEvents Label6 As Label
     Friend WithEvents Panel17 As Panel
     Friend WithEvents lblTotalProduct As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Panel18 As Panel
     Friend WithEvents lblDailySales As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnSql As Button
     Friend WithEvents btnAccount As Button
@@ -984,4 +1112,16 @@ Partial Class FrmMain
     Friend WithEvents btnStockAdjustment As Button
     Friend WithEvents btnAgent As Button
     Friend WithEvents btnInventoryList As Button
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Chart1 As DataVisualization.Charting.Chart
 End Class

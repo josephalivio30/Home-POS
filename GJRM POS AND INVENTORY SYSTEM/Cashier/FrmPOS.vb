@@ -49,6 +49,7 @@
     Private Sub FrmPOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Enabled = True
         LoadProducts()
+        NotifyCriticalItems()
     End Sub
 
     Private Sub txtBarcode_TextChanged(sender As Object, e As EventArgs) Handles txtBarcode.TextChanged
