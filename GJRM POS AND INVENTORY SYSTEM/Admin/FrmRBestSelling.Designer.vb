@@ -32,10 +32,10 @@ Partial Class FrmRBestSelling
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnSPrint = New System.Windows.Forms.Button()
+        Me.btnBPrint = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Sdt2 = New System.Windows.Forms.DateTimePicker()
-        Me.Sdt1 = New System.Windows.Forms.DateTimePicker()
+        Me.Bdt2 = New System.Windows.Forms.DateTimePicker()
+        Me.Bdt1 = New System.Windows.Forms.DateTimePicker()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.dgvBestSelling = New System.Windows.Forms.DataGridView()
@@ -54,33 +54,33 @@ Partial Class FrmRBestSelling
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
-        Me.Panel1.Controls.Add(Me.btnSPrint)
+        Me.Panel1.Controls.Add(Me.btnBPrint)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.Sdt2)
-        Me.Panel1.Controls.Add(Me.Sdt1)
+        Me.Panel1.Controls.Add(Me.Bdt2)
+        Me.Panel1.Controls.Add(Me.Bdt1)
         Me.Panel1.Controls.Add(Me.Label16)
         Me.Panel1.Location = New System.Drawing.Point(0, 31)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1205, 30)
         Me.Panel1.TabIndex = 47
         '
-        'btnSPrint
+        'btnBPrint
         '
-        Me.btnSPrint.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSPrint.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSPrint.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSPrint.FlatAppearance.BorderSize = 0
-        Me.btnSPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSPrint.ForeColor = System.Drawing.Color.White
-        Me.btnSPrint.Image = CType(resources.GetObject("btnSPrint.Image"), System.Drawing.Image)
-        Me.btnSPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSPrint.Location = New System.Drawing.Point(1114, 3)
-        Me.btnSPrint.Name = "btnSPrint"
-        Me.btnSPrint.Size = New System.Drawing.Size(78, 24)
-        Me.btnSPrint.TabIndex = 8
-        Me.btnSPrint.Text = "   PRINT"
-        Me.btnSPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSPrint.UseVisualStyleBackColor = False
+        Me.btnBPrint.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnBPrint.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnBPrint.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBPrint.FlatAppearance.BorderSize = 0
+        Me.btnBPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBPrint.ForeColor = System.Drawing.Color.White
+        Me.btnBPrint.Image = CType(resources.GetObject("btnBPrint.Image"), System.Drawing.Image)
+        Me.btnBPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBPrint.Location = New System.Drawing.Point(1114, 3)
+        Me.btnBPrint.Name = "btnBPrint"
+        Me.btnBPrint.Size = New System.Drawing.Size(78, 24)
+        Me.btnBPrint.TabIndex = 8
+        Me.btnBPrint.Text = "   PRINT"
+        Me.btnBPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBPrint.UseVisualStyleBackColor = False
         '
         'Label3
         '
@@ -92,23 +92,23 @@ Partial Class FrmRBestSelling
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Filter Date [From - to]"
         '
-        'Sdt2
+        'Bdt2
         '
-        Me.Sdt2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Sdt2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Sdt2.Location = New System.Drawing.Point(984, 2)
-        Me.Sdt2.Name = "Sdt2"
-        Me.Sdt2.Size = New System.Drawing.Size(124, 23)
-        Me.Sdt2.TabIndex = 3
+        Me.Bdt2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Bdt2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Bdt2.Location = New System.Drawing.Point(984, 2)
+        Me.Bdt2.Name = "Bdt2"
+        Me.Bdt2.Size = New System.Drawing.Size(124, 23)
+        Me.Bdt2.TabIndex = 3
         '
-        'Sdt1
+        'Bdt1
         '
-        Me.Sdt1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Sdt1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Sdt1.Location = New System.Drawing.Point(854, 2)
-        Me.Sdt1.Name = "Sdt1"
-        Me.Sdt1.Size = New System.Drawing.Size(124, 23)
-        Me.Sdt1.TabIndex = 1
+        Me.Bdt1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Bdt1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Bdt1.Location = New System.Drawing.Point(854, 2)
+        Me.Bdt1.Name = "Bdt1"
+        Me.Bdt1.Size = New System.Drawing.Size(124, 23)
+        Me.Bdt1.TabIndex = 1
         '
         'Label16
         '
@@ -269,10 +269,10 @@ Partial Class FrmRBestSelling
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents btnSPrint As Button
+    Friend WithEvents btnBPrint As Button
     Friend WithEvents Label3 As Label
-    Friend WithEvents Sdt2 As DateTimePicker
-    Friend WithEvents Sdt1 As DateTimePicker
+    Friend WithEvents Bdt2 As DateTimePicker
+    Friend WithEvents Bdt1 As DateTimePicker
     Friend WithEvents Label16 As Label
     Friend WithEvents btnClose As Button
     Friend WithEvents dgvBestSelling As DataGridView

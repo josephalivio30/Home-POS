@@ -22,29 +22,30 @@ Partial Class FrmPrintBestSelling
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.RvBestSelling = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.SuspendLayout()
         '
-        'ReportViewer1
+        'RvBestSelling
         '
-        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(800, 450)
-        Me.ReportViewer1.TabIndex = 0
+        Me.RvBestSelling.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RvBestSelling.Location = New System.Drawing.Point(0, 0)
+        Me.RvBestSelling.Name = "RvBestSelling"
+        Me.RvBestSelling.ServerReport.BearerToken = Nothing
+        Me.RvBestSelling.Size = New System.Drawing.Size(800, 450)
+        Me.RvBestSelling.TabIndex = 0
         '
-        'FrmBestSelling
+        'FrmPrintBestSelling
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.ReportViewer1)
-        Me.Name = "FrmBestSelling"
-        Me.Text = "FrmBestSelling"
+        Me.Controls.Add(Me.RvBestSelling)
+        Me.Name = "FrmPrintBestSelling"
+        Me.Text = "Best Selling"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents RvBestSelling As Microsoft.Reporting.WinForms.ReportViewer
 End Class

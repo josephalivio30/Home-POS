@@ -1,6 +1,7 @@
-﻿Public Class FrmCancelledOrder
+﻿Public Class FrmRCancelledOrder
     Dim sdate1 As String
     Dim sdate2 As String
+    Dim sql As String
     Sub LoadCancelOrder()
         Try
             dgvCancelOrder.Rows.Clear()
@@ -10,10 +11,10 @@
             sdate2 = Cdt2.Value.ToString("yyyy-MM-dd")
             cn.Open()
 
-            If cboCashier.Text = "ALL" Then
+            If cboCancelledBy.Text = "ALL" Then
                 cm = New OleDb.OleDbCommand("select * from vwcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and transno like '" & txtSearch.Text & "%'", cn)
             Else
-                cm = New OleDb.OleDbCommand("select * from vwcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and transno like '" & txtSearch.Text & "%' and cancelledby like '" & cboCashier.Text & "'", cn)
+                cm = New OleDb.OleDbCommand("select * from vwcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and transno like '" & txtSearch.Text & "%' and cancelledby like '" & cboCancelledBy.Text & "'", cn)
             End If
             dr = cm.ExecuteReader
             While dr.Read
@@ -32,13 +33,13 @@
     End Sub
     Sub LoadCashier()
         Try
-            cboCashier.Items.Clear()
-            cboCashier.Items.Add("ALL CASHIER")
+            cboCancelledBy.Items.Clear()
+            cboCancelledBy.Items.Add("ALL")
             cn.Open()
             cm = New OleDb.OleDbCommand("select distinct cancelledby from vwcancelorder", cn)
             dr = cm.ExecuteReader
             While dr.Read
-                cboCashier.Items.Add(UCase(dr.Item("cancelledby").ToString))
+                cboCancelledBy.Items.Add(UCase(dr.Item("cancelledby").ToString))
             End While
             dr.Close()
             cn.Close()
@@ -56,11 +57,26 @@
         LoadCancelOrder()
     End Sub
 
-    Private Sub cboCashier_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCashier.SelectedIndexChanged
+    Private Sub cboCashier_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCancelledBy.SelectedIndexChanged
         LoadCancelOrder()
     End Sub
 
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
         LoadCancelOrder()
+    End Sub
+
+    Private Sub btnSPrint_Click(sender As Object, e As EventArgs) Handles btnSPrint.Click
+        If cboCancelledBy.Text = "ALL" Then
+            sql = "select * from vwcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and transno like '" & txtSearch.Text & "%'"
+        Else
+            sql = "select * from vwcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and transno like '" & txtSearch.Text & "%' and cancelledby like '" & cboCancelledBy.Text & "'"
+        End If
+        With FrmPrintCancelledOrder
+            .PrintPreview(sql)
+            .ShowDialog()
+        End With
+    End Sub
+    Private Sub cboCancelledBy_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboCancelledBy.KeyPress
+        e.Handled = True
     End Sub
 End Class

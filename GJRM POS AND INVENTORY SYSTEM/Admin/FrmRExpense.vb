@@ -2,6 +2,7 @@
     Dim sdate1 As String
     Dim sdate2 As String
     Dim Rexpense As Double
+    Dim sql As String
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Dispose()
     End Sub
@@ -46,5 +47,13 @@
         If e.KeyCode = Keys.Escape Then
             Me.Dispose()
         End If
+    End Sub
+
+    Private Sub btnSPrint_Click(sender As Object, e As EventArgs) Handles btnSPrint.Click
+        sql = "select * from tblexpense where sdate between #" & sdate1 & "# and #" & sdate2 & "#"
+        With FrmPrintExpense
+            .PrintPreview(sql)
+            .ShowDialog()
+        End With
     End Sub
 End Class

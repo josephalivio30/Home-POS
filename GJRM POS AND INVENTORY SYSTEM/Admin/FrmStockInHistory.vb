@@ -1,4 +1,5 @@
 ﻿Public Class FrmStockInHistory
+    Dim sql As String
     Sub LoadStockInHistory()
         Try
             Dim i As Integer
@@ -42,5 +43,13 @@
         If e.KeyCode = Keys.Escape Then
             Me.Dispose()
         End If
+    End Sub
+
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+        sql = "Select * from vwstockin where status Like 'Done' and sdate between #" & dt1.Value.Date & "# and #" & dt2.Value.Date & "#"
+        With FrmPrintStockHistory
+            .PrintPreview(sql)
+            .ShowDialog()
+        End With
     End Sub
 End Class

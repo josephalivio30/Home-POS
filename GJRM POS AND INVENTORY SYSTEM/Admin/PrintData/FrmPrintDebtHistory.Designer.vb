@@ -22,29 +22,30 @@ Partial Class FrmPrintDebtHistory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.RvDebtHistory = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.SuspendLayout()
         '
-        'ReportViewer1
+        'RvDebtHistory
         '
-        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(800, 450)
-        Me.ReportViewer1.TabIndex = 0
+        Me.RvDebtHistory.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RvDebtHistory.Location = New System.Drawing.Point(0, 0)
+        Me.RvDebtHistory.Name = "RvDebtHistory"
+        Me.RvDebtHistory.ServerReport.BearerToken = Nothing
+        Me.RvDebtHistory.Size = New System.Drawing.Size(800, 450)
+        Me.RvDebtHistory.TabIndex = 0
         '
         'FrmPrintDebtHistory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.ReportViewer1)
+        Me.Controls.Add(Me.RvDebtHistory)
         Me.Name = "FrmPrintDebtHistory"
-        Me.Text = "dtDebtHistory"
+        Me.Text = "Debt History"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents RvDebtHistory As Microsoft.Reporting.WinForms.ReportViewer
 End Class

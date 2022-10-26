@@ -3,7 +3,7 @@
 
     Dim sdate1 As String
     Dim sdate2 As String
-
+    Dim sql As String
     Dim RstartAmount As Double = 0
     Dim Rrefund As Double = 0
     Dim Rexpense As Double = 0
@@ -139,5 +139,17 @@
             cn.Close()
             MsgBox(ex.Message, vbCritical)
         End Try
+    End Sub
+
+    Private Sub btnSPrint_Click(sender As Object, e As EventArgs) Handles btnSPrint.Click
+        If cboCashier.Text = "ALL CASHIER" Then
+            sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' order by sdate desc"
+        Else
+            sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cashier like '" & cboCashier.Text & "' order by sdate desc"
+        End If
+        With FrmPrintSales
+            .PrintPreview(sql)
+            .ShowDialog()
+        End With
     End Sub
 End Class

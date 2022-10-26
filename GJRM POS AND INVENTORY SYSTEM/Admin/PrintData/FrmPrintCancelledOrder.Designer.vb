@@ -22,29 +22,30 @@ Partial Class FrmPrintCancelledOrder
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.RvCancelledOrder = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.SuspendLayout()
         '
-        'ReportViewer1
+        'RvCancelledOrder
         '
-        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(800, 450)
-        Me.ReportViewer1.TabIndex = 0
+        Me.RvCancelledOrder.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RvCancelledOrder.Location = New System.Drawing.Point(0, 0)
+        Me.RvCancelledOrder.Name = "RvCancelledOrder"
+        Me.RvCancelledOrder.ServerReport.BearerToken = Nothing
+        Me.RvCancelledOrder.Size = New System.Drawing.Size(800, 450)
+        Me.RvCancelledOrder.TabIndex = 0
         '
         'FrmPrintCancelledOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.ReportViewer1)
+        Me.Controls.Add(Me.RvCancelledOrder)
         Me.Name = "FrmPrintCancelledOrder"
         Me.Text = "FrmPrintCancelledOrder"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents RvCancelledOrder As Microsoft.Reporting.WinForms.ReportViewer
 End Class

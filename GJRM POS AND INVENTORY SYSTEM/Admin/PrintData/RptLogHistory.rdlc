@@ -103,11 +103,10 @@
                           <rd:DefaultName>Textbox3</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
                               <Width>1pt</Width>
                             </BottomBorder>
                             <BackgroundColor>White</BackgroundColor>
@@ -143,11 +142,10 @@
                           <rd:DefaultName>Textbox5</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
                               <Width>1pt</Width>
                             </BottomBorder>
                             <BackgroundColor>White</BackgroundColor>
@@ -183,11 +181,10 @@
                           <rd:DefaultName>Textbox7</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
                               <Width>1pt</Width>
                             </BottomBorder>
                             <BackgroundColor>White</BackgroundColor>
@@ -223,11 +220,10 @@
                           <rd:DefaultName>Textbox9</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
                               <Width>1pt</Width>
                             </BottomBorder>
                             <BackgroundColor>White</BackgroundColor>
@@ -263,11 +259,10 @@
                           <rd:DefaultName>Textbox11</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
                               <Width>1pt</Width>
                             </BottomBorder>
                             <BackgroundColor>White</BackgroundColor>
@@ -295,8 +290,8 @@
                                 <TextRun>
                                   <Value>=Fields!cuser.Value</Value>
                                   <Style>
+                                    <FontFamily>Calibri</FontFamily>
                                     <FontWeight>Normal</FontWeight>
-                                    <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -306,7 +301,8 @@
                           <rd:DefaultName>cuser</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>None</Style>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -328,8 +324,9 @@
                                 <TextRun>
                                   <Value>=Fields!sdate.Value</Value>
                                   <Style>
+                                    <FontFamily>Calibri</FontFamily>
                                     <FontWeight>Normal</FontWeight>
-                                    <Color>#333333</Color>
+                                    <Format>M/d/yyyy</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -339,7 +336,8 @@
                           <rd:DefaultName>sdate</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>None</Style>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -361,8 +359,8 @@
                                 <TextRun>
                                   <Value>=Fields!timein.Value</Value>
                                   <Style>
+                                    <FontFamily>Calibri</FontFamily>
                                     <FontWeight>Normal</FontWeight>
-                                    <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -372,7 +370,8 @@
                           <rd:DefaultName>timein</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>None</Style>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -394,8 +393,8 @@
                                 <TextRun>
                                   <Value>=Fields!timeout.Value</Value>
                                   <Style>
+                                    <FontFamily>Calibri</FontFamily>
                                     <FontWeight>Normal</FontWeight>
-                                    <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -405,7 +404,8 @@
                           <rd:DefaultName>timeout</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>None</Style>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -427,8 +427,8 @@
                                 <TextRun>
                                   <Value>=Fields!status.Value</Value>
                                   <Style>
+                                    <FontFamily>Calibri</FontFamily>
                                     <FontWeight>Normal</FontWeight>
-                                    <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -438,7 +438,8 @@
                           <rd:DefaultName>status</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>None</Style>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -479,7 +480,8 @@
             <Width>7.85414in</Width>
             <Style>
               <Border>
-                <Style>None</Style>
+                <Color>LightGrey</Color>
+                <Style>Solid</Style>
               </Border>
             </Style>
           </Tablix>
@@ -502,7 +504,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>h1</rd:DefaultName>
-            <Top>0.85416in</Top>
+            <Top>0.72916in</Top>
             <Left>3.05734in</Left>
             <Height>0.25in</Height>
             <Width>4.79683in</Width>
@@ -536,7 +538,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>h2</rd:DefaultName>
-            <Top>1.10416in</Top>
+            <Top>0.97916in</Top>
             <Left>3.05734in</Left>
             <Height>0.25in</Height>
             <Width>4.79683in</Width>
@@ -570,7 +572,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>h3</rd:DefaultName>
-            <Top>1.35416in</Top>
+            <Top>1.22916in</Top>
             <Left>3.05734in</Left>
             <Height>0.25in</Height>
             <Width>4.79683in</Width>
@@ -606,7 +608,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>pHeader</rd:DefaultName>
-            <Top>1.78472in</Top>
+            <Top>1.65972in</Top>
             <Left>0.00003in</Left>
             <Height>0.25in</Height>
             <Width>7.85417in</Width>
@@ -642,7 +644,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>shopname</rd:DefaultName>
-            <Top>0.52083in</Top>
+            <Top>0.39583in</Top>
             <Left>3.05732in</Left>
             <Height>0.33333in</Height>
             <Width>4.79685in</Width>
@@ -678,10 +680,9 @@
       </Body>
       <Width>7.875in</Width>
       <Page>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
-        <TopMargin>1in</TopMargin>
-        <BottomMargin>1in</BottomMargin>
+        <LeftMargin>0.5in</LeftMargin>
+        <TopMargin>0.5in</TopMargin>
+        <BottomMargin>0.5in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>

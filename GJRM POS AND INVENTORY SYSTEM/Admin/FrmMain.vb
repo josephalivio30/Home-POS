@@ -195,10 +195,10 @@
     End Sub
 
     Private Sub btnRefund_Click(sender As Object, e As EventArgs) Handles btnRefund.Click
-        With FrmCancelledOrder
+        With FrmRCancelledOrder
             .WindowState = FormWindowState.Maximized
             .TopLevel = False
-            panelOutput.Controls.Add(FrmCancelledOrder)
+            panelOutput.Controls.Add(FrmRCancelledOrder)
             .BringToFront()
             .LoadCancelOrder()
             .LoadCashier()

@@ -135,10 +135,10 @@
     <Compile Include="Admin\PrintData\FrmPrintBestSelling.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\FrmCancelledOrder.Designer.vb">
-      <DependentUpon>FrmCancelledOrder.vb</DependentUpon>
+    <Compile Include="Admin\FrmRCancelledOrder.Designer.vb">
+      <DependentUpon>FrmRCancelledOrder.vb</DependentUpon>
     </Compile>
-    <Compile Include="Admin\FrmCancelledOrder.vb">
+    <Compile Include="Admin\FrmRCancelledOrder.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin\FrmDebtPayment.Designer.vb">
@@ -417,8 +417,8 @@
     <EmbeddedResource Include="Admin\PrintData\FrmPrintBestSelling.resx">
       <DependentUpon>FrmPrintBestSelling.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\FrmCancelledOrder.resx">
-      <DependentUpon>FrmCancelledOrder.vb</DependentUpon>
+    <EmbeddedResource Include="Admin\FrmRCancelledOrder.resx">
+      <DependentUpon>FrmRCancelledOrder.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\FrmCategoryList.resx">
       <DependentUpon>FrmCategoryList.vb</DependentUpon>
@@ -499,14 +499,14 @@
       <DependentUpon>FrmStoreSetting.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\PrintData\RptAgentSales.rdlc" />
-    <EmbeddedResource Include="Admin\PrintData\RptBestingSelling.rdlc" />
+    <EmbeddedResource Include="Admin\PrintData\RptBestSelling.rdlc" />
     <EmbeddedResource Include="Admin\PrintData\RptCancelledOrder.rdlc" />
     <EmbeddedResource Include="Admin\PrintData\RptDebtHistory.rdlc" />
     <EmbeddedResource Include="Admin\PrintData\RptExpense.rdlc" />
     <EmbeddedResource Include="Admin\PrintData\RptLogHistory.rdlc" />
-    <EmbeddedResource Include="Admin\PrintData\rptSales.rdlc" />
-    <EmbeddedResource Include="Admin\PrintData\rptStockHistory.rdlc" />
-    <EmbeddedResource Include="Admin\PrintData\rptStockInventory.rdlc" />
+    <EmbeddedResource Include="Admin\PrintData\RptSales.rdlc" />
+    <EmbeddedResource Include="Admin\PrintData\RptStockHistory.rdlc" />
+    <EmbeddedResource Include="Admin\PrintData\RptStockInventory.rdlc" />
     <EmbeddedResource Include="Cashier\FrmCancelAdminPass.resx">
       <DependentUpon>FrmCancelAdminPass.vb</DependentUpon>
     </EmbeddedResource>

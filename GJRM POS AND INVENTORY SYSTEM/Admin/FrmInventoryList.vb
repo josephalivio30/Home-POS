@@ -1,4 +1,5 @@
 ﻿Public Class FrmInventoryList
+    Dim sql As String
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Dispose()
     End Sub
@@ -6,7 +7,7 @@
         dgvInventoryList.Rows.Clear()
         cn.Open()
         Dim i As Integer
-        If cboList.Text = "Inventory List" Then
+        If cboList.Text = "Inventory Stocks" Then
             cm = New OleDb.OleDbCommand("select * from tblinventorylist", cn)
         ElseIf cboList.Text = "Critical Stocks" Then
             cm = New OleDb.OleDbCommand("select * from tblinventorylist WHERE (((tblproduct.[qty])<=[reorder]))", cn)
@@ -26,5 +27,17 @@
 
     Private Sub cboList_KeyDown(sender As Object, e As KeyEventArgs) Handles cboList.KeyDown
         e.Handled = True
+    End Sub
+
+    Private Sub btnSPrint_Click(sender As Object, e As EventArgs) Handles btnSPrint.Click
+        If cboList.Text = "Inventory Stocks" Then
+            sql = "select * from tblinventorylist"
+        ElseIf cboList.Text = "Critical Stocks" Then
+            sql = "select * from tblinventorylist WHERE (((tblproduct.[qty])<=[reorder]))"
+        End If
+        With FrmPrintStockInventory
+            .PrintPreview(sql)
+            .ShowDialog()
+        End With
     End Sub
 End Class

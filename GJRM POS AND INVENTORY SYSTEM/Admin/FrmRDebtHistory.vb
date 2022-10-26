@@ -1,4 +1,7 @@
 ﻿Public Class FrmRDebtHistory
+    Dim sql As String
+    Dim sdate1 As String
+    Dim sdate2 As String
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Dispose()
     End Sub
@@ -7,8 +10,8 @@
         KeyPreview = True
     End Sub
     Sub LoadDebtHistory()
-        Dim sdate1 As String = Ddt1.Value.ToString("yyyy-MM-dd")
-        Dim sdate2 As String = Ddt2.Value.ToString("yyyy-MM-dd")
+        sdate1 = Ddt1.Value.ToString("yyyy-MM-dd")
+        sdate2 = Ddt2.Value.ToString("yyyy-MM-dd")
         Dim total As Double = 0
         Try
             dgvDebtHistory.Rows.Clear()
@@ -68,5 +71,17 @@
 
     Private Sub dt2_ValueChanged(sender As Object, e As EventArgs) Handles Ddt2.ValueChanged
         LoadDebtHistory()
+    End Sub
+
+    Private Sub btnSPrint_Click(sender As Object, e As EventArgs) Handles btnSPrint.Click
+        If cboName.Text = "ALL NAMES" Then
+            sql = "select sdate, transno, cname,cuser,amount, banktransfer + gcash + cash as total, stime from tbldebthistory where sdate between #" & sdate1 & "# and #" & sdate2 & "#"
+        Else
+            sql = "select sdate, transno, cname,cuser,amount, banktransfer + gcash + cash as total, stime from tbldebthistory where cname like '" & cboName.Text & "' and sdate between #" & sdate1 & "# and #" & sdate2 & "#"
+        End If
+        With FrmPrintDebtHistory
+            .PrintPreview(sql)
+            .ShowDialog()
+        End With
     End Sub
 End Class

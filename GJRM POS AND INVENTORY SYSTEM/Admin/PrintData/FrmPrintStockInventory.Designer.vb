@@ -22,29 +22,30 @@ Partial Class FrmPrintStockInventory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.RvInventory = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.SuspendLayout()
         '
-        'ReportViewer1
+        'RvInventory
         '
-        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(800, 450)
-        Me.ReportViewer1.TabIndex = 0
+        Me.RvInventory.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RvInventory.Location = New System.Drawing.Point(0, 0)
+        Me.RvInventory.Name = "RvInventory"
+        Me.RvInventory.ServerReport.BearerToken = Nothing
+        Me.RvInventory.Size = New System.Drawing.Size(800, 450)
+        Me.RvInventory.TabIndex = 0
         '
         'FrmPrintStockInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.ReportViewer1)
+        Me.Controls.Add(Me.RvInventory)
         Me.Name = "FrmPrintStockInventory"
         Me.Text = "FrmPrintStockInventory"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents RvInventory As Microsoft.Reporting.WinForms.ReportViewer
 End Class

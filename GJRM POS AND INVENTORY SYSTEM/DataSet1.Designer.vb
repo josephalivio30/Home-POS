@@ -1026,7 +1026,7 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AdddtStockInventoryRow(ByVal pcode As String, ByVal pdesc As String, ByVal brand As String, ByVal category As String, ByVal sprice As Double, ByVal reorder As String, ByVal qty As String) As dtStockInventoryRow
+        Public Overloads Function AdddtStockInventoryRow(ByVal pcode As String, ByVal pdesc As String, ByVal brand As String, ByVal category As String, ByVal sprice As Double, ByVal reorder As Double, ByVal qty As Double) As dtStockInventoryRow
             Dim rowdtStockInventoryRow As dtStockInventoryRow = CType(Me.NewRow,dtStockInventoryRow)
             Dim columnValuesArray() As Object = New Object() {pcode, pdesc, brand, category, sprice, reorder, qty}
             rowdtStockInventoryRow.ItemArray = columnValuesArray
@@ -1073,9 +1073,9 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columncategory)
             Me.columnsprice = New Global.System.Data.DataColumn("sprice", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnsprice)
-            Me.columnreorder = New Global.System.Data.DataColumn("reorder", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnreorder = New Global.System.Data.DataColumn("reorder", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnreorder)
-            Me.columnqty = New Global.System.Data.DataColumn("qty", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnqty = New Global.System.Data.DataColumn("qty", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnqty)
         End Sub
         
@@ -2975,6 +2975,8 @@ Partial Public Class DataSet1
         
         Private columnstime As Global.System.Data.DataColumn
         
+        Private columntotal As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -3091,6 +3093,14 @@ Partial Public Class DataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property totalColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotal
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3127,9 +3137,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AdddtDebtHistoryRow(ByVal ID As String, ByVal sdate As Date, ByVal transno As String, ByVal cname As String, ByVal cuser As String, ByVal amount As Double, ByVal banktransfer As Double, ByVal gcash As Double, ByVal cash As Double, ByVal stime As String) As dtDebtHistoryRow
+        Public Overloads Function AdddtDebtHistoryRow(ByVal ID As String, ByVal sdate As Date, ByVal transno As String, ByVal cname As String, ByVal cuser As String, ByVal amount As Double, ByVal banktransfer As Double, ByVal gcash As Double, ByVal cash As Double, ByVal stime As String, ByVal total As Double) As dtDebtHistoryRow
             Dim rowdtDebtHistoryRow As dtDebtHistoryRow = CType(Me.NewRow,dtDebtHistoryRow)
-            Dim columnValuesArray() As Object = New Object() {ID, sdate, transno, cname, cuser, amount, banktransfer, gcash, cash, stime}
+            Dim columnValuesArray() As Object = New Object() {ID, sdate, transno, cname, cuser, amount, banktransfer, gcash, cash, stime, total}
             rowdtDebtHistoryRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowdtDebtHistoryRow)
             Return rowdtDebtHistoryRow
@@ -3162,6 +3172,7 @@ Partial Public Class DataSet1
             Me.columngcash = MyBase.Columns("gcash")
             Me.columncash = MyBase.Columns("cash")
             Me.columnstime = MyBase.Columns("stime")
+            Me.columntotal = MyBase.Columns("total")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3187,6 +3198,8 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columncash)
             Me.columnstime = New Global.System.Data.DataColumn("stime", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnstime)
+            Me.columntotal = New Global.System.Data.DataColumn("total", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotal)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3667,10 +3680,10 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property reorder() As String
+        Public Property reorder() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tabledtStockInventory.reorderColumn),String)
+                    Return CType(Me(Me.tabledtStockInventory.reorderColumn),Double)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'reorder' in table 'dtStockInventory' is DBNull.", e)
                 End Try
@@ -3682,10 +3695,10 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property qty() As String
+        Public Property qty() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tabledtStockInventory.qtyColumn),String)
+                    Return CType(Me(Me.tabledtStockInventory.qtyColumn),Double)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'qty' in table 'dtStockInventory' is DBNull.", e)
                 End Try
@@ -5161,6 +5174,21 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property total() As Double
+            Get
+                Try 
+                    Return CType(Me(Me.tabledtDebtHistory.totalColumn),Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'total' in table 'dtDebtHistory' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledtDebtHistory.totalColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsIDNull() As Boolean
             Return Me.IsNull(Me.tabledtDebtHistory.IDColumn)
         End Function
@@ -5277,6 +5305,18 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetstimeNull()
             Me(Me.tabledtDebtHistory.stimeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IstotalNull() As Boolean
+            Return Me.IsNull(Me.tabledtDebtHistory.totalColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SettotalNull()
+            Me(Me.tabledtDebtHistory.totalColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
