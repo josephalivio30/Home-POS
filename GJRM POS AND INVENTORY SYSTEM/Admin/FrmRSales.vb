@@ -23,9 +23,9 @@
             sdate2 = Sdt2.Value.ToString("yyyy-MM-dd")
             cn.Open()
             If cboCashier.Text = "ALL CASHIER" Then
-                cm = New OleDb.OleDbCommand("select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and transno like '" & txtSearch.Text & "%' order by sdate desc", cn)
+                cm = New OleDb.OleDbCommand("select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cname like '" & txtSearch.Text & "%' order by sdate desc", cn)
             Else
-                cm = New OleDb.OleDbCommand("select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cashier like '" & cboCashier.Text & "' and transno like '" & txtSearch.Text & "%' order by sdate desc", cn)
+                cm = New OleDb.OleDbCommand("select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cashier like '" & cboCashier.Text & "' and cname like '" & txtSearch.Text & "%' order by sdate desc", cn)
             End If
 
             dr = cm.ExecuteReader
@@ -34,7 +34,7 @@
                 _total += CDbl(dr.Item("total").ToString)
                 _discount += CDbl(dr.Item("discount").ToString)
                 _net += ((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString)) - CDbl(dr.Item("discount").ToString)
-                dgvDailySales.Rows.Add(i, dr.Item("id").ToString, dr.Item("pcode").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("discount").ToString), "#,##0.00"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"), Format(CDbl(dr.Item("bprice").ToString), "#,##0.00"), Format(CDbl(dr.Item("sprice").ToString), "#,##0.00"), Format(((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString)) - CDbl(dr.Item("discount").ToString), "#,##0.00"), dr.Item("cashier").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString))
+                dgvDailySales.Rows.Add(i, dr.Item("id").ToString, dr.Item("pcode").ToString, dr.Item("cname").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("discount").ToString), "#,##0.00"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"), Format(CDbl(dr.Item("bprice").ToString), "#,##0.00"), Format(CDbl(dr.Item("sprice").ToString), "#,##0.00"), Format(((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString)) - CDbl(dr.Item("discount").ToString), "#,##0.00"), dr.Item("cashier").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString))
             End While
             dr.Close()
             cn.Close()
@@ -124,12 +124,12 @@
                 With FrmCancelOrder
                     .txtID.Text = dgvDailySales.Rows(e.RowIndex).Cells(1).Value.ToString
                     .txtPcode.Text = dgvDailySales.Rows(e.RowIndex).Cells(2).Value.ToString
-                    .txtDesc.Text = dgvDailySales.Rows(e.RowIndex).Cells(4).Value.ToString
-                    .txtTransno.Text = dgvDailySales.Rows(e.RowIndex).Cells(3).Value.ToString
-                    .txtPrice.Text = dgvDailySales.Rows(e.RowIndex).Cells(5).Value.ToString
-                    .txtSQty.Text = dgvDailySales.Rows(e.RowIndex).Cells(6).Value.ToString
-                    .txtDiscount.Text = dgvDailySales.Rows(e.RowIndex).Cells(7).Value.ToString
-                    .txtTotal.Text = dgvDailySales.Rows(e.RowIndex).Cells(8).Value.ToString
+                    .txtDesc.Text = dgvDailySales.Rows(e.RowIndex).Cells(5).Value.ToString
+                    .txtTransno.Text = dgvDailySales.Rows(e.RowIndex).Cells(4).Value.ToString
+                    .txtPrice.Text = dgvDailySales.Rows(e.RowIndex).Cells(6).Value.ToString
+                    .txtSQty.Text = dgvDailySales.Rows(e.RowIndex).Cells(7).Value.ToString
+                    .txtDiscount.Text = dgvDailySales.Rows(e.RowIndex).Cells(8).Value.ToString
+                    .txtTotal.Text = dgvDailySales.Rows(e.RowIndex).Cells(9).Value.ToString
                     .txtVoidBy.Text = str_name
                     .txtCancelBy.Text = str_user
                     .ShowDialog()
@@ -151,5 +151,9 @@
             .PrintPreview(sql)
             .ShowDialog()
         End With
+    End Sub
+
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        LoadSale()
     End Sub
 End Class

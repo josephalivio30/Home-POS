@@ -281,9 +281,9 @@ Partial Class FrmStockInHistory
         Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         Me.Column1.DefaultCellStyle = DataGridViewCellStyle9
-        Me.Column1.HeaderText = "STATUS"
+        Me.Column1.HeaderText = "VENDOR"
         Me.Column1.Name = "Column1"
-        Me.Column1.Width = 67
+        Me.Column1.Width = 75
         '
         'FrmStockInHistory
         '

@@ -26,15 +26,10 @@
                 .ExecuteNonQuery()
             End With
             cn.Close()
-            'update agent
-            cn.Open()
-            cm = New OleDb.OleDbCommand("update tblcart set agent = '" & FrmPOS.cboAgent.Text & "' where transno like '" & FrmPOS.lblTransNo.Text & "' and status like 'Pending'", cn)
-            cm.ExecuteNonQuery()
-            cn.Close()
 
             'Updates the status of the tblcart
             cn.Open()
-            cm = New OleDb.OleDbCommand("update tblcart set status = 'Completed' where transno like '" & FrmPOS.lblTransNo.Text & "' and status like 'Pending'", cn)
+            cm = New OleDb.OleDbCommand("update tblcart set status = 'Completed', remarks = 'Paid', cname = '" & txtName.Text & "', agent = '" & FrmPOS.cboAgent.Text & "' where transno like '" & FrmPOS.lblTransNo.Text & "' and status like 'Pending'", cn)
             cm.ExecuteNonQuery()
             cn.Close()
 
@@ -48,11 +43,6 @@
 
             cn.Open()
             cm = New OleDb.OleDbCommand("update tblsales set remarks = 'Paid' where transno like '" & FrmPOS.lblTransNo.Text & "'", cn)
-            cm.ExecuteNonQuery()
-            cn.Close()
-
-            cn.Open()
-            cm = New OleDb.OleDbCommand("update tblcart set remarks = 'Paid' where transno like '" & FrmPOS.lblTransNo.Text & "'", cn)
             cm.ExecuteNonQuery()
             cn.Close()
 

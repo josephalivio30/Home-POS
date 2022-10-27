@@ -94,6 +94,7 @@ Public Class FrmMain
             panelOutput.Controls.Add(FrmStockIn)
             .BringToFront()
             .LoadStockIn()
+            .LoadVendor()
             .Show()
         End With
     End Sub
@@ -285,6 +286,19 @@ Public Class FrmMain
         chart.Series(0).IsValueShownAsLabel = True
         cn.Close()
 
+    End Sub
+
+    Private Sub btnStockAdjustment_Click(sender As Object, e As EventArgs) Handles btnStockAdjustment.Click
+        With FrmAdjustment
+            .WindowState = FormWindowState.Maximized
+            .TopLevel = False
+            panelOutput.Controls.Add(FrmAdjustment)
+            .BringToFront()
+            .LoadProducts()
+            .txtUser.Text = str_user
+            .RandomRefNo()
+            .Show()
+        End With
     End Sub
 
 End Class

@@ -546,6 +546,8 @@ Partial Public Class DataSet1
         
         Private columnstatus As Global.System.Data.DataColumn
         
+        Private columnvendor As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -654,6 +656,14 @@ Partial Public Class DataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property vendorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnvendor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -690,9 +700,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AdddtStockHistoryRow(ByVal ID As String, ByVal refno As String, ByVal pcode As String, ByVal pdesc As String, ByVal qty As Decimal, ByVal sdate As Date, ByVal stime As String, ByVal stockinby As String, ByVal status As String) As dtStockHistoryRow
+        Public Overloads Function AdddtStockHistoryRow(ByVal ID As String, ByVal refno As String, ByVal pcode As String, ByVal pdesc As String, ByVal qty As Decimal, ByVal sdate As Date, ByVal stime As String, ByVal stockinby As String, ByVal status As String, ByVal vendor As String) As dtStockHistoryRow
             Dim rowdtStockHistoryRow As dtStockHistoryRow = CType(Me.NewRow,dtStockHistoryRow)
-            Dim columnValuesArray() As Object = New Object() {ID, refno, pcode, pdesc, qty, sdate, stime, stockinby, status}
+            Dim columnValuesArray() As Object = New Object() {ID, refno, pcode, pdesc, qty, sdate, stime, stockinby, status, vendor}
             rowdtStockHistoryRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowdtStockHistoryRow)
             Return rowdtStockHistoryRow
@@ -724,6 +734,7 @@ Partial Public Class DataSet1
             Me.columnstime = MyBase.Columns("stime")
             Me.columnstockinby = MyBase.Columns("stockinby")
             Me.columnstatus = MyBase.Columns("status")
+            Me.columnvendor = MyBase.Columns("vendor")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -747,6 +758,8 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnstockinby)
             Me.columnstatus = New Global.System.Data.DataColumn("status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnstatus)
+            Me.columnvendor = New Global.System.Data.DataColumn("vendor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnvendor)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3481,6 +3494,21 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property vendor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledtStockHistory.vendorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'vendor' in table 'dtStockHistory' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledtStockHistory.vendorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsIDNull() As Boolean
             Return Me.IsNull(Me.tabledtStockHistory.IDColumn)
         End Function
@@ -3585,6 +3613,18 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetstatusNull()
             Me(Me.tabledtStockHistory.statusColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsvendorNull() As Boolean
+            Return Me.IsNull(Me.tabledtStockHistory.vendorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetvendorNull()
+            Me(Me.tabledtStockHistory.vendorColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

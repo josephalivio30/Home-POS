@@ -22,13 +22,14 @@
         If Pcolname = "ColCheck" Then
             If MsgBox("Add this Item?", vbYesNo + vbQuestion) = vbYes Then
                 cn.Open()
-                cm = New OleDb.OleDbCommand("insert into tblstockin (refno, pcode, sdate, stime, stockinby) values (@refno, @pcode, @sdate, @stime, @stockinby)", cn)
+                cm = New OleDb.OleDbCommand("insert into tblstockin (refno, pcode, sdate, stime, stockinby, vendorid) values (@refno, @pcode, @sdate, @stime, @stockinby, vendorid)", cn)
                 With cm.Parameters
                     .AddWithValue("@refno", FrmStockIn.txtRefNo.Text)
                     .AddWithValue("@pcode", dgvOnhand.Rows(e.RowIndex).Cells(1).Value.ToString)
                     .AddWithValue("@sdate", FrmStockIn.dt1.Value.ToShortDateString)
                     .AddWithValue("@stime", Now.ToShortTimeString)
                     .AddWithValue("@stockinby", FrmStockIn.txtStockIn.Text)
+                    .AddWithValue("@vendorid", FrmStockIn.lblID.Text)
                 End With
                 cm.ExecuteNonQuery()
                 dr.Close()

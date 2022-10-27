@@ -58,12 +58,15 @@ Module Module1
         cn.Close()
         dr.Close()
 
-        Dim popup As PopupNotifier = New PopupNotifier()
-        popup.Image = My.Resources._error
-        popup.TitleText = " " & count & " CRITICAL ITEM(S)"
-        popup.ContentText = critical
-        popup.Popup()
-
+        If count = 0 Then
+            Return
+        Else
+            Dim popup As PopupNotifier = New PopupNotifier()
+            popup.Image = My.Resources._error
+            popup.TitleText = " " & count & " CRITICAL ITEM(S)"
+            popup.ContentText = critical
+            popup.Popup()
+        End If
     End Sub
     Sub SumOfAll()
         Dim sdate1 As String = Now.ToString("yyyy-MM-dd")
@@ -216,37 +219,37 @@ Module Module1
     End Sub
     'display content on the administator side
     Sub Dashboard()
-        'Try
-        '    With FrmMain
-        '        cn.Open()
-        '        cm = New OleDbCommand("select count(*) from tblproduct", cn)
-        '        Dim totalproduct As Integer = CInt(cm.ExecuteScalar)
-        '        .lblTotalProduct.Text = Format(totalproduct, "#,##0.0")
-        '        cn.Close()
+        Try
+            With FrmMain
+                cn.Open()
+                cm = New OleDbCommand("select count(*) from tblproduct", cn)
+                Dim totalproduct As Integer = CInt(cm.ExecuteScalar)
+                .lblTotalProduct.Text = Format(totalproduct, "#,##0.0")
+                cn.Close()
 
-        '        cn.Open()
-        '        cm = New OleDbCommand("Select ifnull(sum(total),0) from tblsales where sdate between #" & sdate & "# and #" & sdate & "#", cn)
-        '        Dim daily As Double = CDbl(cm.ExecuteScalar)
-        '        .lblDailySales.Text = Format(daily, currencysymbol & "#,##0.00")
-        '        cn.Close()
+                cn.Open()
+                cm = New OleDbCommand("Select IIf(IsNull(sum(totalbill)), '0', sum(totalbill)) as total from tblsales where sdate between #" & sdate & "# and #" & sdate & "#", cn)
+                Dim daily As Double = CDbl(cm.ExecuteScalar)
+                .lblDailySales.Text = Format(daily, currencysymbol & "#,##0.00")
+                cn.Close()
 
-        '        cn.Open()
-        '        cm = New OleDbCommand("select ifnull(sum(total),0) as total from tblsales group by week(sdate) order by week(sdate) desc", cn)
-        '        Dim weekly As Double = CDbl(cm.ExecuteScalar)
-        '        .lblWeeklySales.Text = Format(weekly, currencysymbol & "#,##0.00")
-        '        cn.Close()
+                cn.Open()
+                cm = New OleDbCommand("select IIf(IsNull(sum(qty)), '0', sum(qty)) as total from tblproduct", cn)
+                Dim stockonhand As Double = CDbl(cm.ExecuteScalar)
+                .lblStockOnHand.Text = Format(stockonhand, "#,##0.0")
+                cn.Close()
 
-        '        cn.Open()
-        '        cm = New OleDbCommand("select ifnull(sum(total),0) as total from tblsales group by month(sdate) order by month(sdate) desc", cn)
-        '        Dim monthly As Double = CDbl(cm.ExecuteScalar)
-        '        .lblMonthlySales.Text = Format(monthly, currencysymbol & "#,##0.00")
-        '        cn.Close()
+                cn.Open()
+                cm = New OleDbCommand("select count(*) from tblinventorylist WHERE tblproduct.qty <= reorder", cn)
+                Dim critical As Double = CDbl(cm.ExecuteScalar)
+                .lblCriticalItem.Text = Format(critical, "#,##0.0")
+                cn.Close()
 
-        '    End With
+            End With
 
-        'Catch ex As Exception
-        '    cn.Close()
-        '    MsgBox(ex.Message, vbCritical)
-        'End Try
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 End Module

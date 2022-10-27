@@ -382,6 +382,12 @@
     <Compile Include="DataSet1.vb">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FrmAdjustment.Designer.vb">
+      <DependentUpon>FrmAdjustment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdjustment.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmForgotPassword.Designer.vb">
       <DependentUpon>FrmForgotPassword.vb</DependentUpon>
     </Compile>
@@ -561,6 +567,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cashier\FrmStartMenu.resx">
       <DependentUpon>FrmStartMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdjustment.resx">
+      <DependentUpon>FrmAdjustment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmForgotPassword.resx">
       <DependentUpon>FrmForgotPassword.vb</DependentUpon>

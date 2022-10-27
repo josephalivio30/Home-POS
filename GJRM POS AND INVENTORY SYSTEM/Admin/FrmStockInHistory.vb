@@ -13,7 +13,7 @@
             dr = cm.ExecuteReader
             While dr.Read
                 i = i + 1
-                dgvStockInHistory.Rows.Add(i, dr.Item("id").ToString, dr.Item("refno").ToString, dr.Item("pcode").ToString, dr.Item("pdesc").ToString, dr.Item("qty").ToString & roundT, Format(CDate(dr.Item("sdate").ToString).ToShortDateString) & " " & Format(CDate(dr.Item("stime").ToString).ToShortTimeString), dr.Item("stockinby").ToString, dr.Item("status").ToString)
+                dgvStockInHistory.Rows.Add(i, dr.Item("id").ToString, dr.Item("refno").ToString, dr.Item("pcode").ToString, dr.Item("pdesc").ToString, dr.Item("qty").ToString & roundT, Format(CDate(dr.Item("sdate").ToString).ToShortDateString) & " " & Format(CDate(dr.Item("stime").ToString).ToShortTimeString), dr.Item("stockinby").ToString, dr.Item("vendor").ToString)
             End While
             dr.Close()
             cn.Close()
