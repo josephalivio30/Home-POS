@@ -21,7 +21,7 @@ Public Class FrmPrintAgentSales
             Dim p1 As New ReportParameter("h1", _h1)
             Dim p2 As New ReportParameter("h2", _h2)
             Dim p3 As New ReportParameter("h3", _h3)
-            Dim pHeader As New ReportParameter("pHeader", "AGENT SALES REPORT DATE COVERED (" & FrmAgentSales.Adt1.Value.ToShortDateString & " - " & FrmAgentSales.Adt2.Value.ToShortDateString & ") AGENT : " & FrmAgentSales.cboAgent.Text)
+            Dim pHeader As New ReportParameter("pHeader", "AGENT SALES REPORT DATE COVERED (" & FrmRAgentSales.Adt1.Value.ToShortDateString & " - " & FrmRAgentSales.Adt2.Value.ToShortDateString & ") AGENT : " & FrmRAgentSales.cboAgent.Text)
 
             RvAgentSales.LocalReport.SetParameters(shopname)
             RvAgentSales.LocalReport.SetParameters(p1)

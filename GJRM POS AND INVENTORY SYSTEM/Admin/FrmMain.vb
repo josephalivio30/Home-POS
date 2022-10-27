@@ -233,10 +233,10 @@ Public Class FrmMain
     End Sub
 
     Private Sub btnAgentSales_Click(sender As Object, e As EventArgs) Handles btnAgentSales.Click
-        With FrmAgentSales
+        With FrmRAgentSales
             .WindowState = FormWindowState.Maximized
             .TopLevel = False
-            panelOutput.Controls.Add(FrmAgentSales)
+            panelOutput.Controls.Add(FrmRAgentSales)
             .BringToFront()
             .LoadAgent()
             .LoadAgentSales()

@@ -1,4 +1,4 @@
-﻿Public Class FrmAgentSales
+﻿Public Class FrmRAgentSales
     Dim sdate1 As String
     Dim sdate2 As String
     Dim sql As String
