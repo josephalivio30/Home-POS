@@ -115,7 +115,7 @@ Module Module1
             cn.Close()
 
             cn.Open()
-            cm = New OleDbCommand("select IIf(IsNull(sum(total)), '0', sum(total)) as refund from tblrefund where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cuser like '" & str_user & "'", cn)
+            cm = New OleDbCommand("select IIf(IsNull(sum(total + discount)), '0', sum(total + discount)) as total from tblcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
             refund = CDbl(cm.ExecuteScalar)
             cn.Close()
         Catch ex As Exception

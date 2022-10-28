@@ -4,6 +4,7 @@
     Dim sdate1 As String
     Dim sdate2 As String
     Dim sql As String
+    Dim total As Double = 0
     Dim RstartAmount As Double = 0
     Dim Rrefund As Double = 0
     Dim Rexpense As Double = 0
@@ -40,6 +41,11 @@
             cn.Close()
 
             cn.Open()
+            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(totalbill)), '0', sum(totalbill)) as total from tblsales where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
+            total = CDbl(cm.ExecuteScalar)
+            cn.Close()
+
+            cn.Open()
             cm = New OleDb.OleDbCommand("Select IIf(IsNull(sum(initialcash)), '0', sum(initialcash)) as startamount from tblstart where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
             RstartAmount = CDbl(cm.ExecuteScalar)
             cn.Close()
@@ -71,7 +77,7 @@
             lblSRefund.Text = Format(Rrefund, currencysymbol & "#,##0.00")
             lblDebt.Text = Format(Rdebt, currencysymbol & "#,##0.00")
             lblPaidDebt.Text = Format(Rdebtpaid, currencysymbol & "#,##0.00")
-            lblGrandSales.Text = Format((_total + startAmount + Rdebtpaid) - (_discount + Rrefund + Rdebt + Rexpense), currencysymbol & "#,##0.00")
+            lblGrandSales.Text = Format((total + startAmount + Rdebtpaid) - (_discount + Rrefund + Rdebt + Rexpense), currencysymbol & "#,##0.00")
             lblTotalNet.Text = Format(_net, currencysymbol & "#,##0.00")
 
 

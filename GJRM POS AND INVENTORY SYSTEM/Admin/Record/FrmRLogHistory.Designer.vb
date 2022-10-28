@@ -83,7 +83,7 @@ Partial Class FrmRLogHistory
         '
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(724, 8)
+        Me.Label3.Location = New System.Drawing.Point(724, 10)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(124, 15)
         Me.Label3.TabIndex = 5
@@ -93,7 +93,7 @@ Partial Class FrmRLogHistory
         '
         Me.Ldt2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Ldt2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Ldt2.Location = New System.Drawing.Point(984, 2)
+        Me.Ldt2.Location = New System.Drawing.Point(984, 4)
         Me.Ldt2.Name = "Ldt2"
         Me.Ldt2.Size = New System.Drawing.Size(124, 23)
         Me.Ldt2.TabIndex = 3
@@ -102,7 +102,7 @@ Partial Class FrmRLogHistory
         '
         Me.Ldt1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Ldt1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Ldt1.Location = New System.Drawing.Point(854, 2)
+        Me.Ldt1.Location = New System.Drawing.Point(854, 4)
         Me.Ldt1.Name = "Ldt1"
         Me.Ldt1.Size = New System.Drawing.Size(124, 23)
         Me.Ldt1.TabIndex = 1

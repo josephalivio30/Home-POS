@@ -92,7 +92,7 @@ Partial Class FrmRExpense
         '
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(724, 8)
+        Me.Label3.Location = New System.Drawing.Point(724, 10)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(124, 15)
         Me.Label3.TabIndex = 5
@@ -102,7 +102,7 @@ Partial Class FrmRExpense
         '
         Me.Edt2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Edt2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Edt2.Location = New System.Drawing.Point(984, 2)
+        Me.Edt2.Location = New System.Drawing.Point(984, 4)
         Me.Edt2.Name = "Edt2"
         Me.Edt2.Size = New System.Drawing.Size(124, 23)
         Me.Edt2.TabIndex = 3
@@ -111,7 +111,7 @@ Partial Class FrmRExpense
         '
         Me.Edt1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Edt1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Edt1.Location = New System.Drawing.Point(854, 2)
+        Me.Edt1.Location = New System.Drawing.Point(854, 4)
         Me.Edt1.Name = "Edt1"
         Me.Edt1.Size = New System.Drawing.Size(124, 23)
         Me.Edt1.TabIndex = 1

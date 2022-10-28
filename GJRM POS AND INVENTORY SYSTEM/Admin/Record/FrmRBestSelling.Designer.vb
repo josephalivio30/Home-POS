@@ -86,7 +86,7 @@ Partial Class FrmRBestSelling
         '
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(724, 8)
+        Me.Label3.Location = New System.Drawing.Point(724, 10)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(124, 15)
         Me.Label3.TabIndex = 5
@@ -96,7 +96,7 @@ Partial Class FrmRBestSelling
         '
         Me.Bdt2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Bdt2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Bdt2.Location = New System.Drawing.Point(984, 2)
+        Me.Bdt2.Location = New System.Drawing.Point(984, 4)
         Me.Bdt2.Name = "Bdt2"
         Me.Bdt2.Size = New System.Drawing.Size(124, 23)
         Me.Bdt2.TabIndex = 3
@@ -105,7 +105,7 @@ Partial Class FrmRBestSelling
         '
         Me.Bdt1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Bdt1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Bdt1.Location = New System.Drawing.Point(854, 2)
+        Me.Bdt1.Location = New System.Drawing.Point(854, 4)
         Me.Bdt1.Name = "Bdt1"
         Me.Bdt1.Size = New System.Drawing.Size(124, 23)
         Me.Bdt1.TabIndex = 1

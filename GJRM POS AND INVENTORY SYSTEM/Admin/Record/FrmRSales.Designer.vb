@@ -38,7 +38,6 @@ Partial Class FrmRSales
         Me.btnClose = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.cboCashier = New System.Windows.Forms.ComboBox()
         Me.btnSPrint = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -124,7 +123,6 @@ Partial Class FrmRSales
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.Controls.Add(Me.txtSearch)
-        Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.cboCashier)
         Me.Panel1.Controls.Add(Me.btnSPrint)
         Me.Panel1.Controls.Add(Me.Label3)
@@ -171,16 +169,6 @@ Partial Class FrmRSales
         Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'Label2
-        '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(761, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(52, 15)
-        Me.Label2.TabIndex = 22
-        Me.Label2.Text = "CASHIER"
-        '
         'cboCashier
         '
         Me.cboCashier.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -213,7 +201,7 @@ Partial Class FrmRSales
         '
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(374, 9)
+        Me.Label3.Location = New System.Drawing.Point(429, 9)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(124, 15)
         Me.Label3.TabIndex = 5
@@ -223,7 +211,7 @@ Partial Class FrmRSales
         '
         Me.Sdt2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Sdt2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Sdt2.Location = New System.Drawing.Point(634, 3)
+        Me.Sdt2.Location = New System.Drawing.Point(689, 3)
         Me.Sdt2.Name = "Sdt2"
         Me.Sdt2.Size = New System.Drawing.Size(124, 23)
         Me.Sdt2.TabIndex = 3
@@ -232,7 +220,7 @@ Partial Class FrmRSales
         '
         Me.Sdt1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Sdt1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Sdt1.Location = New System.Drawing.Point(504, 3)
+        Me.Sdt1.Location = New System.Drawing.Point(559, 3)
         Me.Sdt1.Name = "Sdt1"
         Me.Sdt1.Size = New System.Drawing.Size(124, 23)
         Me.Sdt1.TabIndex = 1
@@ -806,7 +794,6 @@ Partial Class FrmRSales
     Friend WithEvents btnClose As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents txtSearch As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents cboCashier As ComboBox
     Friend WithEvents btnSPrint As Button
     Friend WithEvents Label3 As Label
