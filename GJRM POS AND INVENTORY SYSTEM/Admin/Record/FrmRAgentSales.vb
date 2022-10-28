@@ -25,7 +25,7 @@
                 _total += CDbl(dr.Item("total").ToString)
                 _qty += CDbl(dr.Item("qty").ToString)
                 _discount += CDbl(dr.Item("discount").ToString)
-                _net += ((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString)) - CDbl(dr.Item("discount").ToString)
+                _net += ((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString))
                 dgvDailySales.Rows.Add(i, dr.Item("id").ToString, dr.Item("pcode").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("discount").ToString), "#,##0.00"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"), Format(CDbl(dr.Item("bprice").ToString), "#,##0.00"), Format(CDbl(dr.Item("sprice").ToString), "#,##0.00"), Format(((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString)) - CDbl(dr.Item("discount").ToString), "#,##0.00"), dr.Item("agent").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString))
             End While
             dr.Close()
@@ -34,7 +34,7 @@
             lblTotal.Text = Format(_total - _discount, currencysymbol & "#,##0.00")
             lblQty.Text = Format(_qty, currencysymbol & "#,##0.0")
             lblDiscount.Text = Format(_discount, currencysymbol & "#,##0.00")
-            lblTotalNet.Text = Format(_net - _discount, currencysymbol & "#,##0.00")
+            lblTotalNet.Text = Format(_net, currencysymbol & "#,##0.00")
         Catch ex As Exception
             cn.Close()
             MsgBox(ex.Message, vbCritical)

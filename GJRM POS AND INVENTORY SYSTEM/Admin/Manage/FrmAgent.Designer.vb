@@ -67,7 +67,7 @@ Partial Class FrmAgent
         Me.txtAgent.DisplayIcon = True
         Me.txtAgent.Icon = CType(resources.GetObject("txtAgent.Icon"), System.Drawing.Image)
         Me.txtAgent.Lines = New String(-1) {}
-        Me.txtAgent.Location = New System.Drawing.Point(5, 503)
+        Me.txtAgent.Location = New System.Drawing.Point(5, 500)
         Me.txtAgent.MaxLength = 32767
         Me.txtAgent.Name = "txtAgent"
         Me.txtAgent.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -92,7 +92,7 @@ Partial Class FrmAgent
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnCancel.Image = CType(resources.GetObject("btnCancel.Image"), System.Drawing.Image)
-        Me.btnCancel.Location = New System.Drawing.Point(182, 532)
+        Me.btnCancel.Location = New System.Drawing.Point(182, 529)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 28)
         Me.btnCancel.TabIndex = 91
@@ -109,7 +109,7 @@ Partial Class FrmAgent
         Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdate.ForeColor = System.Drawing.Color.White
         Me.btnUpdate.Image = CType(resources.GetObject("btnUpdate.Image"), System.Drawing.Image)
-        Me.btnUpdate.Location = New System.Drawing.Point(104, 532)
+        Me.btnUpdate.Location = New System.Drawing.Point(104, 529)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(75, 28)
         Me.btnUpdate.TabIndex = 90
@@ -125,7 +125,7 @@ Partial Class FrmAgent
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.Image = CType(resources.GetObject("btnSave.Image"), System.Drawing.Image)
-        Me.btnSave.Location = New System.Drawing.Point(26, 532)
+        Me.btnSave.Location = New System.Drawing.Point(26, 529)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 28)
         Me.btnSave.TabIndex = 89
@@ -208,7 +208,7 @@ Partial Class FrmAgent
         Me.dgvAgent.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgvAgent.EnableHeadersVisualStyles = False
         Me.dgvAgent.GridColor = System.Drawing.Color.LightSkyBlue
-        Me.dgvAgent.Location = New System.Drawing.Point(5, 38)
+        Me.dgvAgent.Location = New System.Drawing.Point(5, 35)
         Me.dgvAgent.Name = "dgvAgent"
         Me.dgvAgent.ReadOnly = True
         Me.dgvAgent.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None

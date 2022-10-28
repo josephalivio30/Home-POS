@@ -142,4 +142,8 @@
             End If
         End If
     End Sub
+
+    Private Sub FrmAgent_Load(sender As Object, e As EventArgs) Handles Me.Load
+        KeyPreview = True
+    End Sub
 End Class

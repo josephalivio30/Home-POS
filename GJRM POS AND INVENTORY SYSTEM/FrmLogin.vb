@@ -110,9 +110,9 @@
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        txtUser.Clear()
-        txtPass.Clear()
-        txtUser.Focus()
+        If MsgBox("Do you want to Exit?", vbYesNo + vbQuestion) = vbYes Then
+            Application.Exit()
+        End If
     End Sub
 
     Private Sub llForgotPassword_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llForgotPassword.LinkClicked

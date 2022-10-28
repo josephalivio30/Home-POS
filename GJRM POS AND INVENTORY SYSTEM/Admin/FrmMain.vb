@@ -305,4 +305,9 @@ Public Class FrmMain
         End With
     End Sub
 
+    Private Sub FrmMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If (e.CloseReason = CloseReason.UserClosing) Then
+            e.Cancel = True
+        End If
+    End Sub
 End Class

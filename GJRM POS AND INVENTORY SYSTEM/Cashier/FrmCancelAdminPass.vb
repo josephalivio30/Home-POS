@@ -55,7 +55,7 @@
                     'update ,tblcart subtract qty
                     UpdateData("update tblcart set qty = qty - '" & CDbl(FrmCancelOrder.txtCQty.Text) & "', total = price * qty - discount where id like '" & FrmCancelOrder.txtID.Text & "'")
 
-                    'select total in tblsales
+                    'select total in tblcart
                     cn.Open()
                     cm = New OleDb.OleDbCommand("select total from tblcart where ID like '" & FrmCancelOrder.txtID.Text & "' and transno like '" & FrmCancelOrder.txtTransno.Text & "'", cn)
                     dr = cm.ExecuteReader
@@ -73,6 +73,9 @@
 
                     'Update total in tblsales 
                     UpdateData("update tblsales set banktransfer = 0, gcash = 0 where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
+
+                    'update total in tblcart
+                    UpdateData("update tblcart set total = price * qty where transno like '" & FrmCancelOrder.txtTransno.Text & "' and pcode like '" & FrmCancelOrder.txtPcode.Text & "'")
 
                     'delete row in tblcart
                     cn.Open()

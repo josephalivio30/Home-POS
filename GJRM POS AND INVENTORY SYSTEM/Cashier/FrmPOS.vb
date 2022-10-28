@@ -457,4 +457,10 @@
             End If
         End If
     End Sub
+
+    Private Sub FrmPOS_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If (e.CloseReason = CloseReason.UserClosing) Then
+            e.Cancel = True
+        End If
+    End Sub
 End Class
