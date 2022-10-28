@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.Reporting.WinForms
 Public Class FrmPrintDebtHistory
     Private Sub FrmPrintDebtHistory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        KeyPreview = True
         Me.RvDebtHistory.RefreshReport()
     End Sub
     Sub PrintPreview(ByVal sql As String)
@@ -39,5 +39,11 @@ Public Class FrmPrintDebtHistory
             cn.Close()
             MsgBox(ex.Message, vbCritical)
         End Try
+    End Sub
+
+    Private Sub FrmPrintDebtHistory_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If Keys.KeyCode = Keys.Escape Then
+            Me.Dispose()
+        End If
     End Sub
 End Class

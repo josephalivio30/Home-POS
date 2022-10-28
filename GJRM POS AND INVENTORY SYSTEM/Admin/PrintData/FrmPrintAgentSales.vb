@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.Reporting.WinForms
 Public Class FrmPrintAgentSales
     Private Sub FrmPrintAgentSales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        KeyPreview = True
         Me.RvAgentSales.RefreshReport()
     End Sub
     Sub PrintPreview(ByVal sql As String)
@@ -41,4 +41,9 @@ Public Class FrmPrintAgentSales
         End Try
     End Sub
 
+    Private Sub FrmPrintAgentSales_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If Keys.KeyCode = Keys.Escape Then
+            Me.Dispose()
+        End If
+    End Sub
 End Class

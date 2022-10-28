@@ -46,10 +46,16 @@
     End Sub
 
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
-        sql = "Select * from vwstockin where status Like 'Done' and sdate between #" & dt1.Value.Date & "# and #" & dt2.Value.Date & "#"
-        With FrmPrintStockHistory
-            .PrintPreview(sql)
-            .ShowDialog()
-        End With
+        Try
+            sql = "Select * from vwstockin where status Like 'Done' and sdate between #" & dt1.Value.Date & "# and #" & dt2.Value.Date & "#"
+            With FrmPrintStockHistory
+                .PrintPreview(sql)
+                .ShowDialog()
+            End With
+
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 End Class

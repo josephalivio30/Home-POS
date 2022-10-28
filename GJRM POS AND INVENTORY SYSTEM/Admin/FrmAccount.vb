@@ -1,4 +1,5 @@
-﻿Public Class FrmAccount
+﻿Imports System.Text.RegularExpressions
+Public Class FrmAccount
     Dim user As String
     Dim pass As String
     Dim cuser As String
@@ -28,8 +29,8 @@
         Create()
     End Sub
     Sub LoadAccount()
-        dgvAccount.Rows.Clear()
         Try
+            dgvAccount.Rows.Clear()
             cn.Open()
             cm = New OleDb.OleDbCommand("select * from tbluser", cn)
             dr = cm.ExecuteReader
@@ -66,11 +67,18 @@
                 Return
             End If
 
+            Dim regex As Regex = New Regex("[a-zA-Z0-9_\-\.]+[@][a-z]+[\.][a-z]{2,3}")
+            Dim isValid As Boolean = regex.IsMatch(txtCode.Text.Trim)
+            If Not isValid Then
+                MsgBox("Please enter a valid email address.", vbExclamation)
+                Return
+            End If
+
             cn.Open()
-            cm = New OleDb.OleDbCommand("Insert into tbluser (username, code, cpassword, cname, role)values(@username, @code, @cpassword, @cname, @role)", cn)
+            cm = New OleDb.OleDbCommand("Insert into tbluser (username, email, cpassword, cname, role)values(@username, @email, @cpassword, @cname, @role)", cn)
             With cm
                 .Parameters.AddWithValue("@username", txtUser.Text)
-                .Parameters.AddWithValue("@code", txtCode.Text)
+                .Parameters.AddWithValue("@email", txtCode.Text)
                 .Parameters.AddWithValue("@cpassword", txtPass.Text)
                 .Parameters.AddWithValue("@cname", txtName.Text)
                 .Parameters.AddWithValue("@role", cboRole.SelectedItem)

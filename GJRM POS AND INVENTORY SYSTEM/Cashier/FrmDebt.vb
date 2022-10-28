@@ -1,6 +1,4 @@
 ﻿Public Class FrmDebt
-    Dim total As Double
-    Dim pass As String
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         savedebt()
     End Sub

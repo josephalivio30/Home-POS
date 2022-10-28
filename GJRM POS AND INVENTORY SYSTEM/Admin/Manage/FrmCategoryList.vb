@@ -1,7 +1,7 @@
 ﻿Public Class FrmCategoryList
     Dim category As String
     Private Sub FrmBrand_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        KeyPreview = True
     End Sub
     Sub LoadCategory()
         Try

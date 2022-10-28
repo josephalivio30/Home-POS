@@ -1,6 +1,6 @@
 ﻿Public Class FrmProduct
     Private Sub FrmProduct_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        KeyPreview = True
     End Sub
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Dispose()
@@ -20,28 +20,38 @@
         End With
     End Sub
     Sub LoadCboCategory()
-        cboCategory.Items.Clear()
+        Try
+            cboCategory.Items.Clear()
+            cn.Open()
+            cm = New OleDb.OleDbCommand("select * from tblcategory", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+                cboCategory.Items.Add(dr.Item("category").ToString)
+            End While
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
 
-        cn.Open()
-        cm = New OleDb.OleDbCommand("select * from tblcategory", cn)
-        dr = cm.ExecuteReader
-        While dr.Read
-            cboCategory.Items.Add(dr.Item("category").ToString)
-        End While
-        dr.Close()
-        cn.Close()
     End Sub
     Sub LoadCboBrand()
-        cboBrand.Items.Clear()
+        Try
+            cboBrand.Items.Clear()
+            cn.Open()
+            cm = New OleDb.OleDbCommand("select * from tblbrand", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+                cboBrand.Items.Add(dr.Item("brand").ToString)
+            End While
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            cn.Close()
+        MsgBox(ex.Message, vbCritical)
+        End Try
 
-        cn.Open()
-        cm = New OleDb.OleDbCommand("select * from tblbrand", cn)
-        dr = cm.ExecuteReader
-        While dr.Read
-            cboBrand.Items.Add(dr.Item("brand").ToString)
-        End While
-        dr.Close()
-        cn.Close()
     End Sub
     Sub Save()
         Try

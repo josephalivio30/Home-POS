@@ -36,18 +36,34 @@
     End Sub
 
     Private Sub btnSPrint_Click(sender As Object, e As EventArgs) Handles btnBPrint.Click
-        sql = "SELECT tblproduct.pcode, tblproduct.pdesc, tblcart.price, Sum(tblcart.qty) AS qty, (tblcart.price * Sum(tblcart.qty)) as total
+        Try
+            sql = "SELECT tblproduct.pcode, tblproduct.pdesc, tblcart.price, Sum(tblcart.qty) AS qty, (tblcart.price * Sum(tblcart.qty)) as total
                                         FROM tblcart INNER JOIN tblproduct ON tblcart.pcode = tblproduct.pcode where sdate between #" & sdate1 & "# and #" & sdate2 & "#
                                         GROUP BY tblproduct.pcode, tblproduct.pdesc, tblcart.price
                                         ORDER BY Sum(tblcart.qty) DESC;
                                         "
-        With FrmPrintBestSelling
-            .PrintPreview(sql)
-            .ShowDialog()
-        End With
+            With FrmPrintBestSelling
+                .PrintPreview(sql)
+                .ShowDialog()
+            End With
+        Catch ex As Exception
+            cn.Close()
+        MsgBox(ex.Message, vbCritical)
+        End Try
+
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Dispose()
+    End Sub
+
+    Private Sub FrmRBestSelling_Load(sender As Object, e As EventArgs) Handles Me.Load
+        KeyPreview = True
+    End Sub
+
+    Private Sub FrmRBestSelling_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If Keys.KeyCode = Keys.Escape Then
+            Me.Dispose()
+        End If
     End Sub
 End Class

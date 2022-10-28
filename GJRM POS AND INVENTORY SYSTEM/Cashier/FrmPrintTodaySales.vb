@@ -39,7 +39,6 @@
 
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
         Try
-
             Static currentchar As Integer
             Dim textfont As Font = New Font("Verdana", 7, FontStyle.Bold)
 
@@ -88,6 +87,18 @@
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         If MsgBox("Do you want to print Daily Sales", vbYesNo + vbQuestion) = vbYes Then
             PrintReceipt()
+        End If
+    End Sub
+
+    Private Sub FrmPrintTodaySales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        KeyPreview = True
+    End Sub
+
+    Private Sub FrmPrintTodaySales_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If Keys.KeyCode = Keys.Escape Then
+            Me.Dispose()
+        ElseIf Keys.KeyCode = Keys.Enter Then
+            btnPrint_Click(sender, e)
         End If
     End Sub
 End Class

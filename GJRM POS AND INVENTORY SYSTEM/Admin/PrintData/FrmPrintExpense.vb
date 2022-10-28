@@ -2,7 +2,7 @@
 Public Class FrmPrintExpense
 
     Private Sub FrmPrintExpense_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        KeyPreview = True
         Me.RvExpense.RefreshReport()
     End Sub
     Sub PrintPreview(ByVal sql As String)
@@ -40,5 +40,11 @@ Public Class FrmPrintExpense
             cn.Close()
             MsgBox(ex.Message, vbCritical)
         End Try
+    End Sub
+
+    Private Sub FrmPrintExpense_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If Keys.KeyCode = Keys.Escape Then
+            Me.Dispose()
+        End If
     End Sub
 End Class

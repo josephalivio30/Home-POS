@@ -118,4 +118,16 @@
                 e.Handled = True
         End Select
     End Sub
+
+    Private Sub FrmCancelOrder_Load(sender As Object, e As EventArgs) Handles Me.Load
+        KeyPreview = True
+    End Sub
+
+    Private Sub FrmCancelOrder_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If Keys.KeyCode = Keys.Escape Then
+            Me.Dispose()
+        ElseIf Keys.KeyCode = Keys.Enter Then
+            save()
+        End If
+    End Sub
 End Class

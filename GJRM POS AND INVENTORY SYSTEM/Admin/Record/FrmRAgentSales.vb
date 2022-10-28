@@ -79,14 +79,33 @@
     End Sub
 
     Private Sub btnSPrint_Click(sender As Object, e As EventArgs) Handles btnSPrint.Click
-        If cboAgent.Text = "ALL AGENT" Then
-            sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and agent <> 'NO AGENT' and transno like '" & txtSearch.Text & "%' order by sdate desc"
-        Else
-            sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and agent like '" & cboAgent.Text & "' and pdesc like '" & txtSearch.Text & "%' order by sdate desc"
+        Try
+            If cboAgent.Text = "ALL AGENT" Then
+                sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and agent <> 'NO AGENT' and transno like '" & txtSearch.Text & "%' order by sdate desc"
+            Else
+                sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and agent like '" & cboAgent.Text & "' and pdesc like '" & txtSearch.Text & "%' order by sdate desc"
+            End If
+            With FrmPrintAgentSales
+                .PrintPreview(sql)
+                .ShowDialog()
+            End With
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
+    End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Dispose()
+    End Sub
+
+    Private Sub FrmRAgentSales_Load(sender As Object, e As EventArgs) Handles Me.Load
+        KeyPreview = True
+    End Sub
+
+    Private Sub FrmRAgentSales_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If Keys.KeyCode = Keys.Escape Then
+            Me.Dispose()
         End If
-        With FrmPrintAgentSales
-            .PrintPreview(sql)
-            .ShowDialog()
-        End With
     End Sub
 End Class

@@ -82,6 +82,7 @@
                     .LoadAgent()
                     .lblShopname.Text = _shopname
                     .lblName.Text = str_name & " | " & str_role
+
                     .ShowDialog()
                     txtUser.Clear()
                     txtPass.Clear()
@@ -109,9 +110,9 @@
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        If MsgBox("Do you want to Exit?", vbYesNo + vbQuestion) = vbYes Then
-            Application.Exit()
-        End If
+        txtUser.Clear()
+        txtPass.Clear()
+        txtUser.Focus()
     End Sub
 
     Private Sub llForgotPassword_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llForgotPassword.LinkClicked

@@ -47,16 +47,20 @@
     End Sub
 
     Private Sub FrmPOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        KeyPreview = True
         Timer1.Enabled = True
         LoadProducts()
         NotifyCriticalItems()
+        If CheckStatus() = True Then
+            btnExpense.Enabled = True
+            btnDailySales.Enabled = True
+        End If
     End Sub
 
     Private Sub txtBarcode_TextChanged(sender As Object, e As EventArgs) Handles txtBarcode.TextChanged
         Dim pcodee As String
         Dim pricee As Double
         Dim qty As Integer
-
 
         If txtBarcode.Text = String.Empty Then Return
         Try
@@ -149,8 +153,6 @@
                 cn.Close()
 
             End If
-
-
             txtBarcode.SelectionStart = 0
             txtBarcode.SelectionLength = txtBarcode.Text.Length
             LoadCart()
@@ -257,7 +259,7 @@
                     cm = New OleDb.OleDbCommand("delete from tblcart where id like '" & dgvCart.Rows(e.RowIndex).Cells(1).Value.ToString & "' and status like 'Pending'", cn)
                     cm.ExecuteNonQuery()
                     cn.Close()
-                    MsgBox("Item has been successfully voided", vbInformation)
+                    MsgBox("Item has been successfully deleted", vbInformation)
                     LoadCart()
                 End If
             ElseIf colname = "ColAdd" Then
@@ -372,7 +374,7 @@
         End With
     End Sub
 
-    Private Sub txtDebtPayment_Click(sender As Object, e As EventArgs) Handles btnDebtPayment.Click
+    Private Sub btnDebtPayment_Click(sender As Object, e As EventArgs) Handles btnDebtPayment.Click
         With FrmDebt
             .txtDiscount.Text = lblDiscount.Text
             .txtAmount.Text = lblTotalBill.Text
@@ -399,5 +401,60 @@
 
     Private Sub cboAgent_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboAgent.KeyPress
         e.Handled = True
+    End Sub
+
+    Private Sub FrmPOS_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.F1 Then
+            If btnStartMenu.Enabled = False Then
+                Return
+            Else
+                btnStartMenu_Click(sender, e)
+            End If
+
+        ElseIf e.KeyCode = Keys.F2 Then
+            If btnNewOrder.Enabled = False Then
+                Return
+            Else
+                btnNewOrder_Click(sender, e)
+            End If
+        ElseIf e.KeyCode = Keys.F3 Then
+            If btnSettle.Enabled = False Then
+                Return
+            Else
+                btnSettle_Click(sender, e)
+            End If
+        ElseIf e.KeyCode = Keys.F4 Then
+            If btnApplyDiscount.Enabled = False Then
+                Return
+            Else
+                btnApplyDiscount_Click(sender, e)
+            End If
+        ElseIf e.KeyCode = Keys.F5 Then
+            If btnDebtPayment.Enabled = False Then
+                Return
+            Else
+                btnDebtPayment_Click(sender, e)
+            End If
+        ElseIf e.KeyCode = Keys.F6 Then
+            If btnExpense.Enabled = False Then
+                Return
+            Else
+                btnExpense_Click(sender, e)
+            End If
+        ElseIf e.KeyCode = Keys.F7 Then
+            If btnDailySales.Enabled = False Then
+                Return
+            Else
+                btnDailySales_Click(sender, e)
+            End If
+        ElseIf e.KeyCode = Keys.F8 Then
+            If txtBarcode.Enabled = False Then
+                Return
+            Else
+                txtBarcode.SelectionStart = 0
+                txtBarcode.SelectionLength = txtBarcode.Text.Length
+                LoadCart()
+            End If
+        End If
     End Sub
 End Class

@@ -3,7 +3,6 @@
 
     Private Sub FrmStartMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         KeyPreview = True
-
     End Sub
     Sub Display()
         SumOfAll()
@@ -21,6 +20,9 @@
 
         If CheckTransaction() = True Then
             btnStart.Enabled = False
+            txtStartingCash.Enabled = False
+        Else
+            txtStartingCash.Enabled = True
         End If
         If CheckDay() = False Then
             btnPrint.Enabled = False
@@ -29,11 +31,6 @@
             btnPrint.Enabled = False
         Else
             btnPrint.Enabled = True
-        End If
-        If txtStartingCash.Text = "0.00" Then
-            txtStartingCash.Enabled = True
-        Else
-            txtStartingCash.Enabled = False
         End If
     End Sub
     Sub EndDay()
@@ -67,7 +64,6 @@
                         .btnNewOrder.Enabled = False
                         .btnSettle.Enabled = False
                         .btnApplyDiscount.Enabled = False
-                        .btnRefund.Enabled = False
                         .btnExpense.Enabled = False
                         .btnDebtPayment.Enabled = False
                     End With
@@ -114,7 +110,6 @@
                 With FrmPOS
                     If CheckStatus() = True Then
                         .btnNewOrder.Enabled = True
-                        .btnRefund.Enabled = True
                         .btnExpense.Enabled = True
                         .btnDebtPayment.Enabled = True
                     Else

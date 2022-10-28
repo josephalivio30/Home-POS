@@ -24,138 +24,168 @@ Module Module1
 
     'it checks to enable the transaction everyday
     Function CheckStatus() As Boolean
-        Dim found As Boolean
-        cn.Open()
-        cm = New OleDbCommand("select * from tblstart where sdate between #" & sdate & "# and #" & sdate & "# and status like 'open' and cuser like '" & str_user & "'", cn)
-        dr = cm.ExecuteReader
-        dr.Read()
-        If dr.HasRows Then
-            startid = dr.Item("id").ToString
-            found = True
-        Else
-            found = False
-        End If
-        dr.Close()
-        cn.Close()
-        Return found
+        Try
+            Dim found As Boolean
+            cn.Open()
+            cm = New OleDbCommand("select * from tblstart where sdate between #" & sdate & "# and #" & sdate & "# and status like 'open' and cuser like '" & str_user & "'", cn)
+            dr = cm.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then
+                startid = dr.Item("id").ToString
+                found = True
+            Else
+                found = False
+            End If
+            dr.Close()
+            cn.Close()
+            Return found
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Function
     Sub NotifyCriticalItems()
-        Dim critical As String = ""
-        Dim count As String
-        cn.Open()
-        cm = New OleDbCommand("select count(*) from tblinventorylist WHERE tblproduct.qty <= reorder", cn)
-        count = CDbl(cm.ExecuteScalar).ToString
-        cn.Close()
+        Try
+            Dim critical As String = ""
+            Dim count As String
+            cn.Open()
+            cm = New OleDbCommand("select count(*) from tblinventorylist WHERE tblproduct.qty <= reorder", cn)
+            count = CDbl(cm.ExecuteScalar).ToString
+            cn.Close()
 
-        Dim i As Integer = 0
-        cn.Open()
-        cm = New OleDbCommand("select * from tblinventorylist WHERE tblproduct.qty <= reorder", cn)
-        dr = cm.ExecuteReader
-        While dr.Read
-            i += 1
-            critical += i & ". " & dr.Item("pdesc").ToString & Environment.NewLine
-        End While
-        cn.Close()
-        dr.Close()
+            Dim i As Integer = 0
+            cn.Open()
+            cm = New OleDbCommand("select * from tblinventorylist WHERE tblproduct.qty <= reorder", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+                i += 1
+                critical += i & ". " & dr.Item("pdesc").ToString & Environment.NewLine
+            End While
+            cn.Close()
+            dr.Close()
 
-        If count = 0 Then
-            Return
-        Else
-            Dim popup As PopupNotifier = New PopupNotifier()
-            popup.Image = My.Resources._error
-            popup.TitleText = " " & count & " CRITICAL ITEM(S)"
-            popup.ContentText = critical
-            popup.Popup()
-        End If
+            If count = 0 Then
+                Return
+            Else
+                Dim popup As PopupNotifier = New PopupNotifier()
+                popup.Image = My.Resources._error
+                popup.TitleText = " " & count & " CRITICAL ITEM(S)"
+                popup.ContentText = critical
+                popup.Popup()
+            End If
+        Catch ex As Exception
+            cn.Close()
+        MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
     Sub SumOfAll()
-        Dim sdate1 As String = Now.ToString("yyyy-MM-dd")
-        Dim sdate2 As String = Now.ToString("yyyy-MM-dd")
-        cn.Open()
-        cm = New OleDbCommand("select initialcash, timein, timeout from tblstart where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cuser like '" & str_user & "'", cn)
-        dr = cm.ExecuteReader
-        dr.Read()
-        If dr.HasRows Then
-            startAmount = dr.Item("initialcash").ToString
-            timein = dr.Item("timein").ToString
-            timeout = dr.Item("timeout").ToString
-        End If
-        cn.Close()
-        dr.Close()
+        Try
+            Dim sdate1 As String = Now.ToString("yyyy-MM-dd")
+            Dim sdate2 As String = Now.ToString("yyyy-MM-dd")
+            cn.Open()
+            cm = New OleDbCommand("select initialcash, timein, timeout from tblstart where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cuser like '" & str_user & "'", cn)
+            dr = cm.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then
+                startAmount = dr.Item("initialcash").ToString
+                timein = dr.Item("timein").ToString
+                timeout = dr.Item("timeout").ToString
+            End If
+            cn.Close()
+            dr.Close()
 
-        cn.Open()
-        cm = New OleDbCommand("select IIf(IsNull(sum(discount)), '0', sum(discount)) as discount, IIf(IsNull(sum(totalbill)), '0', sum(totalbill)) as total from tblsales where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cashier like '" & str_user & "'", cn)
-        dr = cm.ExecuteReader
-        While dr.Read
-            sales = (Format(CDbl(dr.Item("total").ToString), "#,##0.00"))
-            discount = (Format(CDbl(dr.Item("discount").ToString), "#,##0.00"))
-        End While
-        cn.Close()
-        dr.Close()
+            cn.Open()
+            cm = New OleDbCommand("select IIf(IsNull(sum(discount)), '0', sum(discount)) as discount, IIf(IsNull(sum(totalbill)), '0', sum(totalbill)) as total from tblsales where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cashier like '" & str_user & "'", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+                sales = (Format(CDbl(dr.Item("total").ToString), "#,##0.00"))
+                discount = (Format(CDbl(dr.Item("discount").ToString), "#,##0.00"))
+            End While
+            cn.Close()
+            dr.Close()
 
-        cn.Open()
-        cm = New OleDbCommand("Select IIf(IsNull(sum(amount)), '0', sum(amount)) as expense from tblexpense where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cuser like '" & str_user & "'", cn)
-        expense = CDbl(cm.ExecuteScalar)
-        cn.Close()
+            cn.Open()
+            cm = New OleDbCommand("Select IIf(IsNull(sum(amount)), '0', sum(amount)) as expense from tblexpense where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cuser like '" & str_user & "'", cn)
+            expense = CDbl(cm.ExecuteScalar)
+            cn.Close()
 
-        cn.Open()
-        cm = New OleDbCommand("select IIf(IsNull(sum(amount)), '0', sum(amount)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cuser like '" & str_user & "'", cn)
-        debt = CDbl(cm.ExecuteScalar)
-        cn.Close()
+            cn.Open()
+            cm = New OleDbCommand("select IIf(IsNull(sum(amount)), '0', sum(amount)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cuser like '" & str_user & "'", cn)
+            debt = CDbl(cm.ExecuteScalar)
+            cn.Close()
 
-        cn.Open()
-        cm = New OleDbCommand("select IIf(IsNull(sum(total)), '0', sum(total)) as refund from tblrefund where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cuser like '" & str_user & "'", cn)
-        refund = CDbl(cm.ExecuteScalar)
-        cn.Close()
+            cn.Open()
+            cm = New OleDbCommand("select IIf(IsNull(sum(total)), '0', sum(total)) as refund from tblrefund where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cuser like '" & str_user & "'", cn)
+            refund = CDbl(cm.ExecuteScalar)
+            cn.Close()
+        Catch ex As Exception
+            cn.Close()
+        MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
     'needed to repair
     Function CheckUserOpen()
-        Dim found As Boolean
-        cn.Open()
-        cm = New OleDbCommand("select * from tblstart where status = 'open' and sdate between #" & sdate & "# and #" & sdate & "# and cuser <> '" & str_user & "'", cn)
-        dr = cm.ExecuteReader
-        dr.Read()
-        If dr.HasRows Then
-            found = True
-        Else
-            found = False
-        End If
-        cn.Close()
-        dr.Close()
-        Return found
+        Try
+            Dim found As Boolean
+            cn.Open()
+            cm = New OleDbCommand("select * from tblstart where status = 'open' and sdate between #" & sdate & "# and #" & sdate & "# and cuser <> '" & str_user & "'", cn)
+            dr = cm.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then
+                found = True
+            Else
+                found = False
+            End If
+            cn.Close()
+            dr.Close()
+            Return found
+        Catch ex As Exception
+            cn.Close()
+        MsgBox(ex.Message, vbCritical)
+        End Try
     End Function
 
     'checks the start of the day
     Function CheckDay()
-        Dim found As Boolean
-        cn.Open()
-        cm = New OleDbCommand("select * from tblstart where sdate between #" & sdate & "# and #" & sdate & "#", cn)
-        dr = cm.ExecuteReader
-        dr.Read()
-        If dr.HasRows Then
-            found = True
-        Else
-            found = False
-        End If
-        dr.Close()
-        cn.Close()
-        Return found
+        Try
+            Dim found As Boolean
+            cn.Open()
+            cm = New OleDbCommand("select * from tblstart where sdate between #" & sdate & "# and #" & sdate & "#", cn)
+            dr = cm.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then
+                found = True
+            Else
+                found = False
+            End If
+            dr.Close()
+            cn.Close()
+            Return found
+        Catch ex As Exception
+            cn.Close()
+        MsgBox(ex.Message, vbCritical)
+        End Try
     End Function
 
     'check if the status is open and can still continue to transact
     Function CheckTransaction() As Boolean
-        Dim isOpen As Boolean
-        cn.Open()
-        cm = New OleDbCommand("select * from tblstart where ID like '" & startid & "' and status like 'open' and cuser like '" & str_user & "'", cn)
-        dr = cm.ExecuteReader
-        If dr.HasRows Then
-            isOpen = True
-        Else
-            isOpen = False
-        End If
-        dr.Close()
-        cn.Close()
-        Return isOpen
+        Try
+            Dim isOpen As Boolean
+            cn.Open()
+            cm = New OleDbCommand("select * from tblstart where ID like '" & startid & "' and status like 'open' and cuser like '" & str_user & "'", cn)
+            dr = cm.ExecuteReader
+            If dr.HasRows Then
+                isOpen = True
+            Else
+                isOpen = False
+            End If
+            dr.Close()
+            cn.Close()
+            Return isOpen
+        Catch ex As Exception
+            cn.Close()
+        MsgBox(ex.Message, vbCritical)
+        End Try
     End Function
 
     'counts record in the database

@@ -554,7 +554,7 @@ Partial Class FrmRAgentSales
         Me.lblQty.Text = "0.00"
         Me.lblQty.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'FrmAgentSales
+        'FrmRAgentSales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -570,7 +570,7 @@ Partial Class FrmRAgentSales
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Name = "FrmAgentSales"
+        Me.Name = "FrmRAgentSales"
         Me.Panel18.ResumeLayout(False)
         Me.Panel18.PerformLayout()
         CType(Me.dgvDailySales, System.ComponentModel.ISupportInitialize).EndInit()

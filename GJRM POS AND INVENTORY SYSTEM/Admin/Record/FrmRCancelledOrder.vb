@@ -66,17 +66,33 @@
     End Sub
 
     Private Sub btnSPrint_Click(sender As Object, e As EventArgs) Handles btnSPrint.Click
-        If cboCancelledBy.Text = "ALL" Then
-            sql = "select * from vwcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and transno like '" & txtSearch.Text & "%'"
-        Else
-            sql = "select * from vwcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and transno like '" & txtSearch.Text & "%' and cancelledby like '" & cboCancelledBy.Text & "'"
-        End If
-        With FrmPrintCancelledOrder
-            .PrintPreview(sql)
-            .ShowDialog()
-        End With
+        Try
+
+            If cboCancelledBy.Text = "ALL" Then
+                sql = "select * from vwcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and transno like '" & txtSearch.Text & "%'"
+            Else
+                sql = "select * from vwcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and transno like '" & txtSearch.Text & "%' and cancelledby like '" & cboCancelledBy.Text & "'"
+            End If
+            With FrmPrintCancelledOrder
+                .PrintPreview(sql)
+                .ShowDialog()
+            End With
+        Catch ex As Exception
+            cn.Close()
+        MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
     Private Sub cboCancelledBy_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboCancelledBy.KeyPress
         e.Handled = True
+    End Sub
+
+    Private Sub FrmRCancelledOrder_Load(sender As Object, e As EventArgs) Handles Me.Load
+        KeyPreview = True
+    End Sub
+
+    Private Sub FrmRCancelledOrder_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If Keys.KeyCode = Keys.Escape Then
+            Me.Dispose()
+        End If
     End Sub
 End Class

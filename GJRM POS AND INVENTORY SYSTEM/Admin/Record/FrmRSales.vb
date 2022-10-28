@@ -10,7 +10,7 @@
     Dim Rdebt As Double = 0
     Dim Rdebtpaid As Double = 0
     Private Sub FrmRSales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        KeyPreview = True
     End Sub
     Sub LoadSale()
         Try
@@ -155,5 +155,15 @@
 
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
         LoadSale()
+    End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Dispose()
+    End Sub
+
+    Private Sub FrmRSales_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If Keys.KeyCode = Keys.Escape Then
+            Me.Dispose()
+        End If
     End Sub
 End Class

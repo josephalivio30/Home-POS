@@ -62,4 +62,14 @@
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Dispose()
     End Sub
+
+    Private Sub FrmVendorList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        KeyPreview = True
+    End Sub
+
+    Private Sub dgvVendor_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvVendor.KeyDown
+        If Keys.KeyCode = Keys.Escape Then
+            Me.Dispose()
+        End If
+    End Sub
 End Class

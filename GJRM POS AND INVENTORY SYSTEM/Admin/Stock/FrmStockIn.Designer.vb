@@ -298,7 +298,7 @@ Partial Class FrmStockIn
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.ForeColor = System.Drawing.Color.White
         Me.btnClose.Image = CType(resources.GetObject("btnClose.Image"), System.Drawing.Image)
-        Me.btnClose.Location = New System.Drawing.Point(1020, 1)
+        Me.btnClose.Location = New System.Drawing.Point(1020, 0)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(26, 23)
         Me.btnClose.TabIndex = 54
@@ -438,7 +438,7 @@ Partial Class FrmStockIn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DarkGray
+        Me.BackColor = System.Drawing.Color.Silver
         Me.ClientSize = New System.Drawing.Size(1048, 618)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnCreateNew)

@@ -103,7 +103,7 @@ Partial Class FrmRCancelledOrder
         Me.dgvCancelOrder.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgvCancelOrder.EnableHeadersVisualStyles = False
         Me.dgvCancelOrder.GridColor = System.Drawing.Color.LightSkyBlue
-        Me.dgvCancelOrder.Location = New System.Drawing.Point(12, 76)
+        Me.dgvCancelOrder.Location = New System.Drawing.Point(12, 67)
         Me.dgvCancelOrder.Name = "dgvCancelOrder"
         Me.dgvCancelOrder.ReadOnly = True
         DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -240,7 +240,7 @@ Partial Class FrmRCancelledOrder
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.ForeColor = System.Drawing.Color.White
         Me.btnClose.Image = CType(resources.GetObject("btnClose.Image"), System.Drawing.Image)
-        Me.btnClose.Location = New System.Drawing.Point(1179, 9)
+        Me.btnClose.Location = New System.Drawing.Point(1179, 0)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(26, 31)
         Me.btnClose.TabIndex = 77
@@ -260,7 +260,7 @@ Partial Class FrmRCancelledOrder
         Me.Panel1.Controls.Add(Me.Cdt2)
         Me.Panel1.Controls.Add(Me.Cdt1)
         Me.Panel1.Controls.Add(Me.Label16)
-        Me.Panel1.Location = New System.Drawing.Point(0, 40)
+        Me.Panel1.Location = New System.Drawing.Point(0, 31)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1205, 30)
         Me.Panel1.TabIndex = 76
@@ -383,7 +383,7 @@ Partial Class FrmRCancelledOrder
         Me.Panel18.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel18.Controls.Add(Me.Label18)
         Me.Panel18.Controls.Add(Me.lblTotal)
-        Me.Panel18.Location = New System.Drawing.Point(1031, 76)
+        Me.Panel18.Location = New System.Drawing.Point(1031, 67)
         Me.Panel18.Name = "Panel18"
         Me.Panel18.Size = New System.Drawing.Size(161, 60)
         Me.Panel18.TabIndex = 79

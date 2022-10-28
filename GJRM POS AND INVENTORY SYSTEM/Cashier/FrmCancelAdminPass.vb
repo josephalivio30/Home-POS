@@ -111,5 +111,18 @@
 
     Private Sub FrmCancelAdminPass_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtPass.PasswordChar = Chr(149)
+        KeyPreview = True
+    End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Dispose()
+    End Sub
+
+    Private Sub FrmCancelAdminPass_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If Keys.KeyCode = Keys.Escape Then
+            Me.Dispose()
+        ElseIf Keys.KeyCode = Keys.Enter Then
+            Save()
+        End If
     End Sub
 End Class

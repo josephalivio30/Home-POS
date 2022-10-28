@@ -57,6 +57,8 @@
     Private Sub FrmStockIn_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If e.KeyCode = Keys.Escape Then
             Me.Dispose()
+        ElseIf Keys.KeyCode = Keys.Enter Then
+            btnSave_Click(sender, e)
         End If
     End Sub
 
@@ -129,18 +131,22 @@
     End Sub
 
     Private Sub cboVendor_TextChanged(sender As Object, e As EventArgs) Handles cboVendor.TextChanged
-
-        cn.Open()
-        cm = New OleDb.OleDbCommand("select * from tblvendor where vendor like '" & cboVendor.Text & "'", cn)
-        dr = cm.ExecuteReader
-        dr.Read()
-        If dr.HasRows Then
-            lblID.Text = dr.Item("ID").ToString
-            txtContact.Text = dr.Item("contactperson").ToString
-            txtAddress.Text = dr.Item("address").ToString
-        End If
-        dr.Close()
-        cn.Close()
+        Try
+            cn.Open()
+            cm = New OleDb.OleDbCommand("select * from tblvendor where vendor like '" & cboVendor.Text & "'", cn)
+            dr = cm.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then
+                lblID.Text = dr.Item("ID").ToString
+                txtContact.Text = dr.Item("contactperson").ToString
+                txtAddress.Text = dr.Item("address").ToString
+            End If
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 
     Private Sub cboVendor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboVendor.KeyPress
@@ -161,9 +167,13 @@
 
 
     Private Sub txtRefNo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtRefNo.KeyPress
-        Dim DecimalSeparator As String = Application.CurrentCulture.NumberFormat.NumberDecimalSeparator
-        e.Handled = Not (Char.IsDigit(e.KeyChar) Or
-                     Asc(e.KeyChar) = 8 Or
-                     (e.KeyChar = DecimalSeparator And sender.Text.IndexOf(DecimalSeparator) = -1))
+        Select Case Asc(e.KeyChar)
+            Case 48 To 57
+            'Case 46 period
+            Case 8
+            Case 13
+            Case Else
+                e.Handled = True
+        End Select
     End Sub
 End Class

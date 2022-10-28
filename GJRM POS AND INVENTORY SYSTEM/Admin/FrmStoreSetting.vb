@@ -3,35 +3,45 @@
         Me.Dispose()
     End Sub
     Sub LoadSetting()
-        If CheckSetting() = True Then
+        Try
+            If CheckSetting() = True Then
+                cn.Open()
+                cm = New OleDb.OleDbCommand("select * from tblsetting", cn)
+                dr = cm.ExecuteReader
+                dr.Read()
+                txtShopName.Text = dr.Item("shopname").ToString
+                txtHeader1.Text = dr.Item("h1").ToString
+                txtHeader2.Text = dr.Item("h2").ToString
+                txtHeader3.Text = dr.Item("h3").ToString
+                cn.Close()
+                dr.Close()
+                btnUpdate.Enabled = True
+                btnSave.Enabled = False
+            End If
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
+    End Sub
+    Function CheckSetting() As Boolean
+        Try
+            Dim found As Boolean
             cn.Open()
             cm = New OleDb.OleDbCommand("select * from tblsetting", cn)
             dr = cm.ExecuteReader
             dr.Read()
-            txtShopName.Text = dr.Item("shopname").ToString
-            txtHeader1.Text = dr.Item("h1").ToString
-            txtHeader2.Text = dr.Item("h2").ToString
-            txtHeader3.Text = dr.Item("h3").ToString
-            cn.Close()
+            If dr.HasRows Then
+                found = True
+            Else
+                found = False
+            End If
             dr.Close()
-            btnUpdate.Enabled = True
-            btnSave.Enabled = False
-        End If
-    End Sub
-    Function CheckSetting() As Boolean
-        Dim found As Boolean
-        cn.Open()
-        cm = New OleDb.OleDbCommand("select * from tblsetting", cn)
-        dr = cm.ExecuteReader
-        dr.Read()
-        If dr.HasRows Then
-            found = True
-        Else
-            found = False
-        End If
-        dr.Close()
-        cn.Close()
-        Return found
+            cn.Close()
+            Return found
+        Catch ex As Exception
+            cn.Close()
+        MsgBox(ex.Message, vbCritical)
+        End Try
     End Function
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try

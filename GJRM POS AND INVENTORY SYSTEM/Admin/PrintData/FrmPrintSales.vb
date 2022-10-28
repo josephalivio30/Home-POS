@@ -1,6 +1,7 @@
 ﻿Imports Microsoft.Reporting.WinForms
 Public Class FrmPrintSales
     Private Sub FrmPrintSales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        KeyPreview = True
         Me.RvSales.RefreshReport()
     End Sub
     Sub PrintPreview(ByVal sql As String)
@@ -38,5 +39,11 @@ Public Class FrmPrintSales
             cn.Close()
             MsgBox(ex.Message, vbCritical)
         End Try
+    End Sub
+
+    Private Sub FrmPrintSales_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If Keys.KeyCode = Keys.Escape Then
+            Me.Dispose()
+        End If
     End Sub
 End Class

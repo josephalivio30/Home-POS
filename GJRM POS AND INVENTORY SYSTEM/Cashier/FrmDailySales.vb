@@ -6,7 +6,7 @@
             Dim i As Integer
             Dim sdate As String = Now.ToString("dd-MM-yyyy")
             cn.Open()
-            cm = New OleDb.OleDbCommand("select * from ComputeTotal where sdate between #" & sdate & "# and #" & sdate & "# and status like 'Completed'", cn)
+            cm = New OleDb.OleDbCommand("select * from ComputeTotal where sdate between #" & sdate & "# and #" & sdate & "# and status like 'Completed' and transno like '" & txtSearch.Text & "%'", cn)
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
@@ -17,7 +17,6 @@
             cn.Close()
 
             lblTotal.Text = Format(_total, currencysymbol & "#,##0.00")
-
 
         Catch ex As Exception
             cn.Close()
@@ -60,5 +59,9 @@
             cn.Close()
             MsgBox(ex.Message, vbCritical)
         End Try
+    End Sub
+
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        LoadSale()
     End Sub
 End Class

@@ -12,16 +12,21 @@
     End Sub
 
     Sub LoadCboCategory()
-        cboCategory.Items.Clear()
+        Try
+            cboCategory.Items.Clear()
+            cn.Open()
+            cm = New OleDb.OleDbCommand("select * from tblcategory", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+                cboCategory.Items.Add(dr.Item("category").ToString)
+            End While
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            cn.Close()
+        MsgBox(ex.Message, vbCritical)
+        End Try
 
-        cn.Open()
-        cm = New OleDb.OleDbCommand("select * from tblcategory", cn)
-        dr = cm.ExecuteReader
-        While dr.Read
-            cboCategory.Items.Add(dr.Item("category").ToString)
-        End While
-        dr.Close()
-        cn.Close()
     End Sub
 
     Sub LoadProducts()
@@ -90,8 +95,17 @@
             MsgBox(ex.Message, vbCritical)
         End Try
     End Sub
-
     Private Sub cboCategory_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboCategory.KeyPress
         e.Handled = True
+    End Sub
+
+    Private Sub FrmProductList_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If Keys.KeyCode = Keys.Escape Then
+            Me.Dispose()
+        End If
+    End Sub
+
+    Private Sub FrmProductList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        KeyPreview = True
     End Sub
 End Class

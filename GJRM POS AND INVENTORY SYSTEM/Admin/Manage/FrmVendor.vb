@@ -1,6 +1,6 @@
 ﻿Public Class FrmVendor
     Private Sub FrmVendor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        KeyPreview = True
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
@@ -95,5 +95,17 @@
             Case Else
                 e.Handled = True
         End Select
+    End Sub
+
+    Private Sub FrmVendor_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If Keys.KeyCode = Keys.Escape Then
+            Me.Dispose()
+        ElseIf Keys.KeyCode = Keys.Enter Then
+            If btnSave.Enabled = False Then
+                Return
+            Else
+                Save()
+            End If
+        End If
     End Sub
 End Class

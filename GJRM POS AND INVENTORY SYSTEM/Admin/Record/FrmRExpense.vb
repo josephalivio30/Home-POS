@@ -50,10 +50,17 @@
     End Sub
 
     Private Sub btnSPrint_Click(sender As Object, e As EventArgs) Handles btnSPrint.Click
-        sql = "select * from tblexpense where sdate between #" & sdate1 & "# and #" & sdate2 & "#"
-        With FrmPrintExpense
-            .PrintPreview(sql)
-            .ShowDialog()
-        End With
+        Try
+
+            sql = "select * from tblexpense where sdate between #" & sdate1 & "# and #" & sdate2 & "#"
+            With FrmPrintExpense
+                .PrintPreview(sql)
+                .ShowDialog()
+            End With
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
+
     End Sub
 End Class
