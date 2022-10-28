@@ -27,6 +27,9 @@
         If CheckDay() = False Then
             btnPrint.Enabled = False
         End If
+        If CheckStatus() = False Then
+            txtStartingCash.Enabled = False
+        End If
         If txtTimeClose.Text = String.Empty Then
             btnPrint.Enabled = False
         Else
