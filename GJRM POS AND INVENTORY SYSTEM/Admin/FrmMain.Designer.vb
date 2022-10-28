@@ -22,24 +22,27 @@ Partial Class FrmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMain))
         Me.panelOutput = New System.Windows.Forms.Panel()
         Me.pDashBoard = New System.Windows.Forms.Panel()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.lblStockOnHand = New System.Windows.Forms.Label()
         Me.Panel17 = New System.Windows.Forms.Panel()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.lblTotalProduct = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -85,9 +88,6 @@ Partial Class FrmMain
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblName = New System.Windows.Forms.Label()
         Me.lblShopName = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.panelOutput.SuspendLayout()
         Me.pDashBoard.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -113,7 +113,7 @@ Partial Class FrmMain
         Me.panelOutput.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.panelOutput.BackColor = System.Drawing.Color.White
+        Me.panelOutput.BackColor = System.Drawing.Color.Silver
         Me.panelOutput.Controls.Add(Me.pDashBoard)
         Me.panelOutput.Location = New System.Drawing.Point(296, 0)
         Me.panelOutput.Name = "panelOutput"
@@ -122,7 +122,7 @@ Partial Class FrmMain
         '
         'pDashBoard
         '
-        Me.pDashBoard.BackColor = System.Drawing.Color.White
+        Me.pDashBoard.BackColor = System.Drawing.Color.Silver
         Me.pDashBoard.Controls.Add(Me.Chart1)
         Me.pDashBoard.Controls.Add(Me.Panel3)
         Me.pDashBoard.Controls.Add(Me.Panel17)
@@ -142,19 +142,20 @@ Partial Class FrmMain
         Me.Chart1.BorderSkin.BackSecondaryColor = System.Drawing.Color.Silver
         Me.Chart1.BorderSkin.BorderColor = System.Drawing.Color.Silver
         Me.Chart1.BorderSkin.PageColor = System.Drawing.Color.Silver
-        ChartArea2.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend2)
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
         Me.Chart1.Location = New System.Drawing.Point(72, 147)
         Me.Chart1.Name = "Chart1"
-        Series2.ChartArea = "ChartArea1"
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Me.Chart1.Series.Add(Series2)
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Chart1.Series.Add(Series1)
         Me.Chart1.Size = New System.Drawing.Size(772, 459)
         Me.Chart1.TabIndex = 3
         Me.Chart1.Text = "Chart1"
+        Me.Chart1.Visible = False
         '
         'Panel3
         '
@@ -168,6 +169,14 @@ Partial Class FrmMain
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(257, 109)
         Me.Panel3.TabIndex = 2
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Location = New System.Drawing.Point(70, 14)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(1, 90)
+        Me.GroupBox3.TabIndex = 11
+        Me.GroupBox3.TabStop = False
         '
         'PictureBox4
         '
@@ -223,6 +232,14 @@ Partial Class FrmMain
         Me.Panel17.Size = New System.Drawing.Size(257, 109)
         Me.Panel17.TabIndex = 1
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Location = New System.Drawing.Point(68, 14)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(1, 90)
+        Me.GroupBox2.TabIndex = 11
+        Me.GroupBox2.TabStop = False
+        '
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -276,6 +293,14 @@ Partial Class FrmMain
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(257, 109)
         Me.Panel16.TabIndex = 2
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Location = New System.Drawing.Point(68, 14)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(1, 90)
+        Me.GroupBox4.TabIndex = 11
+        Me.GroupBox4.TabStop = False
         '
         'PictureBox5
         '
@@ -400,7 +425,7 @@ Partial Class FrmMain
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(297, 892)
+        Me.Panel1.Size = New System.Drawing.Size(297, 772)
         Me.Panel1.TabIndex = 20
         '
         'btnSql
@@ -1044,35 +1069,11 @@ Partial Class FrmMain
         Me.lblShopName.Text = "SHOP NAME"
         Me.lblShopName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'GroupBox2
-        '
-        Me.GroupBox2.Location = New System.Drawing.Point(68, 14)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1, 90)
-        Me.GroupBox2.TabIndex = 11
-        Me.GroupBox2.TabStop = False
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Location = New System.Drawing.Point(70, 14)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(1, 90)
-        Me.GroupBox3.TabIndex = 11
-        Me.GroupBox3.TabStop = False
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Location = New System.Drawing.Point(68, 14)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(1, 90)
-        Me.GroupBox4.TabIndex = 11
-        Me.GroupBox4.TabStop = False
-        '
         'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1370, 892)
+        Me.ClientSize = New System.Drawing.Size(1370, 772)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.panelOutput)
