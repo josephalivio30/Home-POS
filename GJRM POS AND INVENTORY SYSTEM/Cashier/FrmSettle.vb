@@ -4,7 +4,7 @@
     End Sub
     Sub savepayment()
         Try
-            Dim sdate As String = Now.ToString("dd-MM-yyyy")
+            Dim sdate As String = Now.ToString("MM-dd-yyyy")
             Dim stime As String = Now.ToString("hh:mm:ss")
 
             cn.Open()

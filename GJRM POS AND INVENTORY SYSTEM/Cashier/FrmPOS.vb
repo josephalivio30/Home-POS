@@ -385,6 +385,7 @@
     Sub LoadAgent()
         Try
             cboAgent.Items.Clear()
+            cboAgent.Items.Add("NO AGENT")
             cn.Open()
             cm = New OleDb.OleDbCommand("select agent from tblagent", cn)
             dr = cm.ExecuteReader

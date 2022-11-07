@@ -53,18 +53,20 @@
                         UpdateData("update tblproduct set qty = qty + '" & CDbl(FrmCancelOrder.txtCQty.Text) & "' where pcode like '" & FrmCancelOrder.txtPcode.Text & "'")
                     End If
                     'update ,tblcart subtract qty
-                    UpdateData("update tblcart set qty = qty - '" & CDbl(FrmCancelOrder.txtCQty.Text) & "', total = price * qty - discount where id like '" & FrmCancelOrder.txtID.Text & "'")
+                    UpdateData("update tblcart set qty = qty - '" & CDbl(FrmCancelOrder.txtCQty.Text) & "', total = (price * qty) - discount where id like '" & FrmCancelOrder.txtID.Text & "'")
 
                     'select total in tblcart
-                    cn.Open()
-                    cm = New OleDb.OleDbCommand("select total from tblcart where ID like '" & FrmCancelOrder.txtID.Text & "' and transno like '" & FrmCancelOrder.txtTransno.Text & "'", cn)
-                    dr = cm.ExecuteReader
-                    While dr.Read
-                        _total = dr.Item("total")
-                    End While
-                    cn.Close()
-                    dr.Close()
-
+                    'cn.Open()
+                    'cm = New OleDb.OleDbCommand("select total from tblcart where ID like '" & FrmCancelOrder.txtID.Text & "' and transno like '" & FrmCancelOrder.txtTransno.Text & "'", cn)
+                    'dr = cm.ExecuteReader
+                    'While dr.Read
+                    '    _total = dr.Item("total")
+                    'End While
+                    'cn.Close()
+                    'dr.Close()
+                    Dim qty As Double = CDbl(FrmCancelOrder.txtCQty.Text)
+                    Dim price As Double = CDbl(FrmCancelOrder.txtPrice.Text)
+                    _total = qty * price
                     'Update total and cash in tblsales 
                     cn.Open()
                     cm = New OleDb.OleDbCommand("update tblsales set total = total - '" & _total & "', totalbill = totalbill - '" & _total & "' - discount, cash = (banktransfer + gcash + cash) - '" & _total & "' - discount where transno like '" & FrmCancelOrder.txtTransno.Text & "'", cn)

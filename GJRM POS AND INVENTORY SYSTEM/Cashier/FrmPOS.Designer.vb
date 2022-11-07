@@ -168,7 +168,8 @@ Partial Class FrmPOS
         '
         'Panel3
         '
-        Me.Panel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.Controls.Add(Me.btnDebtPayment)
         Me.Panel3.Controls.Add(Me.btnStartMenu)
         Me.Panel3.Controls.Add(Me.btnDailySales)
@@ -177,9 +178,9 @@ Partial Class FrmPOS
         Me.Panel3.Controls.Add(Me.btnLogout)
         Me.Panel3.Controls.Add(Me.btnSettle)
         Me.Panel3.Controls.Add(Me.btnNewOrder)
-        Me.Panel3.Location = New System.Drawing.Point(0, 643)
+        Me.Panel3.Location = New System.Drawing.Point(2, 643)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1370, 40)
+        Me.Panel3.Size = New System.Drawing.Size(1365, 40)
         Me.Panel3.TabIndex = 33
         '
         'btnDebtPayment
@@ -191,7 +192,7 @@ Partial Class FrmPOS
         Me.btnDebtPayment.FlatAppearance.BorderSize = 0
         Me.btnDebtPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDebtPayment.ForeColor = System.Drawing.Color.White
-        Me.btnDebtPayment.Location = New System.Drawing.Point(851, -1)
+        Me.btnDebtPayment.Location = New System.Drawing.Point(846, -1)
         Me.btnDebtPayment.Name = "btnDebtPayment"
         Me.btnDebtPayment.Size = New System.Drawing.Size(140, 40)
         Me.btnDebtPayment.TabIndex = 12
@@ -209,7 +210,7 @@ Partial Class FrmPOS
         Me.btnStartMenu.ForeColor = System.Drawing.Color.White
         Me.btnStartMenu.Location = New System.Drawing.Point(3, -1)
         Me.btnStartMenu.Name = "btnStartMenu"
-        Me.btnStartMenu.Size = New System.Drawing.Size(364, 40)
+        Me.btnStartMenu.Size = New System.Drawing.Size(359, 40)
         Me.btnStartMenu.TabIndex = 11
         Me.btnStartMenu.Text = "[F1 - START && END MENU]"
         Me.btnStartMenu.UseVisualStyleBackColor = False
@@ -223,7 +224,7 @@ Partial Class FrmPOS
         Me.btnDailySales.FlatAppearance.BorderSize = 0
         Me.btnDailySales.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDailySales.ForeColor = System.Drawing.Color.White
-        Me.btnDailySales.Location = New System.Drawing.Point(1133, 0)
+        Me.btnDailySales.Location = New System.Drawing.Point(1128, 0)
         Me.btnDailySales.Name = "btnDailySales"
         Me.btnDailySales.Size = New System.Drawing.Size(140, 40)
         Me.btnDailySales.TabIndex = 9
@@ -239,7 +240,7 @@ Partial Class FrmPOS
         Me.btnApplyDiscount.FlatAppearance.BorderSize = 0
         Me.btnApplyDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnApplyDiscount.ForeColor = System.Drawing.Color.White
-        Me.btnApplyDiscount.Location = New System.Drawing.Point(710, -1)
+        Me.btnApplyDiscount.Location = New System.Drawing.Point(705, -1)
         Me.btnApplyDiscount.Name = "btnApplyDiscount"
         Me.btnApplyDiscount.Size = New System.Drawing.Size(140, 40)
         Me.btnApplyDiscount.TabIndex = 4
@@ -255,7 +256,7 @@ Partial Class FrmPOS
         Me.btnExpense.FlatAppearance.BorderSize = 0
         Me.btnExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExpense.ForeColor = System.Drawing.Color.White
-        Me.btnExpense.Location = New System.Drawing.Point(992, -1)
+        Me.btnExpense.Location = New System.Drawing.Point(987, -1)
         Me.btnExpense.Name = "btnExpense"
         Me.btnExpense.Size = New System.Drawing.Size(140, 40)
         Me.btnExpense.TabIndex = 6
@@ -270,7 +271,7 @@ Partial Class FrmPOS
         Me.btnLogout.FlatAppearance.BorderSize = 0
         Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogout.ForeColor = System.Drawing.Color.White
-        Me.btnLogout.Location = New System.Drawing.Point(1274, -1)
+        Me.btnLogout.Location = New System.Drawing.Point(1269, -1)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Size = New System.Drawing.Size(93, 40)
         Me.btnLogout.TabIndex = 8
@@ -286,7 +287,7 @@ Partial Class FrmPOS
         Me.btnSettle.FlatAppearance.BorderSize = 0
         Me.btnSettle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSettle.ForeColor = System.Drawing.Color.White
-        Me.btnSettle.Location = New System.Drawing.Point(539, -1)
+        Me.btnSettle.Location = New System.Drawing.Point(534, -1)
         Me.btnSettle.Name = "btnSettle"
         Me.btnSettle.Size = New System.Drawing.Size(170, 40)
         Me.btnSettle.TabIndex = 3
@@ -302,7 +303,7 @@ Partial Class FrmPOS
         Me.btnNewOrder.FlatAppearance.BorderSize = 0
         Me.btnNewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNewOrder.ForeColor = System.Drawing.Color.White
-        Me.btnNewOrder.Location = New System.Drawing.Point(368, 0)
+        Me.btnNewOrder.Location = New System.Drawing.Point(363, 0)
         Me.btnNewOrder.Name = "btnNewOrder"
         Me.btnNewOrder.Size = New System.Drawing.Size(170, 40)
         Me.btnNewOrder.TabIndex = 2

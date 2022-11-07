@@ -38,8 +38,8 @@
                     cm = New OleDb.OleDbCommand("delete from tblcategory where category like '" & dgvCategory.Rows(e.RowIndex).Cells(2).Value.ToString & "'", cn)
                     cm.ExecuteNonQuery()
                     MsgBox("Record has been successfully deleted", vbInformation)
-                    AuditTrail("Deleted category list " & txtCategory.Text)
                     cn.Close()
+                    AuditTrail("Deleted category list " & txtCategory.Text)
                     LoadCategory()
 
                     With FrmProduct
@@ -96,7 +96,6 @@
                 cm.Parameters.AddWithValue("@category", txtCategory.Text)
                 cm.ExecuteNonQuery()
                 cn.Close()
-                MsgBox("Category has been successfully saved", vbInformation)
                 AuditTrail("Added category list " & txtCategory.Text)
                 txtCategory.Clear()
                 txtCategory.Focus()

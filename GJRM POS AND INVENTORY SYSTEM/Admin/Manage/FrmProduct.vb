@@ -68,7 +68,7 @@
                 dr.Close()
                 cn.Close()
 
-                If txtBPrice.Text > txtSPrice.Text Then
+                If CDbl(txtBPrice.Text) > CDbl(txtSPrice.Text) Then
                     MsgBox("The bought price must be lower than the selling price.", vbExclamation)
                     Return
                 End If
@@ -125,6 +125,11 @@
                 dr.Close()
                 cn.Close()
 
+                If CDbl(txtBPrice.Text) > CDbl(txtSPrice.Text) Then
+                    MsgBox("The bought price must be lower than the selling price.", vbExclamation)
+                    Return
+                End If
+
                 cn.Open()
                 cm = New OleDb.OleDbCommand("select id from tblcategory where category like '" & cboCategory.Text & "'", cn)
                 dr = cm.ExecuteReader
@@ -170,6 +175,7 @@
         cboCategory.Text = ""
         txtBPrice.Text = ""
         txtSPrice.Text = ""
+        txtReOrder.Text = ""
         txtProductCode.Focus()
         btnSave.Enabled = True
         btnUpdate.Enabled = False

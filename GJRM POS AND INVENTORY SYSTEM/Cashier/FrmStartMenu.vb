@@ -1,5 +1,5 @@
 ﻿Public Class FrmStartMenu
-    Dim sdate As String = Now.ToString("dd-MM-yyyy")
+    Dim sdate As String = Now.ToString("MM-dd-yyyy")
 
     Private Sub FrmStartMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         KeyPreview = True
@@ -28,7 +28,7 @@
             btnPrint.Enabled = False
         End If
         If CheckStatus() = False Then
-            txtStartingCash.Enabled = False
+            'txtStartingCash.Enabled = False
         End If
         If txtTimeClose.Text = String.Empty Then
             btnPrint.Enabled = False
@@ -153,7 +153,6 @@
             Else
                 btnStart_Click(sender, e)
             End If
-
         End If
     End Sub
 

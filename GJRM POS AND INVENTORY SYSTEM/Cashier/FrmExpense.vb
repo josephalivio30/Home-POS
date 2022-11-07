@@ -9,7 +9,7 @@
                 Return
             End If
 
-            Dim sdate As String = Now.ToString("dd-MM-yyyy")
+            Dim sdate As String = Now.ToString("MM-dd-yyyy")
             cn.Open()
             cm = New OleDb.OleDbCommand("insert into tblexpense(expense,cuser,receiver,amount,stime,sdate)values(@expense,@user,@receiver,@amount,@stime,@sdate)", cn)
             cm.Parameters.AddWithValue("expense", txtExpense.Text)

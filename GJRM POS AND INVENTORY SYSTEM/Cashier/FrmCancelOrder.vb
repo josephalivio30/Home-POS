@@ -40,19 +40,20 @@
                         If rbYes.Checked = True Then
                             UpdateData("update tblproduct set qty = qty + '" & CDbl(txtCQty.Text) & "' where pcode like '" & txtPcode.Text & "'")
                         End If
-                        'update ,tblcart subtract qty
-                        UpdateData("update tblcart set qty = qty - '" & CDbl(txtCQty.Text) & "', total = price * qty - discount where id like '" & txtID.Text & "'")
+                        UpdateData("update tblcart set qty = qty - '" & CDbl(txtCQty.Text) & "', total = (price * qty) - discount where id like '" & txtID.Text & "'")
 
-                        'select total in tblsales
-                        cn.Open()
-                        cm = New OleDb.OleDbCommand("select total from tblcart where ID like '" & txtID.Text & "' and transno like '" & txtTransno.Text & "'", cn)
-                        dr = cm.ExecuteReader
-                        While dr.Read
-                            _total = dr.Item("total")
-                        End While
-                        cn.Close()
-                        dr.Close()
-
+                        'select total in tblcart
+                        'cn.Open()
+                        'cm = New OleDb.OleDbCommand("select total from tblcart where ID like '" & FrmCancelOrder.txtID.Text & "' and transno like '" & FrmCancelOrder.txtTransno.Text & "'", cn)
+                        'dr = cm.ExecuteReader
+                        'While dr.Read
+                        '    _total = dr.Item("total")
+                        'End While
+                        'cn.Close()
+                        'dr.Close()
+                        Dim qty As Double = CDbl(txtCQty.Text)
+                        Dim price As Double = CDbl(txtPrice.Text)
+                        _total = qty * price
                         'Update total and cash in tblsales 
                         cn.Open()
                         cm = New OleDb.OleDbCommand("update tblsales set total = total - '" & _total & "', totalbill = totalbill - '" & _total & "' - discount, cash = (banktransfer + gcash + cash) - '" & _total & "' - discount where transno like '" & txtTransno.Text & "'", cn)
@@ -61,6 +62,9 @@
 
                         'Update total in tblsales 
                         UpdateData("update tblsales set banktransfer = 0, gcash = 0 where transno like '" & txtTransno.Text & "'")
+
+                        'update total in tblcart
+                        UpdateData("update tblcart set total = price * qty where transno like '" & txtTransno.Text & "' and pcode like '" & txtPcode.Text & "'")
 
                         'delete row in tblcart
                         cn.Open()
@@ -77,10 +81,11 @@
                         MsgBox("Order transaction has been successfully cancelled.", vbInformation)
                         AuditTrail("voided product name " & txtDesc.Text)
                     End If
-                    Me.Dispose()
                     FrmDailySales.LoadSale()
                     FrmRSales.LoadSale()
                     FrmPOS.LoadProducts()
+                    Me.Dispose()
+
                 Else
                     With FrmCancelAdminPass
                         .ShowDialog()

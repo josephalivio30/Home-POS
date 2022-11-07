@@ -15,8 +15,6 @@
                 cm.Parameters.AddWithValue("@brand", txtBrand.Text)
                 cm.ExecuteNonQuery()
                 cn.Close()
-
-                MsgBox("Record has been successfully save.", vbInformation)
                 AuditTrail("Added brand name " & txtBrand.Text)
                 LoadBrand()
 
@@ -80,8 +78,8 @@
                     cm = New OleDb.OleDbCommand("delete from tblbrand where brand like '" & dgvBrand.Rows(e.RowIndex).Cells(2).Value.ToString & "'", cn)
                     cm.ExecuteNonQuery()
                     MsgBox("Record has been successfully deleted", vbInformation)
-                    AuditTrail("Deleted brand name " & dgvBrand.Rows(e.RowIndex).Cells(2).Value.ToString)
                     cn.Close()
+                    AuditTrail("Deleted brand name " & dgvBrand.Rows(e.RowIndex).Cells(2).Value.ToString)
                     LoadBrand()
 
                     With FrmProduct

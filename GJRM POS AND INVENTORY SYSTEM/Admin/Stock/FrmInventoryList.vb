@@ -31,10 +31,6 @@
         LoadInventory()
     End Sub
 
-    Private Sub cboList_KeyDown(sender As Object, e As KeyEventArgs) Handles cboList.KeyDown
-        e.Handled = True
-    End Sub
-
     Private Sub btnSPrint_Click(sender As Object, e As EventArgs) Handles btnSPrint.Click
         Try
             If cboList.Text = "Inventory Stocks" Then
@@ -60,5 +56,9 @@
         If Keys.KeyCode = Keys.Escape Then
             Me.Dispose()
         End If
+    End Sub
+
+    Private Sub cboList_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboList.KeyPress
+        e.Handled = True
     End Sub
 End Class

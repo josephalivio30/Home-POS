@@ -5,8 +5,8 @@
             Dim i As Integer
             Dim sdate1 As String
             Dim sdate2 As String
-            sdate1 = dt1.Value.ToString("dd-MM-yyyy")
-            sdate2 = dt2.Value.ToString("dd-MM-yyyy")
+            sdate1 = dt1.Value.ToString("yyyy-MM-dd")
+            sdate2 = dt2.Value.ToString("yyyy-MM-dd")
             dgvStockInHistory.Rows.Clear()
             cn.Open()
             cm = New OleDb.OleDbCommand("select * from vwstockin where status like 'Done' and sdate between #" & dt1.Value.Date & "# and #" & dt2.Value.Date & "#", cn)

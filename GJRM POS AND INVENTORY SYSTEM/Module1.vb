@@ -1,7 +1,7 @@
 ﻿Imports System.Data.OleDb
 Imports Tulpep.NotificationWindow
 Module Module1
-    Public cn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\JOJO GWAPO\OneDrive\Personal Vault\POS.accdb")
+    Public cn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\User\OneDrive\Documents\POS.accdb")
     Public cm As New OleDbCommand
     Public dr As OleDbDataReader
     Public da As OleDbDataAdapter
@@ -205,7 +205,7 @@ Module Module1
             With cm
                 .Parameters.AddWithValue("@cuser", str_user)
                 .Parameters.AddWithValue("@summary", summary)
-                .Parameters.AddWithValue("@sdate", Now.ToString("dd-MM-yyyy"))
+                .Parameters.AddWithValue("@sdate", Now.ToString("MM-dd-yyyy"))
                 .Parameters.AddWithValue("@stime", Now.ToShortTimeString)
                 .ExecuteNonQuery()
             End With

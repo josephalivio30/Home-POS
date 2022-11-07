@@ -1,5 +1,5 @@
 ﻿Public Class FrmLogin
-    Dim sdate As String = Now.ToString("dd-MM-yyyy")
+    Dim sdate As String = Now.ToString("MM-dd-yyyy")
     Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtPass.PasswordChar = Chr(149)
         Me.KeyPreview = True

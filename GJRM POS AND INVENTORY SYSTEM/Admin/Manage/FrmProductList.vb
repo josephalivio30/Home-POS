@@ -15,6 +15,7 @@
         Try
             cboCategory.Items.Clear()
             cn.Open()
+            cboCategory.Items.Add("ALL CATEGORY")
             cm = New OleDb.OleDbCommand("select * from tblcategory", cn)
             dr = cm.ExecuteReader
             While dr.Read

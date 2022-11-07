@@ -124,7 +124,7 @@ Partial Class FrmStockIn
         Me.dgvStockIn.RowsDefaultCellStyle = DataGridViewCellStyle26
         Me.dgvStockIn.RowTemplate.Height = 25
         Me.dgvStockIn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvStockIn.Size = New System.Drawing.Size(1024, 371)
+        Me.dgvStockIn.Size = New System.Drawing.Size(1024, 407)
         Me.dgvStockIn.TabIndex = 46
         '
         'DataGridViewTextBoxColumn1
@@ -281,7 +281,7 @@ Partial Class FrmStockIn
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.Image = CType(resources.GetObject("btnSave.Image"), System.Drawing.Image)
-        Me.btnSave.Location = New System.Drawing.Point(941, 571)
+        Me.btnSave.Location = New System.Drawing.Point(776, 109)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(95, 37)
         Me.btnSave.TabIndex = 53
@@ -307,7 +307,9 @@ Partial Class FrmStockIn
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnCreateNew)
         Me.GroupBox1.Controls.Add(Me.LinkLabel1)
+        Me.GroupBox1.Controls.Add(Me.btnSave)
         Me.GroupBox1.Controls.Add(Me.lblID)
         Me.GroupBox1.Controls.Add(Me.cboVendor)
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -323,7 +325,7 @@ Partial Class FrmStockIn
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 30)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(877, 123)
+        Me.GroupBox1.Size = New System.Drawing.Size(877, 158)
         Me.GroupBox1.TabIndex = 55
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Stock Entry"
@@ -426,7 +428,7 @@ Partial Class FrmStockIn
         Me.btnCreateNew.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCreateNew.ForeColor = System.Drawing.Color.White
         Me.btnCreateNew.Image = CType(resources.GetObject("btnCreateNew.Image"), System.Drawing.Image)
-        Me.btnCreateNew.Location = New System.Drawing.Point(12, 159)
+        Me.btnCreateNew.Location = New System.Drawing.Point(9, 117)
         Me.btnCreateNew.Name = "btnCreateNew"
         Me.btnCreateNew.Size = New System.Drawing.Size(137, 29)
         Me.btnCreateNew.TabIndex = 56
@@ -439,17 +441,14 @@ Partial Class FrmStockIn
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(1048, 618)
+        Me.ClientSize = New System.Drawing.Size(1048, 613)
         Me.ControlBox = False
-        Me.Controls.Add(Me.btnCreateNew)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnClose)
-        Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.dgvStockIn)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "FrmStockIn"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.dgvStockIn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

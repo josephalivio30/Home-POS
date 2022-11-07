@@ -35,7 +35,7 @@
                 _total += CDbl(dr.Item("total").ToString)
                 _discount += CDbl(dr.Item("discount").ToString)
                 _net += ((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString))
-                dgvDailySales.Rows.Add(i, dr.Item("id").ToString, dr.Item("pcode").ToString, dr.Item("cname").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("discount").ToString), "#,##0.00"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"), Format(CDbl(dr.Item("bprice").ToString), "#,##0.00"), Format(CDbl(dr.Item("sprice").ToString), "#,##0.00"), Format(((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString)) - CDbl(dr.Item("discount").ToString), "#,##0.00"), dr.Item("cashier").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString))
+                dgvDailySales.Rows.Add(i, dr.Item("id").ToString, dr.Item("pcode").ToString, dr.Item("cname").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("discount").ToString), "#,##0.00"), Format(CDbl((dr.Item("qty")) * CDbl(dr.Item("price")) - CDbl(dr.Item("discount")).ToString), "#,##0.00"), Format(CDbl(dr.Item("bprice").ToString), "#,##0.00"), Format(CDbl(dr.Item("sprice").ToString), "#,##0.00"), Format(((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString)) - CDbl(dr.Item("discount").ToString), "#,##0.00"), dr.Item("cashier").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString))
             End While
             dr.Close()
             cn.Close()
@@ -66,7 +66,7 @@
             cn.Close()
 
             cn.Open()
-            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(total + discount)), '0', sum(total + discount)) as total from tblcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
+            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(total)), '0', sum(total)) as total from tblcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
             Rrefund = CDbl(cm.ExecuteScalar)
             cn.Close()
 
@@ -77,7 +77,7 @@
             lblSRefund.Text = Format(Rrefund, currencysymbol & "#,##0.00")
             lblDebt.Text = Format(Rdebt, currencysymbol & "#,##0.00")
             lblPaidDebt.Text = Format(Rdebtpaid, currencysymbol & "#,##0.00")
-            lblGrandSales.Text = Format((total + startAmount + Rdebtpaid) - (_discount + Rrefund + Rdebt + Rexpense), currencysymbol & "#,##0.00")
+            lblGrandSales.Text = Format((_total + startAmount + Rdebtpaid) - (_discount + Rrefund + Rdebt + Rexpense), currencysymbol & "#,##0.00")
             lblTotalNet.Text = Format(_net, currencysymbol & "#,##0.00")
 
 

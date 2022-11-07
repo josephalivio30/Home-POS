@@ -59,6 +59,7 @@ Partial Class FrmAdjustment
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.dgvAdjustment = New System.Windows.Forms.DataGridView()
+        Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -68,7 +69,6 @@ Partial Class FrmAdjustment
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColSelect = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvAdjustment, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -363,6 +363,40 @@ Partial Class FrmAdjustment
         Me.dgvAdjustment.Size = New System.Drawing.Size(1029, 352)
         Me.dgvAdjustment.TabIndex = 61
         '
+        'txtSearch
+        '
+        '
+        '
+        '
+        Me.txtSearch.CustomButton.Image = Nothing
+        Me.txtSearch.CustomButton.Location = New System.Drawing.Point(323, 1)
+        Me.txtSearch.CustomButton.Name = ""
+        Me.txtSearch.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtSearch.CustomButton.TabIndex = 1
+        Me.txtSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtSearch.CustomButton.UseSelectable = True
+        Me.txtSearch.CustomButton.Visible = False
+        Me.txtSearch.DisplayIcon = True
+        Me.txtSearch.Icon = CType(resources.GetObject("txtSearch.Icon"), System.Drawing.Image)
+        Me.txtSearch.Lines = New String(-1) {}
+        Me.txtSearch.Location = New System.Drawing.Point(7, 189)
+        Me.txtSearch.MaxLength = 32767
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSearch.PromptText = "Search Description"
+        Me.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtSearch.SelectedText = ""
+        Me.txtSearch.SelectionLength = 0
+        Me.txtSearch.SelectionStart = 0
+        Me.txtSearch.ShortcutsEnabled = True
+        Me.txtSearch.Size = New System.Drawing.Size(345, 23)
+        Me.txtSearch.TabIndex = 62
+        Me.txtSearch.UseSelectable = True
+        Me.txtSearch.WaterMark = "Search Description"
+        Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -454,40 +488,6 @@ Partial Class FrmAdjustment
         Me.ColSelect.ReadOnly = True
         Me.ColSelect.Width = 5
         '
-        'txtSearch
-        '
-        '
-        '
-        '
-        Me.txtSearch.CustomButton.Image = Nothing
-        Me.txtSearch.CustomButton.Location = New System.Drawing.Point(323, 1)
-        Me.txtSearch.CustomButton.Name = ""
-        Me.txtSearch.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.txtSearch.CustomButton.TabIndex = 1
-        Me.txtSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.txtSearch.CustomButton.UseSelectable = True
-        Me.txtSearch.CustomButton.Visible = False
-        Me.txtSearch.DisplayIcon = True
-        Me.txtSearch.Icon = CType(resources.GetObject("txtSearch.Icon"), System.Drawing.Image)
-        Me.txtSearch.Lines = New String(-1) {}
-        Me.txtSearch.Location = New System.Drawing.Point(7, 189)
-        Me.txtSearch.MaxLength = 32767
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSearch.PromptText = "Search Description"
-        Me.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtSearch.SelectedText = ""
-        Me.txtSearch.SelectionLength = 0
-        Me.txtSearch.SelectionStart = 0
-        Me.txtSearch.ShortcutsEnabled = True
-        Me.txtSearch.Size = New System.Drawing.Size(345, 23)
-        Me.txtSearch.TabIndex = 62
-        Me.txtSearch.UseSelectable = True
-        Me.txtSearch.WaterMark = "Search Description"
-        Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.txtSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
-        '
         'FrmAdjustment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -529,6 +529,8 @@ Partial Class FrmAdjustment
     Friend WithEvents txtDesc As TextBox
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents dgvAdjustment As DataGridView
+    Friend WithEvents txtSearch As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
@@ -538,6 +540,4 @@ Partial Class FrmAdjustment
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents ColSelect As DataGridViewImageColumn
-    Friend WithEvents txtSearch As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents LinkLabel1 As LinkLabel
 End Class

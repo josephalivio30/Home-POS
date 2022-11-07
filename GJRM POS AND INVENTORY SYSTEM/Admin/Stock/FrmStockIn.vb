@@ -65,18 +65,11 @@
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
             Dim i As Integer
+            If txtRefNo.Text = String.Empty Or txtStockIn.Text = String.Empty Or cboVendor.Text = String.Empty Then
+                MsgBox("All fields are required.", vbExclamation)
+                Return
+            End If
             If MsgBox("Save this records?", vbYesNo + vbQuestion) = vbYes Then
-                cn.Open()
-                cm = New OleDb.OleDbCommand("select * from tblstockin", cn)
-                dr = cm.ExecuteReader
-                While dr.Read
-                    If txtRefNo.Text = dr.Item("refno").ToString Then
-                        MsgBox("Duplicate ref #, please click generate again", vbExclamation)
-                        Return
-                    End If
-                End While
-                dr.Close()
-                cn.Close()
 
                 If dgvStockIn.Rows.Count > 0 Then
                     For i = 0 To dgvStockIn.Rows.Count - 1

@@ -4,7 +4,7 @@
             dgvDailySales.Rows.Clear()
             Dim _total As Double
             Dim i As Integer
-            Dim sdate As String = Now.ToString("dd-MM-yyyy")
+            Dim sdate As String = Now.ToString("MM-dd-yyyy")
             cn.Open()
             cm = New OleDb.OleDbCommand("select * from ComputeTotal where sdate between #" & sdate & "# and #" & sdate & "# and status like 'Completed' and transno like '" & txtSearch.Text & "%'", cn)
             dr = cm.ExecuteReader

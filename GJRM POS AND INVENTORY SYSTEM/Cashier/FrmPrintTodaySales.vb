@@ -1,6 +1,6 @@
 ﻿Public Class FrmPrintTodaySales
     Dim texttoprint As String
-    Dim sdate = Now.ToString("dd-MM-yyyy")
+    Dim sdate = Now.ToString("MM-dd-yyyy")
 
     Sub LoadTodaySales()
         Try
