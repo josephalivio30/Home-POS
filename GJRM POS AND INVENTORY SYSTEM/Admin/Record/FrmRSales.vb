@@ -4,7 +4,10 @@
     Dim sdate1 As String
     Dim sdate2 As String
     Dim sql As String
-    Dim total As Double = 0
+    Dim banktransfer As Double = 0
+    Dim gcash As Double = 0
+    Dim cheque As Double = 0
+    Dim cash As Double = 0
     Dim RstartAmount As Double = 0
     Dim Rrefund As Double = 0
     Dim Rexpense As Double = 0
@@ -35,15 +38,22 @@
                 _total += CDbl(dr.Item("total").ToString)
                 _discount += CDbl(dr.Item("discount").ToString)
                 _net += ((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString))
-                dgvDailySales.Rows.Add(i, dr.Item("id").ToString, dr.Item("pcode").ToString, dr.Item("cname").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("discount").ToString), "#,##0.00"), Format(CDbl((dr.Item("qty")) * CDbl(dr.Item("price")) - CDbl(dr.Item("discount")).ToString), "#,##0.00"), Format(CDbl(dr.Item("bprice").ToString), "#,##0.00"), Format(CDbl(dr.Item("sprice").ToString), "#,##0.00"), Format(((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString)) - CDbl(dr.Item("discount").ToString), "#,##0.00"), dr.Item("cashier").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString))
+                dgvDailySales.Rows.Add(i, dr.Item("id").ToString, dr.Item("pcode").ToString, dr.Item("cname").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("discount").ToString), "#,##0.00"), Format(CDbl((dr.Item("qty")) * CDbl(dr.Item("price")) - CDbl(dr.Item("discount")).ToString), "#,##0.00"), Format(CDbl(dr.Item("bprice").ToString), "#,##0.00"), Format(CDbl(dr.Item("sprice").ToString), "#,##0.00"), Format(((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString)) - CDbl(dr.Item("discount").ToString), "#,##0.00"), dr.Item("cashier").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString), dr.Item("remarks").ToString)
             End While
             dr.Close()
             cn.Close()
 
             cn.Open()
-            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(totalbill)), '0', sum(totalbill)) as total from tblsales where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
-            total = CDbl(cm.ExecuteScalar)
+            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(banktransfer)), '0', sum(banktransfer)) as banktransfer, IIf(IsNull(sum(gcash)), '0', sum(gcash)) as gcash, IIf(IsNull(sum(cheque)), '0', sum(cheque)) as cheque, IIf(IsNull(sum(cash)), '0', sum(cash)) as cash, IIf(IsNull(sum(schange)), '0', sum(schange)) as schange from tblsales where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cashier like '" & str_user & "'", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+                banktransfer = CDbl(dr.Item("banktransfer").ToString)
+                gcash = CDbl(dr.Item("gcash").ToString)
+                cash = CDbl(dr.Item("cash") - CDbl(dr.Item("schange")).ToString)
+                cheque = CDbl(dr.Item("cheque").ToString)
+            End While
             cn.Close()
+            dr.Close()
 
             cn.Open()
             cm = New OleDb.OleDbCommand("Select IIf(IsNull(sum(initialcash)), '0', sum(initialcash)) as startamount from tblstart where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
@@ -80,6 +90,10 @@
             lblGrandSales.Text = Format((_total + startAmount + Rdebtpaid) - (_discount + Rrefund + Rdebt + Rexpense), currencysymbol & "#,##0.00")
             lblTotalNet.Text = Format(_net, currencysymbol & "#,##0.00")
 
+            lblbt.Text = Format(banktransfer, currencysymbol & "#,##0.00")
+            lblgcash.Text = Format(gcash, currencysymbol & "#,##0.00")
+            lblcheque.Text = Format(cheque, currencysymbol & "#,##0.00")
+            lblcash.Text = Format(cash, currencysymbol & "#,##0.00")
 
         Catch ex As Exception
             cn.Close()
@@ -149,9 +163,9 @@
 
     Private Sub btnSPrint_Click(sender As Object, e As EventArgs) Handles btnSPrint.Click
         If cboCashier.Text = "ALL CASHIER" Then
-            sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' order by sdate desc"
+            sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cname like '" & txtSearch.Text & "%' order by sdate desc"
         Else
-            sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cashier like '" & cboCashier.Text & "' order by sdate desc"
+            sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cashier like '" & cboCashier.Text & "' and cname like '" & txtSearch.Text & "%' order by sdate desc"
         End If
         With FrmPrintSales
             .PrintPreview(sql)

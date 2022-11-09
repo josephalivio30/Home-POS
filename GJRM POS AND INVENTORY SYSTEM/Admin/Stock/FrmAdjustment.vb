@@ -61,6 +61,7 @@
 
             SqlStatement("insert into tbladjustment(refno, pcode, qty, saction, remarks, sdate, cuser)values('" & txtRefNo.Text & "', '" & txtPcode.Text & "', '" & txtQty.Text & "', '" & cboCommand.Text & "', '" & txtRemarks.Text & "', '" & Now.ToShortDateString & "', '" & txtUser.Text & "')")
             LoadProducts()
+            Dashboard()
             MsgBox("Record has been successfully adjusted", vbInformation)
             AuditTrail("Adjusted product name " & dgvAdjustment.Rows(i).Cells(3).Value.ToString)
             Clear()

@@ -23,18 +23,19 @@ Partial Class FrmRSales
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmRSales))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
@@ -60,6 +61,7 @@ Partial Class FrmRSales
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CASHIER = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColCancel = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Label18 = New System.Windows.Forms.Label()
@@ -88,6 +90,19 @@ Partial Class FrmRSales
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblGrandSales = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblgcash = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblcheque = New System.Windows.Forms.Label()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblbt = New System.Windows.Forms.Label()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.lblcash = New System.Windows.Forms.Label()
+        Me.cboRemarks = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvDailySales, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel18.SuspendLayout()
@@ -99,6 +114,10 @@ Partial Class FrmRSales
         Me.Panel11.SuspendLayout()
         Me.Panel37.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        Me.Panel6.SuspendLayout()
+        Me.Panel7.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnClose
@@ -122,6 +141,7 @@ Partial Class FrmRSales
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.Controls.Add(Me.cboRemarks)
         Me.Panel1.Controls.Add(Me.txtSearch)
         Me.Panel1.Controls.Add(Me.cboCashier)
         Me.Panel1.Controls.Add(Me.btnSPrint)
@@ -201,7 +221,7 @@ Partial Class FrmRSales
         '
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(429, 9)
+        Me.Label3.Location = New System.Drawing.Point(323, 9)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(124, 15)
         Me.Label3.TabIndex = 5
@@ -211,7 +231,7 @@ Partial Class FrmRSales
         '
         Me.Sdt2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Sdt2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Sdt2.Location = New System.Drawing.Point(689, 3)
+        Me.Sdt2.Location = New System.Drawing.Point(583, 3)
         Me.Sdt2.Name = "Sdt2"
         Me.Sdt2.Size = New System.Drawing.Size(124, 23)
         Me.Sdt2.TabIndex = 3
@@ -220,7 +240,7 @@ Partial Class FrmRSales
         '
         Me.Sdt1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Sdt1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Sdt1.Location = New System.Drawing.Point(559, 3)
+        Me.Sdt1.Location = New System.Drawing.Point(453, 3)
         Me.Sdt1.Name = "Sdt1"
         Me.Sdt1.Size = New System.Drawing.Size(124, 23)
         Me.Sdt1.TabIndex = 1
@@ -241,11 +261,11 @@ Partial Class FrmRSales
         Me.dgvDailySales.AllowUserToAddRows = False
         Me.dgvDailySales.AllowUserToResizeColumns = False
         Me.dgvDailySales.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(251, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.dgvDailySales.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle27.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.dgvDailySales.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle27
         Me.dgvDailySales.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -253,46 +273,46 @@ Partial Class FrmRSales
         Me.dgvDailySales.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvDailySales.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dgvDailySales.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvDailySales.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle28.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle28.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvDailySales.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle28
         Me.dgvDailySales.ColumnHeadersHeight = 30
         Me.dgvDailySales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvDailySales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column1, Me.Column5, Me.Column14, Me.Column12, Me.Column2, Me.Column4, Me.Column8, Me.Column11, Me.Column3, Me.Column6, Me.Column9, Me.Column10, Me.CASHIER, Me.Column13, Me.ColCancel})
+        Me.dgvDailySales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column1, Me.Column5, Me.Column14, Me.Column12, Me.Column2, Me.Column4, Me.Column8, Me.Column11, Me.Column3, Me.Column6, Me.Column9, Me.Column10, Me.CASHIER, Me.Column13, Me.Column15, Me.ColCancel})
         Me.dgvDailySales.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(251, Byte), Integer))
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvDailySales.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle37.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle37.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle37.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvDailySales.DefaultCellStyle = DataGridViewCellStyle37
         Me.dgvDailySales.EnableHeadersVisualStyles = False
         Me.dgvDailySales.GridColor = System.Drawing.Color.LightSkyBlue
         Me.dgvDailySales.Location = New System.Drawing.Point(12, 67)
         Me.dgvDailySales.Name = "dgvDailySales"
         Me.dgvDailySales.ReadOnly = True
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(251, Byte), Integer))
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvDailySales.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle38.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle38.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle38.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvDailySales.RowHeadersDefaultCellStyle = DataGridViewCellStyle38
         Me.dgvDailySales.RowHeadersVisible = False
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(251, Byte), Integer))
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.dgvDailySales.RowsDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.dgvDailySales.RowsDefaultCellStyle = DataGridViewCellStyle39
         Me.dgvDailySales.RowTemplate.Height = 25
         Me.dgvDailySales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvDailySales.Size = New System.Drawing.Size(1012, 588)
+        Me.dgvDailySales.Size = New System.Drawing.Size(1012, 642)
         Me.dgvDailySales.TabIndex = 75
         '
         'Column7
@@ -322,8 +342,8 @@ Partial Class FrmRSales
         'Column14
         '
         Me.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column14.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column14.DefaultCellStyle = DataGridViewCellStyle29
         Me.Column14.HeaderText = "CUSTOMER"
         Me.Column14.Name = "Column14"
         Me.Column14.ReadOnly = True
@@ -345,8 +365,8 @@ Partial Class FrmRSales
         'Column4
         '
         Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle30
         Me.Column4.HeaderText = "PRICE"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
@@ -355,8 +375,8 @@ Partial Class FrmRSales
         'Column8
         '
         Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column8.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column8.DefaultCellStyle = DataGridViewCellStyle31
         Me.Column8.HeaderText = "QTY"
         Me.Column8.Name = "Column8"
         Me.Column8.ReadOnly = True
@@ -365,8 +385,8 @@ Partial Class FrmRSales
         'Column11
         '
         Me.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column11.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column11.DefaultCellStyle = DataGridViewCellStyle32
         Me.Column11.HeaderText = "DISCOUNT"
         Me.Column11.Name = "Column11"
         Me.Column11.ReadOnly = True
@@ -375,8 +395,8 @@ Partial Class FrmRSales
         'Column3
         '
         Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle33
         Me.Column3.HeaderText = "TOTAL"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
@@ -412,8 +432,8 @@ Partial Class FrmRSales
         'CASHIER
         '
         Me.CASHIER.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.CASHIER.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.CASHIER.DefaultCellStyle = DataGridViewCellStyle34
         Me.CASHIER.HeaderText = "CASHIER"
         Me.CASHIER.Name = "CASHIER"
         Me.CASHIER.ReadOnly = True
@@ -422,12 +442,22 @@ Partial Class FrmRSales
         'Column13
         '
         Me.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column13.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column13.DefaultCellStyle = DataGridViewCellStyle35
         Me.Column13.HeaderText = "DATE"
         Me.Column13.Name = "Column13"
         Me.Column13.ReadOnly = True
         Me.Column13.Width = 56
+        '
+        'Column15
+        '
+        Me.Column15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column15.DefaultCellStyle = DataGridViewCellStyle36
+        Me.Column15.HeaderText = "REMARKS"
+        Me.Column15.Name = "Column15"
+        Me.Column15.ReadOnly = True
+        Me.Column15.Width = 81
         '
         'ColCancel
         '
@@ -444,9 +474,9 @@ Partial Class FrmRSales
         Me.Panel18.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel18.Controls.Add(Me.Label18)
         Me.Panel18.Controls.Add(Me.lblTotal)
-        Me.Panel18.Location = New System.Drawing.Point(1030, 67)
+        Me.Panel18.Location = New System.Drawing.Point(1038, 67)
         Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(161, 60)
+        Me.Panel18.Size = New System.Drawing.Size(153, 44)
         Me.Panel18.TabIndex = 76
         '
         'Label18
@@ -454,7 +484,7 @@ Partial Class FrmRSales
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.Location = New System.Drawing.Point(3, 45)
+        Me.Label18.Location = New System.Drawing.Point(3, 26)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(62, 13)
         Me.Label18.TabIndex = 0
@@ -465,11 +495,11 @@ Partial Class FrmRSales
         Me.lblTotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblTotal.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotal.ForeColor = System.Drawing.Color.White
-        Me.lblTotal.Location = New System.Drawing.Point(2, 0)
+        Me.lblTotal.Location = New System.Drawing.Point(0, 0)
         Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(158, 45)
+        Me.lblTotal.Size = New System.Drawing.Size(152, 26)
         Me.lblTotal.TabIndex = 25
-        Me.lblTotal.Text = "00000000.00"
+        Me.lblTotal.Text = "0000000000.00"
         Me.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Panel13
@@ -478,9 +508,9 @@ Partial Class FrmRSales
         Me.Panel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel13.Controls.Add(Me.Label14)
         Me.Panel13.Controls.Add(Me.lblDiscount)
-        Me.Panel13.Location = New System.Drawing.Point(1031, 199)
+        Me.Panel13.Location = New System.Drawing.Point(1038, 167)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(161, 60)
+        Me.Panel13.Size = New System.Drawing.Size(153, 44)
         Me.Panel13.TabIndex = 77
         '
         'Label14
@@ -488,7 +518,7 @@ Partial Class FrmRSales
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(3, 45)
+        Me.Label14.Location = New System.Drawing.Point(3, 26)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(83, 13)
         Me.Label14.TabIndex = 0
@@ -501,7 +531,7 @@ Partial Class FrmRSales
         Me.lblDiscount.ForeColor = System.Drawing.Color.White
         Me.lblDiscount.Location = New System.Drawing.Point(0, 0)
         Me.lblDiscount.Name = "lblDiscount"
-        Me.lblDiscount.Size = New System.Drawing.Size(160, 45)
+        Me.lblDiscount.Size = New System.Drawing.Size(152, 26)
         Me.lblDiscount.TabIndex = 28
         Me.lblDiscount.Text = "0.00"
         Me.lblDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -512,9 +542,9 @@ Partial Class FrmRSales
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.lblPaidDebt)
-        Me.Panel2.Location = New System.Drawing.Point(1030, 463)
+        Me.Panel2.Location = New System.Drawing.Point(1038, 367)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(161, 60)
+        Me.Panel2.Size = New System.Drawing.Size(153, 44)
         Me.Panel2.TabIndex = 84
         '
         'Label1
@@ -522,7 +552,7 @@ Partial Class FrmRSales
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(3, 45)
+        Me.Label1.Location = New System.Drawing.Point(1, 26)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(82, 13)
         Me.Label1.TabIndex = 0
@@ -533,9 +563,9 @@ Partial Class FrmRSales
         Me.lblPaidDebt.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblPaidDebt.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPaidDebt.ForeColor = System.Drawing.Color.White
-        Me.lblPaidDebt.Location = New System.Drawing.Point(3, 0)
+        Me.lblPaidDebt.Location = New System.Drawing.Point(0, 0)
         Me.lblPaidDebt.Name = "lblPaidDebt"
-        Me.lblPaidDebt.Size = New System.Drawing.Size(157, 45)
+        Me.lblPaidDebt.Size = New System.Drawing.Size(152, 26)
         Me.lblPaidDebt.TabIndex = 28
         Me.lblPaidDebt.Text = "0.00"
         Me.lblPaidDebt.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -546,9 +576,9 @@ Partial Class FrmRSales
         Me.Panel42.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel42.Controls.Add(Me.Label25)
         Me.Panel42.Controls.Add(Me.lblDebt)
-        Me.Panel42.Location = New System.Drawing.Point(1031, 397)
+        Me.Panel42.Location = New System.Drawing.Point(1038, 317)
         Me.Panel42.Name = "Panel42"
-        Me.Panel42.Size = New System.Drawing.Size(161, 60)
+        Me.Panel42.Size = New System.Drawing.Size(153, 44)
         Me.Panel42.TabIndex = 83
         '
         'Label25
@@ -556,7 +586,7 @@ Partial Class FrmRSales
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.ForeColor = System.Drawing.Color.White
-        Me.Label25.Location = New System.Drawing.Point(3, 45)
+        Me.Label25.Location = New System.Drawing.Point(3, 26)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(59, 13)
         Me.Label25.TabIndex = 0
@@ -567,9 +597,9 @@ Partial Class FrmRSales
         Me.lblDebt.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblDebt.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDebt.ForeColor = System.Drawing.Color.White
-        Me.lblDebt.Location = New System.Drawing.Point(3, 0)
+        Me.lblDebt.Location = New System.Drawing.Point(1, 0)
         Me.lblDebt.Name = "lblDebt"
-        Me.lblDebt.Size = New System.Drawing.Size(157, 45)
+        Me.lblDebt.Size = New System.Drawing.Size(152, 26)
         Me.lblDebt.TabIndex = 28
         Me.lblDebt.Text = "0.00"
         Me.lblDebt.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -580,9 +610,9 @@ Partial Class FrmRSales
         Me.Panel36.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel36.Controls.Add(Me.Label22)
         Me.Panel36.Controls.Add(Me.lblExpense)
-        Me.Panel36.Location = New System.Drawing.Point(1031, 331)
+        Me.Panel36.Location = New System.Drawing.Point(1038, 267)
         Me.Panel36.Name = "Panel36"
-        Me.Panel36.Size = New System.Drawing.Size(161, 60)
+        Me.Panel36.Size = New System.Drawing.Size(153, 44)
         Me.Panel36.TabIndex = 81
         '
         'Label22
@@ -590,7 +620,7 @@ Partial Class FrmRSales
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.White
-        Me.Label22.Location = New System.Drawing.Point(3, 45)
+        Me.Label22.Location = New System.Drawing.Point(3, 26)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(75, 13)
         Me.Label22.TabIndex = 0
@@ -601,9 +631,9 @@ Partial Class FrmRSales
         Me.lblExpense.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblExpense.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblExpense.ForeColor = System.Drawing.Color.White
-        Me.lblExpense.Location = New System.Drawing.Point(3, 0)
+        Me.lblExpense.Location = New System.Drawing.Point(0, 0)
         Me.lblExpense.Name = "lblExpense"
-        Me.lblExpense.Size = New System.Drawing.Size(157, 45)
+        Me.lblExpense.Size = New System.Drawing.Size(152, 26)
         Me.lblExpense.TabIndex = 28
         Me.lblExpense.Text = "0.00"
         Me.lblExpense.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -614,9 +644,9 @@ Partial Class FrmRSales
         Me.Panel14.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel14.Controls.Add(Me.Label20)
         Me.Panel14.Controls.Add(Me.lblTotalNet)
-        Me.Panel14.Location = New System.Drawing.Point(1030, 595)
+        Me.Panel14.Location = New System.Drawing.Point(1038, 467)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(161, 60)
+        Me.Panel14.Size = New System.Drawing.Size(153, 44)
         Me.Panel14.TabIndex = 85
         '
         'Label20
@@ -624,7 +654,7 @@ Partial Class FrmRSales
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.White
-        Me.Label20.Location = New System.Drawing.Point(3, 45)
+        Me.Label20.Location = New System.Drawing.Point(3, 26)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(53, 13)
         Me.Label20.TabIndex = 0
@@ -637,7 +667,7 @@ Partial Class FrmRSales
         Me.lblTotalNet.ForeColor = System.Drawing.Color.White
         Me.lblTotalNet.Location = New System.Drawing.Point(0, 0)
         Me.lblTotalNet.Name = "lblTotalNet"
-        Me.lblTotalNet.Size = New System.Drawing.Size(160, 45)
+        Me.lblTotalNet.Size = New System.Drawing.Size(152, 26)
         Me.lblTotalNet.TabIndex = 28
         Me.lblTotalNet.Text = "0.00"
         Me.lblTotalNet.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -648,9 +678,9 @@ Partial Class FrmRSales
         Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel11.Controls.Add(Me.Label12)
         Me.Panel11.Controls.Add(Me.lblStartAmount)
-        Me.Panel11.Location = New System.Drawing.Point(1031, 133)
+        Me.Panel11.Location = New System.Drawing.Point(1038, 117)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(159, 60)
+        Me.Panel11.Size = New System.Drawing.Size(153, 44)
         Me.Panel11.TabIndex = 86
         '
         'Label12
@@ -658,7 +688,7 @@ Partial Class FrmRSales
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(3, 45)
+        Me.Label12.Location = New System.Drawing.Point(3, 26)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(105, 13)
         Me.Label12.TabIndex = 0
@@ -671,7 +701,7 @@ Partial Class FrmRSales
         Me.lblStartAmount.ForeColor = System.Drawing.Color.White
         Me.lblStartAmount.Location = New System.Drawing.Point(0, 0)
         Me.lblStartAmount.Name = "lblStartAmount"
-        Me.lblStartAmount.Size = New System.Drawing.Size(158, 45)
+        Me.lblStartAmount.Size = New System.Drawing.Size(152, 26)
         Me.lblStartAmount.TabIndex = 28
         Me.lblStartAmount.Text = "0.00"
         Me.lblStartAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -681,7 +711,7 @@ Partial Class FrmRSales
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label29.ForeColor = System.Drawing.Color.White
-        Me.Label29.Location = New System.Drawing.Point(3, 45)
+        Me.Label29.Location = New System.Drawing.Point(3, 26)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(75, 13)
         Me.Label29.TabIndex = 0
@@ -692,9 +722,9 @@ Partial Class FrmRSales
         Me.lblSRefund.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblSRefund.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSRefund.ForeColor = System.Drawing.Color.White
-        Me.lblSRefund.Location = New System.Drawing.Point(3, 0)
+        Me.lblSRefund.Location = New System.Drawing.Point(0, 0)
         Me.lblSRefund.Name = "lblSRefund"
-        Me.lblSRefund.Size = New System.Drawing.Size(158, 45)
+        Me.lblSRefund.Size = New System.Drawing.Size(152, 26)
         Me.lblSRefund.TabIndex = 51
         Me.lblSRefund.Text = "0.00"
         Me.lblSRefund.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -705,9 +735,9 @@ Partial Class FrmRSales
         Me.Panel37.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel37.Controls.Add(Me.lblSRefund)
         Me.Panel37.Controls.Add(Me.Label29)
-        Me.Panel37.Location = New System.Drawing.Point(1031, 265)
+        Me.Panel37.Location = New System.Drawing.Point(1038, 217)
         Me.Panel37.Name = "Panel37"
-        Me.Panel37.Size = New System.Drawing.Size(161, 60)
+        Me.Panel37.Size = New System.Drawing.Size(153, 44)
         Me.Panel37.TabIndex = 82
         '
         'Panel3
@@ -716,9 +746,9 @@ Partial Class FrmRSales
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Controls.Add(Me.lblGrandSales)
-        Me.Panel3.Location = New System.Drawing.Point(1030, 529)
+        Me.Panel3.Location = New System.Drawing.Point(1038, 417)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(161, 60)
+        Me.Panel3.Size = New System.Drawing.Size(153, 44)
         Me.Panel3.TabIndex = 86
         '
         'Label4
@@ -726,7 +756,7 @@ Partial Class FrmRSales
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(3, 45)
+        Me.Label4.Location = New System.Drawing.Point(3, 26)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(68, 13)
         Me.Label4.TabIndex = 0
@@ -739,18 +769,169 @@ Partial Class FrmRSales
         Me.lblGrandSales.ForeColor = System.Drawing.Color.White
         Me.lblGrandSales.Location = New System.Drawing.Point(0, 0)
         Me.lblGrandSales.Name = "lblGrandSales"
-        Me.lblGrandSales.Size = New System.Drawing.Size(160, 45)
+        Me.lblGrandSales.Size = New System.Drawing.Size(152, 26)
         Me.lblGrandSales.TabIndex = 28
         Me.lblGrandSales.Text = "0.00"
         Me.lblGrandSales.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Panel4
+        '
+        Me.Panel4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(131, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(117, Byte), Integer))
+        Me.Panel4.Controls.Add(Me.Label2)
+        Me.Panel4.Controls.Add(Me.lblgcash)
+        Me.Panel4.Location = New System.Drawing.Point(1038, 567)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(153, 44)
+        Me.Panel4.TabIndex = 89
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(2, 26)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(38, 13)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "GCASH"
+        '
+        'lblgcash
+        '
+        Me.lblgcash.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblgcash.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblgcash.ForeColor = System.Drawing.Color.White
+        Me.lblgcash.Location = New System.Drawing.Point(0, 0)
+        Me.lblgcash.Name = "lblgcash"
+        Me.lblgcash.Size = New System.Drawing.Size(152, 26)
+        Me.lblgcash.TabIndex = 28
+        Me.lblgcash.Text = "0.00"
+        Me.lblgcash.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Panel5
+        '
+        Me.Panel5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(131, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(117, Byte), Integer))
+        Me.Panel5.Controls.Add(Me.Label6)
+        Me.Panel5.Controls.Add(Me.lblcheque)
+        Me.Panel5.Location = New System.Drawing.Point(1038, 617)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(153, 44)
+        Me.Panel5.TabIndex = 88
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(2, 26)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(44, 13)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "CHEQUE"
+        '
+        'lblcheque
+        '
+        Me.lblcheque.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblcheque.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblcheque.ForeColor = System.Drawing.Color.White
+        Me.lblcheque.Location = New System.Drawing.Point(0, 0)
+        Me.lblcheque.Name = "lblcheque"
+        Me.lblcheque.Size = New System.Drawing.Size(152, 26)
+        Me.lblcheque.TabIndex = 28
+        Me.lblcheque.Text = "0.00"
+        Me.lblcheque.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Panel6
+        '
+        Me.Panel6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(131, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(117, Byte), Integer))
+        Me.Panel6.Controls.Add(Me.Label8)
+        Me.Panel6.Controls.Add(Me.lblbt)
+        Me.Panel6.Location = New System.Drawing.Point(1038, 517)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(153, 44)
+        Me.Panel6.TabIndex = 87
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(3, 26)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(79, 13)
+        Me.Label8.TabIndex = 0
+        Me.Label8.Text = "BANK TRANSFER"
+        '
+        'lblbt
+        '
+        Me.lblbt.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblbt.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblbt.ForeColor = System.Drawing.Color.White
+        Me.lblbt.Location = New System.Drawing.Point(0, 0)
+        Me.lblbt.Name = "lblbt"
+        Me.lblbt.Size = New System.Drawing.Size(152, 26)
+        Me.lblbt.TabIndex = 28
+        Me.lblbt.Text = "0.00"
+        Me.lblbt.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Panel7
+        '
+        Me.Panel7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(131, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(117, Byte), Integer))
+        Me.Panel7.Controls.Add(Me.Label10)
+        Me.Panel7.Controls.Add(Me.lblcash)
+        Me.Panel7.Location = New System.Drawing.Point(1038, 667)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(153, 44)
+        Me.Panel7.TabIndex = 90
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(3, 29)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(31, 13)
+        Me.Label10.TabIndex = 0
+        Me.Label10.Text = "CASH"
+        '
+        'lblcash
+        '
+        Me.lblcash.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblcash.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblcash.ForeColor = System.Drawing.Color.White
+        Me.lblcash.Location = New System.Drawing.Point(0, 0)
+        Me.lblcash.Name = "lblcash"
+        Me.lblcash.Size = New System.Drawing.Size(152, 26)
+        Me.lblcash.TabIndex = 28
+        Me.lblcash.Text = "0.00"
+        Me.lblcash.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'cboRemarks
+        '
+        Me.cboRemarks.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cboRemarks.FormattingEnabled = True
+        Me.cboRemarks.Items.AddRange(New Object() {"Paid", "Unpaid"})
+        Me.cboRemarks.Location = New System.Drawing.Point(713, 3)
+        Me.cboRemarks.Name = "cboRemarks"
+        Me.cboRemarks.Size = New System.Drawing.Size(100, 23)
+        Me.cboRemarks.TabIndex = 81
+        Me.cboRemarks.Text = "Paid"
         '
         'FrmRSales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(1204, 673)
+        Me.ClientSize = New System.Drawing.Size(1204, 727)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Panel7)
+        Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.Panel5)
+        Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel11)
         Me.Controls.Add(Me.Panel14)
@@ -787,6 +968,14 @@ Partial Class FrmRSales
         Me.Panel37.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -828,6 +1017,18 @@ Partial Class FrmRSales
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents lblGrandSales As Label
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents lblgcash As Label
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label6 As Label
+    Friend WithEvents lblcheque As Label
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Label8 As Label
+    Friend WithEvents lblbt As Label
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Label10 As Label
+    Friend WithEvents lblcash As Label
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
@@ -843,5 +1044,7 @@ Partial Class FrmRSales
     Friend WithEvents Column10 As DataGridViewTextBoxColumn
     Friend WithEvents CASHIER As DataGridViewTextBoxColumn
     Friend WithEvents Column13 As DataGridViewTextBoxColumn
+    Friend WithEvents Column15 As DataGridViewTextBoxColumn
     Friend WithEvents ColCancel As DataGridViewImageColumn
+    Friend WithEvents cboRemarks As ComboBox
 End Class

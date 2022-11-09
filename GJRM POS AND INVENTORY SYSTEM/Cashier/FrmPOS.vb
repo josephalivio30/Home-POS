@@ -363,6 +363,9 @@
     Private Sub btnDailySales_Click(sender As Object, e As EventArgs) Handles btnDailySales.Click
         With FrmDailySales
             .LoadSale()
+            .LoadCancelOrder()
+            .LoadDebt()
+            .LoadExpense()
             .ShowDialog()
         End With
     End Sub

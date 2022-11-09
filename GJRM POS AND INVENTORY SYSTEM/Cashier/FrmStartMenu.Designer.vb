@@ -487,9 +487,9 @@ Partial Class FrmStartMenu
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label8.Location = New System.Drawing.Point(5, 299)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(62, 15)
+        Me.Label8.Size = New System.Drawing.Size(72, 15)
         Me.Label8.TabIndex = 87
-        Me.Label8.Text = "TOTAL NET"
+        Me.Label8.Text = "TOTAL SALES"
         '
         'btnPrint
         '

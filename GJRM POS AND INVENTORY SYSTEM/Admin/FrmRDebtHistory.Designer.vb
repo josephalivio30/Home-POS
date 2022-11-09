@@ -256,10 +256,9 @@ Partial Class FrmRDebtHistory
         '
         'DataGridViewTextBoxColumn18
         '
-        Me.DataGridViewTextBoxColumn18.HeaderText = "TRANSACTION NO"
+        Me.DataGridViewTextBoxColumn18.HeaderText = "TRANSNO"
         Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
         Me.DataGridViewTextBoxColumn18.ReadOnly = True
-        Me.DataGridViewTextBoxColumn18.Visible = False
         '
         'DataGridViewTextBoxColumn19
         '

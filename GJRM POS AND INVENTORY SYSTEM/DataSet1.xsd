@@ -38,6 +38,8 @@
               <xs:element name="sprice" msprop:Generator_ColumnVarNameInTable="columnsprice" msprop:Generator_ColumnPropNameInRow="sprice" msprop:Generator_ColumnPropNameInTable="spriceColumn" msprop:Generator_UserColumnName="sprice" type="xs:double" minOccurs="0" />
               <xs:element name="reorder" msprop:Generator_ColumnVarNameInTable="columnreorder" msprop:Generator_ColumnPropNameInRow="reorder" msprop:Generator_ColumnPropNameInTable="reorderColumn" msprop:Generator_UserColumnName="reorder" type="xs:double" minOccurs="0" />
               <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:double" minOccurs="0" />
+              <xs:element name="bprice" msprop:Generator_ColumnVarNameInTable="columnbprice" msprop:Generator_ColumnPropNameInRow="bprice" msprop:Generator_ColumnPropNameInTable="bpriceColumn" msprop:Generator_UserColumnName="bprice" type="xs:double" minOccurs="0" />
+              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -58,6 +60,8 @@
               <xs:element name="bprice" msprop:Generator_ColumnVarNameInTable="columnbprice" msprop:Generator_ColumnPropNameInRow="bprice" msprop:Generator_ColumnPropNameInTable="bpriceColumn" msprop:Generator_UserColumnName="bprice" type="xs:double" minOccurs="0" />
               <xs:element name="sprice" msprop:Generator_ColumnVarNameInTable="columnsprice" msprop:Generator_ColumnPropNameInRow="sprice" msprop:Generator_ColumnPropNameInTable="spriceColumn" msprop:Generator_UserColumnName="sprice" type="xs:double" minOccurs="0" />
               <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" type="xs:string" minOccurs="0" />
+              <xs:element name="cname" msprop:Generator_ColumnVarNameInTable="columncname" msprop:Generator_ColumnPropNameInRow="cname" msprop:Generator_ColumnPropNameInTable="cnameColumn" msprop:Generator_UserColumnName="cname" type="xs:string" minOccurs="0" />
+              <xs:element name="remarks" msprop:Generator_ColumnVarNameInTable="columnremarks" msprop:Generator_ColumnPropNameInRow="remarks" msprop:Generator_ColumnPropNameInTable="remarksColumn" msprop:Generator_UserColumnName="remarks" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

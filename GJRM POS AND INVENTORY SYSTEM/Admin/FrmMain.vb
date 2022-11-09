@@ -226,9 +226,13 @@ Public Class FrmMain
     End Sub
 
     Private Sub btnAgent_Click(sender As Object, e As EventArgs) Handles btnAgent.Click
-        With FrmAgent
+        With FrmAgentList
+            .WindowState = FormWindowState.Maximized
+            .TopLevel = False
+            panelOutput.Controls.Add(FrmAgentList)
+            .BringToFront()
             .LoadAgent()
-            .ShowDialog()
+            .Show()
         End With
     End Sub
 

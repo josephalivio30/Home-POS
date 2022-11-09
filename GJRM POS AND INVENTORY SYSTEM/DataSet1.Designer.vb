@@ -911,6 +911,10 @@ Partial Public Class DataSet1
         
         Private columnqty As Global.System.Data.DataColumn
         
+        Private columnbprice As Global.System.Data.DataColumn
+        
+        Private columntotal As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -1003,6 +1007,22 @@ Partial Public Class DataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property bpriceColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnbprice
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property totalColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotal
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1039,9 +1059,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AdddtStockInventoryRow(ByVal pcode As String, ByVal pdesc As String, ByVal brand As String, ByVal category As String, ByVal sprice As Double, ByVal reorder As Double, ByVal qty As Double) As dtStockInventoryRow
+        Public Overloads Function AdddtStockInventoryRow(ByVal pcode As String, ByVal pdesc As String, ByVal brand As String, ByVal category As String, ByVal sprice As Double, ByVal reorder As Double, ByVal qty As Double, ByVal bprice As Double, ByVal total As Double) As dtStockInventoryRow
             Dim rowdtStockInventoryRow As dtStockInventoryRow = CType(Me.NewRow,dtStockInventoryRow)
-            Dim columnValuesArray() As Object = New Object() {pcode, pdesc, brand, category, sprice, reorder, qty}
+            Dim columnValuesArray() As Object = New Object() {pcode, pdesc, brand, category, sprice, reorder, qty, bprice, total}
             rowdtStockInventoryRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowdtStockInventoryRow)
             Return rowdtStockInventoryRow
@@ -1071,6 +1091,8 @@ Partial Public Class DataSet1
             Me.columnsprice = MyBase.Columns("sprice")
             Me.columnreorder = MyBase.Columns("reorder")
             Me.columnqty = MyBase.Columns("qty")
+            Me.columnbprice = MyBase.Columns("bprice")
+            Me.columntotal = MyBase.Columns("total")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1090,6 +1112,10 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnreorder)
             Me.columnqty = New Global.System.Data.DataColumn("qty", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnqty)
+            Me.columnbprice = New Global.System.Data.DataColumn("bprice", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnbprice)
+            Me.columntotal = New Global.System.Data.DataColumn("total", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotal)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1255,6 +1281,10 @@ Partial Public Class DataSet1
         
         Private columnstatus As Global.System.Data.DataColumn
         
+        Private columncname As Global.System.Data.DataColumn
+        
+        Private columnremarks As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -1403,6 +1433,22 @@ Partial Public Class DataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property cnameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncname
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property remarksColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnremarks
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1439,9 +1485,25 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AdddtSalesRecordRow(ByVal ID As String, ByVal transno As String, ByVal pcode As String, ByVal pdesc As String, ByVal price As Double, ByVal qty As Double, ByVal discount As Double, ByVal total As Double, ByVal cashier As String, ByVal agent As String, ByVal sdate As Date, ByVal bprice As Double, ByVal sprice As Double, ByVal status As String) As dtSalesRecordRow
+        Public Overloads Function AdddtSalesRecordRow( _
+                    ByVal ID As String,  _
+                    ByVal transno As String,  _
+                    ByVal pcode As String,  _
+                    ByVal pdesc As String,  _
+                    ByVal price As Double,  _
+                    ByVal qty As Double,  _
+                    ByVal discount As Double,  _
+                    ByVal total As Double,  _
+                    ByVal cashier As String,  _
+                    ByVal agent As String,  _
+                    ByVal sdate As Date,  _
+                    ByVal bprice As Double,  _
+                    ByVal sprice As Double,  _
+                    ByVal status As String,  _
+                    ByVal cname As String,  _
+                    ByVal remarks As String) As dtSalesRecordRow
             Dim rowdtSalesRecordRow As dtSalesRecordRow = CType(Me.NewRow,dtSalesRecordRow)
-            Dim columnValuesArray() As Object = New Object() {ID, transno, pcode, pdesc, price, qty, discount, total, cashier, agent, sdate, bprice, sprice, status}
+            Dim columnValuesArray() As Object = New Object() {ID, transno, pcode, pdesc, price, qty, discount, total, cashier, agent, sdate, bprice, sprice, status, cname, remarks}
             rowdtSalesRecordRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowdtSalesRecordRow)
             Return rowdtSalesRecordRow
@@ -1478,6 +1540,8 @@ Partial Public Class DataSet1
             Me.columnbprice = MyBase.Columns("bprice")
             Me.columnsprice = MyBase.Columns("sprice")
             Me.columnstatus = MyBase.Columns("status")
+            Me.columncname = MyBase.Columns("cname")
+            Me.columnremarks = MyBase.Columns("remarks")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1511,6 +1575,10 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnsprice)
             Me.columnstatus = New Global.System.Data.DataColumn("status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnstatus)
+            Me.columncname = New Global.System.Data.DataColumn("cname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncname)
+            Me.columnremarks = New Global.System.Data.DataColumn("remarks", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnremarks)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3750,6 +3818,36 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property bprice() As Double
+            Get
+                Try 
+                    Return CType(Me(Me.tabledtStockInventory.bpriceColumn),Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'bprice' in table 'dtStockInventory' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledtStockInventory.bpriceColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property total() As Double
+            Get
+                Try 
+                    Return CType(Me(Me.tabledtStockInventory.totalColumn),Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'total' in table 'dtStockInventory' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledtStockInventory.totalColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IspcodeNull() As Boolean
             Return Me.IsNull(Me.tabledtStockInventory.pcodeColumn)
         End Function
@@ -3830,6 +3928,30 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetqtyNull()
             Me(Me.tabledtStockInventory.qtyColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsbpriceNull() As Boolean
+            Return Me.IsNull(Me.tabledtStockInventory.bpriceColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetbpriceNull()
+            Me(Me.tabledtStockInventory.bpriceColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IstotalNull() As Boolean
+            Return Me.IsNull(Me.tabledtStockInventory.totalColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SettotalNull()
+            Me(Me.tabledtStockInventory.totalColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -4060,6 +4182,36 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property cname() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledtSalesRecord.cnameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'cname' in table 'dtSalesRecord' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledtSalesRecord.cnameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property remarks() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledtSalesRecord.remarksColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'remarks' in table 'dtSalesRecord' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledtSalesRecord.remarksColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsIDNull() As Boolean
             Return Me.IsNull(Me.tabledtSalesRecord.IDColumn)
         End Function
@@ -4224,6 +4376,30 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetstatusNull()
             Me(Me.tabledtSalesRecord.statusColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IscnameNull() As Boolean
+            Return Me.IsNull(Me.tabledtSalesRecord.cnameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetcnameNull()
+            Me(Me.tabledtSalesRecord.cnameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsremarksNull() As Boolean
+            Return Me.IsNull(Me.tabledtSalesRecord.remarksColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetremarksNull()
+            Me(Me.tabledtSalesRecord.remarksColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

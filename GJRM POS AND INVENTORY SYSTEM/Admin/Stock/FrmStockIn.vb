@@ -83,7 +83,7 @@
                         cm = New OleDb.OleDbCommand("update tblstockin set qty = qty +'" & CInt(dgvStockIn.Rows(i).Cells(6).Value.ToString) & "', status = 'Done' where id like '" & (dgvStockIn.Rows(i).Cells(1).Value.ToString) & "'", cn)
                         cm.ExecuteNonQuery()
                         cn.Close()
-
+                        Dashboard()
                         AuditTrail("Added " & dgvStockIn.Rows(i).Cells(6).Value.ToString & " qty, product name " & dgvStockIn.Rows(i).Cells(5).Value.ToString)
                     Next
                 End If

@@ -106,6 +106,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Manage\FrmAgent.Designer.vb">
+      <DependentUpon>FrmAgent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Manage\FrmAgent.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Admin\Manage\FrmVendorList.Designer.vb">
       <DependentUpon>FrmVendorList.vb</DependentUpon>
     </Compile>
@@ -130,10 +136,10 @@
     <Compile Include="Admin\FrmAdminPass.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\Manage\FrmAgent.Designer.vb">
-      <DependentUpon>FrmAgent.vb</DependentUpon>
+    <Compile Include="Admin\Manage\FrmAgentList.Designer.vb">
+      <DependentUpon>FrmAgentList.vb</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Manage\FrmAgent.vb">
+    <Compile Include="Admin\Manage\FrmAgentList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin\Record\FrmRAgentSales.Designer.vb">
@@ -435,6 +441,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\Manage\FrmAgent.resx">
       <DependentUpon>FrmAgent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Manage\FrmAgentList.resx">
+      <DependentUpon>FrmAgentList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\Record\FrmRAgentSales.resx">
       <DependentUpon>FrmRAgentSales.vb</DependentUpon>

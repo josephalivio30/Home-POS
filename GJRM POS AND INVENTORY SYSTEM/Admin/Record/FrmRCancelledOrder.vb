@@ -12,15 +12,15 @@
             cn.Open()
 
             If cboCancelledBy.Text = "ALL" Then
-                cm = New OleDb.OleDbCommand("select * from vwcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and transno like '" & txtSearch.Text & "%'", cn)
+                cm = New OleDb.OleDbCommand("select * from vwcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and reason like '" & txtSearch.Text & "%'", cn)
             Else
-                cm = New OleDb.OleDbCommand("select * from vwcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and transno like '" & txtSearch.Text & "%' and cancelledby like '" & cboCancelledBy.Text & "'", cn)
+                cm = New OleDb.OleDbCommand("select * from vwcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and reason like '" & txtSearch.Text & "%' and cancelledby like '" & cboCancelledBy.Text & "'", cn)
             End If
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
                 _total += CDbl(dr.Item("total").ToString)
-                dgvCancelOrder.Rows.Add(i, dr.Item("transno").ToString, dr.Item("pcode").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"), CDate(dr.Item("sdate").ToString).ToShortDateString, dr.Item("voidby").ToString, dr.Item("cancelledby").ToString, dr.Item("reason").ToString, dr.Item("saction").ToString)
+                dgvCancelOrder.Rows.Add(i, dr.Item("pcode").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"), CDate(dr.Item("sdate").ToString).ToShortDateString, dr.Item("voidby").ToString, dr.Item("cancelledby").ToString, dr.Item("reason").ToString, dr.Item("saction").ToString)
             End While
             dr.Close()
             cn.Close()
@@ -69,9 +69,9 @@
         Try
 
             If cboCancelledBy.Text = "ALL" Then
-                sql = "select * from vwcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and transno like '" & txtSearch.Text & "%'"
+                sql = "select * from vwcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and reason like '" & txtSearch.Text & "%'"
             Else
-                sql = "select * from vwcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and transno like '" & txtSearch.Text & "%' and cancelledby like '" & cboCancelledBy.Text & "'"
+                sql = "select * from vwcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and reason like '" & txtSearch.Text & "%' and cancelledby like '" & cboCancelledBy.Text & "'"
             End If
             With FrmPrintCancelledOrder
                 .PrintPreview(sql)

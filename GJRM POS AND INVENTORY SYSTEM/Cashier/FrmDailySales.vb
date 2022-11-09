@@ -1,22 +1,22 @@
 ﻿Public Class FrmDailySales
+    Dim sdate As String = Now.ToString("MM-dd-yyyy")
     Sub LoadSale()
         Try
             dgvDailySales.Rows.Clear()
             Dim _total As Double
             Dim i As Integer
-            Dim sdate As String = Now.ToString("MM-dd-yyyy")
             cn.Open()
             cm = New OleDb.OleDbCommand("select * from ComputeTotal where sdate between #" & sdate & "# and #" & sdate & "# and status like 'Completed' and transno like '" & txtSearch.Text & "%'", cn)
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
                 _total += CDbl(dr.Item("total").ToString)
-                dgvDailySales.Rows.Add(i, dr.Item("id").ToString, dr.Item("pcode").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("discount").ToString), "#,##0.00"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"))
+                dgvDailySales.Rows.Add(i, dr.Item("id").ToString, dr.Item("pcode").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("discount").ToString), "#,##0.00"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"), dr.Item("remarks").ToString)
             End While
             dr.Close()
             cn.Close()
 
-            lblTotal.Text = Format(_total, currencysymbol & "#,##0.00")
+            lblSTotal.Text = Format(_total, currencysymbol & "#,##0.00")
 
         Catch ex As Exception
             cn.Close()
@@ -38,7 +38,7 @@
         End If
     End Sub
 
-    Private Sub dgvDailySales_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDailySales.CellContentClick
+    Private Sub dgvDailySales_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
         Try
             Dim colname As String = dgvDailySales.Columns(e.ColumnIndex).Name
             If colname = "ColCancel" Then
@@ -61,7 +61,82 @@
         End Try
     End Sub
 
-    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs)
         LoadSale()
+    End Sub
+
+    'cancelled order
+    Sub LoadCancelOrder()
+        Try
+            dgvCancelOrder.Rows.Clear()
+            Dim _total As Double = 0
+            Dim i As Integer
+            cn.Open()
+            cm = New OleDb.OleDbCommand("select * from vwcancelorder where sdate between #" & sdate & "# and #" & sdate & "#", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+                i += 1
+                _total += CDbl(dr.Item("total").ToString)
+                dgvCancelOrder.Rows.Add(i, dr.Item("pcode").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"), CDate(dr.Item("sdate").ToString).ToShortDateString, dr.Item("voidby").ToString, dr.Item("cancelledby").ToString, dr.Item("reason").ToString, dr.Item("saction").ToString)
+            End While
+            dr.Close()
+            cn.Close()
+
+            lblCTotal.Text = Format(_total, currencysymbol & "#,##0.00")
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
+    End Sub
+
+    'debt
+    Sub LoadDebt()
+        Try
+            dgvDebt.Rows.Clear()
+            Dim debt As Double
+            cn.Open()
+            cm = New OleDb.OleDbCommand("select * from tbldebt where sdate between #" & sdate & "# and #" & sdate & "#", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+                dgvDebt.Rows.Add(dr.Item("transno").ToString, dr.Item("cname").ToString, dr.Item("cuser").ToString, Format(dr.Item("amount"), "#,##0.00").ToString, dr.Item("stime").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString))
+            End While
+            cn.Close()
+            dr.Close()
+
+            cn.Open()
+            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(amount)), '0', sum(amount)) as debt from tbldebt where sdate between #" & sdate & "# and #" & sdate & "#", cn)
+            debt = CDbl(cm.ExecuteScalar)
+            cn.Close()
+            lblDTotal.Text = Format(debt, currencysymbol & "#,##0.00")
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
+    End Sub
+
+    'expense
+    Sub LoadExpense()
+        Try
+            dgvExpense.Rows.Clear()
+            Dim Rexpense As Double
+            cn.Open()
+            cm = New OleDb.OleDbCommand("select * from tblexpense where sdate between #" & sdate & "# and #" & sdate & "#", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+                dgvExpense.Rows.Add(dr.Item("expense").ToString, dr.Item("cuser").ToString, dr.Item("receiver").ToString, Format(dr.Item("amount"), "#,##0.00").ToString, dr.Item("stime").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString))
+            End While
+            cn.Close()
+            dr.Close()
+
+            cn.Open()
+            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(amount)), '0', sum(amount)) as expense from tblexpense where sdate between #" & sdate & "# and #" & sdate & "#", cn)
+            Rexpense = CDbl(cm.ExecuteScalar)
+            lblETotal.Text = Format(Rexpense, currencysymbol & "#,##0.00")
+            cn.Close()
+
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 End Class

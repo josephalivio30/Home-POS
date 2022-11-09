@@ -16,7 +16,7 @@
         txtDiscount.Text = Format(CDbl(discount), "#,#0.00")
         txtRefund.Text = Format(CDbl(refund), "#,#0.00")
         txtDebt.Text = Format(CDbl(debt), "#,#0.00")
-        txtNet.Text = Format(CDbl((sales) - (expense + discount + refund + debt)), "#,#0.00")
+        txtNet.Text = Format(CDbl((sales + startAmount) - (expense + discount + refund + debt)), "#,#0.00")
 
         If CheckTransaction() = True Then
             btnStart.Enabled = False

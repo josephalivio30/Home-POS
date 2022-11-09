@@ -9,7 +9,7 @@
 
             cn.Open()
 
-            cm = New OleDb.OleDbCommand("insert into tblsales(cname,transno, sdate, stime, cashier, total, discount, totalbill, banktransfer, gcash, cash, schange)values(@cname, @transno, @sdate, @stime, @cashier, @total, @discount, @totalbill, @banktransfer, @gcash, @cash, @schange)", cn)
+            cm = New OleDb.OleDbCommand("insert into tblsales(cname,transno, sdate, stime, cashier, total, discount, totalbill, banktransfer, gcash, cheque, cash, schange)values(@cname, @transno, @sdate, @stime, @cashier, @total, @discount, @totalbill, @banktransfer, @gcash, @cheque, @cash, @schange)", cn)
             With cm
                 .Parameters.AddWithValue("@cname", "" + txtName.Text)
                 .Parameters.AddWithValue("@transno", FrmPOS.lblTransNo.Text)
@@ -21,6 +21,7 @@
                 .Parameters.AddWithValue("@totalbill", CDbl("" + txtBill.Text))
                 .Parameters.AddWithValue("@banktransfer", CDbl("" + txtBankTransfer.Text))
                 .Parameters.AddWithValue("@gcash", CDbl("" + txtGcash.Text))
+                .Parameters.AddWithValue("@cheque", CDbl("" + txtCheque.Text))
                 .Parameters.AddWithValue("@cash", CDbl("" + txtCash.Text))
                 .Parameters.AddWithValue("@schange", CDbl("" + txtChange.Text))
                 .ExecuteNonQuery()
@@ -72,8 +73,11 @@
             If txtBankTransfer.Text = String.Empty Then
                 txtBankTransfer.Text = "0.00"
             End If
+            If txtCheque.Text = String.Empty Then
+                txtCheque.Text = "0.00"
+            End If
             Dim total As Double = CDbl(txtBill.Text)
-            Dim change As Double = (CDbl(txtGcash.Text) + CDbl(txtCash.Text) + CDbl(txtBankTransfer.Text)) - total
+            Dim change As Double = (CDbl(txtGcash.Text) + CDbl(txtCash.Text) + CDbl(txtBankTransfer.Text) + CDbl(txtCheque.Text)) - total
             If change < 0 Then
                 MsgBox("Insufficient Cash! Plase enter correct amount.", vbExclamation)
                 Return
@@ -98,14 +102,14 @@
             btnAccept_Click(sender, e)
         End If
     End Sub
-    Private Sub txtBankTransfer_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtGcash.KeyPress, txtCash.KeyPress, txtBankTransfer.KeyPress
+    Private Sub txtBankTransfer_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtGcash.KeyPress, txtCash.KeyPress, txtBankTransfer.KeyPress, txtCheque.KeyPress
         Dim DecimalSeparator As String = Application.CurrentCulture.NumberFormat.NumberDecimalSeparator
         e.Handled = Not (Char.IsDigit(e.KeyChar) Or
                      Asc(e.KeyChar) = 8 Or
                      (e.KeyChar = DecimalSeparator And sender.Text.IndexOf(DecimalSeparator) = -1))
     End Sub
     Sub calculateMoney()
-        Dim totalmoney As Double = Val(txtGcash.Text) + Val(txtCash.Text) + Val(txtBankTransfer.Text)
+        Dim totalmoney As Double = Val(txtGcash.Text) + Val(txtCash.Text) + Val(txtBankTransfer.Text) + Val(txtCheque.Text)
         Dim bill As Double = CDbl("0" + txtBill.Text)
         Dim change As Double = totalmoney - bill
         Try
@@ -118,7 +122,7 @@
             txtChange.Text = Format(change, "#,##0.00")
         End Try
     End Sub
-    Private Sub txtGcash_TextChanged(sender As Object, e As EventArgs) Handles txtGcash.TextChanged, txtCash.TextChanged, txtBankTransfer.TextChanged
+    Private Sub txtGcash_TextChanged(sender As Object, e As EventArgs) Handles txtGcash.TextChanged, txtCash.TextChanged, txtBankTransfer.TextChanged, txtCheque.TextChanged
         calculateMoney()
     End Sub
 End Class
