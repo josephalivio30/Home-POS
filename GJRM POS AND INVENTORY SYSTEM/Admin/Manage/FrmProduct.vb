@@ -102,6 +102,7 @@
                 With FrmProductList
                     .LoadProducts()
                 End With
+                Dashboard()
                 Clear()
 
             End If
@@ -159,6 +160,7 @@
                 With FrmProductList
                     .LoadProducts()
                 End With
+                Dashboard()
                 Clear()
                 Me.Dispose()
             End If

@@ -55,46 +55,91 @@
                     'update ,tblcart subtract qty
                     UpdateData("update tblcart set qty = qty - '" & CDbl(FrmCancelOrder.txtCQty.Text) & "', total = (price * qty) - discount where id like '" & FrmCancelOrder.txtID.Text & "'")
 
-                    'select total in tblcart
-                    'cn.Open()
-                    'cm = New OleDb.OleDbCommand("select total from tblcart where ID like '" & FrmCancelOrder.txtID.Text & "' and transno like '" & FrmCancelOrder.txtTransno.Text & "'", cn)
-                    'dr = cm.ExecuteReader
-                    'While dr.Read
-                    '    _total = dr.Item("total")
-                    'End While
-                    'cn.Close()
-                    'dr.Close()
                     Dim qty As Double = CDbl(FrmCancelOrder.txtCQty.Text)
                     Dim price As Double = CDbl(FrmCancelOrder.txtPrice.Text)
                     _total = qty * price
-                    'Update total and cash in tblsales 
-                    cn.Open()
-                    cm = New OleDb.OleDbCommand("update tblsales set total = total - '" & _total & "', totalbill = totalbill - '" & _total & "' - discount, cash = (banktransfer + gcash + cash) - '" & _total & "' - discount where transno like '" & FrmCancelOrder.txtTransno.Text & "'", cn)
-                    cm.ExecuteNonQuery()
-                    cn.Close()
 
-                    'Update total in tblsales 
-                    UpdateData("update tblsales set banktransfer = 0, gcash = 0 where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
+                    'Update total and cash in tblsales 
+                    UpdateData("update tblsales set total = total - '" & _total & "', totalbill = totalbill - '" & _total & "' where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
+
+                    'Select Case total In tblsales
+                    Dim remain1 As Double = 0
+                    Dim remain2 As Double = 0
+                    Dim remain3 As Double = 0
+                    Dim remain4 As Double = 0
+                    Dim cash As Double
+                    Dim gcash As Double
+                    Dim bt As Double
+                    Dim cheque As Double
+                    cn.Open()
+                    cm = New OleDb.OleDbCommand("select * from tblsales where transno like '" & FrmCancelOrder.txtTransno.Text & "'", cn)
+                    dr = cm.ExecuteReader
+                    dr.Read()
+                    If dr.HasRows Then
+                        cash = CDbl(dr.Item("cash").ToString)
+                        gcash = CDbl(dr.Item("gcash").ToString)
+                        bt = CDbl(dr.Item("banktransfer").ToString)
+                        cheque = CDbl(dr.Item("cheque").ToString)
+                        If _total > 0 Then
+                            remain1 = cash - _total
+                        End If
+                        If remain1 < 0 Then
+                            remain2 = gcash + remain1
+                        End If
+                        If remain2 < 0 Then
+                            remain3 = bt + remain2
+                        End If
+                        If remain3 < 0 Then
+                            remain4 = cheque + remain3
+                        End If
+                    End If
+                    cn.Close()
+                    If remain1 = 0 Then
+                        UpdateData("Update tblsales set cash = cash + '" & remain1 & "'where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
+                    Else
+                        If remain1 < 0 Then
+                            remain1 = 0
+                        End If
+                        UpdateData("Update tblsales set cash = '" & remain1 & "'where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
+                    End If
+                    If remain2 = 0 Then
+                        UpdateData("Update tblsales set gcash = gcash + '" & remain2 & "'where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
+                    Else
+                        If remain2 < 0 Then
+                            remain2 = 0
+                        End If
+                        UpdateData("Update tblsales set gcash = '" & remain2 & "'where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
+                    End If
+                    If remain3 = 0 Then
+                        UpdateData("Update tblsales set banktransfer = banktransfer + '" & remain3 & "'where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
+                    Else
+                        If remain3 < 0 Then
+                            remain3 = 0
+                        End If
+                        UpdateData("Update tblsales set banktransfer = '" & remain3 & "'where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
+                    End If
+                    If remain4 = 0 Then
+                        UpdateData("Update tblsales set cheque = cheque + '" & remain4 & "'where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
+                    Else
+                        If remain4 < 0 Then
+                            remain4 = 0
+                        End If
+                        UpdateData("Update tblsales set cheque = '" & remain4 & "'where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
+                    End If
 
                     'update total in tblcart
                     UpdateData("update tblcart set total = price * qty where transno like '" & FrmCancelOrder.txtTransno.Text & "' and pcode like '" & FrmCancelOrder.txtPcode.Text & "'")
 
                     'delete row in tblcart
-                    cn.Open()
-                    cm = New OleDb.OleDbCommand("delete from tblcart where qty = 0", cn)
-                    cm.ExecuteNonQuery()
-                    cn.Close()
+                    UpdateData("delete from tblcart where qty = 0")
 
                     'delete row in tblcart
-                    cn.Open()
-                    cm = New OleDb.OleDbCommand("delete from tblsales where totalbill = 0", cn)
-                    cm.ExecuteNonQuery()
-                    cn.Close()
+                    UpdateData("delete from tblsales where totalbill = 0")
 
                     MsgBox("Order transaction has been successfully cancelled.", vbInformation)
-                    AuditTrail("voided product name " & FrmCancelOrder.txtDesc.Text)
+                    AuditTrail("cancelled product name " & FrmCancelOrder.txtDesc.Text)
                 End If
-                Me.Dispose()
+                    Me.Dispose()
                 FrmCancelOrder.Dispose()
                 FrmDailySales.LoadSale()
                 FrmPOS.LoadProducts()

@@ -41,6 +41,8 @@ Partial Class FrmSettle
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtCheque = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -67,7 +69,7 @@ Partial Class FrmSettle
         'txtCash
         '
         Me.txtCash.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.txtCash.Location = New System.Drawing.Point(13, 305)
+        Me.txtCash.Location = New System.Drawing.Point(13, 366)
         Me.txtCash.Name = "txtCash"
         Me.txtCash.Size = New System.Drawing.Size(291, 40)
         Me.txtCash.TabIndex = 45
@@ -196,7 +198,7 @@ Partial Class FrmSettle
         Me.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAccept.ForeColor = System.Drawing.Color.White
         Me.btnAccept.Image = CType(resources.GetObject("btnAccept.Image"), System.Drawing.Image)
-        Me.btnAccept.Location = New System.Drawing.Point(44, 412)
+        Me.btnAccept.Location = New System.Drawing.Point(49, 473)
         Me.btnAccept.Name = "btnAccept"
         Me.btnAccept.Size = New System.Drawing.Size(232, 36)
         Me.btnAccept.TabIndex = 48
@@ -209,7 +211,7 @@ Partial Class FrmSettle
         '
         Me.txtChange.Enabled = False
         Me.txtChange.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.txtChange.Location = New System.Drawing.Point(13, 366)
+        Me.txtChange.Location = New System.Drawing.Point(13, 427)
         Me.txtChange.Name = "txtChange"
         Me.txtChange.Size = New System.Drawing.Size(291, 40)
         Me.txtChange.TabIndex = 47
@@ -220,7 +222,7 @@ Partial Class FrmSettle
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Location = New System.Drawing.Point(13, 348)
+        Me.Label3.Location = New System.Drawing.Point(13, 409)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(51, 15)
         Me.Label3.TabIndex = 46
@@ -230,7 +232,7 @@ Partial Class FrmSettle
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(13, 287)
+        Me.Label2.Location = New System.Drawing.Point(13, 348)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(35, 15)
         Me.Label2.TabIndex = 43
@@ -255,13 +257,35 @@ Partial Class FrmSettle
         Me.Label1.TabIndex = 55
         Me.Label1.Text = "CUSTOMER'S NAME"
         '
+        'txtCheque
+        '
+        Me.txtCheque.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold)
+        Me.txtCheque.Location = New System.Drawing.Point(13, 305)
+        Me.txtCheque.Name = "txtCheque"
+        Me.txtCheque.Size = New System.Drawing.Size(291, 40)
+        Me.txtCheque.TabIndex = 57
+        Me.txtCheque.Text = "0.00"
+        Me.txtCheque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Location = New System.Drawing.Point(13, 287)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(51, 15)
+        Me.Label5.TabIndex = 58
+        Me.Label5.Text = "CHEQUE"
+        '
         'FrmSettle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(313, 458)
+        Me.ClientSize = New System.Drawing.Size(313, 514)
         Me.ControlBox = False
+        Me.Controls.Add(Me.txtCheque)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtBankTransfer)
@@ -304,4 +328,6 @@ Partial Class FrmSettle
     Friend WithEvents Label2 As Label
     Public WithEvents txtName As TextBox
     Friend WithEvents Label1 As Label
+    Public WithEvents txtCheque As TextBox
+    Friend WithEvents Label5 As Label
 End Class

@@ -38,6 +38,8 @@
               <xs:element name="sprice" msprop:Generator_ColumnVarNameInTable="columnsprice" msprop:Generator_ColumnPropNameInRow="sprice" msprop:Generator_ColumnPropNameInTable="spriceColumn" msprop:Generator_UserColumnName="sprice" type="xs:double" minOccurs="0" />
               <xs:element name="reorder" msprop:Generator_ColumnVarNameInTable="columnreorder" msprop:Generator_ColumnPropNameInRow="reorder" msprop:Generator_ColumnPropNameInTable="reorderColumn" msprop:Generator_UserColumnName="reorder" type="xs:double" minOccurs="0" />
               <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:double" minOccurs="0" />
+              <xs:element name="bprice" msprop:Generator_ColumnVarNameInTable="columnbprice" msprop:Generator_ColumnPropNameInRow="bprice" msprop:Generator_ColumnPropNameInTable="bpriceColumn" msprop:Generator_UserColumnName="bprice" type="xs:double" minOccurs="0" />
+              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -58,6 +60,8 @@
               <xs:element name="bprice" msprop:Generator_ColumnVarNameInTable="columnbprice" msprop:Generator_ColumnPropNameInRow="bprice" msprop:Generator_ColumnPropNameInTable="bpriceColumn" msprop:Generator_UserColumnName="bprice" type="xs:double" minOccurs="0" />
               <xs:element name="sprice" msprop:Generator_ColumnVarNameInTable="columnsprice" msprop:Generator_ColumnPropNameInRow="sprice" msprop:Generator_ColumnPropNameInTable="spriceColumn" msprop:Generator_UserColumnName="sprice" type="xs:double" minOccurs="0" />
               <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" type="xs:string" minOccurs="0" />
+              <xs:element name="cname" msprop:Generator_ColumnVarNameInTable="columncname" msprop:Generator_ColumnPropNameInRow="cname" msprop:Generator_ColumnPropNameInTable="cnameColumn" msprop:Generator_UserColumnName="cname" type="xs:string" minOccurs="0" />
+              <xs:element name="remarks" msprop:Generator_ColumnVarNameInTable="columnremarks" msprop:Generator_ColumnPropNameInRow="remarks" msprop:Generator_ColumnPropNameInTable="remarksColumn" msprop:Generator_UserColumnName="remarks" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -126,6 +130,17 @@
               <xs:element name="gcash" msprop:Generator_ColumnVarNameInTable="columngcash" msprop:Generator_ColumnPropNameInRow="gcash" msprop:Generator_ColumnPropNameInTable="gcashColumn" msprop:Generator_UserColumnName="gcash" type="xs:double" minOccurs="0" />
               <xs:element name="cash" msprop:Generator_ColumnVarNameInTable="columncash" msprop:Generator_ColumnPropNameInRow="cash" msprop:Generator_ColumnPropNameInTable="cashColumn" msprop:Generator_UserColumnName="cash" type="xs:double" minOccurs="0" />
               <xs:element name="stime" msprop:Generator_ColumnVarNameInTable="columnstime" msprop:Generator_ColumnPropNameInRow="stime" msprop:Generator_ColumnPropNameInTable="stimeColumn" msprop:Generator_UserColumnName="stime" type="xs:string" minOccurs="0" />
+              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtPrintReceipt" msprop:Generator_TableClassName="dtPrintReceiptDataTable" msprop:Generator_TableVarName="tabledtPrintReceipt" msprop:Generator_RowChangedName="dtPrintReceiptRowChanged" msprop:Generator_TablePropName="dtPrintReceipt" msprop:Generator_RowDeletingName="dtPrintReceiptRowDeleting" msprop:Generator_RowChangingName="dtPrintReceiptRowChanging" msprop:Generator_RowEvHandlerName="dtPrintReceiptRowChangeEventHandler" msprop:Generator_RowDeletedName="dtPrintReceiptRowDeleted" msprop:Generator_RowClassName="dtPrintReceiptRow" msprop:Generator_UserTableName="dtPrintReceipt" msprop:Generator_RowEvArgName="dtPrintReceiptRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
+              <xs:element name="pdesc" msprop:Generator_ColumnVarNameInTable="columnpdesc" msprop:Generator_ColumnPropNameInRow="pdesc" msprop:Generator_ColumnPropNameInTable="pdescColumn" msprop:Generator_UserColumnName="pdesc" type="xs:string" minOccurs="0" />
+              <xs:element name="price" msprop:Generator_ColumnVarNameInTable="columnprice" msprop:Generator_ColumnPropNameInRow="price" msprop:Generator_ColumnPropNameInTable="priceColumn" msprop:Generator_UserColumnName="price" type="xs:double" minOccurs="0" />
+              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:double" minOccurs="0" />
               <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>

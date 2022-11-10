@@ -1,4 +1,5 @@
-﻿Public Class FrmVendor
+﻿Imports System.Text.RegularExpressions
+Public Class FrmVendor
     Private Sub FrmVendor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         KeyPreview = True
     End Sub
@@ -8,10 +9,18 @@
     End Sub
     Sub Save()
         Try
-            If txtVendor.Text = String.Empty Or txtAddress.Text = String.Empty Or txtContact.Text = String.Empty Or txtNo.Text = String.Empty Or txtEmail.Text = String.Empty Then
+            If txtVendor.Text = String.Empty Or txtAddress.Text = String.Empty Or txtContact.Text = String.Empty Then
                 MsgBox("Required empty field.", vbExclamation)
                 Return
             End If
+
+            Dim regex As Regex = New Regex("[a-zA-Z0-9_\-\.]+[@][a-z]+[\.][a-z]{2,3}")
+            Dim isValid As Boolean = regex.IsMatch(txtEmail.Text.Trim)
+            If Not isValid Then
+                MsgBox("Please enter a valid email address.", vbExclamation)
+                Return
+            End If
+
             If MsgBox("Save this record?", vbYesNo + vbQuestion) = vbYes Then
                 cn.Open()
                 cm = New OleDb.OleDbCommand("insert into tblvendor(vendor,address, contactperson, telephone, email)values(@vendor,@address, @contactperson, @telephone, @email)", cn)
@@ -38,10 +47,18 @@
     End Sub
     Sub UpdateVendor()
         Try
-            If txtVendor.Text = String.Empty Or txtAddress.Text = String.Empty Or txtContact.Text = String.Empty Or txtNo.Text = String.Empty Or txtEmail.Text = String.Empty Then
+            If txtVendor.Text = String.Empty Or txtAddress.Text = String.Empty Or txtContact.Text = String.Empty Then
                 MsgBox("Required empty field.", vbExclamation)
                 Return
             End If
+
+            Dim regex As Regex = New Regex("[a-zA-Z0-9_\-\.]+[@][a-z]+[\.][a-z]{2,3}")
+            Dim isValid As Boolean = regex.IsMatch(txtEmail.Text.Trim)
+            If Not isValid Then
+                MsgBox("Please enter a valid email address.", vbExclamation)
+                Return
+            End If
+
             If MsgBox("Update this record?", vbYesNo + vbQuestion) = vbYes Then
                 cn.Open()
                 cm = New OleDb.OleDbCommand("update tblvendor set vendor = @vendor ,address = @address , contactperson = @contactperson , telephone = @telephone, email = @email where ID like '" & txtID.Text & "'", cn)

@@ -10,8 +10,9 @@
             End If
 
             cn.Open()
-            cm = New OleDb.OleDbCommand("insert into tblsales(transno, sdate, stime, cashier, total, discount, totalbill)values(@transno, @sdate, @stime, @cashier, @total, @discount, @totalbill)", cn)
+            cm = New OleDb.OleDbCommand("insert into tblsales(cname, transno, sdate, stime, cashier, total, discount, totalbill)values(@cname, @transno, @sdate, @stime, @cashier, @total, @discount, @totalbill)", cn)
             With cm
+                .Parameters.AddWithValue("@cname", txtName.Text)
                 .Parameters.AddWithValue("@transno", FrmPOS.lblTransNo.Text)
                 .Parameters.AddWithValue("@sdate", Now.ToShortDateString)
                 .Parameters.AddWithValue("@stime", Now.ToShortTimeString)
@@ -37,7 +38,7 @@
             cn.Close()
 
             cn.Open()
-            cm = New OleDb.OleDbCommand("update tblcart set status = 'Completed', remarks = 'Unpaid' where transno like '" & FrmPOS.lblTransNo.Text & "' and status like 'Pending'", cn)
+            cm = New OleDb.OleDbCommand("update tblcart set cname = '" & txtName.Text & "', status = 'Completed', remarks = 'Unpaid', agent = '" & FrmPOS.cboAgent.Text & "' where transno like '" & FrmPOS.lblTransNo.Text & "' and status like 'Pending'", cn)
             cm.ExecuteNonQuery()
             cn.Close()
 
