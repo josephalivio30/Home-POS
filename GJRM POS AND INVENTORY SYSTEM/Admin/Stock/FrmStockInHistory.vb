@@ -9,7 +9,7 @@
             sdate2 = dt2.Value.ToString("yyyy-MM-dd")
             dgvStockInHistory.Rows.Clear()
             cn.Open()
-            cm = New OleDb.OleDbCommand("select * from vwstockin where status like 'Done' and sdate between #" & dt1.Value.Date & "# and #" & dt2.Value.Date & "#", cn)
+            cm = New OleDb.OleDbCommand("select * from vwstockin where status like 'Done' and sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
             dr = cm.ExecuteReader
             While dr.Read
                 i = i + 1

@@ -1,7 +1,7 @@
 ﻿Imports System.Data.OleDb
 Imports Tulpep.NotificationWindow
 Module Module1
-    Public cn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\User\OneDrive\Documents\POS.accdb")
+    Public cn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\JOJO GWAPO\OneDrive\Documents\POS.accdb")
     Public cm As New OleDbCommand
     Public dr As OleDbDataReader
     Public da As OleDbDataAdapter
