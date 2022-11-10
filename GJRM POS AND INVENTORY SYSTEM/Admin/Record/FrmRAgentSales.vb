@@ -14,7 +14,7 @@
             sdate2 = Adt2.Value.ToString("yyyy-MM-dd")
             cn.Open()
             If cboAgent.Text = "ALL AGENT" Then
-                cm = New OleDb.OleDbCommand("select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and agent <> 'NO AGENT' and transno like '" & txtSearch.Text & "%' order by sdate desc", cn)
+                cm = New OleDb.OleDbCommand("select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and agent <> 'NO AGENT' and pdesc like '" & txtSearch.Text & "%' order by sdate desc", cn)
             Else
                 cm = New OleDb.OleDbCommand("select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and agent like '" & cboAgent.Text & "' and pdesc like '" & txtSearch.Text & "%' order by sdate desc", cn)
             End If
@@ -81,7 +81,7 @@
     Private Sub btnSPrint_Click(sender As Object, e As EventArgs) Handles btnSPrint.Click
         Try
             If cboAgent.Text = "ALL AGENT" Then
-                sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and agent <> 'NO AGENT' and transno like '" & txtSearch.Text & "%' order by sdate desc"
+                sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and agent <> 'NO AGENT' and pdesc like '" & txtSearch.Text & "%' order by sdate desc"
             Else
                 sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and agent like '" & cboAgent.Text & "' and pdesc like '" & txtSearch.Text & "%' order by sdate desc"
             End If
