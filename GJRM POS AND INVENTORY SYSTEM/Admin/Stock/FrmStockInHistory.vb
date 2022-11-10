@@ -1,12 +1,11 @@
 ﻿Public Class FrmStockInHistory
     Dim sql As String
+    Dim sdate1 As String = dt1.Value.ToString("yyyy-MM-dd")
+    Dim sdate2 As String = dt2.Value.ToString("yyyy-MM-dd")
     Sub LoadStockInHistory()
         Try
             Dim i As Integer
-            Dim sdate1 As String
-            Dim sdate2 As String
-            sdate1 = dt1.Value.ToString("yyyy-MM-dd")
-            sdate2 = dt2.Value.ToString("yyyy-MM-dd")
+
             dgvStockInHistory.Rows.Clear()
             cn.Open()
             cm = New OleDb.OleDbCommand("select * from vwstockin where status like 'Done' and sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
@@ -47,7 +46,7 @@
 
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         Try
-            sql = "Select * from vwstockin where status Like 'Done' and sdate between #" & dt1.Value.Date & "# and #" & dt2.Value.Date & "#"
+            sql = "Select * from vwstockin where status Like 'Done' and sdate between #" & sdate1 & "# and #" & sdate2 & "#"
             With FrmPrintStockHistory
                 .PrintPreview(sql)
                 .ShowDialog()
