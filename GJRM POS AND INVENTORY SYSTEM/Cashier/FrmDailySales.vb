@@ -11,7 +11,7 @@
             While dr.Read
                 i += 1
                 _total += CDbl(dr.Item("total").ToString)
-                dgvDailySales.Rows.Add(i, dr.Item("id").ToString, dr.Item("pcode").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("discount").ToString), "#,##0.00"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"), dr.Item("remarks").ToString)
+                dgvDailySales.Rows.Add(i, dr.Item("id").ToString, dr.Item("pcode").ToString, dr.Item("cname").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("discount").ToString), "#,##0.00"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"), dr.Item("remarks").ToString)
             End While
             dr.Close()
             cn.Close()
@@ -38,19 +38,19 @@
         End If
     End Sub
 
-    Private Sub dgvDailySales_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub dgvDailySales_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDailySales.CellContentClick
         Try
             Dim colname As String = dgvDailySales.Columns(e.ColumnIndex).Name
             If colname = "ColCancel" Then
                 With FrmCancelOrder
                     .txtID.Text = dgvDailySales.Rows(e.RowIndex).Cells(1).Value.ToString
                     .txtPcode.Text = dgvDailySales.Rows(e.RowIndex).Cells(2).Value.ToString
-                    .txtDesc.Text = dgvDailySales.Rows(e.RowIndex).Cells(4).Value.ToString
-                    .txtTransno.Text = dgvDailySales.Rows(e.RowIndex).Cells(3).Value.ToString
-                    .txtPrice.Text = dgvDailySales.Rows(e.RowIndex).Cells(5).Value.ToString
-                    .txtSQty.Text = dgvDailySales.Rows(e.RowIndex).Cells(6).Value.ToString
-                    .txtDiscount.Text = dgvDailySales.Rows(e.RowIndex).Cells(7).Value.ToString
-                    .txtTotal.Text = dgvDailySales.Rows(e.RowIndex).Cells(8).Value.ToString
+                    .txtDesc.Text = dgvDailySales.Rows(e.RowIndex).Cells(5).Value.ToString
+                    .txtTransno.Text = dgvDailySales.Rows(e.RowIndex).Cells(4).Value.ToString
+                    .txtPrice.Text = dgvDailySales.Rows(e.RowIndex).Cells(6).Value.ToString
+                    .txtSQty.Text = dgvDailySales.Rows(e.RowIndex).Cells(7).Value.ToString
+                    .txtDiscount.Text = dgvDailySales.Rows(e.RowIndex).Cells(8).Value.ToString
+                    .txtTotal.Text = dgvDailySales.Rows(e.RowIndex).Cells(9).Value.ToString
                     .txtCancelBy.Text = str_user
                     .ShowDialog()
                 End With
@@ -60,8 +60,7 @@
             MsgBox(ex.Message, vbCritical)
         End Try
     End Sub
-
-    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs)
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
         LoadSale()
     End Sub
 

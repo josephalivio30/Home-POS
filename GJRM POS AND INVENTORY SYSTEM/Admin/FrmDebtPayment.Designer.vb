@@ -40,6 +40,8 @@ Partial Class FrmDebtPayment
         Me.btnClose = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.lblTitle = New System.Windows.Forms.Label()
+        Me.txtCheque = New MetroFramework.Controls.MetroTextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -258,7 +260,7 @@ Partial Class FrmDebtPayment
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.Image = CType(resources.GetObject("btnSave.Image"), System.Drawing.Image)
-        Me.btnSave.Location = New System.Drawing.Point(273, 212)
+        Me.btnSave.Location = New System.Drawing.Point(272, 239)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(86, 27)
         Me.btnSave.TabIndex = 89
@@ -344,13 +346,61 @@ Partial Class FrmDebtPayment
         Me.lblTitle.TabIndex = 21
         Me.lblTitle.Text = "SETTLE DEBT"
         '
+        'txtCheque
+        '
+        Me.txtCheque.BackColor = System.Drawing.Color.White
+        '
+        '
+        '
+        Me.txtCheque.CustomButton.Image = Nothing
+        Me.txtCheque.CustomButton.Location = New System.Drawing.Point(216, 1)
+        Me.txtCheque.CustomButton.Name = ""
+        Me.txtCheque.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtCheque.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtCheque.CustomButton.TabIndex = 1
+        Me.txtCheque.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtCheque.CustomButton.UseSelectable = True
+        Me.txtCheque.CustomButton.Visible = False
+        Me.txtCheque.DisplayIcon = True
+        Me.txtCheque.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.txtCheque.Icon = CType(resources.GetObject("txtCheque.Icon"), System.Drawing.Image)
+        Me.txtCheque.Lines = New String() {"0.00"}
+        Me.txtCheque.Location = New System.Drawing.Point(120, 210)
+        Me.txtCheque.MaxLength = 32767
+        Me.txtCheque.Name = "txtCheque"
+        Me.txtCheque.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtCheque.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtCheque.SelectedText = ""
+        Me.txtCheque.SelectionLength = 0
+        Me.txtCheque.SelectionStart = 0
+        Me.txtCheque.ShortcutsEnabled = True
+        Me.txtCheque.Size = New System.Drawing.Size(238, 23)
+        Me.txtCheque.TabIndex = 106
+        Me.txtCheque.Text = "0.00"
+        Me.txtCheque.UseSelectable = True
+        Me.txtCheque.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtCheque.WaterMarkFont = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label7.Location = New System.Drawing.Point(12, 213)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(51, 15)
+        Me.Label7.TabIndex = 105
+        Me.Label7.Text = "CHEQUE"
+        '
         'FrmDebtPayment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(371, 247)
+        Me.ClientSize = New System.Drawing.Size(371, 278)
         Me.ControlBox = False
+        Me.Controls.Add(Me.txtCheque)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtTAmount)
         Me.Controls.Add(Me.txtCASH)
         Me.Controls.Add(Me.txtGcash)
@@ -393,4 +443,6 @@ Partial Class FrmDebtPayment
     Friend WithEvents btnClose As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents lblTitle As Label
+    Friend WithEvents txtCheque As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents Label7 As Label
 End Class

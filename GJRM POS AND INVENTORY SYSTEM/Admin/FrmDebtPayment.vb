@@ -4,7 +4,7 @@
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Dispose()
     End Sub
-    Private Sub txtBt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBT.KeyPress, txtCASH.KeyPress, txtGcash.KeyPress
+    Private Sub txtBt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBT.KeyPress, txtCASH.KeyPress, txtGcash.KeyPress, txtCheque.KeyPress
         Dim DecimalSeparator As String = Application.CurrentCulture.NumberFormat.NumberDecimalSeparator
         e.Handled = Not (Char.IsDigit(e.KeyChar) Or
                      Asc(e.KeyChar) = 8 Or
@@ -17,6 +17,8 @@
             txtCASH.Text = "0.00"
         ElseIf txtGcash.Text = String.Empty Then
             txtGcash.Text = "0.00"
+        ElseIf txtCheque.Text = String.Empty Then
+            txtCheque.Text = "0.00"
         End If
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -37,7 +39,7 @@
     End Sub
     Sub SaveDebtPayment()
         Try
-            Dim total As Double = CDbl(txtBT.Text) + CDbl(txtCASH.Text) + CDbl(txtGcash.Text)
+            Dim total As Double = CDbl(txtBT.Text) + CDbl(txtCASH.Text) + CDbl(txtGcash.Text) + CDbl(txtCheque.Text)
             If total > CDbl(txtTAmount.Text) Then
                 MsgBox("Cash is over the amount needed! Plase enter correct amount.", vbCritical)
                 Return

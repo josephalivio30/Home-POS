@@ -1,4 +1,9 @@
 ﻿Partial Class DataSet1
+    Partial Public Class dtPrintReceiptDataTable
+
+
+    End Class
+
     Partial Public Class dtBestSellingDataTable
 
 

@@ -115,6 +115,7 @@
                         .btnNewOrder.Enabled = True
                         .btnExpense.Enabled = True
                         .btnDebtPayment.Enabled = True
+                        .btnDailySales.Enabled = True
                     Else
                         btnStart.Enabled = True
                         btnEnd.Enabled = False

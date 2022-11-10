@@ -76,6 +76,7 @@ Partial Class FrmDailySales
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -188,7 +189,7 @@ Partial Class FrmDailySales
         Me.metrotab.Dock = System.Windows.Forms.DockStyle.Fill
         Me.metrotab.Location = New System.Drawing.Point(0, 30)
         Me.metrotab.Name = "metrotab"
-        Me.metrotab.SelectedIndex = 3
+        Me.metrotab.SelectedIndex = 0
         Me.metrotab.Size = New System.Drawing.Size(1203, 668)
         Me.metrotab.Style = MetroFramework.MetroColorStyle.Black
         Me.metrotab.TabIndex = 76
@@ -300,7 +301,7 @@ Partial Class FrmDailySales
         Me.dgvDailySales.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvDailySales.ColumnHeadersHeight = 30
         Me.dgvDailySales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvDailySales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column1, Me.Column5, Me.Column12, Me.Column2, Me.Column4, Me.Column8, Me.Column11, Me.Column3, Me.Column14, Me.ColCancel})
+        Me.dgvDailySales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column1, Me.Column5, Me.Column15, Me.Column12, Me.Column2, Me.Column4, Me.Column8, Me.Column11, Me.Column3, Me.Column14, Me.ColCancel})
         Me.dgvDailySales.Cursor = System.Windows.Forms.Cursors.Hand
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
@@ -355,6 +356,12 @@ Partial Class FrmDailySales
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
         Me.Column5.Visible = False
+        '
+        'Column15
+        '
+        Me.Column15.HeaderText = "CUSTOMER"
+        Me.Column15.Name = "Column15"
+        Me.Column15.ReadOnly = True
         '
         'Column12
         '
@@ -1031,9 +1038,16 @@ Partial Class FrmDailySales
     Friend WithEvents DataGridViewTextBoxColumn34 As DataGridViewTextBoxColumn
     Friend WithEvents Column28 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn35 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn24 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn25 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn26 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn27 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn28 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column15 As DataGridViewTextBoxColumn
     Friend WithEvents Column12 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
@@ -1042,10 +1056,4 @@ Partial Class FrmDailySales
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column14 As DataGridViewTextBoxColumn
     Friend WithEvents ColCancel As DataGridViewImageColumn
-    Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn24 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn25 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn26 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn27 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn28 As DataGridViewTextBoxColumn
 End Class
