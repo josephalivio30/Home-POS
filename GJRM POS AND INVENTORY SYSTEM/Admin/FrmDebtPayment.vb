@@ -76,7 +76,7 @@
                 End If
 
                 cn.Open()
-                cm = New OleDb.OleDbCommand("insert into tbldebthistory (transno, cname, cuser, amount, banktransfer, gcash, cash, stime, sdate)values(@transno, @cname, @cuser, @amount, @banktransfer, @gcash, @cash, @stime, @sdate)", cn)
+                cm = New OleDb.OleDbCommand("insert into tbldebthistory (transno, cname, cuser, amount, banktransfer, gcash, cheque, cash, stime, sdate)values(@transno, @cname, @cuser, @amount, @banktransfer, @gcash, @cheque, @cash, @stime, @sdate)", cn)
                 With cm
                     .Parameters.AddWithValue("@transno", txtTransno.Text)
                     .Parameters.AddWithValue("@cname", txtName.Text)
@@ -84,6 +84,7 @@
                     .Parameters.AddWithValue("@amount", CDbl("" + txtTAmount.Text))
                     .Parameters.AddWithValue("@banktransfer", CDbl("" + txtBT.Text))
                     .Parameters.AddWithValue("@gcash", CDbl("" + txtCASH.Text))
+                    .Parameters.AddWithValue("@cheque", CDbl("" + txtCheque.Text))
                     .Parameters.AddWithValue("@cash", CDbl("" + txtGcash.Text))
                     .Parameters.AddWithValue("@stime", Now.ToShortTimeString)
                     .Parameters.AddWithValue("@sdate", sdate)
