@@ -220,7 +220,6 @@ Partial Class FrmPOS
         Me.btnDailySales.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnDailySales.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.btnDailySales.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDailySales.Enabled = False
         Me.btnDailySales.FlatAppearance.BorderSize = 0
         Me.btnDailySales.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDailySales.ForeColor = System.Drawing.Color.White

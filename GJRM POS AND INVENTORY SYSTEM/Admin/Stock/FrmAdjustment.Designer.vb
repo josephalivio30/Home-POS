@@ -59,7 +59,6 @@ Partial Class FrmAdjustment
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.dgvAdjustment = New System.Windows.Forms.DataGridView()
-        Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -69,6 +68,7 @@ Partial Class FrmAdjustment
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColSelect = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvAdjustment, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -79,6 +79,7 @@ Partial Class FrmAdjustment
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.txtQty)
         Me.GroupBox1.Controls.Add(Me.txtDesc)
+        Me.GroupBox1.Controls.Add(Me.btnSave)
         Me.GroupBox1.Controls.Add(Me.lblID)
         Me.GroupBox1.Controls.Add(Me.cboCommand)
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -93,7 +94,7 @@ Partial Class FrmAdjustment
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(7, 35)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(831, 148)
+        Me.GroupBox1.Size = New System.Drawing.Size(831, 159)
         Me.GroupBox1.TabIndex = 60
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Stock Adjustment"
@@ -296,7 +297,7 @@ Partial Class FrmAdjustment
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.Image = CType(resources.GetObject("btnSave.Image"), System.Drawing.Image)
-        Me.btnSave.Location = New System.Drawing.Point(936, 576)
+        Me.btnSave.Location = New System.Drawing.Point(727, 109)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(95, 37)
         Me.btnSave.TabIndex = 58
@@ -343,7 +344,7 @@ Partial Class FrmAdjustment
         Me.dgvAdjustment.DefaultCellStyle = DataGridViewCellStyle13
         Me.dgvAdjustment.EnableHeadersVisualStyles = False
         Me.dgvAdjustment.GridColor = System.Drawing.Color.LightSkyBlue
-        Me.dgvAdjustment.Location = New System.Drawing.Point(7, 218)
+        Me.dgvAdjustment.Location = New System.Drawing.Point(7, 229)
         Me.dgvAdjustment.Name = "dgvAdjustment"
         Me.dgvAdjustment.ReadOnly = True
         DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -360,42 +361,8 @@ Partial Class FrmAdjustment
         Me.dgvAdjustment.RowsDefaultCellStyle = DataGridViewCellStyle15
         Me.dgvAdjustment.RowTemplate.Height = 25
         Me.dgvAdjustment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvAdjustment.Size = New System.Drawing.Size(1029, 352)
+        Me.dgvAdjustment.Size = New System.Drawing.Size(1029, 341)
         Me.dgvAdjustment.TabIndex = 61
-        '
-        'txtSearch
-        '
-        '
-        '
-        '
-        Me.txtSearch.CustomButton.Image = Nothing
-        Me.txtSearch.CustomButton.Location = New System.Drawing.Point(323, 1)
-        Me.txtSearch.CustomButton.Name = ""
-        Me.txtSearch.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.txtSearch.CustomButton.TabIndex = 1
-        Me.txtSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.txtSearch.CustomButton.UseSelectable = True
-        Me.txtSearch.CustomButton.Visible = False
-        Me.txtSearch.DisplayIcon = True
-        Me.txtSearch.Icon = CType(resources.GetObject("txtSearch.Icon"), System.Drawing.Image)
-        Me.txtSearch.Lines = New String(-1) {}
-        Me.txtSearch.Location = New System.Drawing.Point(7, 189)
-        Me.txtSearch.MaxLength = 32767
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSearch.PromptText = "Search Description"
-        Me.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtSearch.SelectedText = ""
-        Me.txtSearch.SelectionLength = 0
-        Me.txtSearch.SelectionStart = 0
-        Me.txtSearch.ShortcutsEnabled = True
-        Me.txtSearch.Size = New System.Drawing.Size(345, 23)
-        Me.txtSearch.TabIndex = 62
-        Me.txtSearch.UseSelectable = True
-        Me.txtSearch.WaterMark = "Search Description"
-        Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.txtSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'DataGridViewTextBoxColumn1
         '
@@ -488,6 +455,40 @@ Partial Class FrmAdjustment
         Me.ColSelect.ReadOnly = True
         Me.ColSelect.Width = 5
         '
+        'txtSearch
+        '
+        '
+        '
+        '
+        Me.txtSearch.CustomButton.Image = Nothing
+        Me.txtSearch.CustomButton.Location = New System.Drawing.Point(323, 1)
+        Me.txtSearch.CustomButton.Name = ""
+        Me.txtSearch.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtSearch.CustomButton.TabIndex = 1
+        Me.txtSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtSearch.CustomButton.UseSelectable = True
+        Me.txtSearch.CustomButton.Visible = False
+        Me.txtSearch.DisplayIcon = True
+        Me.txtSearch.Icon = CType(resources.GetObject("txtSearch.Icon"), System.Drawing.Image)
+        Me.txtSearch.Lines = New String(-1) {}
+        Me.txtSearch.Location = New System.Drawing.Point(7, 200)
+        Me.txtSearch.MaxLength = 32767
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSearch.PromptText = "Search Description"
+        Me.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtSearch.SelectedText = ""
+        Me.txtSearch.SelectionLength = 0
+        Me.txtSearch.SelectionStart = 0
+        Me.txtSearch.ShortcutsEnabled = True
+        Me.txtSearch.Size = New System.Drawing.Size(345, 23)
+        Me.txtSearch.TabIndex = 62
+        Me.txtSearch.UseSelectable = True
+        Me.txtSearch.WaterMark = "Search Description"
+        Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
         'FrmAdjustment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -499,7 +500,6 @@ Partial Class FrmAdjustment
         Me.Controls.Add(Me.dgvAdjustment)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnClose)
-        Me.Controls.Add(Me.btnSave)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "FrmAdjustment"
