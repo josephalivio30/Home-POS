@@ -151,4 +151,31 @@
         ZBt+G/anqhoAKBNEH8DnceIAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="btnRestore.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5gcBBBwTY5VdFQAAARRJREFU
+        OE+1kztOAzEQQFdCkChHIdWmTkOXJtoKiTb3CXX4HSMn4A4UoeMEiAqJAvNePF5W2axQCp70JHtmbCde
+        T3VISmmGd/iKX6FjY3WUWXcWwwyBCT7hNw5h7h6v8B3n3cXPKJ+4xhovQsfGzHVpygaPeZ7ecLoPHoHc
+        al/1S2PQ3f1p7n4ZtT3IjfADuyxNbPI4raN2EGoWeBNe49jgDqW94ZNg4RZf8DxC/4+HxaHbCJ0GC31s
+        snMyRi+kXM4i6gahxjchGyfLPG7xU42itge5KfrJ/fS1gQa7rKK2BzkX+9jkoQQPN3D3W/R/Dj1ln/2k
+        bDBHG8MGsVH+aiYbLi8uEGhbk7Gn+TqPtfMsyoKq+gG7swExIc7PCwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnBackUp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5gcBBBo0kMVP+AAAAK9JREFU
+        OE/VjrENgmAQRmkcwNIl6J3AxM4CGlcxtq5B7QoMwBIuYEFBa+H5fdxBCMfpb8lLXnIcxwuZiJzgE5IC
+        ljouwncHuM8G8DB8TFICvOmgRridkBogGtF55J8A6Vyg/60v8EZPlXmggfcf8mZkHpjygrXJeZEo0MLc
+        /po3ue0cUeACd/BhcubOEQXO8KhjD2fuHFGgght4Mzlz54gCb3iFW5Mzd44okMzqAyIfXVenVkQH2zEA
+        AAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="OpenFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="FolderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>159, 17</value>
+  </metadata>
 </root>

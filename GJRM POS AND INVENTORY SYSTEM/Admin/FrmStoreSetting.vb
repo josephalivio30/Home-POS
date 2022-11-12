@@ -123,4 +123,37 @@
     Private Sub FrmStoreSetting_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         KeyPreview = True
     End Sub
+
+    Private Sub btnBackUp_Click(sender As Object, e As EventArgs) Handles btnBackUp.Click
+        Try
+
+            Dim databasefile As String = Application.StartupPath & "\POS.accdb"
+            FolderBrowserDialog1.ShowDialog()
+            Dim sp As String = FolderBrowserDialog1.SelectedPath
+            Dim filebackupdistination As String = sp & "\POS" & Format(Now(), "yyyy-M-d H m s") & ".accdb"
+
+            FileCopy(databasefile, filebackupdistination)
+            MsgBox("Database backup has been created successfully.", vbInformation)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnRestore_Click(sender As Object, e As EventArgs) Handles btnRestore.Click
+
+        Try
+            Dim restorefile As String = Application.StartupPath & "\POS.accdb"
+            Dim msgtex As String
+            OpenFileDialog1.Filter = "ACCESS | *.accdb"
+            If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+                msgtex = "Are you sure you want to restore your database? it will overwrite your database since the backup have made"
+                If MsgBox(msgtex, vbYesNo + vbQuestion) = vbYes Then
+                    FileCopy(OpenFileDialog1.FileName, restorefile)
+                    MsgBox("Database has been restore successfully.", vbInformation)
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class

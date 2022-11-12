@@ -36,7 +36,15 @@ Partial Class FrmStoreSetting
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.lblTitle = New System.Windows.Forms.Label()
+        Me.btnRestore = New System.Windows.Forms.Button()
+        Me.btnBackUp = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Panel1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnUpdate
@@ -48,9 +56,9 @@ Partial Class FrmStoreSetting
         Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdate.ForeColor = System.Drawing.Color.White
         Me.btnUpdate.Image = CType(resources.GetObject("btnUpdate.Image"), System.Drawing.Image)
-        Me.btnUpdate.Location = New System.Drawing.Point(478, 153)
+        Me.btnUpdate.Location = New System.Drawing.Point(469, 138)
         Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(132, 30)
+        Me.btnUpdate.Size = New System.Drawing.Size(118, 30)
         Me.btnUpdate.TabIndex = 65
         Me.btnUpdate.Text = "   &UPDATE"
         Me.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -65,9 +73,9 @@ Partial Class FrmStoreSetting
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.Image = CType(resources.GetObject("btnSave.Image"), System.Drawing.Image)
-        Me.btnSave.Location = New System.Drawing.Point(340, 153)
+        Me.btnSave.Location = New System.Drawing.Point(331, 138)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(132, 30)
+        Me.btnSave.Size = New System.Drawing.Size(118, 30)
         Me.btnSave.TabIndex = 64
         Me.btnSave.Text = "   &SAVE"
         Me.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -76,16 +84,16 @@ Partial Class FrmStoreSetting
         '
         'txtHeader3
         '
-        Me.txtHeader3.Location = New System.Drawing.Point(177, 124)
+        Me.txtHeader3.Location = New System.Drawing.Point(168, 109)
         Me.txtHeader3.Name = "txtHeader3"
-        Me.txtHeader3.Size = New System.Drawing.Size(433, 23)
+        Me.txtHeader3.Size = New System.Drawing.Size(419, 23)
         Me.txtHeader3.TabIndex = 63
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Location = New System.Drawing.Point(22, 127)
+        Me.Label3.Location = New System.Drawing.Point(13, 112)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(155, 15)
         Me.Label3.TabIndex = 62
@@ -93,16 +101,16 @@ Partial Class FrmStoreSetting
         '
         'txtHeader2
         '
-        Me.txtHeader2.Location = New System.Drawing.Point(177, 95)
+        Me.txtHeader2.Location = New System.Drawing.Point(168, 80)
         Me.txtHeader2.Name = "txtHeader2"
-        Me.txtHeader2.Size = New System.Drawing.Size(433, 23)
+        Me.txtHeader2.Size = New System.Drawing.Size(419, 23)
         Me.txtHeader2.TabIndex = 61
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(22, 98)
+        Me.Label4.Location = New System.Drawing.Point(13, 83)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(92, 15)
         Me.Label4.TabIndex = 60
@@ -110,16 +118,16 @@ Partial Class FrmStoreSetting
         '
         'txtHeader1
         '
-        Me.txtHeader1.Location = New System.Drawing.Point(177, 66)
+        Me.txtHeader1.Location = New System.Drawing.Point(168, 51)
         Me.txtHeader1.Name = "txtHeader1"
-        Me.txtHeader1.Size = New System.Drawing.Size(433, 23)
+        Me.txtHeader1.Size = New System.Drawing.Size(419, 23)
         Me.txtHeader1.TabIndex = 59
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(22, 69)
+        Me.Label2.Location = New System.Drawing.Point(13, 54)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(116, 15)
         Me.Label2.TabIndex = 58
@@ -127,16 +135,16 @@ Partial Class FrmStoreSetting
         '
         'txtShopName
         '
-        Me.txtShopName.Location = New System.Drawing.Point(177, 37)
+        Me.txtShopName.Location = New System.Drawing.Point(168, 22)
         Me.txtShopName.Name = "txtShopName"
-        Me.txtShopName.Size = New System.Drawing.Size(433, 23)
+        Me.txtShopName.Size = New System.Drawing.Size(419, 23)
         Me.txtShopName.TabIndex = 57
         '
         'lblUser
         '
         Me.lblUser.AutoSize = True
         Me.lblUser.BackColor = System.Drawing.Color.Transparent
-        Me.lblUser.Location = New System.Drawing.Point(22, 40)
+        Me.lblUser.Location = New System.Drawing.Point(13, 25)
         Me.lblUser.Name = "lblUser"
         Me.lblUser.Size = New System.Drawing.Size(76, 15)
         Me.lblUser.TabIndex = 56
@@ -181,23 +189,83 @@ Partial Class FrmStoreSetting
         Me.lblTitle.TabIndex = 21
         Me.lblTitle.Text = "STORE SETTINGS"
         '
+        'btnRestore
+        '
+        Me.btnRestore.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnRestore.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRestore.FlatAppearance.BorderSize = 0
+        Me.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRestore.ForeColor = System.Drawing.Color.White
+        Me.btnRestore.Image = CType(resources.GetObject("btnRestore.Image"), System.Drawing.Image)
+        Me.btnRestore.Location = New System.Drawing.Point(296, 22)
+        Me.btnRestore.Name = "btnRestore"
+        Me.btnRestore.Size = New System.Drawing.Size(234, 57)
+        Me.btnRestore.TabIndex = 67
+        Me.btnRestore.Text = "   RESTORE DATABASE"
+        Me.btnRestore.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnRestore.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnRestore.UseVisualStyleBackColor = False
+        '
+        'btnBackUp
+        '
+        Me.btnBackUp.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnBackUp.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBackUp.FlatAppearance.BorderSize = 0
+        Me.btnBackUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBackUp.ForeColor = System.Drawing.Color.White
+        Me.btnBackUp.Image = CType(resources.GetObject("btnBackUp.Image"), System.Drawing.Image)
+        Me.btnBackUp.Location = New System.Drawing.Point(56, 22)
+        Me.btnBackUp.Name = "btnBackUp"
+        Me.btnBackUp.Size = New System.Drawing.Size(234, 57)
+        Me.btnBackUp.TabIndex = 66
+        Me.btnBackUp.Text = "   BACKUP DATABASE"
+        Me.btnBackUp.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnBackUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBackUp.UseVisualStyleBackColor = False
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.txtShopName)
+        Me.GroupBox1.Controls.Add(Me.lblUser)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.btnUpdate)
+        Me.GroupBox1.Controls.Add(Me.txtHeader1)
+        Me.GroupBox1.Controls.Add(Me.btnSave)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.txtHeader3)
+        Me.GroupBox1.Controls.Add(Me.txtHeader2)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 36)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(593, 178)
+        Me.GroupBox1.TabIndex = 68
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "STORE SETTINGS"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.btnRestore)
+        Me.GroupBox2.Controls.Add(Me.btnBackUp)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 232)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(593, 100)
+        Me.GroupBox2.TabIndex = 69
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "BACKUP AND RESTORE"
+        '
         'FrmStoreSetting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(617, 187)
+        Me.ClientSize = New System.Drawing.Size(617, 343)
         Me.ControlBox = False
-        Me.Controls.Add(Me.btnUpdate)
-        Me.Controls.Add(Me.btnSave)
-        Me.Controls.Add(Me.txtHeader3)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.txtHeader2)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.txtHeader1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txtShopName)
-        Me.Controls.Add(Me.lblUser)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -205,8 +273,10 @@ Partial Class FrmStoreSetting
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnUpdate As Button
@@ -222,4 +292,10 @@ Partial Class FrmStoreSetting
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnClose As Button
     Friend WithEvents lblTitle As Label
+    Friend WithEvents btnRestore As Button
+    Friend WithEvents btnBackUp As Button
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBox2 As GroupBox
 End Class

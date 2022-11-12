@@ -17,7 +17,11 @@
             texttoprint &= "TOTAL REFUND : " & currencysymbol & Format(refund, "#,##0.00") & Environment.NewLine
             texttoprint &= "TOTAL EXPENSE : " & currencysymbol & Format(CDbl(expense), "#,##0.00") & Environment.NewLine
             texttoprint &= "TOTAL DEBT : " & currencysymbol & Format(CDbl(debt), "#,##0.00") & Environment.NewLine
-            texttoprint &= "TOTAL NET : " & currencysymbol & Format(CDbl(sales + startAmount - discount - expense - refund - debt), "#,##0.00") & Environment.NewLine
+            texttoprint &= "TOTAL SALES : " & currencysymbol & Format(CDbl(sales + startAmount) + (discount + expense + refund + debt), "#,##0.00") & Environment.NewLine
+            texttoprint &= "BANKTRANSFER : " & currencysymbol & Format(CDbl(banktransfer), "#,##0.00") & Environment.NewLine
+            texttoprint &= "GCASH : " & currencysymbol & Format(CDbl(gcash), "#,##0.00") & Environment.NewLine
+            texttoprint &= "CHEQUE : " & currencysymbol & Format(CDbl(cheque), "#,##0.00") & Environment.NewLine
+            texttoprint &= "CASH : " & currencysymbol & Format(CDbl(cash), "#,##0.00") & Environment.NewLine
             texttoprint &= Environment.NewLine
 
             rtbSales.Text = texttoprint

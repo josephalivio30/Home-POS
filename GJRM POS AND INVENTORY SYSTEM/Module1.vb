@@ -15,12 +15,16 @@ Module Module1
 
     Public timein As String
     Public timeout As String
-    Public sales As Double
-    Public startAmount As Double
-    Public discount As Double
-    Public refund As Double
-    Public expense As Double
-    Public debt As Double
+    Public sales As Double = 0
+    Public startAmount As Double = 0
+    Public discount As Double = 0
+    Public refund As Double = 0
+    Public expense As Double = 0
+    Public debt As Double = 0
+    Public banktransfer As Double = 0
+    Public gcash As Double = 0
+    Public cheque As Double = 0
+    Public cash As Double = 0
 
     'it checks to enable the transaction everyday
     Function CheckStatus() As Boolean
@@ -91,6 +95,18 @@ Module Module1
                 timein = dr.Item("timein").ToString
                 timeout = dr.Item("timeout").ToString
             End If
+            cn.Close()
+            dr.Close()
+
+            cn.Open()
+            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(banktransfer)), '0', sum(banktransfer)) as banktransfer, IIf(IsNull(sum(gcash)), '0', sum(gcash)) as gcash, IIf(IsNull(sum(cheque)), '0', sum(cheque)) as cheque, IIf(IsNull(sum(cash)), '0', sum(cash)) as cash, IIf(IsNull(sum(schange)), '0', sum(schange)) as schange from tblsales where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cashier like '" & str_user & "'", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+                banktransfer = CDbl(dr.Item("banktransfer").ToString)
+                gcash = CDbl(dr.Item("gcash").ToString)
+                cash = CDbl(dr.Item("cash") - CDbl(dr.Item("schange")).ToString)
+                cheque = CDbl(dr.Item("cheque").ToString)
+            End While
             cn.Close()
             dr.Close()
 

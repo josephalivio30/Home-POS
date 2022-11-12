@@ -2,6 +2,10 @@
     Dim sql As String
     Dim sdate1 As String
     Dim sdate2 As String
+    Dim banktransfer As Double = 0
+    Dim gcash As Double = 0
+    Dim cheque As Double = 0
+    Dim cash As Double = 0
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Dispose()
     End Sub
@@ -30,6 +34,23 @@
             dr.Close()
 
             lblTotal.Text = Format(total, currencysymbol & "#,##0.00")
+
+            cn.Open()
+            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(banktransfer)), '0', sum(banktransfer)) as banktransfer, IIf(IsNull(sum(gcash)), '0', sum(gcash)) as gcash, IIf(IsNull(sum(cheque)), '0', sum(cheque)) as cheque, IIf(IsNull(sum(cash)), '0', sum(cash)) as cash from tbldebthistory where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cashier like '" & str_user & "'", cn)
+            dr.Read()
+            If dr.HasRows Then
+                banktransfer = CDbl(dr.Item("banktransfer").ToString)
+                gcash = CDbl(dr.Item("gcash").ToString)
+                cash = CDbl(dr.Item("cash") - CDbl(dr.Item("schange")).ToString)
+                cheque = CDbl(dr.Item("cheque").ToString)
+            End If
+            cn.Close()
+
+            lblBt.Text = Format(banktransfer, currencysymbol & "#,##0.00")
+            lblGcash.Text = Format(gcash, currencysymbol & "#,##0.00")
+            lblCheque.Text = Format(cheque, currencysymbol & "#,##0.00")
+            lblCash.Text = Format(cash, currencysymbol & "#,##0.00")
+
         Catch ex As Exception
             cn.Close()
             MsgBox(ex.Message, vbCritical)

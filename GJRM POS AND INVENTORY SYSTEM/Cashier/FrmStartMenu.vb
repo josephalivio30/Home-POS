@@ -18,6 +18,11 @@
         txtDebt.Text = Format(CDbl(debt), "#,#0.00")
         txtNet.Text = Format(CDbl((sales + startAmount) - (expense + discount + refund + debt)), "#,#0.00")
 
+        txtBt.Text = Format(CDbl(banktransfer), "#,#0.00")
+        txtGcash.Text = Format(CDbl(gcash), "#,#0.00")
+        txtCheque.Text = Format(CDbl(cheque), "#,#0.00")
+        txtCash.Text = Format(CDbl(cash), "#,#0.00")
+
         If CheckTransaction() = True Then
             btnStart.Enabled = False
             txtStartingCash.Enabled = False
