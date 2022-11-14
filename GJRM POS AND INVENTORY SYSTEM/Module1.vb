@@ -108,7 +108,7 @@ Module Module1
             Dim sdate1 As String = Now.ToString("yyyy-MM-dd")
             Dim sdate2 As String = Now.ToString("yyyy-MM-dd")
             cn.Open()
-            cm = New OleDbCommand("select initialcash, timein, timeout from tblstart where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cuser like '" & str_user & "'", cn)
+            cm = New OleDbCommand("select initialcash, timein, timeout from tblstart where sdate between #" & sdate1 & "# and #" & sdate1 & "# and cuser like '" & str_user & "'", cn)
             dr = cm.ExecuteReader
             dr.Read()
             If dr.HasRows Then
