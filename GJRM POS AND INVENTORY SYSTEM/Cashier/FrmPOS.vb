@@ -347,12 +347,17 @@
                 MsgBox("Other cashier is still open for transaction", vbCritical)
                 Return
             Else
+
                 With FrmStartMenu
+                    If CheckClose() = True Then
+                        .txtStartingCash.Enabled = False
+                    End If
                     .Display()
                     .ShowDialog()
                     .txtCashier.Text = str_user
                     .txtStartingCash.Focus()
                 End With
+
             End If
         Catch ex As Exception
             cn.Close()

@@ -1,7 +1,7 @@
 ﻿Imports System.Data.OleDb
 Imports Tulpep.NotificationWindow
 Module Module1
-    Public cn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\POS.accdb;Jet OLEDB:Database Password=Alivio30!;")
+    Public cn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\User\source\repos\GJRM POS AND INVENTORY SYSTEM\GJRM POS AND INVENTORY SYSTEM\bin\Debug\POS.accdb;Persist Security Info=True;Jet OLEDB:Database Password=Alivio30!;")
     Public cm As New OleDbCommand
     Public dr As OleDbDataReader
     Public da As OleDbDataAdapter
@@ -26,6 +26,27 @@ Module Module1
     Public cheque As Double = 0
     Public cash As Double = 0
 
+
+    Function CheckClose() As Boolean
+        Try
+            Dim found As Boolean
+            cn.Open()
+            cm = New OleDbCommand("select * from tblstart where sdate between #" & sdate & "# and #" & sdate & "# and status like 'close' and cuser like '" & str_user & "'", cn)
+            dr = cm.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then
+                found = True
+            Else
+                found = False
+            End If
+            dr.Close()
+            cn.Close()
+            Return found
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
+    End Function
     'it checks to enable the transaction everyday
     Function CheckStatus() As Boolean
         Try

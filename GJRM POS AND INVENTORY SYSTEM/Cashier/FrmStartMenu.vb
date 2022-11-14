@@ -27,7 +27,7 @@
             btnStart.Enabled = False
             txtStartingCash.Enabled = False
         Else
-            txtStartingCash.Enabled = True
+            'txtStartingCash.Enabled = True
         End If
         If CheckDay() = False Then
             btnPrint.Enabled = False

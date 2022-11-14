@@ -5,6 +5,10 @@
     Dim _total As Double
     Sub Save()
         Try
+            If CheckClose() = True Then
+                MsgBox("Transaction is already close", vbExclamation)
+                Return
+            End If
             If txtPass.Text = String.Empty Then
                 MsgBox("Required to input administrator password!", vbExclamation)
                 Return
@@ -139,7 +143,7 @@
                     MsgBox("Order transaction has been successfully cancelled.", vbInformation)
                     AuditTrail("cancelled product name " & FrmCancelOrder.txtDesc.Text)
                 End If
-                    Me.Dispose()
+                Me.Dispose()
                 FrmCancelOrder.Dispose()
                 FrmDailySales.LoadSale()
                 FrmPOS.LoadProducts()
