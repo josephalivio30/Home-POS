@@ -1,7 +1,7 @@
 ﻿Imports System.Data.OleDb
 Imports Tulpep.NotificationWindow
 Module Module1
-    Public cn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\User\source\repos\GJRM POS AND INVENTORY SYSTEM\GJRM POS AND INVENTORY SYSTEM\bin\Debug\POS.accdb;Persist Security Info=True;Jet OLEDB:Database Password=Alivio30!;")
+    Public cn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\POS.accdb;Persist Security Info=True;Jet OLEDB:Database Password=Alivio30!;")
     Public cm As New OleDbCommand
     Public dr As OleDbDataReader
     Public da As OleDbDataAdapter
