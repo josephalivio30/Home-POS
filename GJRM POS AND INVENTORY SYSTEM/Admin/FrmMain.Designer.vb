@@ -22,9 +22,9 @@ Partial Class FrmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMain))
         Me.panelOutput = New System.Windows.Forms.Panel()
         Me.pDashBoard = New System.Windows.Forms.Panel()
@@ -54,7 +54,6 @@ Partial Class FrmMain
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lblDailySales = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnSql = New System.Windows.Forms.Button()
         Me.btnAccount = New System.Windows.Forms.Button()
         Me.btnSetting = New System.Windows.Forms.Button()
         Me.panelDebt = New System.Windows.Forms.Panel()
@@ -142,16 +141,16 @@ Partial Class FrmMain
         Me.Chart1.BorderSkin.BackSecondaryColor = System.Drawing.Color.Silver
         Me.Chart1.BorderSkin.BorderColor = System.Drawing.Color.Silver
         Me.Chart1.BorderSkin.PageColor = System.Drawing.Color.Silver
-        ChartArea2.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend2)
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
         Me.Chart1.Location = New System.Drawing.Point(72, 147)
         Me.Chart1.Name = "Chart1"
-        Series2.ChartArea = "ChartArea1"
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Me.Chart1.Series.Add(Series2)
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Chart1.Series.Add(Series1)
         Me.Chart1.Size = New System.Drawing.Size(772, 459)
         Me.Chart1.TabIndex = 3
         Me.Chart1.Text = "Chart1"
@@ -409,7 +408,6 @@ Partial Class FrmMain
         '
         Me.Panel1.AutoScroll = True
         Me.Panel1.BackColor = System.Drawing.Color.Gray
-        Me.Panel1.Controls.Add(Me.btnSql)
         Me.Panel1.Controls.Add(Me.btnAccount)
         Me.Panel1.Controls.Add(Me.btnSetting)
         Me.Panel1.Controls.Add(Me.panelDebt)
@@ -427,27 +425,6 @@ Partial Class FrmMain
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(297, 772)
         Me.Panel1.TabIndex = 20
-        '
-        'btnSql
-        '
-        Me.btnSql.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnSql.BackColor = System.Drawing.Color.Gray
-        Me.btnSql.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSql.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnSql.FlatAppearance.BorderSize = 0
-        Me.btnSql.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSql.ForeColor = System.Drawing.Color.White
-        Me.btnSql.Image = CType(resources.GetObject("btnSql.Image"), System.Drawing.Image)
-        Me.btnSql.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSql.Location = New System.Drawing.Point(0, 1155)
-        Me.btnSql.Name = "btnSql"
-        Me.btnSql.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnSql.Size = New System.Drawing.Size(280, 45)
-        Me.btnSql.TabIndex = 46
-        Me.btnSql.Text = "   RETREIVE && RESTORE DATA"
-        Me.btnSql.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSql.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSql.UseVisualStyleBackColor = False
         '
         'btnAccount
         '
@@ -877,7 +854,7 @@ Partial Class FrmMain
         Me.btnLogout.ForeColor = System.Drawing.Color.White
         Me.btnLogout.Image = CType(resources.GetObject("btnLogout.Image"), System.Drawing.Image)
         Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLogout.Location = New System.Drawing.Point(0, 1200)
+        Me.btnLogout.Location = New System.Drawing.Point(0, 1155)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnLogout.Size = New System.Drawing.Size(280, 45)
@@ -1064,7 +1041,7 @@ Partial Class FrmMain
         Me.lblShopName.ForeColor = System.Drawing.Color.White
         Me.lblShopName.Location = New System.Drawing.Point(100, 17)
         Me.lblShopName.Name = "lblShopName"
-        Me.lblShopName.Size = New System.Drawing.Size(166, 23)
+        Me.lblShopName.Size = New System.Drawing.Size(197, 23)
         Me.lblShopName.TabIndex = 0
         Me.lblShopName.Text = "SHOP NAME"
         Me.lblShopName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1119,7 +1096,6 @@ Partial Class FrmMain
     Friend WithEvents Panel18 As Panel
     Friend WithEvents lblDailySales As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents btnSql As Button
     Friend WithEvents btnAccount As Button
     Friend WithEvents btnSetting As Button
     Friend WithEvents panelDebt As Panel

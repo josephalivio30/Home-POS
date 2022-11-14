@@ -29,13 +29,13 @@ Partial Class FrmVendor
         Me.txtVendor = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtNo = New System.Windows.Forms.TextBox()
         Me.txtContact = New System.Windows.Forms.TextBox()
         Me.txtEmail = New System.Windows.Forms.TextBox()
-        Me.btnClose = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
@@ -46,7 +46,6 @@ Partial Class FrmVendor
         'txtAddress
         '
         Me.txtAddress.BackColor = System.Drawing.Color.White
-        Me.txtAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtAddress.Location = New System.Drawing.Point(128, 86)
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(307, 23)
@@ -77,7 +76,6 @@ Partial Class FrmVendor
         'txtVendor
         '
         Me.txtVendor.BackColor = System.Drawing.Color.White
-        Me.txtVendor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtVendor.Location = New System.Drawing.Point(128, 57)
         Me.txtVendor.Name = "txtVendor"
         Me.txtVendor.Size = New System.Drawing.Size(307, 23)
@@ -104,6 +102,22 @@ Partial Class FrmVendor
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(447, 30)
         Me.Panel1.TabIndex = 123
+        '
+        'btnClose
+        '
+        Me.btnClose.BackColor = System.Drawing.Color.Gray
+        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClose.FlatAppearance.BorderSize = 0
+        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClose.ForeColor = System.Drawing.Color.White
+        Me.btnClose.Image = CType(resources.GetObject("btnClose.Image"), System.Drawing.Image)
+        Me.btnClose.Location = New System.Drawing.Point(377, 2)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(69, 27)
+        Me.btnClose.TabIndex = 12
+        Me.btnClose.Text = "CLOSE"
+        Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnClose.UseVisualStyleBackColor = False
         '
         'lblTitle
         '
@@ -160,27 +174,10 @@ Partial Class FrmVendor
         'txtEmail
         '
         Me.txtEmail.BackColor = System.Drawing.Color.White
-        Me.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtEmail.Location = New System.Drawing.Point(128, 173)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(307, 23)
         Me.txtEmail.TabIndex = 133
-        '
-        'btnClose
-        '
-        Me.btnClose.BackColor = System.Drawing.Color.Gray
-        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnClose.FlatAppearance.BorderSize = 0
-        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Image = CType(resources.GetObject("btnClose.Image"), System.Drawing.Image)
-        Me.btnClose.Location = New System.Drawing.Point(377, 2)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(69, 27)
-        Me.btnClose.TabIndex = 12
-        Me.btnClose.Text = "CLOSE"
-        Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnClose.UseVisualStyleBackColor = False
         '
         'btnCancel
         '

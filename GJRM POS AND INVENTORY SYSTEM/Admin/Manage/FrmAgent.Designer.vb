@@ -44,7 +44,6 @@ Partial Class FrmAgent
         'txtEmail
         '
         Me.txtEmail.BackColor = System.Drawing.Color.White
-        Me.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtEmail.Location = New System.Drawing.Point(128, 144)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(307, 23)
@@ -62,7 +61,6 @@ Partial Class FrmAgent
         'txtAddress
         '
         Me.txtAddress.BackColor = System.Drawing.Color.White
-        Me.txtAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtAddress.Location = New System.Drawing.Point(128, 86)
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(307, 23)

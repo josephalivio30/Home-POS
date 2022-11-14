@@ -41,96 +41,10 @@
         Try
             Dim total As Double = CDbl(txtBT.Text) + CDbl(txtCASH.Text) + CDbl(txtGcash.Text) + CDbl(txtCheque.Text)
             If total > CDbl(txtTAmount.Text) Then
-                MsgBox("Cash is over the amount needed! Plase enter correct amount.", vbCritical)
+                MsgBox("Cash is over the amount needed! Please enter correct amount.", vbCritical)
                 Return
             Else
-
-                'subtract amount from tbldebt
-                cn.Open()
-                cm = New OleDb.OleDbCommand("update tbldebt set amount = amount - '" & total & "' where transno like '" & txtTransno.Text & "' and cname like '" & txtName.Text & "'", cn)
-                cm.ExecuteNonQuery()
-                cn.Close()
-
-                'extract amount from tbldebt
-                cn.Open()
-                cm = New OleDb.OleDbCommand("select amount from tbldebt where transno like '" & txtTransno.Text & "' and cname like '" & txtName.Text & "'", cn)
-                dr = cm.ExecuteReader
-                dr.Read()
-                If dr.HasRows Then
-                    amount = dr.Item("amount")
-                End If
-                cn.Close()
-                dr.Close()
-
-                'update tblsales and tblcart to paid
-                If amount = "0" Then
-                    cn.Open()
-                    cm = New OleDb.OleDbCommand("update tblsales set remarks = 'Paid' where transno like '" & txtTransno.Text & "'", cn)
-                    cm.ExecuteNonQuery()
-                    cn.Close()
-
-                    cn.Open()
-                    cm = New OleDb.OleDbCommand("update tblcart set remarks = 'Paid' where transno like '" & txtTransno.Text & "'", cn)
-                    cm.ExecuteNonQuery()
-                    cn.Close()
-                End If
-
-                cn.Open()
-                cm = New OleDb.OleDbCommand("insert into tbldebthistory (transno, cname, cuser, amount, banktransfer, gcash, cheque, cash, stime, sdate)values(@transno, @cname, @cuser, @amount, @banktransfer, @gcash, @cheque, @cash, @stime, @sdate)", cn)
-                With cm
-                    .Parameters.AddWithValue("@transno", txtTransno.Text)
-                    .Parameters.AddWithValue("@cname", txtName.Text)
-                    .Parameters.AddWithValue("@cuser", str_user)
-                    .Parameters.AddWithValue("@amount", CDbl("" + txtTAmount.Text))
-                    .Parameters.AddWithValue("@banktransfer", CDbl("" + txtBT.Text))
-                    .Parameters.AddWithValue("@gcash", CDbl("" + txtCASH.Text))
-                    .Parameters.AddWithValue("@cheque", CDbl("" + txtCheque.Text))
-                    .Parameters.AddWithValue("@cash", CDbl("" + txtGcash.Text))
-                    .Parameters.AddWithValue("@stime", Now.ToShortTimeString)
-                    .Parameters.AddWithValue("@sdate", sdate)
-
-                    .ExecuteNonQuery()
-                End With
-                cn.Close()
-
                 If txtTransno.Text = "PAY ALL" Then
-                    If total = CDbl(txtTAmount.Text) Then
-                        cn.Open()
-                        cm = New OleDb.OleDbCommand("insert into tbldebthistory (transno, cname, cuser, amount, banktransfer, gcash, cash, stime, sdate)values(@transno, @cname, @cuser, @amount, @banktransfer, @gcash, @cash, @stime, @sdate)", cn)
-                        With cm
-                            .Parameters.AddWithValue("@transno", txtTransno.Text)
-                            .Parameters.AddWithValue("@cname", txtName.Text)
-                            .Parameters.AddWithValue("@cuser", str_user)
-                            .Parameters.AddWithValue("@amount", CDbl("" + txtTAmount.Text))
-                            .Parameters.AddWithValue("@banktransfer", CDbl("" + txtBT.Text))
-                            .Parameters.AddWithValue("@gcash", CDbl("" + txtCASH.Text))
-                            .Parameters.AddWithValue("@cash", CDbl("" + txtGcash.Text))
-                            .Parameters.AddWithValue("@stime", Now.ToShortTimeString)
-                            .Parameters.AddWithValue("@sdate", sdate)
-
-                            .ExecuteNonQuery()
-                        End With
-                        cn.Close()
-
-                        cn.Open()
-                        cm = New OleDb.OleDbCommand("update tblsales as s inner join tbldebt as d on s.transno = d.transno set remarks = 'Paid' where s.transno = d.transno", cn)
-                        cm.ExecuteNonQuery()
-                        cn.Close()
-
-                        cn.Open()
-                        cm = New OleDb.OleDbCommand("update tblcart as c inner join tbldebt as d on c.transno = d.transno set remarks = 'Paid' where c.transno = d.transno", cn)
-                        cm.ExecuteNonQuery()
-                        cn.Close()
-
-                        cn.Open()
-                        cm = New OleDb.OleDbCommand("delete from tbldebt where cname like '" & txtName.Text & "'", cn)
-                        cm.ExecuteNonQuery()
-                        cn.Close()
-                    Else
-                        MsgBox("The Amount is either insufficient or over the total debt")
-                        Return
-                    End If
-
                     cn.Open()
                     cm = New OleDb.OleDbCommand("insert into tbldebthistory (transno, cname, cuser, amount, banktransfer, gcash, cash, stime, sdate)values(@transno, @cname, @cuser, @amount, @banktransfer, @gcash, @cash, @stime, @sdate)", cn)
                     With cm
@@ -141,7 +55,71 @@
                         .Parameters.AddWithValue("@banktransfer", CDbl("" + txtBT.Text))
                         .Parameters.AddWithValue("@gcash", CDbl("" + txtCASH.Text))
                         .Parameters.AddWithValue("@cash", CDbl("" + txtGcash.Text))
-                        .Parameters.AddWithValue("@stime", Now.ToLongTimeString)
+                        .Parameters.AddWithValue("@stime", Now.ToShortTimeString)
+                        .Parameters.AddWithValue("@sdate", sdate)
+
+                        .ExecuteNonQuery()
+                    End With
+                    cn.Close()
+
+                    cn.Open()
+                    cm = New OleDb.OleDbCommand("update tblsales as s inner join tbldebt as d on s.transno = d.transno set remarks = 'Paid' where s.transno = d.transno", cn)
+                    cm.ExecuteNonQuery()
+                    cn.Close()
+
+                    cn.Open()
+                    cm = New OleDb.OleDbCommand("update tblcart as c inner join tbldebt as d on c.transno = d.transno set remarks = 'Paid' where c.transno = d.transno", cn)
+                    cm.ExecuteNonQuery()
+                    cn.Close()
+
+                    cn.Open()
+                    cm = New OleDb.OleDbCommand("delete from tbldebt where cname like '" & txtName.Text & "'", cn)
+                    cm.ExecuteNonQuery()
+                    cn.Close()
+                Else
+                    'else not pay all
+                    'subtract amount from tbldebt
+                    cn.Open()
+                    cm = New OleDb.OleDbCommand("update tbldebt set amount = amount - '" & total & "' where transno like '" & txtTransno.Text & "' and cname like '" & txtName.Text & "'", cn)
+                    cm.ExecuteNonQuery()
+                    cn.Close()
+
+                    'extract amount from tbldebt
+                    cn.Open()
+                    cm = New OleDb.OleDbCommand("select amount from tbldebt where transno like '" & txtTransno.Text & "' and cname like '" & txtName.Text & "'", cn)
+                    dr = cm.ExecuteReader
+                    dr.Read()
+                    If dr.HasRows Then
+                        amount = dr.Item("amount")
+                    End If
+                    cn.Close()
+                    dr.Close()
+
+                    'update tblsales and tblcart to paid
+                    If amount = "0" Then
+                        cn.Open()
+                        cm = New OleDb.OleDbCommand("update tblsales set remarks = 'Paid' where transno like '" & txtTransno.Text & "'", cn)
+                        cm.ExecuteNonQuery()
+                        cn.Close()
+
+                        cn.Open()
+                        cm = New OleDb.OleDbCommand("update tblcart set remarks = 'Paid' where transno like '" & txtTransno.Text & "'", cn)
+                        cm.ExecuteNonQuery()
+                        cn.Close()
+                    End If
+
+                    cn.Open()
+                    cm = New OleDb.OleDbCommand("insert into tbldebthistory (transno, cname, cuser, amount, banktransfer, gcash, cheque, cash, stime, sdate)values(@transno, @cname, @cuser, @amount, @banktransfer, @gcash, @cheque, @cash, @stime, @sdate)", cn)
+                    With cm
+                        .Parameters.AddWithValue("@transno", txtTransno.Text)
+                        .Parameters.AddWithValue("@cname", txtName.Text)
+                        .Parameters.AddWithValue("@cuser", str_user)
+                        .Parameters.AddWithValue("@amount", CDbl("" + txtTAmount.Text))
+                        .Parameters.AddWithValue("@banktransfer", CDbl("" + txtBT.Text))
+                        .Parameters.AddWithValue("@gcash", CDbl("" + txtCASH.Text))
+                        .Parameters.AddWithValue("@cheque", CDbl("" + txtCheque.Text))
+                        .Parameters.AddWithValue("@cash", CDbl("" + txtGcash.Text))
+                        .Parameters.AddWithValue("@stime", Now.ToShortTimeString)
                         .Parameters.AddWithValue("@sdate", sdate)
                         .ExecuteNonQuery()
                     End With

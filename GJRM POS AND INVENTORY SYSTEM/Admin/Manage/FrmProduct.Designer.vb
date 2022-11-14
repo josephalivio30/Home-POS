@@ -265,7 +265,6 @@ Partial Class FrmProduct
         'txtDescription
         '
         Me.txtDescription.BackColor = System.Drawing.Color.White
-        Me.txtDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDescription.Location = New System.Drawing.Point(130, 115)
         Me.txtDescription.Name = "txtDescription"
         Me.txtDescription.Size = New System.Drawing.Size(307, 23)

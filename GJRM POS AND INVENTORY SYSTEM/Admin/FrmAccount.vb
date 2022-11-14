@@ -24,7 +24,9 @@ Public Class FrmAccount
         txtName.Clear()
         cboRole.SelectedIndex = 0
     End Sub
-
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Clear()
+    End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Create()
     End Sub

@@ -15,6 +15,12 @@
             End While
             dr.Close()
             cn.Close()
+
+            If dgvStockIn.Rows.Count < 1 Then
+                btnSave.Enabled = False
+            Else
+                btnSave.Enabled = True
+            End If
         Catch ex As Exception
             cn.Close()
             MsgBox(ex.Message, vbCritical)
@@ -29,7 +35,6 @@
                 cm = New OleDb.OleDbCommand("delete from tblstockin where id like '" & dgvStockIn.Rows(e.RowIndex).Cells(1).Value.ToString & "'", cn)
                 cm.ExecuteNonQuery()
                 cn.Close()
-                MsgBox("Record has been successfully deleted", vbInformation)
                 LoadStockIn()
             End If
         End If

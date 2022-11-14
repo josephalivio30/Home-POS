@@ -10,9 +10,9 @@
             Dim _total As Double
             Dim i As Integer
             If cboList.Text = "Inventory Stocks" Then
-                cm = New OleDb.OleDbCommand("select * from tblinventorylist", cn)
+                cm = New OleDb.OleDbCommand("select * from tblinventorylist where pdesc like '" & txtSearch.Text & "%'", cn)
             ElseIf cboList.Text = "Critical Stocks" Then
-                cm = New OleDb.OleDbCommand("select * from tblinventorylist WHERE (((tblproduct.[qty])<=[reorder]))", cn)
+                cm = New OleDb.OleDbCommand("select * from tblinventorylist WHERE (((tblproduct.[qty])<=[reorder])) where pdesc like '" & txtSearch.Text & "%'", cn)
             End If
             dr = cm.ExecuteReader
             While dr.Read
@@ -38,9 +38,9 @@
     Private Sub btnSPrint_Click(sender As Object, e As EventArgs) Handles btnSPrint.Click
         Try
             If cboList.Text = "Inventory Stocks" Then
-                sql = "select * from tblinventorylist"
+                sql = "select * from tblinventorylist where pdesc like '" & txtSearch.Text & "%'"
             ElseIf cboList.Text = "Critical Stocks" Then
-                sql = "select * from tblinventorylist WHERE (((tblproduct.[qty])<=[reorder]))"
+                sql = "select * from tblinventorylist WHERE (((tblproduct.[qty])<=[reorder])) where pdesc like '" & txtSearch.Text & "%'"
             End If
             With FrmPrintStockInventory
                 .PrintPreview(sql)
@@ -64,5 +64,9 @@
 
     Private Sub cboList_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboList.KeyPress
         e.Handled = True
+    End Sub
+
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        LoadInventory()
     End Sub
 End Class

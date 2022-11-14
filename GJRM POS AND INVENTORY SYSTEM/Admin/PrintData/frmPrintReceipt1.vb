@@ -17,6 +17,7 @@ Public Class frmPrintReceipt1
             da.SelectCommand = New OleDb.OleDbCommand(sql, cn)
             da.Fill(ds.Tables("dtPrintReceipt"))
 
+            Dim pCustomer As New ReportParameter("pCustomer", "CUSTOMER : " & FrmSettle.txtName.Text)
             Dim pCashier As New ReportParameter("pCashier", "CASHIER NAME : " & str_name)
             Dim pDate As New ReportParameter("pDate", "DATE | TIME : " & Now)
             Dim pTransno As New ReportParameter("pTransno", "TRANSACTION NO : " & FrmPOS.lblTransNo.Text)
@@ -27,6 +28,7 @@ Public Class frmPrintReceipt1
             'Dim pCash As New ReportParameter("pCash", Format(CDbl(frmSettle.txtCash.Text), "#,##0.00"))
             'Dim pChange As New ReportParameter("pChange", frmSettle.txtChange.Text)
 
+            rvReceipt.LocalReport.SetParameters(pCustomer)
             rvReceipt.LocalReport.SetParameters(pCashier)
             rvReceipt.LocalReport.SetParameters(pDate)
             rvReceipt.LocalReport.SetParameters(pTransno)

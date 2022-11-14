@@ -131,11 +131,17 @@
                         UpdateData("Update tblsales set cheque = '" & remain4 & "'where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
                     End If
 
+                    'update total in tbldebt
+                    UpdateData("update tbldebt set amount = amount - '" & _total & "' where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
+
                     'update total in tblcart
                     UpdateData("update tblcart set total = price * qty where transno like '" & FrmCancelOrder.txtTransno.Text & "' and pcode like '" & FrmCancelOrder.txtPcode.Text & "'")
 
                     'delete row in tblcart
                     UpdateData("delete from tblcart where qty = 0")
+
+                    'delete row in tbldebt
+                    UpdateData("delete from tbldebt where amount = 0")
 
                     'delete row in tblcart
                     UpdateData("delete from tblsales where totalbill = 0")
@@ -147,6 +153,8 @@
                 FrmCancelOrder.Dispose()
                 FrmDailySales.LoadSale()
                 FrmPOS.LoadProducts()
+                FrmDailySales.LoadCancelOrder()
+                FrmDailySales.LoadDebt()
             End If
         Catch ex As Exception
             cn.Close()

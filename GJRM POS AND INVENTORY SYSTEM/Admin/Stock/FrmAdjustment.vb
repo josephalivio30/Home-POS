@@ -32,6 +32,7 @@
         Try
             If txtPcode.Text = String.Empty Or txtDesc.Text = String.Empty Or txtQty.Text = String.Empty Or txtRemarks.Text = String.Empty Or cboCommand.Text = String.Empty Then
                 MsgBox("Required empty field.", vbExclamation)
+                Return
             End If
             Dim i As Integer
             If MsgBox("Save this records?", vbYesNo + vbQuestion) = vbYes Then
@@ -116,5 +117,9 @@
         ElseIf Keys.KeyCode = Keys.Enter Then
             save()
         End If
+    End Sub
+
+    Private Sub cboCommand_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboCommand.KeyPress
+        e.Handled = True
     End Sub
 End Class

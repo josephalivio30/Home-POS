@@ -85,6 +85,9 @@
             If txtCheque.Text = String.Empty Then
                 txtCheque.Text = "0.00"
             End If
+            If txtName.Text = String.Empty Then
+                txtName.Text = "noname"
+            End If
             Dim total As Double = CDbl(txtBill.Text)
             Dim change As Double = (CDbl(txtGcash.Text) + CDbl(txtCash.Text) + CDbl(txtBankTransfer.Text) + CDbl(txtCheque.Text)) - total
             If change < 0 Then

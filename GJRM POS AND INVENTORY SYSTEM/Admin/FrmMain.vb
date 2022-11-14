@@ -137,8 +137,8 @@ Public Class FrmMain
             .WindowState = FormWindowState.Maximized
             .TopLevel = False
             panelOutput.Controls.Add(FrmRBestSelling)
-            .BringToFront()
             .LoadBestSelling()
+            .BringToFront()
             .Show()
         End With
     End Sub

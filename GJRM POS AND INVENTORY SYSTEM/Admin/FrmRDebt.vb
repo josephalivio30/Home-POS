@@ -4,6 +4,7 @@
         Try
             dgvDebt.Rows.Clear()
             Dim debt As Double
+            Dim total As Double = 0
             cn.Open()
             If cboName.Text = "ALL NAMES" Then
                 cm = New OleDb.OleDbCommand("select * from tbldebt", cn)
@@ -12,16 +13,13 @@
             End If
             dr = cm.ExecuteReader
             While dr.Read
+                total += CDbl(dr.Item("amount"))
                 dgvDebt.Rows.Add(dr.Item("transno").ToString, dr.Item("cname").ToString, dr.Item("cuser").ToString, Format(dr.Item("amount"), "#,##0.00").ToString, dr.Item("stime").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString))
             End While
             cn.Close()
             dr.Close()
 
-            cn.Open()
-            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(amount)), '0', sum(amount)) as debt from tbldebt", cn)
-            debt = CDbl(cm.ExecuteScalar)
-            cn.Close()
-            lblTotal.Text = Format(debt, currencysymbol & "#,##0.00")
+            lblTotal.Text = Format(total, currencysymbol & "#,##0.00")
         Catch ex As Exception
             cn.Close()
             MsgBox(ex.Message, vbCritical)

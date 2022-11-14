@@ -65,8 +65,8 @@
                 cm.Parameters.AddWithValue("@category", txtCategory.Text)
                 cm.ExecuteNonQuery()
                 MsgBox("Record has been successfully updated.", vbInformation)
-                AuditTrail("Updated category list " & txtCategory.Text)
                 cn.Close()
+                AuditTrail("Updated category list " & txtCategory.Text)
                 LoadCategory()
                 txtCategory.Clear()
                 txtCategory.Focus()
@@ -89,7 +89,7 @@
     Sub Save()
         Try
             If (txtCategory.Text = "") Then
-                MsgBox("Please input data needed", vbCritical)
+                MsgBox("Required empty field.", vbCritical)
             ElseIf MsgBox("Save this category?", vbYesNo + vbQuestion) = vbYes Then
                 cn.Open()
                 cm = New OleDb.OleDbCommand("insert into tblcategory (category)values(@category)", cn)

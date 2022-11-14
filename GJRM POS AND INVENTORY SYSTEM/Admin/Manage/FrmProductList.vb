@@ -89,6 +89,7 @@
                     MsgBox("Record has been successfully deleted", vbInformation)
                     AuditTrail("deleted product name " & dgvProduct.Rows(e.RowIndex).Cells(3).Value.ToString)
                     LoadProducts()
+                    Dashboard()
                 End If
             End If
         Catch ex As Exception

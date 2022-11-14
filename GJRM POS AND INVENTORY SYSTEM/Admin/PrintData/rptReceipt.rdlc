@@ -327,7 +327,7 @@
                                   <Value>=Fields!price.Value</Value>
                                   <Style>
                                     <FontSize>7.5pt</FontSize>
-                                    <Format>0.00;(0.00)</Format>
+                                    <Format>#,0.00;(#,0.00)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -397,7 +397,7 @@
                                   <Value>=Fields!total.Value</Value>
                                   <Style>
                                     <FontSize>7.5pt</FontSize>
-                                    <Format>0.00;(0.00)</Format>
+                                    <Format>#,0.00;(#,0.00)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -706,7 +706,7 @@
       <Width>2.75167in</Width>
       <Page>
         <PageHeader>
-          <Height>1.83333in</Height>
+          <Height>1.94791in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -795,8 +795,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>pCashier</rd:DefaultName>
-              <Top>0.79167in</Top>
-              <Left>0.03045in</Left>
+              <Top>0.98486in</Top>
+              <Left>0.05501in</Left>
               <Height>0.25in</Height>
               <Width>2.64538in</Width>
               <ZIndex>2</ZIndex>
@@ -827,8 +827,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>pDate</rd:DefaultName>
-              <Top>1.05556in</Top>
-              <Left>0.03045in</Left>
+              <Top>1.24875in</Top>
+              <Left>0.05501in</Left>
               <Height>0.25in</Height>
               <Width>2.64538in</Width>
               <ZIndex>3</ZIndex>
@@ -859,8 +859,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>pTransno</rd:DefaultName>
-              <Top>1.31013in</Top>
-              <Left>0.03045in</Left>
+              <Top>1.50332in</Top>
+              <Left>0.05501in</Left>
               <Height>0.25in</Height>
               <Width>2.64538in</Width>
               <ZIndex>4</ZIndex>
@@ -887,8 +887,8 @@
               </Style>
             </Line>
             <Line Name="Line2">
-              <Top>1.70313in</Top>
-              <Left>0.0267in</Left>
+              <Top>1.85055in</Top>
+              <Left>0.05501in</Left>
               <Height>0in</Height>
               <Width>2.64913in</Width>
               <ZIndex>6</ZIndex>
@@ -898,6 +898,38 @@
                 </Border>
               </Style>
             </Line>
+            <Textbox Name="pCashier2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!pCustomer.Value</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>pCashier</rd:DefaultName>
+              <Top>0.73486in</Top>
+              <Left>0.05315in</Left>
+              <Height>0.25in</Height>
+              <Width>2.64538in</Width>
+              <ZIndex>7</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>
@@ -946,6 +978,10 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="pCustomer">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -976,6 +1012,11 @@
           <ColumnIndex>3</ColumnIndex>
           <RowIndex>1</RowIndex>
           <ParameterName>pTransno</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>pCustomer</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
