@@ -22,6 +22,7 @@ Partial Class FrmPrintExpense
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPrintExpense))
         Me.RvExpense = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.SuspendLayout()
         '
@@ -40,6 +41,7 @@ Partial Class FrmPrintExpense
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.RvExpense)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmPrintExpense"
         Me.Text = "FrmPrintExpense"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

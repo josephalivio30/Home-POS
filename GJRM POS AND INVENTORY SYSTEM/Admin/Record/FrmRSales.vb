@@ -118,10 +118,18 @@
         End Try
     End Sub
     Private Sub Sdt1_ValueChanged(sender As Object, e As EventArgs) Handles Sdt1.ValueChanged
+        If Sdt1.Value > Sdt2.Value Then
+            Sdt1.Value = Sdt2.Value
+            MsgBox("From date must be lower or equal to the To date", vbExclamation)
+        End If
         LoadSale()
     End Sub
 
     Private Sub Sdt2_ValueChanged(sender As Object, e As EventArgs) Handles Sdt2.ValueChanged
+        If Sdt1.Value > Sdt2.Value Then
+            Sdt2.Value = Sdt1.Value
+            MsgBox("From date must be higher or equal to the To date", vbExclamation)
+        End If
         LoadSale()
     End Sub
 

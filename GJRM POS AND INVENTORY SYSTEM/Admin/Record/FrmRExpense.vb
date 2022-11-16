@@ -33,10 +33,18 @@
     End Sub
 
     Private Sub Edt1_ValueChanged(sender As Object, e As EventArgs) Handles Edt1.ValueChanged
+        If Edt1.Value > Edt2.Value Then
+            Edt1.Value = Edt2.Value
+            MsgBox("From date must be lower or equal to the To date", vbExclamation)
+        End If
         LoadExpense()
     End Sub
 
     Private Sub Edt2_ValueChanged(sender As Object, e As EventArgs) Handles Edt2.ValueChanged
+        If Edt1.Value > Edt2.Value Then
+            Edt2.Value = Edt1.Value
+            MsgBox("From date must be higher or equal to the To date", vbExclamation)
+        End If
         LoadExpense()
     End Sub
     Private Sub FrmRExpense_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -131,7 +131,7 @@ Partial Class FrmRSales
         Me.btnClose.Location = New System.Drawing.Point(1179, 0)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(26, 31)
-        Me.btnClose.TabIndex = 46
+        Me.btnClose.TabIndex = 6
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
         '
@@ -181,7 +181,7 @@ Partial Class FrmRSales
         Me.txtSearch.SelectionStart = 0
         Me.txtSearch.ShortcutsEnabled = True
         Me.txtSearch.Size = New System.Drawing.Size(162, 23)
-        Me.txtSearch.TabIndex = 80
+        Me.txtSearch.TabIndex = 4
         Me.txtSearch.UseSelectable = True
         Me.txtSearch.WaterMark = "Search Customer"
         Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -194,7 +194,7 @@ Partial Class FrmRSales
         Me.cboCashier.Location = New System.Drawing.Point(819, 3)
         Me.cboCashier.Name = "cboCashier"
         Me.cboCashier.Size = New System.Drawing.Size(121, 23)
-        Me.cboCashier.TabIndex = 6
+        Me.cboCashier.TabIndex = 3
         Me.cboCashier.Text = "ALL CASHIER"
         '
         'btnSPrint
@@ -210,7 +210,7 @@ Partial Class FrmRSales
         Me.btnSPrint.Location = New System.Drawing.Point(1114, 3)
         Me.btnSPrint.Name = "btnSPrint"
         Me.btnSPrint.Size = New System.Drawing.Size(78, 24)
-        Me.btnSPrint.TabIndex = 8
+        Me.btnSPrint.TabIndex = 5
         Me.btnSPrint.Text = "   PRINT"
         Me.btnSPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSPrint.UseVisualStyleBackColor = False
@@ -232,7 +232,7 @@ Partial Class FrmRSales
         Me.Sdt2.Location = New System.Drawing.Point(689, 3)
         Me.Sdt2.Name = "Sdt2"
         Me.Sdt2.Size = New System.Drawing.Size(124, 23)
-        Me.Sdt2.TabIndex = 3
+        Me.Sdt2.TabIndex = 2
         '
         'Sdt1
         '
@@ -497,7 +497,7 @@ Partial Class FrmRSales
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(152, 26)
         Me.lblTotal.TabIndex = 25
-        Me.lblTotal.Text = "0000000000.00"
+        Me.lblTotal.Text = "0.00"
         Me.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Panel13
@@ -933,6 +933,7 @@ Partial Class FrmRSales
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmRSales"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

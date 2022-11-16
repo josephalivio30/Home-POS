@@ -72,7 +72,7 @@ Public Class FrmVendor
                 cm.ExecuteNonQuery()
                 cn.Close()
                 MsgBox("Record has been successfully updated", vbInformation)
-                AuditTrail("updated vendor name " & txtVendor.Text)
+                AuditTrail("Updated vendor name " & txtVendor.Text)
                 With FrmVendorList
                     .LoadVendor()
                 End With

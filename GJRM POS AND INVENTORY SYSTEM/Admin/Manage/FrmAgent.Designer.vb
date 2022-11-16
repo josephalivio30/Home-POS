@@ -47,7 +47,7 @@ Partial Class FrmAgent
         Me.txtEmail.Location = New System.Drawing.Point(128, 144)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(307, 23)
-        Me.txtEmail.TabIndex = 147
+        Me.txtEmail.TabIndex = 4
         '
         'txtNo
         '
@@ -56,7 +56,7 @@ Partial Class FrmAgent
         Me.txtNo.Location = New System.Drawing.Point(128, 115)
         Me.txtNo.Name = "txtNo"
         Me.txtNo.Size = New System.Drawing.Size(307, 23)
-        Me.txtNo.TabIndex = 146
+        Me.txtNo.TabIndex = 3
         '
         'txtAddress
         '
@@ -64,7 +64,7 @@ Partial Class FrmAgent
         Me.txtAddress.Location = New System.Drawing.Point(128, 86)
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(307, 23)
-        Me.txtAddress.TabIndex = 143
+        Me.txtAddress.TabIndex = 2
         '
         'Label6
         '
@@ -95,7 +95,7 @@ Partial Class FrmAgent
         Me.txtAgent.Location = New System.Drawing.Point(128, 57)
         Me.txtAgent.Name = "txtAgent"
         Me.txtAgent.Size = New System.Drawing.Size(307, 23)
-        Me.txtAgent.TabIndex = 134
+        Me.txtAgent.TabIndex = 1
         '
         'Label2
         '
@@ -130,7 +130,7 @@ Partial Class FrmAgent
         Me.btnClose.Location = New System.Drawing.Point(377, 2)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(69, 27)
-        Me.btnClose.TabIndex = 12
+        Me.btnClose.TabIndex = 8
         Me.btnClose.Text = "CLOSE"
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
@@ -158,7 +158,7 @@ Partial Class FrmAgent
         Me.btnCancel.Location = New System.Drawing.Point(340, 173)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(95, 37)
-        Me.btnCancel.TabIndex = 137
+        Me.btnCancel.TabIndex = 7
         Me.btnCancel.Text = "  &CANCEL"
         Me.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCancel.UseVisualStyleBackColor = False
@@ -175,7 +175,7 @@ Partial Class FrmAgent
         Me.btnUpdate.Location = New System.Drawing.Point(239, 173)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(95, 37)
-        Me.btnUpdate.TabIndex = 136
+        Me.btnUpdate.TabIndex = 6
         Me.btnUpdate.Text = "   &UPDATE"
         Me.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnUpdate.UseVisualStyleBackColor = False
@@ -191,7 +191,7 @@ Partial Class FrmAgent
         Me.btnSave.Location = New System.Drawing.Point(138, 173)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(95, 37)
-        Me.btnSave.TabIndex = 135
+        Me.btnSave.TabIndex = 5
         Me.btnSave.Text = "   &SAVE"
         Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSave.UseVisualStyleBackColor = False
@@ -238,6 +238,7 @@ Partial Class FrmAgent
         Me.Controls.Add(Me.Label4)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmAgent"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)

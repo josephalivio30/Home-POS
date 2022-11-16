@@ -162,7 +162,7 @@ Partial Class FrmDailySales
         Me.btnClose.Location = New System.Drawing.Point(1133, 0)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(69, 27)
-        Me.btnClose.TabIndex = 26
+        Me.btnClose.TabIndex = 2
         Me.btnClose.Text = "CLOSE"
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
@@ -238,7 +238,7 @@ Partial Class FrmDailySales
         Me.lblSTotal.Name = "lblSTotal"
         Me.lblSTotal.Size = New System.Drawing.Size(158, 45)
         Me.lblSTotal.TabIndex = 25
-        Me.lblSTotal.Text = "00000000.00"
+        Me.lblSTotal.Text = "0.00"
         Me.lblSTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'txtSearch
@@ -257,7 +257,7 @@ Partial Class FrmDailySales
         Me.txtSearch.CustomButton.Visible = False
         Me.txtSearch.DisplayIcon = True
         Me.txtSearch.Icon = CType(resources.GetObject("txtSearch.Icon"), System.Drawing.Image)
-        Me.txtSearch.Lines = New String(-1) {}
+        Me.txtSearch.Lines = New String() {"1"}
         Me.txtSearch.Location = New System.Drawing.Point(6, 10)
         Me.txtSearch.MaxLength = 32767
         Me.txtSearch.Name = "txtSearch"
@@ -270,6 +270,7 @@ Partial Class FrmDailySales
         Me.txtSearch.ShortcutsEnabled = True
         Me.txtSearch.Size = New System.Drawing.Size(139, 23)
         Me.txtSearch.TabIndex = 76
+        Me.txtSearch.Text = "1"
         Me.txtSearch.UseSelectable = True
         Me.txtSearch.WaterMark = "Search Transaction"
         Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -477,7 +478,7 @@ Partial Class FrmDailySales
         Me.lblCTotal.Name = "lblCTotal"
         Me.lblCTotal.Size = New System.Drawing.Size(158, 45)
         Me.lblCTotal.TabIndex = 25
-        Me.lblCTotal.Text = "00000000.00"
+        Me.lblCTotal.Text = "0.00"
         Me.lblCTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'dgvCancelOrder
@@ -689,7 +690,7 @@ Partial Class FrmDailySales
         Me.lblDTotal.Name = "lblDTotal"
         Me.lblDTotal.Size = New System.Drawing.Size(158, 45)
         Me.lblDTotal.TabIndex = 25
-        Me.lblDTotal.Text = "00000000.00"
+        Me.lblDTotal.Text = "0.00"
         Me.lblDTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'dgvDebt
@@ -970,6 +971,7 @@ Partial Class FrmDailySales
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmDailySales"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)

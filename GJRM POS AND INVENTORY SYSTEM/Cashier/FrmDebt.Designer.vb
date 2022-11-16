@@ -141,7 +141,7 @@ Partial Class FrmDebt
         Me.btnClose.Location = New System.Drawing.Point(303, 2)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(69, 27)
-        Me.btnClose.TabIndex = 5
+        Me.btnClose.TabIndex = 3
         Me.btnClose.Text = "CLOSE"
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
@@ -185,7 +185,7 @@ Partial Class FrmDebt
         Me.btnSave.Location = New System.Drawing.Point(274, 132)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(86, 27)
-        Me.btnSave.TabIndex = 68
+        Me.btnSave.TabIndex = 2
         Me.btnSave.Text = "   &SAVE"
         Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSave.UseVisualStyleBackColor = False
@@ -209,7 +209,7 @@ Partial Class FrmDebt
         Me.txtName.Location = New System.Drawing.Point(122, 103)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(238, 23)
-        Me.txtName.TabIndex = 67
+        Me.txtName.TabIndex = 1
         '
         'Label1
         '
@@ -239,6 +239,7 @@ Partial Class FrmDebt
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FrmDebt"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

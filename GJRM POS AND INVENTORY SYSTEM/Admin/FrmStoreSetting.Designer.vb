@@ -59,7 +59,7 @@ Partial Class FrmStoreSetting
         Me.btnUpdate.Location = New System.Drawing.Point(469, 138)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(118, 30)
-        Me.btnUpdate.TabIndex = 65
+        Me.btnUpdate.TabIndex = 6
         Me.btnUpdate.Text = "   &UPDATE"
         Me.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -76,7 +76,7 @@ Partial Class FrmStoreSetting
         Me.btnSave.Location = New System.Drawing.Point(331, 138)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(118, 30)
-        Me.btnSave.TabIndex = 64
+        Me.btnSave.TabIndex = 5
         Me.btnSave.Text = "   &SAVE"
         Me.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -87,7 +87,7 @@ Partial Class FrmStoreSetting
         Me.txtHeader3.Location = New System.Drawing.Point(168, 109)
         Me.txtHeader3.Name = "txtHeader3"
         Me.txtHeader3.Size = New System.Drawing.Size(419, 23)
-        Me.txtHeader3.TabIndex = 63
+        Me.txtHeader3.TabIndex = 4
         '
         'Label3
         '
@@ -104,7 +104,7 @@ Partial Class FrmStoreSetting
         Me.txtHeader2.Location = New System.Drawing.Point(168, 80)
         Me.txtHeader2.Name = "txtHeader2"
         Me.txtHeader2.Size = New System.Drawing.Size(419, 23)
-        Me.txtHeader2.TabIndex = 61
+        Me.txtHeader2.TabIndex = 3
         '
         'Label4
         '
@@ -121,7 +121,7 @@ Partial Class FrmStoreSetting
         Me.txtHeader1.Location = New System.Drawing.Point(168, 51)
         Me.txtHeader1.Name = "txtHeader1"
         Me.txtHeader1.Size = New System.Drawing.Size(419, 23)
-        Me.txtHeader1.TabIndex = 59
+        Me.txtHeader1.TabIndex = 2
         '
         'Label2
         '
@@ -138,7 +138,7 @@ Partial Class FrmStoreSetting
         Me.txtShopName.Location = New System.Drawing.Point(168, 22)
         Me.txtShopName.Name = "txtShopName"
         Me.txtShopName.Size = New System.Drawing.Size(419, 23)
-        Me.txtShopName.TabIndex = 57
+        Me.txtShopName.TabIndex = 1
         '
         'lblUser
         '
@@ -172,7 +172,7 @@ Partial Class FrmStoreSetting
         Me.btnClose.Location = New System.Drawing.Point(547, 2)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(69, 27)
-        Me.btnClose.TabIndex = 28
+        Me.btnClose.TabIndex = 9
         Me.btnClose.Text = "CLOSE"
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
@@ -200,7 +200,7 @@ Partial Class FrmStoreSetting
         Me.btnRestore.Location = New System.Drawing.Point(296, 22)
         Me.btnRestore.Name = "btnRestore"
         Me.btnRestore.Size = New System.Drawing.Size(234, 57)
-        Me.btnRestore.TabIndex = 67
+        Me.btnRestore.TabIndex = 8
         Me.btnRestore.Text = "   RESTORE DATABASE"
         Me.btnRestore.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnRestore.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -217,7 +217,7 @@ Partial Class FrmStoreSetting
         Me.btnBackUp.Location = New System.Drawing.Point(56, 22)
         Me.btnBackUp.Name = "btnBackUp"
         Me.btnBackUp.Size = New System.Drawing.Size(234, 57)
-        Me.btnBackUp.TabIndex = 66
+        Me.btnBackUp.TabIndex = 7
         Me.btnBackUp.Text = "   BACKUP DATABASE"
         Me.btnBackUp.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnBackUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -269,6 +269,7 @@ Partial Class FrmStoreSetting
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmStoreSetting"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)

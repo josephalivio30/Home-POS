@@ -50,6 +50,7 @@ Partial Class FrmInventoryList
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
         Me.cboList = New System.Windows.Forms.ComboBox()
         Me.btnSPrint = New System.Windows.Forms.Button()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -57,7 +58,6 @@ Partial Class FrmInventoryList
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
-        Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
         CType(Me.dgvInventoryList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel18.SuspendLayout()
@@ -241,6 +241,41 @@ Partial Class FrmInventoryList
         Me.Panel1.Size = New System.Drawing.Size(1205, 30)
         Me.Panel1.TabIndex = 80
         '
+        'txtSearch
+        '
+        Me.txtSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        '
+        '
+        '
+        Me.txtSearch.CustomButton.Image = Nothing
+        Me.txtSearch.CustomButton.Location = New System.Drawing.Point(140, 1)
+        Me.txtSearch.CustomButton.Name = ""
+        Me.txtSearch.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtSearch.CustomButton.TabIndex = 1
+        Me.txtSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtSearch.CustomButton.UseSelectable = True
+        Me.txtSearch.CustomButton.Visible = False
+        Me.txtSearch.DisplayIcon = True
+        Me.txtSearch.Icon = CType(resources.GetObject("txtSearch.Icon"), System.Drawing.Image)
+        Me.txtSearch.Lines = New String(-1) {}
+        Me.txtSearch.Location = New System.Drawing.Point(817, 3)
+        Me.txtSearch.MaxLength = 32767
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSearch.PromptText = "Search Description"
+        Me.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtSearch.SelectedText = ""
+        Me.txtSearch.SelectionLength = 0
+        Me.txtSearch.SelectionStart = 0
+        Me.txtSearch.ShortcutsEnabled = True
+        Me.txtSearch.Size = New System.Drawing.Size(162, 23)
+        Me.txtSearch.TabIndex = 1
+        Me.txtSearch.UseSelectable = True
+        Me.txtSearch.WaterMark = "Search Description"
+        Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
         'cboList
         '
         Me.cboList.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -249,7 +284,7 @@ Partial Class FrmInventoryList
         Me.cboList.Location = New System.Drawing.Point(985, 3)
         Me.cboList.Name = "cboList"
         Me.cboList.Size = New System.Drawing.Size(123, 23)
-        Me.cboList.TabIndex = 49
+        Me.cboList.TabIndex = 2
         Me.cboList.Text = "Inventory Stocks"
         '
         'btnSPrint
@@ -265,7 +300,7 @@ Partial Class FrmInventoryList
         Me.btnSPrint.Location = New System.Drawing.Point(1114, 3)
         Me.btnSPrint.Name = "btnSPrint"
         Me.btnSPrint.Size = New System.Drawing.Size(78, 24)
-        Me.btnSPrint.TabIndex = 8
+        Me.btnSPrint.TabIndex = 3
         Me.btnSPrint.Text = "   PRINT"
         Me.btnSPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSPrint.UseVisualStyleBackColor = False
@@ -293,7 +328,7 @@ Partial Class FrmInventoryList
         Me.btnClose.Location = New System.Drawing.Point(1179, 0)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(26, 31)
-        Me.btnClose.TabIndex = 81
+        Me.btnClose.TabIndex = 4
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
         '
@@ -328,43 +363,8 @@ Partial Class FrmInventoryList
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(158, 45)
         Me.lblTotal.TabIndex = 25
-        Me.lblTotal.Text = "00000000.00"
+        Me.lblTotal.Text = "0.00"
         Me.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'txtSearch
-        '
-        Me.txtSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        '
-        '
-        '
-        Me.txtSearch.CustomButton.Image = Nothing
-        Me.txtSearch.CustomButton.Location = New System.Drawing.Point(140, 1)
-        Me.txtSearch.CustomButton.Name = ""
-        Me.txtSearch.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.txtSearch.CustomButton.TabIndex = 1
-        Me.txtSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.txtSearch.CustomButton.UseSelectable = True
-        Me.txtSearch.CustomButton.Visible = False
-        Me.txtSearch.DisplayIcon = True
-        Me.txtSearch.Icon = CType(resources.GetObject("txtSearch.Icon"), System.Drawing.Image)
-        Me.txtSearch.Lines = New String(-1) {}
-        Me.txtSearch.Location = New System.Drawing.Point(817, 3)
-        Me.txtSearch.MaxLength = 32767
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSearch.PromptText = "Search Description"
-        Me.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtSearch.SelectedText = ""
-        Me.txtSearch.SelectionLength = 0
-        Me.txtSearch.SelectionStart = 0
-        Me.txtSearch.ShortcutsEnabled = True
-        Me.txtSearch.Size = New System.Drawing.Size(162, 23)
-        Me.txtSearch.TabIndex = 81
-        Me.txtSearch.UseSelectable = True
-        Me.txtSearch.WaterMark = "Search Description"
-        Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.txtSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'FrmInventoryList
         '
@@ -379,6 +379,7 @@ Partial Class FrmInventoryList
         Me.Controls.Add(Me.btnClose)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmInventoryList"
         CType(Me.dgvInventoryList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)

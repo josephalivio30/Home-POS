@@ -82,7 +82,7 @@ Partial Class FrmCancelOrder
         Me.btnClose.Location = New System.Drawing.Point(444, 2)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(69, 27)
-        Me.btnClose.TabIndex = 26
+        Me.btnClose.TabIndex = 6
         Me.btnClose.Text = "CLOSE"
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
@@ -309,7 +309,7 @@ Partial Class FrmCancelOrder
         Me.txtCQty.Location = New System.Drawing.Point(172, 108)
         Me.txtCQty.Name = "txtCQty"
         Me.txtCQty.Size = New System.Drawing.Size(145, 23)
-        Me.txtCQty.TabIndex = 125
+        Me.txtCQty.TabIndex = 3
         '
         'btnSave
         '
@@ -322,7 +322,7 @@ Partial Class FrmCancelOrder
         Me.btnSave.Location = New System.Drawing.Point(377, 189)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(95, 37)
-        Me.btnSave.TabIndex = 127
+        Me.btnSave.TabIndex = 5
         Me.btnSave.Text = "   &SAVE"
         Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSave.UseVisualStyleBackColor = False
@@ -333,7 +333,7 @@ Partial Class FrmCancelOrder
         Me.rbNo.Location = New System.Drawing.Point(221, 78)
         Me.rbNo.Name = "rbNo"
         Me.rbNo.Size = New System.Drawing.Size(42, 19)
-        Me.rbNo.TabIndex = 126
+        Me.rbNo.TabIndex = 2
         Me.rbNo.TabStop = True
         Me.rbNo.Text = "NO"
         Me.rbNo.UseVisualStyleBackColor = True
@@ -344,7 +344,7 @@ Partial Class FrmCancelOrder
         Me.rbYes.Location = New System.Drawing.Point(172, 78)
         Me.rbYes.Name = "rbYes"
         Me.rbYes.Size = New System.Drawing.Size(43, 19)
-        Me.rbYes.TabIndex = 125
+        Me.rbYes.TabIndex = 1
         Me.rbYes.TabStop = True
         Me.rbYes.Text = "YES"
         Me.rbYes.UseVisualStyleBackColor = True
@@ -377,7 +377,7 @@ Partial Class FrmCancelOrder
         Me.txtReason.Location = New System.Drawing.Point(172, 137)
         Me.txtReason.Name = "txtReason"
         Me.txtReason.Size = New System.Drawing.Size(300, 46)
-        Me.txtReason.TabIndex = 117
+        Me.txtReason.TabIndex = 4
         Me.txtReason.Text = ""
         '
         'txtCancelBy
@@ -445,6 +445,7 @@ Partial Class FrmCancelOrder
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmCancelOrder"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)

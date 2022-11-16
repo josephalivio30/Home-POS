@@ -40,9 +40,6 @@ Partial Class FrmRDebt
         Me.Label16 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.dgvDebt = New System.Windows.Forms.DataGridView()
-        Me.Panel18 = New System.Windows.Forms.Panel()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.lblTotal = New System.Windows.Forms.Label()
         Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -50,6 +47,9 @@ Partial Class FrmRDebt
         Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColEdit = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Panel18 = New System.Windows.Forms.Panel()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.lblTotal = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvDebt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel18.SuspendLayout()
@@ -86,7 +86,7 @@ Partial Class FrmRDebt
         Me.cboName.Location = New System.Drawing.Point(940, 5)
         Me.cboName.Name = "cboName"
         Me.cboName.Size = New System.Drawing.Size(161, 23)
-        Me.cboName.TabIndex = 70
+        Me.cboName.TabIndex = 1
         Me.cboName.Text = "ALL NAMES"
         '
         'btnPayAll
@@ -102,7 +102,7 @@ Partial Class FrmRDebt
         Me.btnPayAll.Location = New System.Drawing.Point(1107, 1)
         Me.btnPayAll.Name = "btnPayAll"
         Me.btnPayAll.Size = New System.Drawing.Size(84, 28)
-        Me.btnPayAll.TabIndex = 69
+        Me.btnPayAll.TabIndex = 2
         Me.btnPayAll.Text = "   PAY ALL"
         Me.btnPayAll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnPayAll.UseVisualStyleBackColor = False
@@ -130,7 +130,7 @@ Partial Class FrmRDebt
         Me.btnClose.Location = New System.Drawing.Point(1179, 0)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(26, 31)
-        Me.btnClose.TabIndex = 56
+        Me.btnClose.TabIndex = 3
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
         '
@@ -185,40 +185,6 @@ Partial Class FrmRDebt
         Me.dgvDebt.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvDebt.Size = New System.Drawing.Size(1013, 594)
         Me.dgvDebt.TabIndex = 67
-        '
-        'Panel18
-        '
-        Me.Panel18.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel18.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.Panel18.Controls.Add(Me.Label18)
-        Me.Panel18.Controls.Add(Me.lblTotal)
-        Me.Panel18.Location = New System.Drawing.Point(1031, 67)
-        Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(161, 60)
-        Me.Panel18.TabIndex = 78
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.Location = New System.Drawing.Point(3, 45)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(59, 13)
-        Me.Label18.TabIndex = 0
-        Me.Label18.Text = "TOTAL DEBT"
-        '
-        'lblTotal
-        '
-        Me.lblTotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblTotal.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotal.ForeColor = System.Drawing.Color.White
-        Me.lblTotal.Location = New System.Drawing.Point(2, 0)
-        Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(158, 45)
-        Me.lblTotal.TabIndex = 25
-        Me.lblTotal.Text = "00000000.00"
-        Me.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'DataGridViewTextBoxColumn13
         '
@@ -288,6 +254,40 @@ Partial Class FrmRDebt
         Me.ColEdit.ReadOnly = True
         Me.ColEdit.Width = 5
         '
+        'Panel18
+        '
+        Me.Panel18.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel18.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.Panel18.Controls.Add(Me.Label18)
+        Me.Panel18.Controls.Add(Me.lblTotal)
+        Me.Panel18.Location = New System.Drawing.Point(1031, 67)
+        Me.Panel18.Name = "Panel18"
+        Me.Panel18.Size = New System.Drawing.Size(161, 60)
+        Me.Panel18.TabIndex = 78
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.Color.White
+        Me.Label18.Location = New System.Drawing.Point(3, 45)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(59, 13)
+        Me.Label18.TabIndex = 0
+        Me.Label18.Text = "TOTAL DEBT"
+        '
+        'lblTotal
+        '
+        Me.lblTotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblTotal.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotal.ForeColor = System.Drawing.Color.White
+        Me.lblTotal.Location = New System.Drawing.Point(2, 0)
+        Me.lblTotal.Name = "lblTotal"
+        Me.lblTotal.Size = New System.Drawing.Size(158, 45)
+        Me.lblTotal.TabIndex = 25
+        Me.lblTotal.Text = "0.00"
+        Me.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'FrmRDebt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -301,6 +301,7 @@ Partial Class FrmRDebt
         Me.Controls.Add(Me.btnClose)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmRDebt"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

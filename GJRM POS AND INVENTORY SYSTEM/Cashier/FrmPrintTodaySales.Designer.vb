@@ -45,7 +45,7 @@ Partial Class FrmPrintTodaySales
         Me.btnPrint.Location = New System.Drawing.Point(29, 412)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(205, 40)
-        Me.btnPrint.TabIndex = 37
+        Me.btnPrint.TabIndex = 1
         Me.btnPrint.Text = "   PRINT"
         Me.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -75,7 +75,7 @@ Partial Class FrmPrintTodaySales
         Me.btnClose.Location = New System.Drawing.Point(193, 2)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(69, 27)
-        Me.btnClose.TabIndex = 28
+        Me.btnClose.TabIndex = 2
         Me.btnClose.Text = "CLOSE"
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
@@ -155,6 +155,7 @@ Partial Class FrmPrintTodaySales
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.Black
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmPrintTodaySales"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)

@@ -24,9 +24,17 @@
         End Try
     End Sub
     Private Sub Ldt1_ValueChanged(sender As Object, e As EventArgs) Handles Ldt1.ValueChanged
+        If Ldt1.Value > Ldt2.Value Then
+            Ldt1.Value = Ldt2.Value
+            MsgBox("From date must be lower or equal to the To date", vbExclamation)
+        End If
         LoadLogHistory()
     End Sub
     Private Sub Ldt2_ValueChanged(sender As Object, e As EventArgs) Handles Ldt2.ValueChanged
+        If Ldt1.Value > Ldt2.Value Then
+            Ldt2.Value = Ldt1.Value
+            MsgBox("From date must be higher or equal to the To date", vbExclamation)
+        End If
         LoadLogHistory()
     End Sub
     Private Sub FrmRLogHistory_Load(sender As Object, e As EventArgs) Handles MyBase.Load

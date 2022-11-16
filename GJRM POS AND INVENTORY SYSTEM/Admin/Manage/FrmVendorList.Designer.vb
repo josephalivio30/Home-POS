@@ -81,7 +81,7 @@ Partial Class FrmVendorList
         Me.txtSearch.SelectionStart = 0
         Me.txtSearch.ShortcutsEnabled = True
         Me.txtSearch.Size = New System.Drawing.Size(213, 23)
-        Me.txtSearch.TabIndex = 55
+        Me.txtSearch.TabIndex = 1
         Me.txtSearch.UseSelectable = True
         Me.txtSearch.WaterMark = "Search Vendor"
         Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -110,7 +110,7 @@ Partial Class FrmVendorList
         Me.btnCreateNew.Location = New System.Drawing.Point(189, 40)
         Me.btnCreateNew.Name = "btnCreateNew"
         Me.btnCreateNew.Size = New System.Drawing.Size(119, 29)
-        Me.btnCreateNew.TabIndex = 54
+        Me.btnCreateNew.TabIndex = 2
         Me.btnCreateNew.Text = "   Add Vendor"
         Me.btnCreateNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCreateNew.UseVisualStyleBackColor = False
@@ -275,7 +275,7 @@ Partial Class FrmVendorList
         Me.btnClose.Location = New System.Drawing.Point(908, 6)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(26, 23)
-        Me.btnClose.TabIndex = 56
+        Me.btnClose.TabIndex = 3
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
         '
@@ -293,6 +293,7 @@ Partial Class FrmVendorList
         Me.Controls.Add(Me.btnClose)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmVendorList"
         CType(Me.dgvVendor, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -71,7 +71,7 @@ Partial Class FrmSearchProductStockIn
         Me.txtSearch.SelectionStart = 0
         Me.txtSearch.ShortcutsEnabled = True
         Me.txtSearch.Size = New System.Drawing.Size(345, 23)
-        Me.txtSearch.TabIndex = 47
+        Me.txtSearch.TabIndex = 1
         Me.txtSearch.UseSelectable = True
         Me.txtSearch.WaterMark = "Search Description"
         Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -199,7 +199,7 @@ Partial Class FrmSearchProductStockIn
         Me.btnClose.Location = New System.Drawing.Point(866, 2)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(69, 27)
-        Me.btnClose.TabIndex = 28
+        Me.btnClose.TabIndex = 2
         Me.btnClose.Text = "CLOSE"
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
@@ -228,6 +228,7 @@ Partial Class FrmSearchProductStockIn
         Me.Controls.Add(Me.dgvOnhand)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FrmSearchProductStockIn"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

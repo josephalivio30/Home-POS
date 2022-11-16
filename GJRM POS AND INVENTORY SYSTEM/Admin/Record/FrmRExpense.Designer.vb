@@ -285,7 +285,7 @@ Partial Class FrmRExpense
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(158, 45)
         Me.lblTotal.TabIndex = 25
-        Me.lblTotal.Text = "00000000.00"
+        Me.lblTotal.Text = "0.00"
         Me.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'FrmRExpense
@@ -301,6 +301,7 @@ Partial Class FrmRExpense
         Me.Controls.Add(Me.btnClose)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmRExpense"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

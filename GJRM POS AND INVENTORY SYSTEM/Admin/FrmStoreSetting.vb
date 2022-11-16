@@ -68,6 +68,8 @@
                     _h3 = dr.Item("h3").ToString
                     cn.Close()
                     dr.Close()
+
+                    AuditTrail("Added the store settings")
                     Me.Dispose()
                 End If
                 FrmMain.lblShopName.Text = _shopname
@@ -103,6 +105,7 @@
                     cn.Close()
                     dr.Close()
 
+                    AuditTrail("Updated the store settings")
                     Me.Dispose()
                 End If
                 FrmMain.lblShopName.Text = _shopname
@@ -150,6 +153,7 @@
                 If MsgBox(msgtex, vbYesNo + vbQuestion) = vbYes Then
                     FileCopy(OpenFileDialog1.FileName, restorefile)
                     MsgBox("Database has been restore successfully.", vbInformation)
+                    LoadSetting()
                 End If
             End If
         Catch ex As Exception

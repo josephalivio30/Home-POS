@@ -63,10 +63,18 @@
     End Sub
 
     Private Sub Adt1_ValueChanged(sender As Object, e As EventArgs) Handles Adt1.ValueChanged
+        If Adt1.Value > Adt2.Value Then
+            Adt1.Value = Adt2.Value
+            MsgBox("From date must be lower or equal to the To date", vbExclamation)
+        End If
         LoadAgentSales()
     End Sub
 
     Private Sub Adt2_ValueChanged(sender As Object, e As EventArgs) Handles Adt2.ValueChanged
+        If Adt1.Value > Adt2.Value Then
+            Adt2.Value = Adt1.Value
+            MsgBox("From date must be higher or equal to the To date", vbExclamation)
+        End If
         LoadAgentSales()
     End Sub
 

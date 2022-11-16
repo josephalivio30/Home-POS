@@ -147,7 +147,7 @@
                     UpdateData("delete from tblsales where totalbill = 0")
 
                     MsgBox("Order transaction has been successfully cancelled.", vbInformation)
-                    AuditTrail("cancelled product name " & FrmCancelOrder.txtDesc.Text)
+                    AuditTrail("Cancelled " & FrmCancelOrder.txtCQty.Text & " qty of " & FrmCancelOrder.txtDesc.Text)
                 End If
                 Me.Dispose()
                 FrmCancelOrder.Dispose()

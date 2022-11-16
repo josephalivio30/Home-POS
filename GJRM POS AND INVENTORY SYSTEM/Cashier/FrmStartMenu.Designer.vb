@@ -85,7 +85,7 @@ Partial Class FrmStartMenu
         Me.btnEnd.Location = New System.Drawing.Point(127, 444)
         Me.btnEnd.Name = "btnEnd"
         Me.btnEnd.Size = New System.Drawing.Size(116, 27)
-        Me.btnEnd.TabIndex = 74
+        Me.btnEnd.TabIndex = 3
         Me.btnEnd.Text = "   END OF DAY"
         Me.btnEnd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnEnd.UseVisualStyleBackColor = False
@@ -101,7 +101,7 @@ Partial Class FrmStartMenu
         Me.btnStart.Location = New System.Drawing.Point(5, 444)
         Me.btnStart.Name = "btnStart"
         Me.btnStart.Size = New System.Drawing.Size(116, 27)
-        Me.btnStart.TabIndex = 73
+        Me.btnStart.TabIndex = 2
         Me.btnStart.Text = "   START OF DAY"
         Me.btnStart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnStart.UseVisualStyleBackColor = False
@@ -135,7 +135,7 @@ Partial Class FrmStartMenu
         Me.txtStartingCash.SelectionStart = 0
         Me.txtStartingCash.ShortcutsEnabled = True
         Me.txtStartingCash.Size = New System.Drawing.Size(253, 23)
-        Me.txtStartingCash.TabIndex = 72
+        Me.txtStartingCash.TabIndex = 1
         Me.txtStartingCash.UseSelectable = True
         Me.txtStartingCash.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtStartingCash.WaterMarkFont = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -511,7 +511,7 @@ Partial Class FrmStartMenu
         Me.btnPrint.Location = New System.Drawing.Point(249, 444)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(120, 27)
-        Me.btnPrint.TabIndex = 75
+        Me.btnPrint.TabIndex = 4
         Me.btnPrint.Text = "   SALES REPORT"
         Me.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnPrint.UseVisualStyleBackColor = False
@@ -799,6 +799,7 @@ Partial Class FrmStartMenu
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmStartMenu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()

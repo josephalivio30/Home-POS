@@ -116,7 +116,7 @@ Partial Class FrmMain
         Me.panelOutput.Controls.Add(Me.pDashBoard)
         Me.panelOutput.Location = New System.Drawing.Point(296, 0)
         Me.panelOutput.Name = "panelOutput"
-        Me.panelOutput.Size = New System.Drawing.Size(1076, 892)
+        Me.panelOutput.Size = New System.Drawing.Size(1076, 772)
         Me.panelOutput.TabIndex = 19
         '
         'pDashBoard
@@ -441,7 +441,7 @@ Partial Class FrmMain
         Me.btnAccount.Name = "btnAccount"
         Me.btnAccount.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnAccount.Size = New System.Drawing.Size(280, 45)
-        Me.btnAccount.TabIndex = 48
+        Me.btnAccount.TabIndex = 24
         Me.btnAccount.Text = "  ACCOUNT"
         Me.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -462,7 +462,7 @@ Partial Class FrmMain
         Me.btnSetting.Name = "btnSetting"
         Me.btnSetting.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnSetting.Size = New System.Drawing.Size(280, 45)
-        Me.btnSetting.TabIndex = 47
+        Me.btnSetting.TabIndex = 23
         Me.btnSetting.Text = "   STORE SETTINGS "
         Me.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -493,7 +493,7 @@ Partial Class FrmMain
         Me.btnHDebt.Name = "btnHDebt"
         Me.btnHDebt.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnHDebt.Size = New System.Drawing.Size(280, 45)
-        Me.btnHDebt.TabIndex = 44
+        Me.btnHDebt.TabIndex = 22
         Me.btnHDebt.Text = "   DEBT HISTORY"
         Me.btnHDebt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnHDebt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -514,7 +514,7 @@ Partial Class FrmMain
         Me.btnRDebt.Name = "btnRDebt"
         Me.btnRDebt.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnRDebt.Size = New System.Drawing.Size(280, 45)
-        Me.btnRDebt.TabIndex = 43
+        Me.btnRDebt.TabIndex = 21
         Me.btnRDebt.Text = "   DEBT REPORT"
         Me.btnRDebt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnRDebt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -535,7 +535,7 @@ Partial Class FrmMain
         Me.btnDebt.Name = "btnDebt"
         Me.btnDebt.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnDebt.Size = New System.Drawing.Size(280, 45)
-        Me.btnDebt.TabIndex = 44
+        Me.btnDebt.TabIndex = 20
         Me.btnDebt.Text = "   DEBT"
         Me.btnDebt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnDebt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -572,7 +572,7 @@ Partial Class FrmMain
         Me.btnAuditTrail.Name = "btnAuditTrail"
         Me.btnAuditTrail.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnAuditTrail.Size = New System.Drawing.Size(280, 45)
-        Me.btnAuditTrail.TabIndex = 42
+        Me.btnAuditTrail.TabIndex = 19
         Me.btnAuditTrail.Text = "   AUDIT TRAIL"
         Me.btnAuditTrail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAuditTrail.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -593,7 +593,7 @@ Partial Class FrmMain
         Me.btnLogHistory.Name = "btnLogHistory"
         Me.btnLogHistory.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnLogHistory.Size = New System.Drawing.Size(280, 45)
-        Me.btnLogHistory.TabIndex = 41
+        Me.btnLogHistory.TabIndex = 18
         Me.btnLogHistory.Text = "   LOG HISTORY"
         Me.btnLogHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLogHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -614,7 +614,7 @@ Partial Class FrmMain
         Me.btnExpense.Name = "btnExpense"
         Me.btnExpense.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnExpense.Size = New System.Drawing.Size(280, 45)
-        Me.btnExpense.TabIndex = 39
+        Me.btnExpense.TabIndex = 17
         Me.btnExpense.Text = "   EXPENSES"
         Me.btnExpense.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnExpense.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -635,7 +635,7 @@ Partial Class FrmMain
         Me.btnBestSelling.Name = "btnBestSelling"
         Me.btnBestSelling.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnBestSelling.Size = New System.Drawing.Size(280, 45)
-        Me.btnBestSelling.TabIndex = 38
+        Me.btnBestSelling.TabIndex = 16
         Me.btnBestSelling.Text = "   BEST SELLING"
         Me.btnBestSelling.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBestSelling.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -656,7 +656,7 @@ Partial Class FrmMain
         Me.btnRefund.Name = "btnRefund"
         Me.btnRefund.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnRefund.Size = New System.Drawing.Size(280, 45)
-        Me.btnRefund.TabIndex = 43
+        Me.btnRefund.TabIndex = 15
         Me.btnRefund.Text = "   CANCELLED ORDER"
         Me.btnRefund.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnRefund.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -677,7 +677,7 @@ Partial Class FrmMain
         Me.btnAgentSales.Name = "btnAgentSales"
         Me.btnAgentSales.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnAgentSales.Size = New System.Drawing.Size(280, 45)
-        Me.btnAgentSales.TabIndex = 37
+        Me.btnAgentSales.TabIndex = 14
         Me.btnAgentSales.Text = "   AGENT SALES"
         Me.btnAgentSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAgentSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -698,7 +698,7 @@ Partial Class FrmMain
         Me.btnSales.Name = "btnSales"
         Me.btnSales.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnSales.Size = New System.Drawing.Size(280, 45)
-        Me.btnSales.TabIndex = 36
+        Me.btnSales.TabIndex = 13
         Me.btnSales.Text = "   SALES "
         Me.btnSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -719,7 +719,7 @@ Partial Class FrmMain
         Me.btnRecord.Name = "btnRecord"
         Me.btnRecord.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnRecord.Size = New System.Drawing.Size(280, 45)
-        Me.btnRecord.TabIndex = 38
+        Me.btnRecord.TabIndex = 12
         Me.btnRecord.Text = "   SALES && RECORD"
         Me.btnRecord.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnRecord.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -753,7 +753,7 @@ Partial Class FrmMain
         Me.btnInventoryList.Name = "btnInventoryList"
         Me.btnInventoryList.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnInventoryList.Size = New System.Drawing.Size(280, 45)
-        Me.btnInventoryList.TabIndex = 33
+        Me.btnInventoryList.TabIndex = 11
         Me.btnInventoryList.Text = "   STOCK INVENTORY"
         Me.btnInventoryList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnInventoryList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -774,7 +774,7 @@ Partial Class FrmMain
         Me.btnStockAdjustment.Name = "btnStockAdjustment"
         Me.btnStockAdjustment.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnStockAdjustment.Size = New System.Drawing.Size(280, 45)
-        Me.btnStockAdjustment.TabIndex = 31
+        Me.btnStockAdjustment.TabIndex = 10
         Me.btnStockAdjustment.Text = "   STOCK ADJUSTMENT"
         Me.btnStockAdjustment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnStockAdjustment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -795,7 +795,7 @@ Partial Class FrmMain
         Me.btnStockInHistory.Name = "btnStockInHistory"
         Me.btnStockInHistory.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnStockInHistory.Size = New System.Drawing.Size(280, 45)
-        Me.btnStockInHistory.TabIndex = 30
+        Me.btnStockInHistory.TabIndex = 9
         Me.btnStockInHistory.Text = "   STOCK IN HISTORY"
         Me.btnStockInHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnStockInHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -816,7 +816,7 @@ Partial Class FrmMain
         Me.btnStockEntry.Name = "btnStockEntry"
         Me.btnStockEntry.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnStockEntry.Size = New System.Drawing.Size(280, 45)
-        Me.btnStockEntry.TabIndex = 28
+        Me.btnStockEntry.TabIndex = 8
         Me.btnStockEntry.Text = "   STOCK ENTRY"
         Me.btnStockEntry.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnStockEntry.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -837,7 +837,7 @@ Partial Class FrmMain
         Me.btnStock.Name = "btnStock"
         Me.btnStock.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnStock.Size = New System.Drawing.Size(280, 45)
-        Me.btnStock.TabIndex = 36
+        Me.btnStock.TabIndex = 7
         Me.btnStock.Text = "   STOCK"
         Me.btnStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -858,7 +858,7 @@ Partial Class FrmMain
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnLogout.Size = New System.Drawing.Size(280, 45)
-        Me.btnLogout.TabIndex = 33
+        Me.btnLogout.TabIndex = 25
         Me.btnLogout.Text = "   LOGOUT"
         Me.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnLogout.UseVisualStyleBackColor = False
@@ -892,7 +892,7 @@ Partial Class FrmMain
         Me.btnAgent.Name = "btnAgent"
         Me.btnAgent.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnAgent.Size = New System.Drawing.Size(280, 45)
-        Me.btnAgent.TabIndex = 34
+        Me.btnAgent.TabIndex = 6
         Me.btnAgent.Text = "   AGENT"
         Me.btnAgent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAgent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -913,7 +913,7 @@ Partial Class FrmMain
         Me.btnVendor.Name = "btnVendor"
         Me.btnVendor.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnVendor.Size = New System.Drawing.Size(280, 45)
-        Me.btnVendor.TabIndex = 33
+        Me.btnVendor.TabIndex = 5
         Me.btnVendor.Text = "   VENDOR"
         Me.btnVendor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnVendor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -934,7 +934,7 @@ Partial Class FrmMain
         Me.btnBrand.Name = "btnBrand"
         Me.btnBrand.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnBrand.Size = New System.Drawing.Size(280, 45)
-        Me.btnBrand.TabIndex = 32
+        Me.btnBrand.TabIndex = 4
         Me.btnBrand.Text = "   BRAND"
         Me.btnBrand.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBrand.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -955,7 +955,7 @@ Partial Class FrmMain
         Me.btnCategory.Name = "btnCategory"
         Me.btnCategory.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnCategory.Size = New System.Drawing.Size(280, 45)
-        Me.btnCategory.TabIndex = 30
+        Me.btnCategory.TabIndex = 3
         Me.btnCategory.Text = "   CATEGORY"
         Me.btnCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCategory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -976,7 +976,7 @@ Partial Class FrmMain
         Me.btnProducts.Name = "btnProducts"
         Me.btnProducts.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnProducts.Size = New System.Drawing.Size(280, 45)
-        Me.btnProducts.TabIndex = 28
+        Me.btnProducts.TabIndex = 2
         Me.btnProducts.Text = "   PRODUCTS"
         Me.btnProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnProducts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -997,7 +997,7 @@ Partial Class FrmMain
         Me.btnManage.Name = "btnManage"
         Me.btnManage.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnManage.Size = New System.Drawing.Size(280, 45)
-        Me.btnManage.TabIndex = 27
+        Me.btnManage.TabIndex = 1
         Me.btnManage.Text = "   MANAGE"
         Me.btnManage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnManage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1056,6 +1056,7 @@ Partial Class FrmMain
         Me.Controls.Add(Me.panelOutput)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.panelOutput.ResumeLayout(False)

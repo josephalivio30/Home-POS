@@ -43,7 +43,7 @@
                     cm.ExecuteNonQuery()
                     cn.Close()
                     MsgBox("Record has been successfully deleted", vbInformation)
-                    AuditTrail("deleted vendor name " & dgvVendor.Rows(e.RowIndex).Cells(2).Value.ToString)
+                    AuditTrail("Deleted vendor name " & dgvVendor.Rows(e.RowIndex).Cells(2).Value.ToString)
                     LoadVendor()
                 End If
             End If

@@ -131,7 +131,7 @@
                         UpdateData("delete from tblsales where totalbill = 0")
 
                         MsgBox("Order transaction has been successfully cancelled.", vbInformation)
-                        AuditTrail("voided product name " & txtDesc.Text)
+                        AuditTrail("Cancelled " & txtCQty.Text & " qty of " & txtDesc.Text)
                     End If
                     FrmDailySales.LoadSale()
                     FrmRSales.LoadSale()

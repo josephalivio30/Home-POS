@@ -93,7 +93,7 @@ Partial Class FrmDiscount
         Me.btnClose.Location = New System.Drawing.Point(243, 2)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(69, 27)
-        Me.btnClose.TabIndex = 28
+        Me.btnClose.TabIndex = 3
         Me.btnClose.Text = "CLOSE"
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
@@ -170,7 +170,7 @@ Partial Class FrmDiscount
         Me.txtDiscount.Location = New System.Drawing.Point(12, 112)
         Me.txtDiscount.Name = "txtDiscount"
         Me.txtDiscount.Size = New System.Drawing.Size(291, 40)
-        Me.txtDiscount.TabIndex = 38
+        Me.txtDiscount.TabIndex = 1
         Me.txtDiscount.Text = "0.00"
         Me.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -185,7 +185,7 @@ Partial Class FrmDiscount
         Me.btnApply.Location = New System.Drawing.Point(27, 219)
         Me.btnApply.Name = "btnApply"
         Me.btnApply.Size = New System.Drawing.Size(264, 43)
-        Me.btnApply.TabIndex = 45
+        Me.btnApply.TabIndex = 2
         Me.btnApply.Text = "  &APPLY DISCOUNT"
         Me.btnApply.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnApply.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -218,6 +218,7 @@ Partial Class FrmDiscount
         Me.Controls.Add(Me.txtDiscount)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmDiscount"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)

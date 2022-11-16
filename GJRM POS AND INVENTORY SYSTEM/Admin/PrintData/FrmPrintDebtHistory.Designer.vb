@@ -22,6 +22,7 @@ Partial Class FrmPrintDebtHistory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPrintDebtHistory))
         Me.RvDebtHistory = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.SuspendLayout()
         '
@@ -40,6 +41,7 @@ Partial Class FrmPrintDebtHistory
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.RvDebtHistory)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmPrintDebtHistory"
         Me.Text = "Debt History"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

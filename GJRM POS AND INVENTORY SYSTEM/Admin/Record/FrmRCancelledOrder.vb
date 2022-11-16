@@ -50,10 +50,18 @@
     End Sub
 
     Private Sub Cdt1_ValueChanged(sender As Object, e As EventArgs) Handles Cdt1.ValueChanged
+        If Cdt1.Value > Cdt2.Value Then
+            Cdt1.Value = Cdt2.Value
+            MsgBox("From date must be lower or equal to the To date", vbExclamation)
+        End If
         LoadCancelOrder()
     End Sub
 
     Private Sub Cdt2_ValueChanged(sender As Object, e As EventArgs) Handles Cdt2.ValueChanged
+        If Cdt1.Value > Cdt2.Value Then
+            Cdt2.Value = Cdt1.Value
+            MsgBox("From date must be higher or equal to the To date", vbExclamation)
+        End If
         LoadCancelOrder()
     End Sub
 

@@ -122,7 +122,7 @@ Partial Class FrmAccount
         Me.txtCode.Location = New System.Drawing.Point(120, 109)
         Me.txtCode.Name = "txtCode"
         Me.txtCode.Size = New System.Drawing.Size(326, 23)
-        Me.txtCode.TabIndex = 40
+        Me.txtCode.TabIndex = 4
         '
         'Label5
         '
@@ -149,7 +149,7 @@ Partial Class FrmAccount
         Me.cboRole.Location = New System.Drawing.Point(120, 164)
         Me.cboRole.Name = "cboRole"
         Me.cboRole.Size = New System.Drawing.Size(326, 23)
-        Me.cboRole.TabIndex = 42
+        Me.cboRole.TabIndex = 6
         '
         'btnCancel
         '
@@ -162,7 +162,7 @@ Partial Class FrmAccount
         Me.btnCancel.Location = New System.Drawing.Point(315, 194)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(131, 30)
-        Me.btnCancel.TabIndex = 44
+        Me.btnCancel.TabIndex = 8
         Me.btnCancel.Text = "   &CANCEL"
         Me.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -179,7 +179,7 @@ Partial Class FrmAccount
         Me.btnSave.Location = New System.Drawing.Point(177, 194)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(132, 30)
-        Me.btnSave.TabIndex = 43
+        Me.btnSave.TabIndex = 7
         Me.btnSave.Text = "   CREATE"
         Me.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -191,7 +191,7 @@ Partial Class FrmAccount
         Me.txtName.Location = New System.Drawing.Point(120, 137)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(326, 23)
-        Me.txtName.TabIndex = 41
+        Me.txtName.TabIndex = 5
         '
         'Label3
         '
@@ -207,7 +207,7 @@ Partial Class FrmAccount
         Me.txtConfirm.Location = New System.Drawing.Point(120, 81)
         Me.txtConfirm.Name = "txtConfirm"
         Me.txtConfirm.Size = New System.Drawing.Size(326, 23)
-        Me.txtConfirm.TabIndex = 39
+        Me.txtConfirm.TabIndex = 3
         '
         'Label4
         '
@@ -223,7 +223,7 @@ Partial Class FrmAccount
         Me.txtPass.Location = New System.Drawing.Point(120, 52)
         Me.txtPass.Name = "txtPass"
         Me.txtPass.Size = New System.Drawing.Size(326, 23)
-        Me.txtPass.TabIndex = 37
+        Me.txtPass.TabIndex = 2
         '
         'Label2
         '
@@ -239,7 +239,7 @@ Partial Class FrmAccount
         Me.txtUser.Location = New System.Drawing.Point(120, 23)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(326, 23)
-        Me.txtUser.TabIndex = 35
+        Me.txtUser.TabIndex = 1
         '
         'lblUser
         '
@@ -394,7 +394,7 @@ Partial Class FrmAccount
         Me.txtOldPass.Location = New System.Drawing.Point(122, 76)
         Me.txtOldPass.Name = "txtOldPass"
         Me.txtOldPass.Size = New System.Drawing.Size(326, 23)
-        Me.txtOldPass.TabIndex = 59
+        Me.txtOldPass.TabIndex = 10
         '
         'Label6
         '
@@ -416,7 +416,7 @@ Partial Class FrmAccount
         Me.txtCCancel.Location = New System.Drawing.Point(317, 163)
         Me.txtCCancel.Name = "txtCCancel"
         Me.txtCCancel.Size = New System.Drawing.Size(131, 30)
-        Me.txtCCancel.TabIndex = 57
+        Me.txtCCancel.TabIndex = 14
         Me.txtCCancel.Text = "   &CANCEL"
         Me.txtCCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.txtCCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -433,7 +433,7 @@ Partial Class FrmAccount
         Me.txtCSave.Location = New System.Drawing.Point(179, 163)
         Me.txtCSave.Name = "txtCSave"
         Me.txtCSave.Size = New System.Drawing.Size(132, 30)
-        Me.txtCSave.TabIndex = 56
+        Me.txtCSave.TabIndex = 13
         Me.txtCSave.Text = "   SAVE"
         Me.txtCSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.txtCSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -444,7 +444,7 @@ Partial Class FrmAccount
         Me.txtCNewPass.Location = New System.Drawing.Point(122, 134)
         Me.txtCNewPass.Name = "txtCNewPass"
         Me.txtCNewPass.Size = New System.Drawing.Size(326, 23)
-        Me.txtCNewPass.TabIndex = 53
+        Me.txtCNewPass.TabIndex = 12
         '
         'Label7
         '
@@ -460,7 +460,7 @@ Partial Class FrmAccount
         Me.txtNewPass.Location = New System.Drawing.Point(122, 105)
         Me.txtNewPass.Name = "txtNewPass"
         Me.txtNewPass.Size = New System.Drawing.Size(326, 23)
-        Me.txtNewPass.TabIndex = 51
+        Me.txtNewPass.TabIndex = 11
         '
         'Label8
         '
@@ -476,7 +476,7 @@ Partial Class FrmAccount
         Me.txtCUser.Location = New System.Drawing.Point(122, 47)
         Me.txtCUser.Name = "txtCUser"
         Me.txtCUser.Size = New System.Drawing.Size(326, 23)
-        Me.txtCUser.TabIndex = 49
+        Me.txtCUser.TabIndex = 9
         '
         'Label9
         '
@@ -511,7 +511,7 @@ Partial Class FrmAccount
         Me.btnClose.Location = New System.Drawing.Point(403, 2)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(69, 27)
-        Me.btnClose.TabIndex = 45
+        Me.btnClose.TabIndex = 15
         Me.btnClose.Text = "CLOSE"
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
@@ -571,6 +571,7 @@ Partial Class FrmAccount
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmAccount"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.mtcAccount.ResumeLayout(False)

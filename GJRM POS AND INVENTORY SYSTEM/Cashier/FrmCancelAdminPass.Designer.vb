@@ -64,7 +64,7 @@ Partial Class FrmCancelAdminPass
         Me.txtPass.SelectionStart = 0
         Me.txtPass.ShortcutsEnabled = True
         Me.txtPass.Size = New System.Drawing.Size(324, 26)
-        Me.txtPass.TabIndex = 44
+        Me.txtPass.TabIndex = 1
         Me.txtPass.UseSelectable = True
         Me.txtPass.WaterMark = "Administrator Password"
         Me.txtPass.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -94,7 +94,7 @@ Partial Class FrmCancelAdminPass
         Me.btnClose.Location = New System.Drawing.Point(283, 2)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(69, 27)
-        Me.btnClose.TabIndex = 28
+        Me.btnClose.TabIndex = 3
         Me.btnClose.Text = "CLOSE"
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
@@ -154,7 +154,7 @@ Partial Class FrmCancelAdminPass
         Me.btnSave.Location = New System.Drawing.Point(242, 91)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(98, 27)
-        Me.btnSave.TabIndex = 42
+        Me.btnSave.TabIndex = 2
         Me.btnSave.Text = "   &CONFIRM"
         Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSave.UseVisualStyleBackColor = False
@@ -183,6 +183,7 @@ Partial Class FrmCancelAdminPass
         Me.Controls.Add(Me.Label2)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmCancelAdminPass"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)

@@ -244,6 +244,7 @@ Partial Class FrmRLogHistory
         Me.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmRLogHistory"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

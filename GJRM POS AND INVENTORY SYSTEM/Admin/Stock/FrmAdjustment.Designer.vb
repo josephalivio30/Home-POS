@@ -127,7 +127,7 @@ Partial Class FrmAdjustment
         Me.txtQty.Location = New System.Drawing.Point(128, 109)
         Me.txtQty.Name = "txtQty"
         Me.txtQty.Size = New System.Drawing.Size(153, 23)
-        Me.txtQty.TabIndex = 62
+        Me.txtQty.TabIndex = 1
         '
         'txtDesc
         '
@@ -151,7 +151,7 @@ Partial Class FrmAdjustment
         Me.btnSave.Location = New System.Drawing.Point(727, 109)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(95, 37)
-        Me.btnSave.TabIndex = 58
+        Me.btnSave.TabIndex = 6
         Me.btnSave.Text = "   &SAVE"
         Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSave.UseVisualStyleBackColor = False
@@ -172,7 +172,7 @@ Partial Class FrmAdjustment
         Me.cboCommand.Location = New System.Drawing.Point(515, 21)
         Me.cboCommand.Name = "cboCommand"
         Me.cboCommand.Size = New System.Drawing.Size(307, 23)
-        Me.cboCommand.TabIndex = 59
+        Me.cboCommand.TabIndex = 2
         '
         'Label6
         '
@@ -193,7 +193,7 @@ Partial Class FrmAdjustment
         Me.txtUser.Location = New System.Drawing.Point(515, 80)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(307, 23)
-        Me.txtUser.TabIndex = 58
+        Me.txtUser.TabIndex = 4
         '
         'Label4
         '
@@ -224,7 +224,7 @@ Partial Class FrmAdjustment
         Me.txtRemarks.Location = New System.Drawing.Point(515, 51)
         Me.txtRemarks.Name = "txtRemarks"
         Me.txtRemarks.Size = New System.Drawing.Size(307, 23)
-        Me.txtRemarks.TabIndex = 56
+        Me.txtRemarks.TabIndex = 3
         '
         'txtRefNo
         '
@@ -301,7 +301,7 @@ Partial Class FrmAdjustment
         Me.btnClose.Location = New System.Drawing.Point(1020, 0)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(26, 23)
-        Me.btnClose.TabIndex = 59
+        Me.btnClose.TabIndex = 7
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
         '
@@ -483,7 +483,7 @@ Partial Class FrmAdjustment
         Me.txtSearch.SelectionStart = 0
         Me.txtSearch.ShortcutsEnabled = True
         Me.txtSearch.Size = New System.Drawing.Size(345, 23)
-        Me.txtSearch.TabIndex = 62
+        Me.txtSearch.TabIndex = 5
         Me.txtSearch.UseSelectable = True
         Me.txtSearch.WaterMark = "Search Description"
         Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -502,6 +502,7 @@ Partial Class FrmAdjustment
         Me.Controls.Add(Me.btnClose)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmAdjustment"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

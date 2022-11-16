@@ -75,7 +75,7 @@ Partial Class FrmDebtPayment
         Me.txtTAmount.SelectionStart = 0
         Me.txtTAmount.ShortcutsEnabled = True
         Me.txtTAmount.Size = New System.Drawing.Size(238, 23)
-        Me.txtTAmount.TabIndex = 104
+        Me.txtTAmount.TabIndex = 1
         Me.txtTAmount.Text = "0.00"
         Me.txtTAmount.UseSelectable = True
         Me.txtTAmount.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -110,7 +110,7 @@ Partial Class FrmDebtPayment
         Me.txtCASH.SelectionStart = 0
         Me.txtCASH.ShortcutsEnabled = True
         Me.txtCASH.Size = New System.Drawing.Size(238, 23)
-        Me.txtCASH.TabIndex = 103
+        Me.txtCASH.TabIndex = 4
         Me.txtCASH.Text = "0.00"
         Me.txtCASH.UseSelectable = True
         Me.txtCASH.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -145,7 +145,7 @@ Partial Class FrmDebtPayment
         Me.txtGcash.SelectionStart = 0
         Me.txtGcash.ShortcutsEnabled = True
         Me.txtGcash.Size = New System.Drawing.Size(238, 23)
-        Me.txtGcash.TabIndex = 102
+        Me.txtGcash.TabIndex = 3
         Me.txtGcash.Text = "0.00"
         Me.txtGcash.UseSelectable = True
         Me.txtGcash.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -180,7 +180,7 @@ Partial Class FrmDebtPayment
         Me.txtBT.SelectionStart = 0
         Me.txtBT.ShortcutsEnabled = True
         Me.txtBT.Size = New System.Drawing.Size(238, 23)
-        Me.txtBT.TabIndex = 101
+        Me.txtBT.TabIndex = 2
         Me.txtBT.Text = "0.00"
         Me.txtBT.UseSelectable = True
         Me.txtBT.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -263,7 +263,7 @@ Partial Class FrmDebtPayment
         Me.btnSave.Location = New System.Drawing.Point(272, 239)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(86, 27)
-        Me.btnSave.TabIndex = 89
+        Me.btnSave.TabIndex = 6
         Me.btnSave.Text = "   &SAVE"
         Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSave.UseVisualStyleBackColor = False
@@ -313,7 +313,7 @@ Partial Class FrmDebtPayment
         Me.btnClose.Location = New System.Drawing.Point(303, 2)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(69, 27)
-        Me.btnClose.TabIndex = 6
+        Me.btnClose.TabIndex = 7
         Me.btnClose.Text = "CLOSE"
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
@@ -375,7 +375,7 @@ Partial Class FrmDebtPayment
         Me.txtCheque.SelectionStart = 0
         Me.txtCheque.ShortcutsEnabled = True
         Me.txtCheque.Size = New System.Drawing.Size(238, 23)
-        Me.txtCheque.TabIndex = 106
+        Me.txtCheque.TabIndex = 5
         Me.txtCheque.Text = "0.00"
         Me.txtCheque.UseSelectable = True
         Me.txtCheque.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -417,6 +417,7 @@ Partial Class FrmDebtPayment
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmDebtPayment"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)

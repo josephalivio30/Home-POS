@@ -259,7 +259,6 @@
                     cm = New OleDb.OleDbCommand("delete from tblcart where id like '" & dgvCart.Rows(e.RowIndex).Cells(1).Value.ToString & "' and status like 'Pending'", cn)
                     cm.ExecuteNonQuery()
                     cn.Close()
-                    MsgBox("Item has been successfully deleted", vbInformation)
                     LoadCart()
                 End If
             ElseIf colname = "ColAdd" Then

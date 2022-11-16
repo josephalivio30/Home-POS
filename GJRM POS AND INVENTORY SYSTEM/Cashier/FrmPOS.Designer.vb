@@ -29,6 +29,11 @@ Partial Class FrmPOS
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -43,11 +48,6 @@ Partial Class FrmPOS
         Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pTop = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblTotal = New System.Windows.Forms.Label()
@@ -71,6 +71,17 @@ Partial Class FrmPOS
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lblTransNo = New System.Windows.Forms.Label()
         Me.dgvCart = New System.Windows.Forms.DataGridView()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColMinus = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ColAdd = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ColDelete = New System.Windows.Forms.DataGridViewImageColumn()
         Me.dgvProduct = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -90,17 +101,6 @@ Partial Class FrmPOS
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cboAgent = New System.Windows.Forms.ComboBox()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColMinus = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ColAdd = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ColDelete = New System.Windows.Forms.DataGridViewImageColumn()
         Me.pTop.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
@@ -195,7 +195,7 @@ Partial Class FrmPOS
         Me.btnDebtPayment.Location = New System.Drawing.Point(846, -1)
         Me.btnDebtPayment.Name = "btnDebtPayment"
         Me.btnDebtPayment.Size = New System.Drawing.Size(140, 40)
-        Me.btnDebtPayment.TabIndex = 12
+        Me.btnDebtPayment.TabIndex = 5
         Me.btnDebtPayment.Text = "[F5 - Debt Payment]"
         Me.btnDebtPayment.UseVisualStyleBackColor = False
         '
@@ -211,7 +211,7 @@ Partial Class FrmPOS
         Me.btnStartMenu.Location = New System.Drawing.Point(3, -1)
         Me.btnStartMenu.Name = "btnStartMenu"
         Me.btnStartMenu.Size = New System.Drawing.Size(359, 40)
-        Me.btnStartMenu.TabIndex = 11
+        Me.btnStartMenu.TabIndex = 1
         Me.btnStartMenu.Text = "[F1 - START && END MENU]"
         Me.btnStartMenu.UseVisualStyleBackColor = False
         '
@@ -226,7 +226,7 @@ Partial Class FrmPOS
         Me.btnDailySales.Location = New System.Drawing.Point(1128, 0)
         Me.btnDailySales.Name = "btnDailySales"
         Me.btnDailySales.Size = New System.Drawing.Size(140, 40)
-        Me.btnDailySales.TabIndex = 9
+        Me.btnDailySales.TabIndex = 7
         Me.btnDailySales.Text = "[F7 - Daily Sales]"
         Me.btnDailySales.UseVisualStyleBackColor = False
         '
@@ -273,7 +273,7 @@ Partial Class FrmPOS
         Me.btnLogout.Location = New System.Drawing.Point(1269, -1)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Size = New System.Drawing.Size(93, 40)
-        Me.btnLogout.TabIndex = 8
+        Me.btnLogout.TabIndex = 11
         Me.btnLogout.Text = "[Logout]"
         Me.btnLogout.UseVisualStyleBackColor = False
         '
@@ -364,7 +364,7 @@ Partial Class FrmPOS
         Me.txtBarcode.SelectionStart = 0
         Me.txtBarcode.ShortcutsEnabled = True
         Me.txtBarcode.Size = New System.Drawing.Size(345, 23)
-        Me.txtBarcode.TabIndex = 42
+        Me.txtBarcode.TabIndex = 10
         Me.txtBarcode.UseSelectable = True
         Me.txtBarcode.WaterMark = "Scan Barcode Here"
         Me.txtBarcode.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -486,6 +486,107 @@ Partial Class FrmPOS
         Me.dgvCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvCart.Size = New System.Drawing.Size(607, 448)
         Me.dgvCart.TabIndex = 44
+        '
+        'Column7
+        '
+        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column7.HeaderText = "#"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 36
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        Me.Column1.Width = 44
+        '
+        'Column12
+        '
+        Me.Column12.HeaderText = "PCODE"
+        Me.Column12.Name = "Column12"
+        Me.Column12.ReadOnly = True
+        Me.Column12.Visible = False
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = "DESCRIPTION"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Column4.HeaderText = "PRICE"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 61
+        '
+        'Column8
+        '
+        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column8.DefaultCellStyle = DataGridViewCellStyle4
+        Me.Column8.HeaderText = "QTY"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        Me.Column8.Width = 51
+        '
+        'Column11
+        '
+        Me.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column11.DefaultCellStyle = DataGridViewCellStyle5
+        Me.Column11.HeaderText = "DISCOUNT"
+        Me.Column11.Name = "Column11"
+        Me.Column11.ReadOnly = True
+        Me.Column11.Width = 86
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle6
+        Me.Column3.HeaderText = "TOTAL"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 62
+        '
+        'ColMinus
+        '
+        Me.ColMinus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.ColMinus.HeaderText = ""
+        Me.ColMinus.Image = CType(resources.GetObject("ColMinus.Image"), System.Drawing.Image)
+        Me.ColMinus.Name = "ColMinus"
+        Me.ColMinus.ReadOnly = True
+        Me.ColMinus.Width = 5
+        '
+        'ColAdd
+        '
+        Me.ColAdd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.ColAdd.HeaderText = ""
+        Me.ColAdd.Image = CType(resources.GetObject("ColAdd.Image"), System.Drawing.Image)
+        Me.ColAdd.Name = "ColAdd"
+        Me.ColAdd.ReadOnly = True
+        Me.ColAdd.Width = 5
+        '
+        'ColDelete
+        '
+        Me.ColDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle7.NullValue = Nothing
+        Me.ColDelete.DefaultCellStyle = DataGridViewCellStyle7
+        Me.ColDelete.HeaderText = ""
+        Me.ColDelete.Image = CType(resources.GetObject("ColDelete.Image"), System.Drawing.Image)
+        Me.ColDelete.Name = "ColDelete"
+        Me.ColDelete.ReadOnly = True
+        Me.ColDelete.Width = 5
         '
         'dgvProduct
         '
@@ -665,7 +766,7 @@ Partial Class FrmPOS
         Me.txtSearch.SelectionStart = 0
         Me.txtSearch.ShortcutsEnabled = True
         Me.txtSearch.Size = New System.Drawing.Size(345, 23)
-        Me.txtSearch.TabIndex = 9
+        Me.txtSearch.TabIndex = 8
         Me.txtSearch.UseSelectable = True
         Me.txtSearch.WaterMark = "Search Description"
         Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -743,112 +844,12 @@ Partial Class FrmPOS
         'cboAgent
         '
         Me.cboAgent.FormattingEnabled = True
+        Me.cboAgent.ItemHeight = 15
         Me.cboAgent.Location = New System.Drawing.Point(1014, 46)
         Me.cboAgent.Name = "cboAgent"
         Me.cboAgent.Size = New System.Drawing.Size(121, 23)
         Me.cboAgent.TabIndex = 83
         Me.cboAgent.Text = "NO AGENT"
-        '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column7.HeaderText = "#"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Width = 36
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        Me.Column1.Width = 42
-        '
-        'Column12
-        '
-        Me.Column12.HeaderText = "PCODE"
-        Me.Column12.Name = "Column12"
-        Me.Column12.ReadOnly = True
-        Me.Column12.Visible = False
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "DESCRIPTION"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Column4.HeaderText = "PRICE"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 61
-        '
-        'Column8
-        '
-        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column8.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Column8.HeaderText = "QTY"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        Me.Column8.Width = 51
-        '
-        'Column11
-        '
-        Me.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column11.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Column11.HeaderText = "DISCOUNT"
-        Me.Column11.Name = "Column11"
-        Me.Column11.ReadOnly = True
-        Me.Column11.Width = 86
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle6
-        Me.Column3.HeaderText = "TOTAL"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 62
-        '
-        'ColMinus
-        '
-        Me.ColMinus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.ColMinus.HeaderText = ""
-        Me.ColMinus.Image = CType(resources.GetObject("ColMinus.Image"), System.Drawing.Image)
-        Me.ColMinus.Name = "ColMinus"
-        Me.ColMinus.ReadOnly = True
-        Me.ColMinus.Width = 5
-        '
-        'ColAdd
-        '
-        Me.ColAdd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.ColAdd.HeaderText = ""
-        Me.ColAdd.Image = CType(resources.GetObject("ColAdd.Image"), System.Drawing.Image)
-        Me.ColAdd.Name = "ColAdd"
-        Me.ColAdd.ReadOnly = True
-        Me.ColAdd.Width = 5
-        '
-        'ColDelete
-        '
-        Me.ColDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle7.NullValue = Nothing
-        Me.ColDelete.DefaultCellStyle = DataGridViewCellStyle7
-        Me.ColDelete.HeaderText = ""
-        Me.ColDelete.Image = CType(resources.GetObject("ColDelete.Image"), System.Drawing.Image)
-        Me.ColDelete.Name = "ColDelete"
-        Me.ColDelete.ReadOnly = True
-        Me.ColDelete.Width = 5
         '
         'FrmPOS
         '
@@ -868,6 +869,7 @@ Partial Class FrmPOS
         Me.Controls.Add(Me.pTop)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmPOS"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.pTop.ResumeLayout(False)

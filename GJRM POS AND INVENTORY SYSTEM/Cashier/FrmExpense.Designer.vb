@@ -85,7 +85,7 @@ Partial Class FrmExpense
         Me.txtAmount.DisplayIcon = True
         Me.txtAmount.Icon = CType(resources.GetObject("txtAmount.Icon"), System.Drawing.Image)
         Me.txtAmount.Lines = New String(-1) {}
-        Me.txtAmount.Location = New System.Drawing.Point(15, 148)
+        Me.txtAmount.Location = New System.Drawing.Point(16, 148)
         Me.txtAmount.MaxLength = 32767
         Me.txtAmount.Name = "txtAmount"
         Me.txtAmount.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -95,7 +95,7 @@ Partial Class FrmExpense
         Me.txtAmount.SelectionStart = 0
         Me.txtAmount.ShortcutsEnabled = True
         Me.txtAmount.Size = New System.Drawing.Size(261, 23)
-        Me.txtAmount.TabIndex = 56
+        Me.txtAmount.TabIndex = 3
         Me.txtAmount.UseSelectable = True
         Me.txtAmount.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtAmount.WaterMarkFont = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -127,7 +127,7 @@ Partial Class FrmExpense
         Me.txtReceiver.SelectionStart = 0
         Me.txtReceiver.ShortcutsEnabled = True
         Me.txtReceiver.Size = New System.Drawing.Size(261, 23)
-        Me.txtReceiver.TabIndex = 55
+        Me.txtReceiver.TabIndex = 2
         Me.txtReceiver.UseSelectable = True
         Me.txtReceiver.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtReceiver.WaterMarkFont = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -159,7 +159,7 @@ Partial Class FrmExpense
         Me.txtExpense.SelectionStart = 0
         Me.txtExpense.ShortcutsEnabled = True
         Me.txtExpense.Size = New System.Drawing.Size(261, 23)
-        Me.txtExpense.TabIndex = 54
+        Me.txtExpense.TabIndex = 1
         Me.txtExpense.UseSelectable = True
         Me.txtExpense.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtExpense.WaterMarkFont = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -248,7 +248,7 @@ Partial Class FrmExpense
         Me.btnSave.Location = New System.Drawing.Point(190, 177)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(86, 27)
-        Me.btnSave.TabIndex = 57
+        Me.btnSave.TabIndex = 4
         Me.btnSave.Text = "   &SAVE"
         Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSave.UseVisualStyleBackColor = False
@@ -270,6 +270,7 @@ Partial Class FrmExpense
         Me.Controls.Add(Me.btnSave)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmExpense"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)

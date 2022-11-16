@@ -21,12 +21,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_05F569E122854B5283FA7500194B967B"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_245180C950D34FCE395FEEBE23371EDF"
         "OwnerKey" = "8:_8AD00A46319049E0BB3159C9BEDF0A82"
         "MsmSig" = "8:_UNDEFINED"
@@ -190,6 +184,12 @@
         "Entry"
         {
         "MsmKey" = "8:_6304164CB2A443FF948A57B8291E1A27"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_652DFF31D41F443F8FF5810A0AF4E13E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -494,6 +494,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -518,6 +526,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -554,26 +570,6 @@
             "TargetName" = "8:RptCancelledOrder.rdlc"
             "Tag" = "8:"
             "Folder" = "8:_B8382649420A4E4E96CC19C3078119EE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_05F569E122854B5283FA7500194B967B"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\OneDrive\\Documents\\POS.accdb"
-            "TargetName" = "8:POS.accdb"
-            "Tag" = "8:"
-            "Folder" = "8:_F7BAE1C8AC9645158462289DEA14B6FC"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1029,6 +1025,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_652DFF31D41F443F8FF5810A0AF4E13E"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\OneDrive\\Documents\\POS.accdb"
+            "TargetName" = "8:POS.accdb"
+            "Tag" = "8:"
+            "Folder" = "8:_F7BAE1C8AC9645158462289DEA14B6FC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_70E0F0304AFA432DA9DF35D38BEA08E1"
             {
             "SourcePath" = "8:..\\..\\..\\..\\Downloads\\ico.cashier.ico"
@@ -1465,7 +1481,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:GJRM POS"
         "ProductCode" = "8:{A5D0C39B-2A00-44D7-AA8D-6E0E8336FDAC}"
-        "PackageCode" = "8:{3868DBB9-E06A-41C7-9647-59FA83CABA8B}"
+        "PackageCode" = "8:{228A9401-A9F7-4856-9C3F-A7143B79BFC2}"
         "UpgradeCode" = "8:{AD86FBB8-1A77-465C-B660-BB39054BBECB}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

@@ -22,6 +22,7 @@ Partial Class FrmPrintSales
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPrintSales))
         Me.RvSales = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.SuspendLayout()
         '
@@ -40,6 +41,7 @@ Partial Class FrmPrintSales
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 553)
         Me.Controls.Add(Me.RvSales)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmPrintSales"
         Me.Text = "FrmPrintSales"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

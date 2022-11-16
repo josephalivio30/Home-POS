@@ -32,6 +32,7 @@ Partial Class FrmRBestSelling
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.cboTop = New System.Windows.Forms.ComboBox()
         Me.btnBPrint = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Bdt2 = New System.Windows.Forms.DateTimePicker()
@@ -54,6 +55,7 @@ Partial Class FrmRBestSelling
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.Controls.Add(Me.cboTop)
         Me.Panel1.Controls.Add(Me.btnBPrint)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Bdt2)
@@ -63,6 +65,18 @@ Partial Class FrmRBestSelling
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1205, 30)
         Me.Panel1.TabIndex = 47
+        '
+        'cboTop
+        '
+        Me.cboTop.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cboTop.FormattingEnabled = True
+        Me.cboTop.ItemHeight = 15
+        Me.cboTop.Items.AddRange(New Object() {"All", "Top 10"})
+        Me.cboTop.Location = New System.Drawing.Point(633, 4)
+        Me.cboTop.Name = "cboTop"
+        Me.cboTop.Size = New System.Drawing.Size(85, 23)
+        Me.cboTop.TabIndex = 84
+        Me.cboTop.Text = "All"
         '
         'btnBPrint
         '
@@ -260,6 +274,7 @@ Partial Class FrmRBestSelling
         Me.Controls.Add(Me.btnClose)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmRBestSelling"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -282,4 +297,5 @@ Partial Class FrmRBestSelling
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents cboTop As ComboBox
 End Class

@@ -79,7 +79,7 @@ Partial Class FrmProduct
         Me.txtSPrice.SelectionStart = 0
         Me.txtSPrice.ShortcutsEnabled = True
         Me.txtSPrice.Size = New System.Drawing.Size(306, 23)
-        Me.txtSPrice.TabIndex = 8
+        Me.txtSPrice.TabIndex = 9
         Me.txtSPrice.UseSelectable = True
         Me.txtSPrice.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtSPrice.WaterMarkFont = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -113,7 +113,7 @@ Partial Class FrmProduct
         Me.txtBPrice.SelectionStart = 0
         Me.txtBPrice.ShortcutsEnabled = True
         Me.txtBPrice.Size = New System.Drawing.Size(306, 23)
-        Me.txtBPrice.TabIndex = 7
+        Me.txtBPrice.TabIndex = 8
         Me.txtBPrice.UseSelectable = True
         Me.txtBPrice.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtBPrice.WaterMarkFont = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -178,7 +178,7 @@ Partial Class FrmProduct
         Me.btnAddCtgry.Location = New System.Drawing.Point(398, 169)
         Me.btnAddCtgry.Name = "btnAddCtgry"
         Me.btnAddCtgry.Size = New System.Drawing.Size(38, 27)
-        Me.btnAddCtgry.TabIndex = 6
+        Me.btnAddCtgry.TabIndex = 7
         Me.btnAddCtgry.Text = "+"
         Me.btnAddCtgry.UseVisualStyleBackColor = False
         '
@@ -193,7 +193,7 @@ Partial Class FrmProduct
         Me.btnCancel.Location = New System.Drawing.Point(342, 289)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(95, 37)
-        Me.btnCancel.TabIndex = 11
+        Me.btnCancel.TabIndex = 13
         Me.btnCancel.Text = "  &CANCEL"
         Me.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCancel.UseVisualStyleBackColor = False
@@ -210,7 +210,7 @@ Partial Class FrmProduct
         Me.btnUpdate.Location = New System.Drawing.Point(241, 289)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(95, 37)
-        Me.btnUpdate.TabIndex = 10
+        Me.btnUpdate.TabIndex = 12
         Me.btnUpdate.Text = "   &UPDATE"
         Me.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnUpdate.UseVisualStyleBackColor = False
@@ -226,7 +226,7 @@ Partial Class FrmProduct
         Me.btnSave.Location = New System.Drawing.Point(140, 289)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(95, 37)
-        Me.btnSave.TabIndex = 9
+        Me.btnSave.TabIndex = 11
         Me.btnSave.Text = "   &SAVE"
         Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSave.UseVisualStyleBackColor = False
@@ -249,7 +249,7 @@ Partial Class FrmProduct
         Me.cboCategory.Location = New System.Drawing.Point(130, 173)
         Me.cboCategory.Name = "cboCategory"
         Me.cboCategory.Size = New System.Drawing.Size(262, 23)
-        Me.cboCategory.TabIndex = 5
+        Me.cboCategory.TabIndex = 6
         '
         'Label4
         '
@@ -268,7 +268,7 @@ Partial Class FrmProduct
         Me.txtDescription.Location = New System.Drawing.Point(130, 115)
         Me.txtDescription.Name = "txtDescription"
         Me.txtDescription.Size = New System.Drawing.Size(307, 23)
-        Me.txtDescription.TabIndex = 2
+        Me.txtDescription.TabIndex = 3
         '
         'Label3
         '
@@ -311,7 +311,7 @@ Partial Class FrmProduct
         Me.btnAddBrand.Location = New System.Drawing.Point(398, 140)
         Me.btnAddBrand.Name = "btnAddBrand"
         Me.btnAddBrand.Size = New System.Drawing.Size(38, 27)
-        Me.btnAddBrand.TabIndex = 4
+        Me.btnAddBrand.TabIndex = 5
         Me.btnAddBrand.Text = "+"
         Me.btnAddBrand.UseVisualStyleBackColor = False
         '
@@ -322,7 +322,7 @@ Partial Class FrmProduct
         Me.cboBrand.Location = New System.Drawing.Point(130, 144)
         Me.cboBrand.Name = "cboBrand"
         Me.cboBrand.Size = New System.Drawing.Size(262, 23)
-        Me.cboBrand.TabIndex = 3
+        Me.cboBrand.TabIndex = 4
         '
         'Label7
         '
@@ -342,7 +342,7 @@ Partial Class FrmProduct
         Me.txtBarCode.Location = New System.Drawing.Point(130, 86)
         Me.txtBarCode.Name = "txtBarCode"
         Me.txtBarCode.Size = New System.Drawing.Size(307, 23)
-        Me.txtBarCode.TabIndex = 105
+        Me.txtBarCode.TabIndex = 2
         '
         'Label6
         '
@@ -362,7 +362,7 @@ Partial Class FrmProduct
         Me.txtReOrder.Location = New System.Drawing.Point(130, 260)
         Me.txtReOrder.Name = "txtReOrder"
         Me.txtReOrder.Size = New System.Drawing.Size(307, 23)
-        Me.txtReOrder.TabIndex = 107
+        Me.txtReOrder.TabIndex = 10
         '
         'Label8
         '
@@ -407,6 +407,7 @@ Partial Class FrmProduct
         Me.Controls.Add(Me.Label3)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmProduct"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)

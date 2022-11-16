@@ -8,7 +8,12 @@
         If e.KeyCode = Keys.Escape Then
             Me.Dispose()
         ElseIf e.KeyCode = Keys.Enter Then
-            Save()
+            If txtQty.Text = "0" Then
+                Me.Dispose()
+                Return
+            Else
+                Save()
+            End If
         End If
     End Sub
     Sub Save()

@@ -78,7 +78,7 @@ Partial Class FrmCategoryList
         Me.txtCategory.SelectionStart = 0
         Me.txtCategory.ShortcutsEnabled = True
         Me.txtCategory.Size = New System.Drawing.Size(252, 23)
-        Me.txtCategory.TabIndex = 86
+        Me.txtCategory.TabIndex = 1
         Me.txtCategory.UseSelectable = True
         Me.txtCategory.WaterMark = "Category"
         Me.txtCategory.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -95,7 +95,7 @@ Partial Class FrmCategoryList
         Me.btnCancel.Location = New System.Drawing.Point(182, 529)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 28)
-        Me.btnCancel.TabIndex = 85
+        Me.btnCancel.TabIndex = 4
         Me.btnCancel.Text = " &CANCEL"
         Me.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCancel.UseVisualStyleBackColor = False
@@ -112,7 +112,7 @@ Partial Class FrmCategoryList
         Me.btnUpdate.Location = New System.Drawing.Point(104, 529)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(75, 28)
-        Me.btnUpdate.TabIndex = 84
+        Me.btnUpdate.TabIndex = 3
         Me.btnUpdate.Text = " &UPDATE"
         Me.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnUpdate.UseVisualStyleBackColor = False
@@ -128,7 +128,7 @@ Partial Class FrmCategoryList
         Me.btnSave.Location = New System.Drawing.Point(26, 529)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 28)
-        Me.btnSave.TabIndex = 83
+        Me.btnSave.TabIndex = 2
         Me.btnSave.Text = " &SAVE"
         Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSave.UseVisualStyleBackColor = False
@@ -155,7 +155,7 @@ Partial Class FrmCategoryList
         Me.btnClose.Location = New System.Drawing.Point(193, 2)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(69, 27)
-        Me.btnClose.TabIndex = 28
+        Me.btnClose.TabIndex = 5
         Me.btnClose.Text = "CLOSE"
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
@@ -290,6 +290,7 @@ Partial Class FrmCategoryList
         Me.Controls.Add(Me.dgvCategory)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmCategoryList"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel2.ResumeLayout(False)

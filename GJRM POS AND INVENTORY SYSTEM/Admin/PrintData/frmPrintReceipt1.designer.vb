@@ -22,6 +22,7 @@ Partial Class frmPrintReceipt1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrintReceipt1))
         Me.rvReceipt = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.SuspendLayout()
         '
@@ -35,7 +36,7 @@ Partial Class frmPrintReceipt1
         Me.rvReceipt.Size = New System.Drawing.Size(327, 519)
         Me.rvReceipt.TabIndex = 0
         '
-        'frmPrintReceipt
+        'frmPrintReceipt1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -44,7 +45,8 @@ Partial Class frmPrintReceipt1
         Me.Controls.Add(Me.rvReceipt)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Name = "frmPrintReceipt"
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "frmPrintReceipt1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.ResumeLayout(False)
 

@@ -87,7 +87,7 @@
                     cm.ExecuteNonQuery()
                     cn.Close()
                     MsgBox("Record has been successfully deleted", vbInformation)
-                    AuditTrail("deleted product name " & dgvProduct.Rows(e.RowIndex).Cells(3).Value.ToString)
+                    AuditTrail("Deleted product name " & dgvProduct.Rows(e.RowIndex).Cells(3).Value.ToString)
                     LoadProducts()
                     Dashboard()
                 End If

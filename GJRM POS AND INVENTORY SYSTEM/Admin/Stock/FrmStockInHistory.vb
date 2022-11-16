@@ -24,10 +24,18 @@
     End Sub
 
     Private Sub dt1_ValueChanged(sender As Object, e As EventArgs) Handles dt1.ValueChanged
+        If dt1.Value > dt2.Value Then
+            dt1.Value = dt2.Value
+            MsgBox("From date must be lower or equal to the To date", vbExclamation)
+        End If
         LoadStockInHistory()
     End Sub
 
     Private Sub dt2_ValueChanged(sender As Object, e As EventArgs) Handles dt2.ValueChanged
+        If dt1.Value > dt2.Value Then
+            dt2.Value = dt1.Value
+            MsgBox("From date must be higher or equal to the To date", vbExclamation)
+        End If
         LoadStockInHistory()
     End Sub
 
