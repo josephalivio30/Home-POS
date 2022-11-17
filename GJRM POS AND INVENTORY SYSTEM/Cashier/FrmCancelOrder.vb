@@ -125,7 +125,7 @@
                         UpdateData("delete from tblcart where qty = 0")
 
                         'delete row in tbldebt
-                        UpdateData("delete from tbldebt where amount = 0")
+                        UpdateData("delete from tbldebt where amount = 0 Or amount < 0")
 
                         'delete row in tblcart
                         UpdateData("delete from tblsales where totalbill = 0")

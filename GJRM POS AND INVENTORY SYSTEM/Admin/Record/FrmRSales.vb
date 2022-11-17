@@ -27,9 +27,9 @@
             sdate2 = Sdt2.Value.ToString("yyyy-MM-dd")
             cn.Open()
             If cboCashier.Text = "ALL CASHIER" Then
-                cm = New OleDb.OleDbCommand("select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cname like '" & txtSearch.Text & "%' order by sdate desc", cn)
+                cm = New OleDb.OleDbCommand("select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cname like '" & txtSearch.Text & "%' order by transno, sdate desc", cn)
             Else
-                cm = New OleDb.OleDbCommand("select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cashier like '" & cboCashier.Text & "' and cname like '" & txtSearch.Text & "%' order by sdate desc", cn)
+                cm = New OleDb.OleDbCommand("select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cashier like '" & cboCashier.Text & "' and cname like '" & txtSearch.Text & "%' order by transno, sdate desc", cn)
             End If
 
             dr = cm.ExecuteReader
@@ -87,7 +87,7 @@
             lblSRefund.Text = Format(Rrefund, currencysymbol & "#,##0.00")
             lblDebt.Text = Format(Rdebt, currencysymbol & "#,##0.00")
             lblPaidDebt.Text = Format(Rdebtpaid, currencysymbol & "#,##0.00")
-            lblGrandSales.Text = Format((_total + startAmount + Rdebtpaid) - (_discount + Rrefund + Rdebt + Rexpense), currencysymbol & "#,##0.00")
+            lblGrandSales.Text = Format((_total + startAmount + Rdebtpaid) - (Rrefund + Rdebt + Rexpense), currencysymbol & "#,##0.00")
             lblTotalNet.Text = Format(_net, currencysymbol & "#,##0.00")
 
             lblbt.Text = Format(banktransfer, currencysymbol & "#,##0.00")
@@ -171,9 +171,9 @@
 
     Private Sub btnSPrint_Click(sender As Object, e As EventArgs) Handles btnSPrint.Click
         If cboCashier.Text = "ALL CASHIER" Then
-            sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cname like '" & txtSearch.Text & "%' order by sdate desc"
+            sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cname like '" & txtSearch.Text & "%' order by transno, sdate desc"
         Else
-            sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cashier like '" & cboCashier.Text & "' and cname like '" & txtSearch.Text & "%' order by sdate desc"
+            sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cashier like '" & cboCashier.Text & "' and cname like '" & txtSearch.Text & "%' order by transno, sdate desc"
         End If
         With FrmPrintSales
             .PrintPreview(sql)

@@ -31,7 +31,7 @@
             dr.Close()
             cn.Close()
 
-            lblTotal.Text = Format(_total - _discount, currencysymbol & "#,##0.00")
+            lblTotal.Text = Format(_total, currencysymbol & "#,##0.00")
             lblQty.Text = Format(_qty, currencysymbol & "#,##0.0")
             lblDiscount.Text = Format(_discount, currencysymbol & "#,##0.00")
             lblTotalNet.Text = Format(_net, currencysymbol & "#,##0.00")

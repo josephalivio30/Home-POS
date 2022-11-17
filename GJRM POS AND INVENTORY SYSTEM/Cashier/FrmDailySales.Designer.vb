@@ -257,7 +257,7 @@ Partial Class FrmDailySales
         Me.txtSearch.CustomButton.Visible = False
         Me.txtSearch.DisplayIcon = True
         Me.txtSearch.Icon = CType(resources.GetObject("txtSearch.Icon"), System.Drawing.Image)
-        Me.txtSearch.Lines = New String() {"1"}
+        Me.txtSearch.Lines = New String(-1) {}
         Me.txtSearch.Location = New System.Drawing.Point(6, 10)
         Me.txtSearch.MaxLength = 32767
         Me.txtSearch.Name = "txtSearch"
@@ -270,7 +270,6 @@ Partial Class FrmDailySales
         Me.txtSearch.ShortcutsEnabled = True
         Me.txtSearch.Size = New System.Drawing.Size(139, 23)
         Me.txtSearch.TabIndex = 76
-        Me.txtSearch.Text = "1"
         Me.txtSearch.UseSelectable = True
         Me.txtSearch.WaterMark = "Search Transaction"
         Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))

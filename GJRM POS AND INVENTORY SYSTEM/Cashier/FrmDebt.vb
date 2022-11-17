@@ -36,6 +36,13 @@
                 .ExecuteNonQuery()
             End With
             cn.Close()
+            'Updates the qty in the tblproduct
+            For i = 0 To FrmPOS.dgvCart.Rows.Count - 1
+                cn.Open()
+                cm = New OleDb.OleDbCommand("update tblproduct set qty = qty -'" & CInt(FrmPOS.dgvCart.Rows(i).Cells(5).Value.ToString) & "' where pcode like '" & (FrmPOS.dgvCart.Rows(i).Cells(2).Value.ToString) & "'", cn)
+                cm.ExecuteNonQuery()
+                cn.Close()
+            Next
 
             cn.Open()
             cm = New OleDb.OleDbCommand("update tblcart set cname = '" & txtName.Text & "', status = 'Completed', remarks = 'Unpaid', agent = '" & FrmPOS.cboAgent.Text & "' where transno like '" & FrmPOS.lblTransNo.Text & "' and status like 'Pending'", cn)
@@ -52,6 +59,7 @@
             With FrmPOS
                 .lblTransNo.Text = .GetTransno
                 .LoadCart()
+                .LoadProducts()
             End With
 
             Me.Dispose()
