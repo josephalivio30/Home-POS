@@ -5,7 +5,7 @@
     Sub LoadCancelOrder()
         Try
             dgvCancelOrder.Rows.Clear()
-            Dim _total As Double = 0
+            Dim refund As Double = 0
             Dim i As Integer
             sdate1 = Cdt1.Value.ToString("yyyy-MM-dd")
             sdate2 = Cdt2.Value.ToString("yyyy-MM-dd")
@@ -19,13 +19,17 @@
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
-                _total += CDbl(dr.Item("total").ToString)
-                dgvCancelOrder.Rows.Add(i, dr.Item("pcode").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"), CDate(dr.Item("sdate").ToString).ToShortDateString, dr.Item("voidby").ToString, dr.Item("cancelledby").ToString, dr.Item("reason").ToString, dr.Item("saction").ToString)
+                dgvCancelOrder.Rows.Add(i, dr.Item("pcode").ToString, dr.Item("cname").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"), CDate(dr.Item("sdate").ToString).ToShortDateString, dr.Item("voidby").ToString, dr.Item("cancelledby").ToString, dr.Item("reason").ToString, dr.Item("saction").ToString, dr.Item("remarks").ToString)
             End While
             dr.Close()
             cn.Close()
 
-            lblTotal.Text = Format(_total, currencysymbol & "#,##0.00")
+            cn.Open()
+            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(total + discount)), '0', sum(total + discount)) as total from tblcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and remarks = 'Paid'", cn)
+            refund = CDbl(cm.ExecuteScalar)
+            cn.Close()
+
+            lblTotal.Text = Format(refund, currencysymbol & "#,##0.00")
         Catch ex As Exception
             cn.Close()
             MsgBox(ex.Message, vbCritical)

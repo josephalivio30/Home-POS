@@ -52,6 +52,7 @@
                     .txtDiscount.Text = dgvDailySales.Rows(e.RowIndex).Cells(8).Value.ToString
                     .txtTotal.Text = dgvDailySales.Rows(e.RowIndex).Cells(9).Value.ToString
                     .txtCancelBy.Text = str_user
+                    .txtRemarks.Text = dgvDailySales.Rows(e.RowIndex).Cells(10).Value.ToString
                     .ShowDialog()
                 End With
             End If
@@ -68,20 +69,24 @@
     Sub LoadCancelOrder()
         Try
             dgvCancelOrder.Rows.Clear()
-            Dim _total As Double = 0
+            Dim refund As Double = 0
             Dim i As Integer
             cn.Open()
             cm = New OleDb.OleDbCommand("select * from vwcancelorder where sdate between #" & sdate & "# and #" & sdate & "#", cn)
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
-                _total += CDbl(dr.Item("total").ToString)
-                dgvCancelOrder.Rows.Add(i, dr.Item("pcode").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"), CDate(dr.Item("sdate").ToString).ToShortDateString, dr.Item("voidby").ToString, dr.Item("cancelledby").ToString, dr.Item("reason").ToString, dr.Item("saction").ToString)
+                dgvCancelOrder.Rows.Add(i, dr.Item("pcode").ToString, dr.Item("cname").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"), CDate(dr.Item("sdate").ToString).ToShortDateString, dr.Item("voidby").ToString, dr.Item("cancelledby").ToString, dr.Item("reason").ToString, dr.Item("saction").ToString, dr.Item("remarks").ToString)
             End While
             dr.Close()
             cn.Close()
 
-            lblCTotal.Text = Format(_total, currencysymbol & "#,##0.00")
+            cn.Open()
+            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(total + discount)), '0', sum(total + discount)) as total from tblcancelorder where sdate between #" & sdate & "# and #" & sdate & "# and remarks = 'Paid'", cn)
+            refund = CDbl(cm.ExecuteScalar)
+            cn.Close()
+
+            lblCTotal.Text = Format(refund, currencysymbol & "#,##0.00")
         Catch ex As Exception
             cn.Close()
             MsgBox(ex.Message, vbCritical)
@@ -92,21 +97,18 @@
     Sub LoadDebt()
         Try
             dgvDebt.Rows.Clear()
-            Dim debt As Double
+            Dim total As Double
             cn.Open()
             cm = New OleDb.OleDbCommand("select * from tbldebt where sdate between #" & sdate & "# and #" & sdate & "#", cn)
             dr = cm.ExecuteReader
             While dr.Read
-                dgvDebt.Rows.Add(dr.Item("transno").ToString, dr.Item("cname").ToString, dr.Item("cuser").ToString, Format(dr.Item("amount"), "#,##0.00").ToString, dr.Item("stime").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString))
+                total += CDbl(dr.Item("total"))
+                dgvDebt.Rows.Add(dr.Item("transno").ToString, dr.Item("cname").ToString, dr.Item("cuser").ToString, Format(dr.Item("adjustment"), "#,##0.00").ToString, Format(dr.Item("amount"), "#,##0.00").ToString, Format(dr.Item("total"), "#,##0.00").ToString, dr.Item("stime").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString), Format(CDate(dr.Item("datetocollect").ToString).ToShortDateString))
             End While
             cn.Close()
             dr.Close()
 
-            cn.Open()
-            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(amount)), '0', sum(amount)) as debt from tbldebt where sdate between #" & sdate & "# and #" & sdate & "#", cn)
-            debt = CDbl(cm.ExecuteScalar)
-            cn.Close()
-            lblDTotal.Text = Format(debt, currencysymbol & "#,##0.00")
+            lblDTotal.Text = Format(total, currencysymbol & "#,##0.00")
         Catch ex As Exception
             cn.Close()
             MsgBox(ex.Message, vbCritical)

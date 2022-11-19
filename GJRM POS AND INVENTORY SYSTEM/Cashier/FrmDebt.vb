@@ -10,7 +10,7 @@
             End If
 
             cn.Open()
-            cm = New OleDb.OleDbCommand("insert into tblsales(cname, transno, sdate, stime, cashier, total, discount, totalbill)values(@cname, @transno, @sdate, @stime, @cashier, @total, @discount, @totalbill)", cn)
+            cm = New OleDb.OleDbCommand("insert into tblsales(cname, transno, sdate, stime, cashier, total, discount, adjustment, totalbill)values(@cname, @transno, @sdate, @stime, @cashier, @total, @discount, @adjustment, @totalbill)", cn)
             With cm
                 .Parameters.AddWithValue("@cname", txtName.Text)
                 .Parameters.AddWithValue("@transno", FrmPOS.lblTransNo.Text)
@@ -19,20 +19,24 @@
                 .Parameters.AddWithValue("@cashier", str_user)
                 .Parameters.AddWithValue("@total", CDbl(FrmPOS.lblTotalBill.Text))
                 .Parameters.AddWithValue("@discount", CDbl(FrmPOS.lblDiscount.Text))
+                .Parameters.AddWithValue("@adjustment", CDbl("" + txtAdjustment.Text))
                 .Parameters.AddWithValue("@totalbill", CDbl("" + txtAmount.Text))
                 .ExecuteNonQuery()
             End With
             cn.Close()
 
             cn.Open()
-            cm = New OleDb.OleDbCommand("insert into tbldebt(transno, cname, cuser, amount, stime, sdate)values(@transno, @cname, @cuser, @amount, @stime, @sdate)", cn)
+            cm = New OleDb.OleDbCommand("insert into tbldebt(transno, cname, cuser, adjustment, amount, total, stime, sdate, datetocollect)values(@transno, @cname, @cuser, @adjustment, @amount, @total, @stime, @sdate, @datetocollect)", cn)
             With cm
                 .Parameters.AddWithValue("@transno", FrmPOS.lblTransNo.Text)
                 .Parameters.AddWithValue("@cname", txtName.Text)
                 .Parameters.AddWithValue("@cuser", str_user)
-                .Parameters.AddWithValue("@amount", CDbl("" + txtAmount.Text))
+                .Parameters.AddWithValue("@adjustment", CDbl("" + txtAdjustment.Text))
+                .Parameters.AddWithValue("@amount", CDbl("" + FrmPOS.lblTotalBill.Text))
+                .Parameters.AddWithValue("@total", CDbl(FrmPOS.lblTotalBill.Text) + CDbl(txtAdjustment.Text))
                 .Parameters.AddWithValue("@stime", Now.ToShortTimeString)
                 .Parameters.AddWithValue("@sdate", Now.ToShortDateString)
+                .Parameters.AddWithValue("@datetocollect", dtCollection.Value.ToShortDateString)
                 .ExecuteNonQuery()
             End With
             cn.Close()
@@ -45,7 +49,7 @@
             Next
 
             cn.Open()
-            cm = New OleDb.OleDbCommand("update tblcart set cname = '" & txtName.Text & "', status = 'Completed', remarks = 'Unpaid', agent = '" & FrmPOS.cboAgent.Text & "' where transno like '" & FrmPOS.lblTransNo.Text & "' and status like 'Pending'", cn)
+            cm = New OleDb.OleDbCommand("update tblcart set cname = '" & txtName.Text & "', tin = '" & txtTinNumber.Text & "', address = '" & txtAddress.Text & "', status = 'Completed', remarks = 'Unpaid', agent = '" & FrmPOS.cboAgent.Text & "' where transno like '" & FrmPOS.lblTransNo.Text & "' and status like 'Pending'", cn)
             cm.ExecuteNonQuery()
             cn.Close()
 
@@ -82,5 +86,47 @@
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Dispose()
+    End Sub
+
+    Private Sub txtAdjustment_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtAdjustment.KeyPress
+        Select Case Asc(e.KeyChar)
+            Case 48 To 57
+            Case 46
+            Case 8
+            Case 13
+            Case Else
+                e.Handled = True
+        End Select
+    End Sub
+
+    Private Sub txtAdjustment_TextChanged(sender As Object, e As EventArgs) Handles txtAdjustment.TextChanged
+        Dim adjustment As Double = CDbl("0" + txtAdjustment.Text)
+        Dim amount As Double = CDbl("0" + FrmPOS.lblTotalBill.Text)
+        Try
+            If adjustment > 0 Then
+                txtAmount.Text = Format(adjustment + amount, "#,##0.00")
+            Else
+                txtAmount.Text = Format(amount, "#,##0.00")
+            End If
+        Catch ex As Exception
+            txtAmount.Text = Format(amount, "#,##0.00")
+        End Try
+    End Sub
+
+    Private Sub dtCollection_ValueChanged(sender As Object, e As EventArgs)
+        If dtCollection.Value < Now.ToShortDateString Then
+            dtCollection.Value = Now.ToShortDateString
+            MsgBox("The date must be higher or equal to today date", vbExclamation)
+        End If
+    End Sub
+    Private Sub txtTinNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTinNumber.KeyPress
+        Select Case Asc(e.KeyChar)
+            Case 48 To 57
+            Case 46
+            Case 8
+            Case 13
+            Case Else
+                e.Handled = True
+        End Select
     End Sub
 End Class

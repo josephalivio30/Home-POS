@@ -102,6 +102,9 @@ Partial Class FrmRSales
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lblcash = New System.Windows.Forms.Label()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblAdjustment = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvDailySales, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel18.SuspendLayout()
@@ -117,6 +120,7 @@ Partial Class FrmRSales
         Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel7.SuspendLayout()
+        Me.Panel8.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnClose
@@ -310,7 +314,7 @@ Partial Class FrmRSales
         Me.dgvDailySales.RowsDefaultCellStyle = DataGridViewCellStyle13
         Me.dgvDailySales.RowTemplate.Height = 25
         Me.dgvDailySales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvDailySales.Size = New System.Drawing.Size(1012, 642)
+        Me.dgvDailySales.Size = New System.Drawing.Size(1012, 693)
         Me.dgvDailySales.TabIndex = 75
         '
         'Column7
@@ -540,7 +544,7 @@ Partial Class FrmRSales
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.lblPaidDebt)
-        Me.Panel2.Location = New System.Drawing.Point(1038, 367)
+        Me.Panel2.Location = New System.Drawing.Point(1037, 417)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(153, 44)
         Me.Panel2.TabIndex = 84
@@ -574,7 +578,7 @@ Partial Class FrmRSales
         Me.Panel42.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel42.Controls.Add(Me.Label25)
         Me.Panel42.Controls.Add(Me.lblDebt)
-        Me.Panel42.Location = New System.Drawing.Point(1038, 317)
+        Me.Panel42.Location = New System.Drawing.Point(1037, 367)
         Me.Panel42.Name = "Panel42"
         Me.Panel42.Size = New System.Drawing.Size(153, 44)
         Me.Panel42.TabIndex = 83
@@ -642,7 +646,7 @@ Partial Class FrmRSales
         Me.Panel14.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel14.Controls.Add(Me.Label20)
         Me.Panel14.Controls.Add(Me.lblTotalNet)
-        Me.Panel14.Location = New System.Drawing.Point(1038, 467)
+        Me.Panel14.Location = New System.Drawing.Point(1037, 517)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(153, 44)
         Me.Panel14.TabIndex = 85
@@ -744,7 +748,7 @@ Partial Class FrmRSales
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Controls.Add(Me.lblGrandSales)
-        Me.Panel3.Location = New System.Drawing.Point(1038, 417)
+        Me.Panel3.Location = New System.Drawing.Point(1037, 467)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(153, 44)
         Me.Panel3.TabIndex = 86
@@ -778,7 +782,7 @@ Partial Class FrmRSales
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(131, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.Panel4.Controls.Add(Me.Label2)
         Me.Panel4.Controls.Add(Me.lblgcash)
-        Me.Panel4.Location = New System.Drawing.Point(1038, 567)
+        Me.Panel4.Location = New System.Drawing.Point(1037, 617)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(153, 44)
         Me.Panel4.TabIndex = 89
@@ -812,7 +816,7 @@ Partial Class FrmRSales
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(131, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.Panel5.Controls.Add(Me.Label6)
         Me.Panel5.Controls.Add(Me.lblcheque)
-        Me.Panel5.Location = New System.Drawing.Point(1038, 617)
+        Me.Panel5.Location = New System.Drawing.Point(1037, 667)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(153, 44)
         Me.Panel5.TabIndex = 88
@@ -846,7 +850,7 @@ Partial Class FrmRSales
         Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(131, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.Panel6.Controls.Add(Me.Label8)
         Me.Panel6.Controls.Add(Me.lblbt)
-        Me.Panel6.Location = New System.Drawing.Point(1038, 517)
+        Me.Panel6.Location = New System.Drawing.Point(1037, 567)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(153, 44)
         Me.Panel6.TabIndex = 87
@@ -880,7 +884,7 @@ Partial Class FrmRSales
         Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(131, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.Panel7.Controls.Add(Me.Label10)
         Me.Panel7.Controls.Add(Me.lblcash)
-        Me.Panel7.Location = New System.Drawing.Point(1038, 667)
+        Me.Panel7.Location = New System.Drawing.Point(1037, 717)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(153, 44)
         Me.Panel7.TabIndex = 90
@@ -908,13 +912,49 @@ Partial Class FrmRSales
         Me.lblcash.Text = "0.00"
         Me.lblcash.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'Panel8
+        '
+        Me.Panel8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.Panel8.Controls.Add(Me.Label5)
+        Me.Panel8.Controls.Add(Me.lblAdjustment)
+        Me.Panel8.Location = New System.Drawing.Point(1038, 317)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(153, 44)
+        Me.Panel8.TabIndex = 84
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(3, 26)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(96, 13)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "TOTAL ADJUSTMENT"
+        '
+        'lblAdjustment
+        '
+        Me.lblAdjustment.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblAdjustment.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAdjustment.ForeColor = System.Drawing.Color.White
+        Me.lblAdjustment.Location = New System.Drawing.Point(1, 0)
+        Me.lblAdjustment.Name = "lblAdjustment"
+        Me.lblAdjustment.Size = New System.Drawing.Size(152, 26)
+        Me.lblAdjustment.TabIndex = 28
+        Me.lblAdjustment.Text = "0.00"
+        Me.lblAdjustment.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'FrmRSales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(1204, 727)
+        Me.ClientSize = New System.Drawing.Size(1204, 778)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Panel8)
+        Me.Controls.Add(Me.dgvDailySales)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel5)
@@ -928,7 +968,6 @@ Partial Class FrmRSales
         Me.Controls.Add(Me.Panel36)
         Me.Controls.Add(Me.Panel13)
         Me.Controls.Add(Me.Panel18)
-        Me.Controls.Add(Me.dgvDailySales)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -964,6 +1003,8 @@ Partial Class FrmRSales
         Me.Panel6.PerformLayout()
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1034,4 +1075,7 @@ Partial Class FrmRSales
     Friend WithEvents Column13 As DataGridViewTextBoxColumn
     Friend WithEvents Column15 As DataGridViewTextBoxColumn
     Friend WithEvents ColCancel As DataGridViewImageColumn
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents lblAdjustment As Label
 End Class

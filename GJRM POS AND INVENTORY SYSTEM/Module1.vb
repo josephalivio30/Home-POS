@@ -20,6 +20,7 @@ Module Module1
     Public discount As Double = 0
     Public refund As Double = 0
     Public expense As Double = 0
+    Public adjustment As Double = 0
     Public debt As Double = 0
     Public banktransfer As Double = 0
     Public gcash As Double = 0
@@ -147,12 +148,17 @@ Module Module1
             cn.Close()
 
             cn.Open()
+            cm = New OleDbCommand("select IIf(IsNull(sum(adjustment)), '0', sum(adjustment)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cuser like '" & str_user & "'", cn)
+            adjustment = CDbl(cm.ExecuteScalar)
+            cn.Close()
+
+            cn.Open()
             cm = New OleDbCommand("select IIf(IsNull(sum(amount)), '0', sum(amount)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cuser like '" & str_user & "'", cn)
             debt = CDbl(cm.ExecuteScalar)
             cn.Close()
 
             cn.Open()
-            cm = New OleDbCommand("select IIf(IsNull(sum(total + discount)), '0', sum(total + discount)) as total from tblcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
+            cm = New OleDbCommand("select IIf(IsNull(sum(total)), '0', sum(total)) as total from tblcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and remarks = 'Paid'", cn)
             refund = CDbl(cm.ExecuteScalar)
             cn.Close()
         Catch ex As Exception

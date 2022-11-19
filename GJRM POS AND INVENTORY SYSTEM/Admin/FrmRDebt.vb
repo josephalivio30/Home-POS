@@ -3,7 +3,6 @@
     Sub LoadDebt()
         Try
             dgvDebt.Rows.Clear()
-            Dim debt As Double
             Dim total As Double = 0
             cn.Open()
             If cboName.Text = "ALL NAMES" Then
@@ -13,8 +12,8 @@
             End If
             dr = cm.ExecuteReader
             While dr.Read
-                total += CDbl(dr.Item("amount"))
-                dgvDebt.Rows.Add(dr.Item("transno").ToString, dr.Item("cname").ToString, dr.Item("cuser").ToString, Format(dr.Item("amount"), "#,##0.00").ToString, dr.Item("stime").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString))
+                total += CDbl(dr.Item("total"))
+                dgvDebt.Rows.Add(dr.Item("transno").ToString, dr.Item("cname").ToString, dr.Item("cuser").ToString, Format(dr.Item("adjustment"), "#,##0.00").ToString, Format(dr.Item("amount"), "#,##0.00").ToString, Format(dr.Item("total"), "#,##0.00").ToString, dr.Item("stime").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString), Format(CDate(dr.Item("datetocollect").ToString).ToShortDateString))
             End While
             cn.Close()
             dr.Close()
@@ -92,7 +91,7 @@
                 With frmDebtPayment
                     .txtTransno.Text = dgvDebt.Rows(e.RowIndex).Cells(0).Value.ToString
                     .txtName.Text = dgvDebt.Rows(e.RowIndex).Cells(1).Value.ToString
-                    .txtTAmount.Text = dgvDebt.Rows(e.RowIndex).Cells(3).Value.ToString
+                    .txtTAmount.Text = dgvDebt.Rows(e.RowIndex).Cells(5).Value.ToString
                     .ShowDialog()
                 End With
             End If

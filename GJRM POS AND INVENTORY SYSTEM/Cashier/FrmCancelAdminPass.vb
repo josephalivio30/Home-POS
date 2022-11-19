@@ -30,7 +30,7 @@
             Else
                 If MsgBox("Cancel this item?", vbYesNo + vbQuestion) = vbYes Then
                     cn.Open()
-                    cm = New OleDb.OleDbCommand("insert into tblcancelorder(transno, pcode, price, qty, discount, total, sdate, stime, voidby, cancelledby, reason,saction)values(@transno, @pcode, @price, @qty, @discount, @total, @sdate, @stime, @voidby, @cancelledby, @reason,saction)", cn)
+                    cm = New OleDb.OleDbCommand("insert into tblcancelorder(transno, pcode, price, qty, discount, total, sdate, stime, voidby, cancelledby, reason,saction, remarks)values(@transno, @pcode, @price, @qty, @discount, @total, @sdate, @stime, @voidby, @cancelledby, @reason, @saction, @remarks)", cn)
                     With cm.Parameters
                         .AddWithValue("@transno", FrmCancelOrder.txtTransno.Text)
                         .AddWithValue("@pcode", FrmCancelOrder.txtPcode.Text)
@@ -42,13 +42,13 @@
                         .AddWithValue("@stime", Now.ToShortTimeString)
                         .AddWithValue("@voidby", user)
                         .AddWithValue("@cancelledby", str_user)
-                        .AddWithValue("@reason", FrmCancelOrder.txtReason.Text)
-
                         If FrmCancelOrder.rbYes.Checked = True Then
                             .AddWithValue("@saction", "Yes")
                         ElseIf FrmCancelOrder.rbNo.Checked = True Then
                             .AddWithValue("@saction", "No")
                         End If
+                        .AddWithValue("@reason", FrmCancelOrder.txtReason.Text)
+                        .AddWithValue("@remarks", FrmCancelOrder.txtRemarks.Text)
                     End With
                     cm.ExecuteNonQuery()
                     cn.Close()
@@ -131,8 +131,10 @@
                         UpdateData("Update tblsales set cheque = '" & remain4 & "'where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
                     End If
 
-                    'update total in tbldebt
+                    'update total in tbldebt 
                     UpdateData("update tbldebt set amount = amount - '" & _total & "' where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
+
+                    UpdateData("update tbldebt set total = adjustment + amount where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
 
                     'update total in tblcart
                     UpdateData("update tblcart set total = price * qty where transno like '" & FrmCancelOrder.txtTransno.Text & "' and pcode like '" & FrmCancelOrder.txtPcode.Text & "'")
@@ -143,8 +145,8 @@
                     'delete row in tbldebt
                     UpdateData("delete from tbldebt where amount = 0 Or amount < 0")
 
-                    'delete row in tblcart
-                    UpdateData("delete from tblsales where totalbill = 0")
+                    'delete row in tblsales
+                    UpdateData("delete from tblsales where totalbill = 0 Or totalbill < 0 Or total = 0 Or total < 0")
 
                     MsgBox("Order transaction has been successfully cancelled.", vbInformation)
                     AuditTrail("Cancelled " & FrmCancelOrder.txtCQty.Text & " qty of " & FrmCancelOrder.txtDesc.Text)

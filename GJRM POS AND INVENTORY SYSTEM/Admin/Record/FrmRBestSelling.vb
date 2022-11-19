@@ -7,23 +7,26 @@
     Sub LoadBestSelling()
         Try
             dgvBestSelling.Rows.Clear()
-            cn.Open()
+
             Dim i As Integer
+
             sdate1 = Bdt1.Value.ToString("yyyy-MM-dd")
             sdate2 = Bdt2.Value.ToString("yyyy-MM-dd")
             sql1 = "SELECT tblproduct.pcode, tblproduct.pdesc, tblcart.price, Sum(tblcart.qty) AS qty, (tblcart.price * Sum(tblcart.qty)) as total
-                                        FROM tblcart INNER JOIN tblproduct ON tblcart.pcode = tblproduct.pcode where sdate between #" & sdate1 & "# and #" & sdate2 & "#
+                                        FROM tblcart INNER JOIN tblproduct ON tblcart.pcode = tblproduct.pcode where tblcart.sdate between #" & sdate1 & "# and #" & sdate2 & "#
                                         GROUP BY tblproduct.pcode, tblproduct.pdesc, tblcart.price
                                         ORDER BY Sum(tblcart.qty) DESC"
             sql2 = "SELECT Top 10 tblproduct.pcode, tblproduct.pdesc, tblcart.price, Sum(tblcart.qty) AS qty, (tblcart.price * Sum(tblcart.qty)) as total
-                                        FROM tblcart INNER JOIN tblproduct ON tblcart.pcode = tblproduct.pcode where sdate between #" & sdate1 & "# and #" & sdate2 & "#
+                                        FROM tblcart INNER JOIN tblproduct ON tblcart.pcode = tblproduct.pcode where tblcart.sdate between #" & sdate1 & "# and #" & sdate2 & "#
                                         GROUP BY tblproduct.pcode, tblproduct.pdesc, tblcart.price
                                         ORDER BY Sum(tblcart.qty) DESC"
+            cn.Open()
             If cboTop.Text = "All" Then
                 cm = New OleDb.OleDbCommand(sql1, cn)
             ElseIf cboTop.Text = "Top 10" Then
                 cm = New OleDb.OleDbCommand(sql2, cn)
             End If
+
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
@@ -31,9 +34,10 @@
             End While
             dr.Close()
             cn.Close()
+
         Catch ex As Exception
             cn.Close()
-        MsgBox(ex.Message, vbCritical)
+            MsgBox(ex.Message, vbCritical)
         End Try
     End Sub
 

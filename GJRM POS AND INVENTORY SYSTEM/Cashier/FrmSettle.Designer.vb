@@ -43,15 +43,23 @@ Partial Class FrmSettle
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtCheque = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtAddress = New System.Windows.Forms.RichTextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtTinNumber = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtBankTransfer
         '
         Me.txtBankTransfer.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.txtBankTransfer.Location = New System.Drawing.Point(13, 305)
+        Me.txtBankTransfer.Location = New System.Drawing.Point(6, 223)
         Me.txtBankTransfer.Name = "txtBankTransfer"
-        Me.txtBankTransfer.Size = New System.Drawing.Size(291, 40)
+        Me.txtBankTransfer.Size = New System.Drawing.Size(241, 40)
         Me.txtBankTransfer.TabIndex = 4
         Me.txtBankTransfer.Text = "0.00"
         Me.txtBankTransfer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -60,7 +68,7 @@ Partial Class FrmSettle
         '
         Me.lbl.AutoSize = True
         Me.lbl.BackColor = System.Drawing.Color.Transparent
-        Me.lbl.Location = New System.Drawing.Point(13, 287)
+        Me.lbl.Location = New System.Drawing.Point(6, 205)
         Me.lbl.Name = "lbl"
         Me.lbl.Size = New System.Drawing.Size(92, 15)
         Me.lbl.TabIndex = 54
@@ -69,9 +77,9 @@ Partial Class FrmSettle
         'txtCash
         '
         Me.txtCash.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.txtCash.Location = New System.Drawing.Point(13, 183)
+        Me.txtCash.Location = New System.Drawing.Point(6, 101)
         Me.txtCash.Name = "txtCash"
-        Me.txtCash.Size = New System.Drawing.Size(291, 40)
+        Me.txtCash.Size = New System.Drawing.Size(241, 40)
         Me.txtCash.TabIndex = 2
         Me.txtCash.Text = "0.00"
         Me.txtCash.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -79,9 +87,9 @@ Partial Class FrmSettle
         'txtGcash
         '
         Me.txtGcash.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.txtGcash.Location = New System.Drawing.Point(13, 244)
+        Me.txtGcash.Location = New System.Drawing.Point(6, 162)
         Me.txtGcash.Name = "txtGcash"
-        Me.txtGcash.Size = New System.Drawing.Size(291, 40)
+        Me.txtGcash.Size = New System.Drawing.Size(241, 40)
         Me.txtGcash.TabIndex = 3
         Me.txtGcash.Text = "0.00"
         Me.txtGcash.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -90,7 +98,7 @@ Partial Class FrmSettle
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(13, 226)
+        Me.Label4.Location = New System.Drawing.Point(6, 144)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(43, 15)
         Me.Label4.TabIndex = 53
@@ -106,7 +114,7 @@ Partial Class FrmSettle
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(313, 30)
+        Me.Panel1.Size = New System.Drawing.Size(539, 30)
         Me.Panel1.TabIndex = 51
         '
         'btnClose
@@ -117,7 +125,7 @@ Partial Class FrmSettle
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.ForeColor = System.Drawing.Color.White
         Me.btnClose.Image = CType(resources.GetObject("btnClose.Image"), System.Drawing.Image)
-        Me.btnClose.Location = New System.Drawing.Point(243, 2)
+        Me.btnClose.Location = New System.Drawing.Point(468, 2)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(69, 27)
         Me.btnClose.TabIndex = 7
@@ -173,9 +181,9 @@ Partial Class FrmSettle
         '
         Me.txtBill.Enabled = False
         Me.txtBill.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.txtBill.Location = New System.Drawing.Point(13, 122)
+        Me.txtBill.Location = New System.Drawing.Point(6, 37)
         Me.txtBill.Name = "txtBill"
-        Me.txtBill.Size = New System.Drawing.Size(291, 40)
+        Me.txtBill.Size = New System.Drawing.Size(241, 40)
         Me.txtBill.TabIndex = 50
         Me.txtBill.Text = "0.00"
         Me.txtBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -184,7 +192,7 @@ Partial Class FrmSettle
         '
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Location = New System.Drawing.Point(13, 104)
+        Me.Label7.Location = New System.Drawing.Point(6, 19)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(39, 15)
         Me.Label7.TabIndex = 49
@@ -198,7 +206,7 @@ Partial Class FrmSettle
         Me.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAccept.ForeColor = System.Drawing.Color.White
         Me.btnAccept.Image = CType(resources.GetObject("btnAccept.Image"), System.Drawing.Image)
-        Me.btnAccept.Location = New System.Drawing.Point(49, 473)
+        Me.btnAccept.Location = New System.Drawing.Point(287, 443)
         Me.btnAccept.Name = "btnAccept"
         Me.btnAccept.Size = New System.Drawing.Size(232, 36)
         Me.btnAccept.TabIndex = 6
@@ -211,9 +219,9 @@ Partial Class FrmSettle
         '
         Me.txtChange.Enabled = False
         Me.txtChange.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.txtChange.Location = New System.Drawing.Point(13, 427)
+        Me.txtChange.Location = New System.Drawing.Point(6, 345)
         Me.txtChange.Name = "txtChange"
-        Me.txtChange.Size = New System.Drawing.Size(291, 40)
+        Me.txtChange.Size = New System.Drawing.Size(241, 40)
         Me.txtChange.TabIndex = 47
         Me.txtChange.Text = "0.00"
         Me.txtChange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -222,7 +230,7 @@ Partial Class FrmSettle
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Location = New System.Drawing.Point(13, 409)
+        Me.Label3.Location = New System.Drawing.Point(6, 327)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(51, 15)
         Me.Label3.TabIndex = 46
@@ -232,7 +240,7 @@ Partial Class FrmSettle
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(13, 165)
+        Me.Label2.Location = New System.Drawing.Point(6, 83)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(35, 15)
         Me.Label2.TabIndex = 43
@@ -241,9 +249,9 @@ Partial Class FrmSettle
         'txtName
         '
         Me.txtName.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.txtName.Location = New System.Drawing.Point(13, 61)
+        Me.txtName.Location = New System.Drawing.Point(5, 37)
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(291, 40)
+        Me.txtName.Size = New System.Drawing.Size(241, 40)
         Me.txtName.TabIndex = 1
         Me.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -251,7 +259,7 @@ Partial Class FrmSettle
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(13, 43)
+        Me.Label1.Location = New System.Drawing.Point(5, 19)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(111, 15)
         Me.Label1.TabIndex = 55
@@ -260,9 +268,9 @@ Partial Class FrmSettle
         'txtCheque
         '
         Me.txtCheque.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.txtCheque.Location = New System.Drawing.Point(13, 366)
+        Me.txtCheque.Location = New System.Drawing.Point(6, 284)
         Me.txtCheque.Name = "txtCheque"
-        Me.txtCheque.Size = New System.Drawing.Size(291, 40)
+        Me.txtCheque.Size = New System.Drawing.Size(241, 40)
         Me.txtCheque.TabIndex = 5
         Me.txtCheque.Text = "0.00"
         Me.txtCheque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -271,35 +279,97 @@ Partial Class FrmSettle
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Location = New System.Drawing.Point(13, 348)
+        Me.Label5.Location = New System.Drawing.Point(6, 266)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(51, 15)
         Me.Label5.TabIndex = 58
         Me.Label5.Text = "CHEQUE"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.txtBill)
+        Me.GroupBox1.Controls.Add(Me.txtChange)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.txtCheque)
+        Me.GroupBox1.Controls.Add(Me.txtGcash)
+        Me.GroupBox1.Controls.Add(Me.txtCash)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.lbl)
+        Me.GroupBox1.Controls.Add(Me.txtBankTransfer)
+        Me.GroupBox1.Location = New System.Drawing.Point(277, 46)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(254, 391)
+        Me.GroupBox1.TabIndex = 59
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Settle Payment"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.txtAddress)
+        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.txtTinNumber)
+        Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Controls.Add(Me.txtName)
+        Me.GroupBox2.Location = New System.Drawing.Point(7, 46)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(253, 210)
+        Me.GroupBox2.TabIndex = 60
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Customer's Information"
+        '
+        'txtAddress
+        '
+        Me.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtAddress.Location = New System.Drawing.Point(6, 162)
+        Me.txtAddress.Name = "txtAddress"
+        Me.txtAddress.Size = New System.Drawing.Size(240, 40)
+        Me.txtAddress.TabIndex = 60
+        Me.txtAddress.Text = ""
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Location = New System.Drawing.Point(6, 144)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(127, 15)
+        Me.Label8.TabIndex = 59
+        Me.Label8.Text = "CUSTOMER'S ADDRESS"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Location = New System.Drawing.Point(5, 83)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(147, 15)
+        Me.Label6.TabIndex = 57
+        Me.Label6.Text = "CUSTOMER'S TIN NUMBER"
+        '
+        'txtTinNumber
+        '
+        Me.txtTinNumber.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold)
+        Me.txtTinNumber.Location = New System.Drawing.Point(5, 101)
+        Me.txtTinNumber.Name = "txtTinNumber"
+        Me.txtTinNumber.Size = New System.Drawing.Size(241, 40)
+        Me.txtTinNumber.TabIndex = 56
+        Me.txtTinNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'FrmSettle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(313, 514)
+        Me.ClientSize = New System.Drawing.Size(539, 486)
         Me.ControlBox = False
-        Me.Controls.Add(Me.txtCheque)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.txtName)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtBankTransfer)
-        Me.Controls.Add(Me.lbl)
-        Me.Controls.Add(Me.txtCash)
-        Me.Controls.Add(Me.txtGcash)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.txtBill)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.btnAccept)
-        Me.Controls.Add(Me.txtChange)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -307,8 +377,11 @@ Partial Class FrmSettle
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Public WithEvents txtBankTransfer As TextBox
@@ -331,4 +404,10 @@ Partial Class FrmSettle
     Friend WithEvents Label1 As Label
     Public WithEvents txtCheque As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents txtAddress As RichTextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label6 As Label
+    Public WithEvents txtTinNumber As TextBox
 End Class

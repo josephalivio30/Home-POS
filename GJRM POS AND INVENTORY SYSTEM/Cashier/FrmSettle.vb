@@ -9,7 +9,7 @@
 
             cn.Open()
 
-            cm = New OleDb.OleDbCommand("insert into tblsales(cname,transno, sdate, stime, cashier, total, discount, totalbill, banktransfer, gcash, cheque, cash, schange)values(@cname, @transno, @sdate, @stime, @cashier, @total, @discount, @totalbill, @banktransfer, @gcash, @cheque, @cash, @schange)", cn)
+            cm = New OleDb.OleDbCommand("insert into tblsales(cname,transno, sdate, stime, cashier, total, discount, adjustment, totalbill, banktransfer, gcash, cheque, cash, schange)values(@cname, @transno, @sdate, @stime, @cashier, @total, @discount, @adjustment, @totalbill, @banktransfer, @gcash, @cheque, @cash, @schange)", cn)
             With cm
                 .Parameters.AddWithValue("@cname", "" + txtName.Text)
                 .Parameters.AddWithValue("@transno", FrmPOS.lblTransNo.Text)
@@ -18,6 +18,7 @@
                 .Parameters.AddWithValue("@cashier", "" + str_user)
                 .Parameters.AddWithValue("@total", Format(CDbl(txtBill.Text) + CDbl(FrmPOS.lblDiscount.Text), "#,##0.00"))
                 .Parameters.AddWithValue("@discount", CDbl(FrmPOS.lblDiscount.Text))
+                .Parameters.AddWithValue("@adjustment", "0.00")
                 .Parameters.AddWithValue("@totalbill", CDbl("" + txtBill.Text))
                 .Parameters.AddWithValue("@banktransfer", CDbl("" + txtBankTransfer.Text))
                 .Parameters.AddWithValue("@gcash", CDbl("" + txtGcash.Text))
@@ -30,7 +31,7 @@
 
             'Updates the status of the tblcart
             cn.Open()
-            cm = New OleDb.OleDbCommand("update tblcart set status = 'Completed', remarks = 'Paid', cname = '" & txtName.Text & "', agent = '" & FrmPOS.cboAgent.Text & "' where transno like '" & FrmPOS.lblTransNo.Text & "' and status like 'Pending'", cn)
+            cm = New OleDb.OleDbCommand("update tblcart set status = 'Completed', remarks = 'Paid', cname = '" & txtName.Text & "', tin = '" & txtTinNumber.Text & "', address = '" & txtAddress.Text & "', agent = '" & FrmPOS.cboAgent.Text & "' where transno like '" & FrmPOS.lblTransNo.Text & "' and status like 'Pending'", cn)
             cm.ExecuteNonQuery()
             cn.Close()
 
@@ -114,7 +115,7 @@
             btnAccept_Click(sender, e)
         End If
     End Sub
-    Private Sub txtBankTransfer_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtGcash.KeyPress, txtCash.KeyPress, txtBankTransfer.KeyPress, txtCheque.KeyPress
+    Private Sub txtBankTransfer_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtGcash.KeyPress, txtCash.KeyPress, txtBankTransfer.KeyPress, txtCheque.KeyPress, txtTinNumber.KeyPress
         Dim DecimalSeparator As String = Application.CurrentCulture.NumberFormat.NumberDecimalSeparator
         e.Handled = Not (Char.IsDigit(e.KeyChar) Or
                      Asc(e.KeyChar) = 8 Or

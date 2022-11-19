@@ -80,23 +80,23 @@
                     'else not pay all
                     'subtract amount from tbldebt
                     cn.Open()
-                    cm = New OleDb.OleDbCommand("update tbldebt set amount = amount - '" & total & "' where transno like '" & txtTransno.Text & "' and cname like '" & txtName.Text & "'", cn)
+                    cm = New OleDb.OleDbCommand("update tbldebt set total = total - '" & total & "' where transno like '" & txtTransno.Text & "' and cname like '" & txtName.Text & "'", cn)
                     cm.ExecuteNonQuery()
                     cn.Close()
 
                     'extract amount from tbldebt
                     cn.Open()
-                    cm = New OleDb.OleDbCommand("select amount from tbldebt where transno like '" & txtTransno.Text & "' and cname like '" & txtName.Text & "'", cn)
+                    cm = New OleDb.OleDbCommand("select total from tbldebt where transno like '" & txtTransno.Text & "' and cname like '" & txtName.Text & "'", cn)
                     dr = cm.ExecuteReader
                     dr.Read()
                     If dr.HasRows Then
-                        amount = dr.Item("amount")
+                        total = dr.Item("total")
                     End If
                     cn.Close()
                     dr.Close()
 
                     'update tblsales and tblcart to paid
-                    If amount = "0" Then
+                    If total = "0" Then
                         cn.Open()
                         cm = New OleDb.OleDbCommand("update tblsales set remarks = 'Paid' where transno like '" & txtTransno.Text & "'", cn)
                         cm.ExecuteNonQuery()

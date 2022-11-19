@@ -55,6 +55,8 @@ Partial Class FrmCancelOrder
         Me.txtVoidBy = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.txtRemarks = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -102,6 +104,8 @@ Partial Class FrmCancelOrder
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtRemarks)
+        Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.txtTotal)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.txtDiscount)
@@ -119,7 +123,7 @@ Partial Class FrmCancelOrder
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 36)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(480, 249)
+        Me.GroupBox1.Size = New System.Drawing.Size(480, 279)
         Me.GroupBox1.TabIndex = 41
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "SOLD ITEM"
@@ -295,7 +299,7 @@ Partial Class FrmCancelOrder
         Me.GroupBox2.Controls.Add(Me.txtVoidBy)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.Label12)
-        Me.GroupBox2.Location = New System.Drawing.Point(16, 291)
+        Me.GroupBox2.Location = New System.Drawing.Point(16, 321)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(480, 235)
         Me.GroupBox2.TabIndex = 125
@@ -433,12 +437,32 @@ Partial Class FrmCancelOrder
         Me.Label12.TabIndex = 113
         Me.Label12.Text = "ADD TO INVENTORY?"
         '
+        'txtRemarks
+        '
+        Me.txtRemarks.BackColor = System.Drawing.Color.White
+        Me.txtRemarks.Enabled = False
+        Me.txtRemarks.Location = New System.Drawing.Point(172, 245)
+        Me.txtRemarks.Name = "txtRemarks"
+        Me.txtRemarks.Size = New System.Drawing.Size(145, 23)
+        Me.txtRemarks.TabIndex = 126
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.Color.Transparent
+        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label13.Location = New System.Drawing.Point(33, 248)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(58, 15)
+        Me.Label13.TabIndex = 125
+        Me.Label13.Text = "REMARKS"
+        '
         'FrmCancelOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(515, 539)
+        Me.ClientSize = New System.Drawing.Size(515, 565)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -490,4 +514,6 @@ Partial Class FrmCancelOrder
     Friend WithEvents Label12 As Label
     Friend WithEvents btnSave As Button
     Friend WithEvents txtCQty As TextBox
+    Friend WithEvents txtRemarks As TextBox
+    Friend WithEvents Label13 As Label
 End Class

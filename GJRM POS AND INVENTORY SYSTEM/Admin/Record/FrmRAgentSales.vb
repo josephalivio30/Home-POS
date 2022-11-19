@@ -9,6 +9,7 @@
             Dim _discount As Double = 0
             Dim _net As Double = 0
             Dim _qty As Double = 0
+            Dim adjustment As Double = 0
             Dim i As Integer
             sdate1 = Adt1.Value.ToString("yyyy-MM-dd")
             sdate2 = Adt2.Value.ToString("yyyy-MM-dd")
@@ -26,12 +27,18 @@
                 _qty += CDbl(dr.Item("qty").ToString)
                 _discount += CDbl(dr.Item("discount").ToString)
                 _net += ((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString))
-                dgvDailySales.Rows.Add(i, dr.Item("id").ToString, dr.Item("pcode").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("discount").ToString), "#,##0.00"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"), Format(CDbl(dr.Item("bprice").ToString), "#,##0.00"), Format(CDbl(dr.Item("sprice").ToString), "#,##0.00"), Format(((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString)) - CDbl(dr.Item("discount").ToString), "#,##0.00"), dr.Item("agent").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString))
+                dgvDailySales.Rows.Add(i, dr.Item("id").ToString, dr.Item("pcode").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("discount").ToString), "#,##0.00"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"), Format(CDbl(dr.Item("bprice").ToString), "#,##0.00"), Format(CDbl(dr.Item("sprice").ToString), "#,##0.00"), Format(((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString)) - CDbl(dr.Item("discount").ToString), "#,##0.00"), dr.Item("agent").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString), dr.Item("remarks").ToString)
             End While
             dr.Close()
             cn.Close()
 
-            lblTotal.Text = Format(_total, currencysymbol & "#,##0.00")
+            cn.Open()
+            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(adjustment)), '0', sum(adjustment)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
+            adjustment = CDbl(cm.ExecuteScalar)
+            cn.Close()
+
+            lblAdjustment.Text = Format(adjustment, currencysymbol & "#,##0.00")
+            lblTotal.Text = Format(_total + adjustment, currencysymbol & "#,##0.00")
             lblQty.Text = Format(_qty, currencysymbol & "#,##0.0")
             lblDiscount.Text = Format(_discount, currencysymbol & "#,##0.00")
             lblTotalNet.Text = Format(_net, currencysymbol & "#,##0.00")
