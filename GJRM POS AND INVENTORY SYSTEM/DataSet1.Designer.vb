@@ -3463,6 +3463,8 @@ Partial Public Class DataSet1
         
         Private columntotal As Global.System.Data.DataColumn
         
+        Private columndiscount As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -3539,6 +3541,14 @@ Partial Public Class DataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property discountColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndiscount
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3575,9 +3585,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AdddtPrintReceiptRow(ByVal id As String, ByVal pdesc As String, ByVal price As Double, ByVal qty As Double, ByVal total As Double) As dtPrintReceiptRow
+        Public Overloads Function AdddtPrintReceiptRow(ByVal id As String, ByVal pdesc As String, ByVal price As Double, ByVal qty As Double, ByVal total As Double, ByVal discount As Double) As dtPrintReceiptRow
             Dim rowdtPrintReceiptRow As dtPrintReceiptRow = CType(Me.NewRow,dtPrintReceiptRow)
-            Dim columnValuesArray() As Object = New Object() {id, pdesc, price, qty, total}
+            Dim columnValuesArray() As Object = New Object() {id, pdesc, price, qty, total, discount}
             rowdtPrintReceiptRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowdtPrintReceiptRow)
             Return rowdtPrintReceiptRow
@@ -3605,6 +3615,7 @@ Partial Public Class DataSet1
             Me.columnprice = MyBase.Columns("price")
             Me.columnqty = MyBase.Columns("qty")
             Me.columntotal = MyBase.Columns("total")
+            Me.columndiscount = MyBase.Columns("discount")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3620,6 +3631,8 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnqty)
             Me.columntotal = New Global.System.Data.DataColumn("total", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntotal)
+            Me.columndiscount = New Global.System.Data.DataColumn("discount", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndiscount)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5967,6 +5980,21 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property discount() As Double
+            Get
+                Try 
+                    Return CType(Me(Me.tabledtPrintReceipt.discountColumn),Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'discount' in table 'dtPrintReceipt' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledtPrintReceipt.discountColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsidNull() As Boolean
             Return Me.IsNull(Me.tabledtPrintReceipt.idColumn)
         End Function
@@ -6023,6 +6051,18 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SettotalNull()
             Me(Me.tabledtPrintReceipt.totalColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsdiscountNull() As Boolean
+            Return Me.IsNull(Me.tabledtPrintReceipt.discountColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetdiscountNull()
+            Me(Me.tabledtPrintReceipt.discountColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

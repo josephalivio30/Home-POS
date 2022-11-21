@@ -31,6 +31,7 @@ Partial Class FrmDebt
         Me.btnSave = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.dtCollection = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtAddress = New System.Windows.Forms.RichTextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -43,7 +44,6 @@ Partial Class FrmDebt
         Me.txtAmount = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtDiscount = New System.Windows.Forms.TextBox()
-        Me.dtCollection = New System.Windows.Forms.DateTimePicker()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -160,6 +160,15 @@ Partial Class FrmDebt
         Me.GroupBox2.TabIndex = 78
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Customer's Information"
+        '
+        'dtCollection
+        '
+        Me.dtCollection.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtCollection.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtCollection.Location = New System.Drawing.Point(6, 223)
+        Me.dtCollection.Name = "dtCollection"
+        Me.dtCollection.Size = New System.Drawing.Size(240, 23)
+        Me.dtCollection.TabIndex = 62
         '
         'Label5
         '
@@ -284,15 +293,6 @@ Partial Class FrmDebt
         Me.txtDiscount.TabIndex = 1
         Me.txtDiscount.Text = "0.00"
         Me.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'dtCollection
-        '
-        Me.dtCollection.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dtCollection.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtCollection.Location = New System.Drawing.Point(6, 223)
-        Me.dtCollection.Name = "dtCollection"
-        Me.dtCollection.Size = New System.Drawing.Size(240, 23)
-        Me.dtCollection.TabIndex = 62
         '
         'FrmDebt
         '

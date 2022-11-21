@@ -166,6 +166,12 @@
     <Compile Include="Admin\Manage\FrmAgentList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Admin\PrintData\FrmPrintReceipt.Designer.vb">
+      <DependentUpon>FrmPrintReceipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PrintData\FrmPrintReceipt.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Admin\PrintData\frmPrintReceipt1.designer.vb">
       <DependentUpon>frmPrintReceipt1.vb</DependentUpon>
     </Compile>
@@ -475,10 +481,14 @@
     <EmbeddedResource Include="Admin\Manage\FrmAgentList.resx">
       <DependentUpon>FrmAgentList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PrintData\FrmPrintReceipt.resx">
+      <DependentUpon>FrmPrintReceipt.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\PrintData\frmPrintReceipt1.resx">
       <DependentUpon>frmPrintReceipt1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\PrintData\rptReceipt.rdlc" />
+    <EmbeddedResource Include="Admin\PrintData\RptReceiptDebt.rdlc" />
+    <EmbeddedResource Include="Admin\PrintData\rptReceipt1.rdlc" />
     <EmbeddedResource Include="Admin\Record\FrmRAgentSales.resx">
       <DependentUpon>FrmRAgentSales.vb</DependentUpon>
     </EmbeddedResource>

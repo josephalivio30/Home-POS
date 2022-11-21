@@ -9,9 +9,10 @@
 
             cn.Open()
 
-            cm = New OleDb.OleDbCommand("insert into tblsales(cname,transno, sdate, stime, cashier, total, discount, adjustment, totalbill, banktransfer, gcash, cheque, cash, schange)values(@cname, @transno, @sdate, @stime, @cashier, @total, @discount, @adjustment, @totalbill, @banktransfer, @gcash, @cheque, @cash, @schange)", cn)
+            cm = New OleDb.OleDbCommand("insert into tblsales(cname, agent, transno, sdate, stime, cashier, total, discount, adjustment, totalbill, banktransfer, gcash, cheque, cash, schange)values(@cname, @agent, @transno, @sdate, @stime, @cashier, @total, @discount, @adjustment, @totalbill, @banktransfer, @gcash, @cheque, @cash, @schange)", cn)
             With cm
                 .Parameters.AddWithValue("@cname", "" + txtName.Text)
+                .Parameters.AddWithValue("@agent", FrmPOS.cboAgent.Text)
                 .Parameters.AddWithValue("@transno", FrmPOS.lblTransNo.Text)
                 .Parameters.AddWithValue("@sdate", sdate)
                 .Parameters.AddWithValue("@stime", stime)

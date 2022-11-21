@@ -33,6 +33,11 @@
             cn.Close()
 
             cn.Open()
+            If cboAgent.Text = "ALL AGENT" Then
+                cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(adjustment)), '0', sum(adjustment)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "# and agent <> 'NO AGENT' and pdesc like '" & txtSearch.Text & "%' order by sdate desc", cn)
+            Else
+                cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(adjustment)), '0', sum(adjustment)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "# and agent like '" & cboAgent.Text & "' and pdesc like '" & txtSearch.Text & "%' order by sdate desc", cn)
+            End If
             cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(adjustment)), '0', sum(adjustment)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
             adjustment = CDbl(cm.ExecuteScalar)
             cn.Close()

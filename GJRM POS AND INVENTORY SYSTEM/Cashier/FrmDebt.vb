@@ -10,9 +10,10 @@
             End If
 
             cn.Open()
-            cm = New OleDb.OleDbCommand("insert into tblsales(cname, transno, sdate, stime, cashier, total, discount, adjustment, totalbill)values(@cname, @transno, @sdate, @stime, @cashier, @total, @discount, @adjustment, @totalbill)", cn)
+            cm = New OleDb.OleDbCommand("insert into tblsales(cname, agent, transno, sdate, stime, cashier, total, discount, adjustment, totalbill)values(@cname, @agent, @transno, @sdate, @stime, @cashier, @total, @discount, @adjustment, @totalbill)", cn)
             With cm
                 .Parameters.AddWithValue("@cname", txtName.Text)
+                .Parameters.AddWithValue("@agent", FrmPOS.cboAgent.Text)
                 .Parameters.AddWithValue("@transno", FrmPOS.lblTransNo.Text)
                 .Parameters.AddWithValue("@sdate", Now.ToShortDateString)
                 .Parameters.AddWithValue("@stime", Now.ToShortTimeString)
@@ -57,6 +58,15 @@
             cm = New OleDb.OleDbCommand("update tblsales set remarks = 'Unpaid' where transno like '" & FrmPOS.lblTransNo.Text & "'", cn)
             cm.ExecuteNonQuery()
             cn.Close()
+
+            If MsgBox("Do you want to print bill", vbYesNo + vbQuestion) = vbYes Then
+                Dim sql As String
+                sql = "select * from ComputeTotal where transno like '" & FrmPOS.lblTransNo.Text & "'"
+                With FrmPrintReceipt
+                    .PrintPreview(sql)
+                    .ShowDialog()
+                End With
+            End If
 
             MsgBox("Debt successfully saved", vbInformation)
             AuditTrail(txtName.Text & " debt amounting " & txtAmount.Text)
@@ -113,7 +123,8 @@
         End Try
     End Sub
 
-    Private Sub dtCollection_ValueChanged(sender As Object, e As EventArgs)
+    Private Sub dtCollection_ValueChanged(sender As Object, e As EventArgs) Handles dtCollection.ValueChanged
+
         If dtCollection.Value < Now.ToShortDateString Then
             dtCollection.Value = Now.ToShortDateString
             MsgBox("The date must be higher or equal to today date", vbExclamation)

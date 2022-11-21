@@ -8,7 +8,7 @@ Public Class frmPrintReceipt1
         Dim rptds As ReportDataSource
         Try
             With rvReceipt.LocalReport
-                .ReportPath = "Report\rptReceipt.rdlc"
+                .ReportPath = "Report\rptReceipt1.rdlc"
                 .DataSources.Clear()
             End With
 
