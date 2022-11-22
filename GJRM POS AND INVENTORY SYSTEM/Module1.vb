@@ -22,6 +22,7 @@ Module Module1
     Public expense As Double = 0
     Public adjustment As Double = 0
     Public debt As Double = 0
+    Public debtpaid As Double = 0
     Public banktransfer As Double = 0
     Public gcash As Double = 0
     Public cheque As Double = 0
@@ -185,6 +186,11 @@ Module Module1
             cn.Open()
             cm = New OleDbCommand("select IIf(IsNull(sum(amount)), '0', sum(amount)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cuser like '" & str_user & "'", cn)
             debt = CDbl(cm.ExecuteScalar)
+            cn.Close()
+
+            cn.Open()
+            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(gcash + banktransfer + cash + cheque)), '0', sum(gcash + banktransfer + cash + cheque)) as debt from tbldebthistory where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
+            debtpaid = CDbl(cm.ExecuteScalar)
             cn.Close()
 
             cn.Open()

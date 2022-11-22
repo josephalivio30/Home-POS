@@ -353,6 +353,17 @@
         gg==
 </value>
   </data>
+  <data name="txtDebtPaid.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        rAAAAKwBhgk01AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADmSURBVDhP3dPN
+        CgFRGMbx05SFrIWdO2DHkhVZWiqxIBbKTtZKuQZyGbKycAeuQC5BiVJq/F/NnPOafGRr6lfP6Zz3aTrT
+        GN/3H3iSOEAW2g5T5MOzmgvGFCFhjrGywB5XlPXwY84GY2qQUEc6IosNjigg9VTA04GEX3R0QQKTYGOG
+        9hsrnNFCQhd4aEIW8jb5N5Y4IQdPF/Qh4Rd9XRDDMNgYofqCXOINPVQQswVBSfgZowUDrCF73fC8nbPB
+        FURdIJfX0IN2zgZXoC9RLiuuB6JccAUlfeAbF/6iQH7nLTL6wGe+uQPhiaS8W5BSnwAAAABJRU5ErkJg
+        gg==
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAQEAAAAEAIAAoQgAAFgAAACgAAABAAAAAgAAAAAEAIAAAAAAAAEAAANgBAADYAQAAAAAAAAAA

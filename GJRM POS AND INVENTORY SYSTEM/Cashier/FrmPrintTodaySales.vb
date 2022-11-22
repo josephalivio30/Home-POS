@@ -18,7 +18,8 @@
             texttoprint &= "TOTAL EXPENSE : " & currencysymbol & Format(CDbl(expense), "#,##0.00") & Environment.NewLine
             texttoprint &= "TOTAL ADJUSTMENT : " & currencysymbol & Format(CDbl(adjustment), "#,##0.00") & Environment.NewLine
             texttoprint &= "TOTAL DEBT : " & currencysymbol & Format(CDbl(debt), "#,##0.00") & Environment.NewLine
-            texttoprint &= "TOTAL SALES : " & currencysymbol & Format(CDbl(sales + startAmount) - (expense + refund + debt + adjustment), "#,##0.00") & Environment.NewLine
+            texttoprint &= "TOTAL DEBT PAID : " & currencysymbol & Format(CDbl(debtpaid), "#,##0.00") & Environment.NewLine
+            texttoprint &= "TOTAL SALES : " & currencysymbol & Format(CDbl(sales + startAmount + debtpaid) - (expense + refund + debt + adjustment), "#,##0.00") & Environment.NewLine
             texttoprint &= "BANKTRANSFER : " & currencysymbol & Format(CDbl(banktransfer), "#,##0.00") & Environment.NewLine
             texttoprint &= "GCASH : " & currencysymbol & Format(CDbl(gcash), "#,##0.00") & Environment.NewLine
             texttoprint &= "CHEQUE : " & currencysymbol & Format(CDbl(cheque), "#,##0.00") & Environment.NewLine

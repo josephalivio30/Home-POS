@@ -69,7 +69,6 @@
             End If
 
             MsgBox("Debt successfully saved", vbInformation)
-            AuditTrail(txtName.Text & " debt amounting " & txtAmount.Text)
             With FrmPOS
                 .lblTransNo.Text = .GetTransno
                 .LoadCart()

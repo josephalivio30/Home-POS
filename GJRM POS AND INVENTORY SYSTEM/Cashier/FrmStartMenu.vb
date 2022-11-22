@@ -17,7 +17,8 @@
         txtRefund.Text = Format(CDbl(refund), "#,#0.00")
         txtAdjustment.Text = Format(CDbl(adjustment), "#,#0.00")
         txtDebt.Text = Format(CDbl(debt), "#,#0.00")
-        txtNet.Text = Format(CDbl((sales + startAmount) - (expense + refund + debt + adjustment)), "#,#0.00")
+        txtDebtPaid.Text = Format(CDbl(debtpaid), "#,#0.00")
+        txtNet.Text = Format(CDbl((sales + startAmount + debtpaid) - (expense + refund + debt + adjustment)), "#,#0.00")
 
         txtBt.Text = Format(CDbl(banktransfer), "#,#0.00")
         txtGcash.Text = Format(CDbl(gcash), "#,#0.00")

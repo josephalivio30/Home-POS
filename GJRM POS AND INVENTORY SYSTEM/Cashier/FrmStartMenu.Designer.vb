@@ -62,6 +62,8 @@ Partial Class FrmStartMenu
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtAdjustment = New MetroFramework.Controls.MetroTextBox()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.txtDebtPaid = New MetroFramework.Controls.MetroTextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -84,7 +86,7 @@ Partial Class FrmStartMenu
         Me.btnEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEnd.ForeColor = System.Drawing.Color.White
         Me.btnEnd.Image = CType(resources.GetObject("btnEnd.Image"), System.Drawing.Image)
-        Me.btnEnd.Location = New System.Drawing.Point(126, 469)
+        Me.btnEnd.Location = New System.Drawing.Point(129, 503)
         Me.btnEnd.Name = "btnEnd"
         Me.btnEnd.Size = New System.Drawing.Size(116, 27)
         Me.btnEnd.TabIndex = 3
@@ -100,7 +102,7 @@ Partial Class FrmStartMenu
         Me.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnStart.ForeColor = System.Drawing.Color.White
         Me.btnStart.Image = CType(resources.GetObject("btnStart.Image"), System.Drawing.Image)
-        Me.btnStart.Location = New System.Drawing.Point(4, 469)
+        Me.btnStart.Location = New System.Drawing.Point(7, 503)
         Me.btnStart.Name = "btnStart"
         Me.btnStart.Size = New System.Drawing.Size(116, 27)
         Me.btnStart.TabIndex = 2
@@ -322,7 +324,7 @@ Partial Class FrmStartMenu
         Me.txtNet.ForeColor = System.Drawing.SystemColors.ControlText
         Me.txtNet.Icon = CType(resources.GetObject("txtNet.Icon"), System.Drawing.Image)
         Me.txtNet.Lines = New String(-1) {}
-        Me.txtNet.Location = New System.Drawing.Point(118, 324)
+        Me.txtNet.Location = New System.Drawing.Point(118, 353)
         Me.txtNet.MaxLength = 32767
         Me.txtNet.Name = "txtNet"
         Me.txtNet.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -495,7 +497,7 @@ Partial Class FrmStartMenu
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(5, 328)
+        Me.Label8.Location = New System.Drawing.Point(5, 357)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(72, 15)
         Me.Label8.TabIndex = 87
@@ -510,7 +512,7 @@ Partial Class FrmStartMenu
         Me.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPrint.ForeColor = System.Drawing.Color.White
         Me.btnPrint.Image = CType(resources.GetObject("btnPrint.Image"), System.Drawing.Image)
-        Me.btnPrint.Location = New System.Drawing.Point(248, 469)
+        Me.btnPrint.Location = New System.Drawing.Point(251, 503)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(120, 27)
         Me.btnPrint.TabIndex = 4
@@ -594,7 +596,7 @@ Partial Class FrmStartMenu
         Me.txtGcash.ForeColor = System.Drawing.SystemColors.ControlText
         Me.txtGcash.Icon = CType(resources.GetObject("txtGcash.Icon"), System.Drawing.Image)
         Me.txtGcash.Lines = New String(-1) {}
-        Me.txtGcash.Location = New System.Drawing.Point(118, 382)
+        Me.txtGcash.Location = New System.Drawing.Point(118, 411)
         Me.txtGcash.MaxLength = 32767
         Me.txtGcash.Name = "txtGcash"
         Me.txtGcash.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -629,7 +631,7 @@ Partial Class FrmStartMenu
         Me.txtCheque.ForeColor = System.Drawing.SystemColors.ControlText
         Me.txtCheque.Icon = CType(resources.GetObject("txtCheque.Icon"), System.Drawing.Image)
         Me.txtCheque.Lines = New String(-1) {}
-        Me.txtCheque.Location = New System.Drawing.Point(118, 411)
+        Me.txtCheque.Location = New System.Drawing.Point(118, 440)
         Me.txtCheque.MaxLength = 32767
         Me.txtCheque.Name = "txtCheque"
         Me.txtCheque.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -649,7 +651,7 @@ Partial Class FrmStartMenu
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(6, 414)
+        Me.Label11.Location = New System.Drawing.Point(6, 443)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(51, 15)
         Me.Label11.TabIndex = 106
@@ -675,7 +677,7 @@ Partial Class FrmStartMenu
         Me.txtCash.ForeColor = System.Drawing.SystemColors.ControlText
         Me.txtCash.Icon = CType(resources.GetObject("txtCash.Icon"), System.Drawing.Image)
         Me.txtCash.Lines = New String(-1) {}
-        Me.txtCash.Location = New System.Drawing.Point(118, 440)
+        Me.txtCash.Location = New System.Drawing.Point(118, 469)
         Me.txtCash.MaxLength = 32767
         Me.txtCash.Name = "txtCash"
         Me.txtCash.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -710,7 +712,7 @@ Partial Class FrmStartMenu
         Me.txtBt.ForeColor = System.Drawing.SystemColors.ControlText
         Me.txtBt.Icon = CType(resources.GetObject("txtBt.Icon"), System.Drawing.Image)
         Me.txtBt.Lines = New String(-1) {}
-        Me.txtBt.Location = New System.Drawing.Point(119, 353)
+        Me.txtBt.Location = New System.Drawing.Point(119, 382)
         Me.txtBt.MaxLength = 32767
         Me.txtBt.Name = "txtBt"
         Me.txtBt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -730,7 +732,7 @@ Partial Class FrmStartMenu
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(6, 356)
+        Me.Label12.Location = New System.Drawing.Point(6, 385)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(89, 15)
         Me.Label12.TabIndex = 102
@@ -741,7 +743,7 @@ Partial Class FrmStartMenu
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label13.Location = New System.Drawing.Point(5, 385)
+        Me.Label13.Location = New System.Drawing.Point(5, 414)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(43, 15)
         Me.Label13.TabIndex = 103
@@ -752,7 +754,7 @@ Partial Class FrmStartMenu
         Me.Label14.AutoSize = True
         Me.Label14.BackColor = System.Drawing.Color.Transparent
         Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(5, 444)
+        Me.Label14.Location = New System.Drawing.Point(5, 473)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(35, 15)
         Me.Label14.TabIndex = 104
@@ -804,13 +806,61 @@ Partial Class FrmStartMenu
         Me.Label15.TabIndex = 109
         Me.Label15.Text = "TOTAL ADJUSTMENT"
         '
+        'txtDebtPaid
+        '
+        Me.txtDebtPaid.BackColor = System.Drawing.Color.White
+        '
+        '
+        '
+        Me.txtDebtPaid.CustomButton.Image = Nothing
+        Me.txtDebtPaid.CustomButton.Location = New System.Drawing.Point(231, 1)
+        Me.txtDebtPaid.CustomButton.Name = ""
+        Me.txtDebtPaid.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtDebtPaid.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtDebtPaid.CustomButton.TabIndex = 1
+        Me.txtDebtPaid.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtDebtPaid.CustomButton.UseSelectable = True
+        Me.txtDebtPaid.CustomButton.Visible = False
+        Me.txtDebtPaid.DisplayIcon = True
+        Me.txtDebtPaid.Enabled = False
+        Me.txtDebtPaid.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.txtDebtPaid.Icon = CType(resources.GetObject("txtDebtPaid.Icon"), System.Drawing.Image)
+        Me.txtDebtPaid.Lines = New String(-1) {}
+        Me.txtDebtPaid.Location = New System.Drawing.Point(118, 324)
+        Me.txtDebtPaid.MaxLength = 32767
+        Me.txtDebtPaid.Name = "txtDebtPaid"
+        Me.txtDebtPaid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtDebtPaid.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtDebtPaid.SelectedText = ""
+        Me.txtDebtPaid.SelectionLength = 0
+        Me.txtDebtPaid.SelectionStart = 0
+        Me.txtDebtPaid.ShortcutsEnabled = True
+        Me.txtDebtPaid.Size = New System.Drawing.Size(253, 23)
+        Me.txtDebtPaid.TabIndex = 110
+        Me.txtDebtPaid.UseSelectable = True
+        Me.txtDebtPaid.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtDebtPaid.WaterMarkFont = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.BackColor = System.Drawing.Color.Transparent
+        Me.Label16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label16.Location = New System.Drawing.Point(6, 327)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(97, 15)
+        Me.Label16.TabIndex = 111
+        Me.Label16.Text = "TOTAL DEBT PAID"
+        '
         'FrmStartMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(378, 502)
+        Me.ClientSize = New System.Drawing.Size(378, 542)
         Me.ControlBox = False
+        Me.Controls.Add(Me.txtDebtPaid)
+        Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.txtAdjustment)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.txtGcash)
@@ -900,4 +950,6 @@ Partial Class FrmStartMenu
     Friend WithEvents Label14 As Label
     Friend WithEvents txtAdjustment As MetroFramework.Controls.MetroTextBox
     Friend WithEvents Label15 As Label
+    Friend WithEvents txtDebtPaid As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents Label16 As Label
 End Class

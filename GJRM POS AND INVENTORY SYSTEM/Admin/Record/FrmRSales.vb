@@ -77,7 +77,7 @@
             cn.Close()
 
             cn.Open()
-            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(gcash + banktransfer + cash)), '0', sum(gcash + banktransfer + cash)) as debt from tbldebthistory where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
+            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(gcash + banktransfer + cash + cheque)), '0', sum(gcash + banktransfer + cash + cheque)) as debt from tbldebthistory where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
             Rdebtpaid = CDbl(cm.ExecuteScalar)
             cn.Close()
 
