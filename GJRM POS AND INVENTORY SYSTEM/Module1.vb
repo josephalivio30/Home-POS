@@ -101,7 +101,41 @@ Module Module1
             End If
         Catch ex As Exception
             cn.Close()
-        MsgBox(ex.Message, vbCritical)
+            MsgBox(ex.Message, vbCritical)
+        End Try
+    End Sub
+    Sub NotifyCollection()
+        Try
+            Dim collection As String = ""
+            Dim count As String
+            cn.Open()
+            cm = New OleDbCommand("select count(*) from tbldebt WHERE datetocollect = Date() Or datetocollect < Date()", cn)
+            count = CDbl(cm.ExecuteScalar).ToString
+            cn.Close()
+
+            Dim i As Integer = 0
+            cn.Open()
+            cm = New OleDbCommand("select * from tbldebt WHERE datetocollect = Date() Or datetocollect < Date()", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+                i += 1
+                collection += i & ". " & dr.Item("cname").ToString & " with the amount of " & currencysymbol & Format(CDbl(dr.Item("total").ToString), "#,##0.00") & Environment.NewLine
+            End While
+            cn.Close()
+            dr.Close()
+
+            If count = 0 Then
+                Return
+            Else
+                Dim popup As PopupNotifier = New PopupNotifier()
+                popup.Image = My.Resources.information
+                popup.TitleText = " " & count & " DEADLINE OF COLLECTION"
+                popup.ContentText = collection
+                popup.Popup()
+            End If
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
         End Try
     End Sub
     Sub SumOfAll()
@@ -121,9 +155,10 @@ Module Module1
             dr.Close()
 
             cn.Open()
-            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(banktransfer)), '0', sum(banktransfer)) as banktransfer, IIf(IsNull(sum(gcash)), '0', sum(gcash)) as gcash, IIf(IsNull(sum(cheque)), '0', sum(cheque)) as cheque, IIf(IsNull(sum(cash)), '0', sum(cash)) as cash, IIf(IsNull(sum(schange)), '0', sum(schange)) as schange from tblsales where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cashier like '" & str_user & "'", cn)
+            cm = New OleDbCommand("select IIf(IsNull(sum(adjustment)), '0', sum(adjustment)) as adjustment, IIf(IsNull(sum(banktransfer)), '0', sum(banktransfer)) as banktransfer, IIf(IsNull(sum(gcash)), '0', sum(gcash)) as gcash, IIf(IsNull(sum(cheque)), '0', sum(cheque)) as cheque, IIf(IsNull(sum(cash)), '0', sum(cash)) as cash, IIf(IsNull(sum(schange)), '0', sum(schange)) as schange from tblsales where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cashier like '" & str_user & "'", cn)
             dr = cm.ExecuteReader
             While dr.Read
+                adjustment = CDbl(dr.Item("adjustment").ToString)
                 banktransfer = CDbl(dr.Item("banktransfer").ToString)
                 gcash = CDbl(dr.Item("gcash").ToString)
                 cash = CDbl(dr.Item("cash") - CDbl(dr.Item("schange")).ToString)
@@ -148,11 +183,6 @@ Module Module1
             cn.Close()
 
             cn.Open()
-            cm = New OleDbCommand("select IIf(IsNull(sum(adjustment)), '0', sum(adjustment)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cuser like '" & str_user & "'", cn)
-            adjustment = CDbl(cm.ExecuteScalar)
-            cn.Close()
-
-            cn.Open()
             cm = New OleDbCommand("select IIf(IsNull(sum(amount)), '0', sum(amount)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cuser like '" & str_user & "'", cn)
             debt = CDbl(cm.ExecuteScalar)
             cn.Close()
@@ -161,6 +191,7 @@ Module Module1
             cm = New OleDbCommand("select IIf(IsNull(sum(total)), '0', sum(total)) as total from tblcancelorder where sdate between #" & sdate1 & "# and #" & sdate2 & "# and remarks = 'Paid'", cn)
             refund = CDbl(cm.ExecuteScalar)
             cn.Close()
+
         Catch ex As Exception
             cn.Close()
         MsgBox(ex.Message, vbCritical)

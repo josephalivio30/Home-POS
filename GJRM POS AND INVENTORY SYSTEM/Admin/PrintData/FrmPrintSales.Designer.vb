@@ -43,7 +43,7 @@ Partial Class FrmPrintSales
         Me.Controls.Add(Me.RvSales)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmPrintSales"
-        Me.Text = "FrmPrintSales"
+        Me.Text = "Sales"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 

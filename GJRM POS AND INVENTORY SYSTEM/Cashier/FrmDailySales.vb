@@ -46,6 +46,7 @@
                     .txtID.Text = dgvDailySales.Rows(e.RowIndex).Cells(1).Value.ToString
                     .txtPcode.Text = dgvDailySales.Rows(e.RowIndex).Cells(2).Value.ToString
                     .txtDesc.Text = dgvDailySales.Rows(e.RowIndex).Cells(5).Value.ToString
+                    .txtName.Text = dgvDailySales.Rows(e.RowIndex).Cells(3).Value.ToString
                     .txtTransno.Text = dgvDailySales.Rows(e.RowIndex).Cells(4).Value.ToString
                     .txtPrice.Text = dgvDailySales.Rows(e.RowIndex).Cells(6).Value.ToString
                     .txtSQty.Text = dgvDailySales.Rows(e.RowIndex).Cells(7).Value.ToString
@@ -103,7 +104,7 @@
             dr = cm.ExecuteReader
             While dr.Read
                 total += CDbl(dr.Item("total"))
-                dgvDebt.Rows.Add(dr.Item("transno").ToString, dr.Item("cname").ToString, dr.Item("cuser").ToString, Format(dr.Item("adjustment"), "#,##0.00").ToString, Format(dr.Item("amount"), "#,##0.00").ToString, Format(dr.Item("total"), "#,##0.00").ToString, dr.Item("stime").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString), Format(CDate(dr.Item("datetocollect").ToString).ToShortDateString))
+                dgvDebt.Rows.Add(dr.Item("transno").ToString, dr.Item("cname").ToString, dr.Item("cuser").ToString, Format(dr.Item("amount"), "#,##0.00").ToString, Format(dr.Item("adjustment"), "#,##0.00").ToString, Format(dr.Item("total"), "#,##0.00").ToString, dr.Item("stime").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString), Format(CDate(dr.Item("datetocollect").ToString).ToShortDateString))
             End While
             cn.Close()
             dr.Close()

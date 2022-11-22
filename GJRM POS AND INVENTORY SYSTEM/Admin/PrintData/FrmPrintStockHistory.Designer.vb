@@ -43,7 +43,7 @@ Partial Class FrmPrintStockHistory
         Me.Controls.Add(Me.RvStockHistory)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmPrintStockHistory"
-        Me.Text = "FrmPrintStockHistory"
+        Me.Text = "Stock History"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 

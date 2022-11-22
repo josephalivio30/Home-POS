@@ -43,7 +43,7 @@ Partial Class FrmPrintStockInventory
         Me.Controls.Add(Me.RvInventory)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmPrintStockInventory"
-        Me.Text = "FrmPrintStockInventory"
+        Me.Text = "Stock Inventory"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 

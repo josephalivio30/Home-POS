@@ -15,7 +15,7 @@
             sdate2 = Adt2.Value.ToString("yyyy-MM-dd")
             cn.Open()
             If cboAgent.Text = "ALL AGENT" Then
-                cm = New OleDb.OleDbCommand("select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and agent <> 'NO AGENT' and pdesc like '" & txtSearch.Text & "%' order by sdate desc", cn)
+                cm = New OleDb.OleDbCommand("select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and pdesc like '" & txtSearch.Text & "%' order by sdate desc", cn)
             Else
                 cm = New OleDb.OleDbCommand("select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and agent like '" & cboAgent.Text & "' and pdesc like '" & txtSearch.Text & "%' order by sdate desc", cn)
             End If
@@ -27,18 +27,17 @@
                 _qty += CDbl(dr.Item("qty").ToString)
                 _discount += CDbl(dr.Item("discount").ToString)
                 _net += ((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString))
-                dgvDailySales.Rows.Add(i, dr.Item("id").ToString, dr.Item("pcode").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("discount").ToString), "#,##0.00"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"), Format(CDbl(dr.Item("bprice").ToString), "#,##0.00"), Format(CDbl(dr.Item("sprice").ToString), "#,##0.00"), Format(((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString)) - CDbl(dr.Item("discount").ToString), "#,##0.00"), dr.Item("agent").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString), dr.Item("remarks").ToString)
+                dgvDailySales.Rows.Add(i, dr.Item("id").ToString, dr.Item("pcode").ToString, dr.Item("cname").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("qty") * CDbl(dr.Item("price").ToString)), "#,##0.0"), Format(CDbl(dr.Item("discount").ToString), "#,##0.00"), Format(CDbl(dr.Item("total").ToString), "#,##0.00"), Format(CDbl(dr.Item("bprice").ToString), "#,##0.00"), Format(CDbl(dr.Item("sprice").ToString), "#,##0.00"), Format(((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString)) - CDbl(dr.Item("discount").ToString), "#,##0.00"), dr.Item("agent").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString), dr.Item("remarks").ToString)
             End While
             dr.Close()
             cn.Close()
 
             cn.Open()
             If cboAgent.Text = "ALL AGENT" Then
-                cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(adjustment)), '0', sum(adjustment)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "# and agent <> 'NO AGENT' and pdesc like '" & txtSearch.Text & "%' order by sdate desc", cn)
+                cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(adjustment)), '0', sum(adjustment)) as adjustment from tblsales where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
             Else
-                cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(adjustment)), '0', sum(adjustment)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "# and agent like '" & cboAgent.Text & "' and pdesc like '" & txtSearch.Text & "%' order by sdate desc", cn)
+                cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(adjustment)), '0', sum(adjustment)) as adjustment from tblsales where sdate between #" & sdate1 & "# and #" & sdate2 & "# and agent like '" & cboAgent.Text & "'", cn)
             End If
-            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(adjustment)), '0', sum(adjustment)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
             adjustment = CDbl(cm.ExecuteScalar)
             cn.Close()
 
@@ -57,7 +56,7 @@
             cboAgent.Items.Clear()
             cboAgent.Items.Add("ALL AGENT")
             cn.Open()
-            cm = New OleDb.OleDbCommand("select distinct agent from tblcart where agent <> 'NO AGENT'", cn)
+            cm = New OleDb.OleDbCommand("select distinct agent from tblcart", cn)
             dr = cm.ExecuteReader
             While dr.Read
                 cboAgent.Items.Add(UCase(dr.Item("agent").ToString))
@@ -101,7 +100,7 @@
     Private Sub btnSPrint_Click(sender As Object, e As EventArgs) Handles btnSPrint.Click
         Try
             If cboAgent.Text = "ALL AGENT" Then
-                sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and agent <> 'NO AGENT' and pdesc like '" & txtSearch.Text & "%' order by sdate desc"
+                sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and pdesc like '" & txtSearch.Text & "%' order by sdate desc"
             Else
                 sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and agent like '" & cboAgent.Text & "' and pdesc like '" & txtSearch.Text & "%' order by sdate desc"
             End If

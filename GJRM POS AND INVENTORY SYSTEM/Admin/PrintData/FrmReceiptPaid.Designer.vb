@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FrmPrintLogHistory
+Partial Class FrmReceiptPaid
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,32 +22,33 @@ Partial Class FrmPrintLogHistory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPrintLogHistory))
-        Me.RvLogHistory = New Microsoft.Reporting.WinForms.ReportViewer()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReceiptPaid))
+        Me.rvReceipt = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.SuspendLayout()
         '
-        'RvLogHistory
+        'rvReceipt
         '
-        Me.RvLogHistory.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RvLogHistory.Location = New System.Drawing.Point(0, 0)
-        Me.RvLogHistory.Name = "RvLogHistory"
-        Me.RvLogHistory.ServerReport.BearerToken = Nothing
-        Me.RvLogHistory.Size = New System.Drawing.Size(800, 450)
-        Me.RvLogHistory.TabIndex = 0
+        Me.rvReceipt.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rvReceipt.Location = New System.Drawing.Point(0, 0)
+        Me.rvReceipt.Name = "rvReceipt"
+        Me.rvReceipt.ServerReport.BearerToken = Nothing
+        Me.rvReceipt.Size = New System.Drawing.Size(800, 450)
+        Me.rvReceipt.TabIndex = 0
+        Me.rvReceipt.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage
         '
-        'FrmPrintLogHistory
+        'FrmReceiptPaid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.RvLogHistory)
+        Me.Controls.Add(Me.rvReceipt)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "FrmPrintLogHistory"
-        Me.Text = "Log History"
+        Me.Name = "FrmReceiptPaid"
+        Me.Text = "Receipt"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents RvLogHistory As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents rvReceipt As Microsoft.Reporting.WinForms.ReportViewer
 End Class

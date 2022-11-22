@@ -43,7 +43,7 @@ Partial Class FrmPrintExpense
         Me.Controls.Add(Me.RvExpense)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmPrintExpense"
-        Me.Text = "FrmPrintExpense"
+        Me.Text = "Expense"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 

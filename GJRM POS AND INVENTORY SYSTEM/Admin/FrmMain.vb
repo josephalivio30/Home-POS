@@ -7,6 +7,7 @@ Public Class FrmMain
         panelSales.Visible = False
         panelDebt.Visible = False
         NotifyCriticalItems()
+        NotifyCollection()
         LoadChart()
     End Sub
     Private Sub Main_Resize(sender As Object, e As EventArgs) Handles Me.Resize
@@ -74,7 +75,6 @@ Public Class FrmMain
     End Sub
 
     Private Sub btnProducts_Click(sender As Object, e As EventArgs) Handles btnProducts.Click
-
         With FrmProductList
             .WindowState = FormWindowState.Maximized
             .TopLevel = False
@@ -133,10 +133,10 @@ Public Class FrmMain
     End Sub
 
     Private Sub btnBestSelling_Click(sender As Object, e As EventArgs) Handles btnBestSelling.Click
-        With FrmRBestSelling
+        With FrmBestSelling
             .WindowState = FormWindowState.Maximized
             .TopLevel = False
-            panelOutput.Controls.Add(FrmRBestSelling)
+            panelOutput.Controls.Add(FrmBestSelling)
             .LoadBestSelling()
             .BringToFront()
             .Show()

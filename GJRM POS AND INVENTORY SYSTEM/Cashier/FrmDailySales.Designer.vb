@@ -42,6 +42,15 @@ Partial Class FrmDailySales
         Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle44 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -52,15 +61,6 @@ Partial Class FrmDailySales
         Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle43 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -100,6 +100,15 @@ Partial Class FrmDailySales
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblDTotal = New System.Windows.Forms.Label()
         Me.dgvDebt = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -111,15 +120,7 @@ Partial Class FrmDailySales
         Me.DataGridViewTextBoxColumn34 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -158,7 +159,7 @@ Partial Class FrmDailySales
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1203, 30)
+        Me.Panel1.Size = New System.Drawing.Size(1124, 30)
         Me.Panel1.TabIndex = 39
         '
         'btnClose
@@ -169,7 +170,7 @@ Partial Class FrmDailySales
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.ForeColor = System.Drawing.Color.White
         Me.btnClose.Image = CType(resources.GetObject("btnClose.Image"), System.Drawing.Image)
-        Me.btnClose.Location = New System.Drawing.Point(1133, 0)
+        Me.btnClose.Location = New System.Drawing.Point(1056, 3)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(69, 27)
         Me.btnClose.TabIndex = 2
@@ -196,11 +197,10 @@ Partial Class FrmDailySales
         Me.metrotab.Controls.Add(Me.TabPage2)
         Me.metrotab.Controls.Add(Me.TabPage3)
         Me.metrotab.Controls.Add(Me.TabPage4)
-        Me.metrotab.Dock = System.Windows.Forms.DockStyle.Fill
         Me.metrotab.Location = New System.Drawing.Point(0, 30)
         Me.metrotab.Name = "metrotab"
-        Me.metrotab.SelectedIndex = 1
-        Me.metrotab.Size = New System.Drawing.Size(1203, 668)
+        Me.metrotab.SelectedIndex = 0
+        Me.metrotab.Size = New System.Drawing.Size(1125, 668)
         Me.metrotab.Style = MetroFramework.MetroColorStyle.Black
         Me.metrotab.TabIndex = 76
         Me.metrotab.UseSelectable = True
@@ -213,7 +213,7 @@ Partial Class FrmDailySales
         Me.TabPage1.Controls.Add(Me.dgvDailySales)
         Me.TabPage1.Location = New System.Drawing.Point(4, 38)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(1195, 626)
+        Me.TabPage1.Size = New System.Drawing.Size(1117, 626)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "DAILY SALES"
         '
@@ -223,7 +223,7 @@ Partial Class FrmDailySales
         Me.Panel18.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel18.Controls.Add(Me.Label18)
         Me.Panel18.Controls.Add(Me.lblSTotal)
-        Me.Panel18.Location = New System.Drawing.Point(1026, 40)
+        Me.Panel18.Location = New System.Drawing.Point(955, 40)
         Me.Panel18.Name = "Panel18"
         Me.Panel18.Size = New System.Drawing.Size(161, 60)
         Me.Panel18.TabIndex = 78
@@ -340,7 +340,7 @@ Partial Class FrmDailySales
         Me.dgvDailySales.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvDailySales.RowTemplate.Height = 25
         Me.dgvDailySales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvDailySales.Size = New System.Drawing.Size(1013, 575)
+        Me.dgvDailySales.Size = New System.Drawing.Size(945, 575)
         Me.dgvDailySales.TabIndex = 77
         '
         'Column7
@@ -452,7 +452,7 @@ Partial Class FrmDailySales
         Me.TabPage2.Controls.Add(Me.dgvCancelOrder)
         Me.TabPage2.Location = New System.Drawing.Point(4, 38)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(1195, 626)
+        Me.TabPage2.Size = New System.Drawing.Size(1117, 626)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "CANCELLED ORDER"
         '
@@ -462,7 +462,7 @@ Partial Class FrmDailySales
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.lblCTotal)
-        Me.Panel2.Location = New System.Drawing.Point(1026, 40)
+        Me.Panel2.Location = New System.Drawing.Point(955, 40)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(161, 60)
         Me.Panel2.TabIndex = 80
@@ -546,7 +546,7 @@ Partial Class FrmDailySales
         Me.dgvCancelOrder.RowsDefaultCellStyle = DataGridViewCellStyle22
         Me.dgvCancelOrder.RowTemplate.Height = 25
         Me.dgvCancelOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvCancelOrder.Size = New System.Drawing.Size(1013, 575)
+        Me.dgvCancelOrder.Size = New System.Drawing.Size(945, 575)
         Me.dgvCancelOrder.TabIndex = 79
         '
         'TabPage3
@@ -556,7 +556,7 @@ Partial Class FrmDailySales
         Me.TabPage3.Controls.Add(Me.dgvDebt)
         Me.TabPage3.Location = New System.Drawing.Point(4, 38)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(1195, 626)
+        Me.TabPage3.Size = New System.Drawing.Size(1117, 626)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "DEBT "
         '
@@ -566,7 +566,7 @@ Partial Class FrmDailySales
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Controls.Add(Me.lblDTotal)
-        Me.Panel3.Location = New System.Drawing.Point(1026, 40)
+        Me.Panel3.Location = New System.Drawing.Point(955, 40)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(161, 60)
         Me.Panel3.TabIndex = 80
@@ -620,7 +620,7 @@ Partial Class FrmDailySales
         Me.dgvDebt.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle24
         Me.dgvDebt.ColumnHeadersHeight = 30
         Me.dgvDebt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvDebt.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn25, Me.Column16, Me.DataGridViewTextBoxColumn26, Me.Column17, Me.DataGridViewTextBoxColumn27, Me.DataGridViewTextBoxColumn28, Me.Column18})
+        Me.dgvDebt.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn25, Me.DataGridViewTextBoxColumn26, Me.Column16, Me.Column17, Me.DataGridViewTextBoxColumn27, Me.DataGridViewTextBoxColumn28, Me.Column18})
         Me.dgvDebt.Cursor = System.Windows.Forms.Cursors.Default
         DataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle34.BackColor = System.Drawing.Color.White
@@ -643,8 +643,96 @@ Partial Class FrmDailySales
         Me.dgvDebt.RowsDefaultCellStyle = DataGridViewCellStyle35
         Me.dgvDebt.RowTemplate.Height = 25
         Me.dgvDebt.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvDebt.Size = New System.Drawing.Size(1013, 575)
+        Me.dgvDebt.Size = New System.Drawing.Size(945, 575)
         Me.dgvDebt.TabIndex = 79
+        '
+        'DataGridViewTextBoxColumn13
+        '
+        Me.DataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.DataGridViewTextBoxColumn13.DefaultCellStyle = DataGridViewCellStyle25
+        Me.DataGridViewTextBoxColumn13.HeaderText = "TRANSNO"
+        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        Me.DataGridViewTextBoxColumn13.ReadOnly = True
+        Me.DataGridViewTextBoxColumn13.Width = 81
+        '
+        'DataGridViewTextBoxColumn24
+        '
+        Me.DataGridViewTextBoxColumn24.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.DataGridViewTextBoxColumn24.DefaultCellStyle = DataGridViewCellStyle26
+        Me.DataGridViewTextBoxColumn24.HeaderText = "NAME"
+        Me.DataGridViewTextBoxColumn24.Name = "DataGridViewTextBoxColumn24"
+        Me.DataGridViewTextBoxColumn24.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn25
+        '
+        Me.DataGridViewTextBoxColumn25.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.DataGridViewTextBoxColumn25.DefaultCellStyle = DataGridViewCellStyle27
+        Me.DataGridViewTextBoxColumn25.HeaderText = "CASHIER"
+        Me.DataGridViewTextBoxColumn25.Name = "DataGridViewTextBoxColumn25"
+        Me.DataGridViewTextBoxColumn25.ReadOnly = True
+        Me.DataGridViewTextBoxColumn25.Width = 75
+        '
+        'DataGridViewTextBoxColumn26
+        '
+        Me.DataGridViewTextBoxColumn26.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.DataGridViewTextBoxColumn26.DefaultCellStyle = DataGridViewCellStyle28
+        Me.DataGridViewTextBoxColumn26.HeaderText = "AMOUNT"
+        Me.DataGridViewTextBoxColumn26.Name = "DataGridViewTextBoxColumn26"
+        Me.DataGridViewTextBoxColumn26.ReadOnly = True
+        Me.DataGridViewTextBoxColumn26.Width = 79
+        '
+        'Column16
+        '
+        Me.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column16.DefaultCellStyle = DataGridViewCellStyle29
+        Me.Column16.HeaderText = "ADJUSTMENT"
+        Me.Column16.Name = "Column16"
+        Me.Column16.ReadOnly = True
+        '
+        'Column17
+        '
+        Me.Column17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column17.DefaultCellStyle = DataGridViewCellStyle30
+        Me.Column17.HeaderText = "TOTAL"
+        Me.Column17.Name = "Column17"
+        Me.Column17.ReadOnly = True
+        Me.Column17.Width = 62
+        '
+        'DataGridViewTextBoxColumn27
+        '
+        Me.DataGridViewTextBoxColumn27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn27.DefaultCellStyle = DataGridViewCellStyle31
+        Me.DataGridViewTextBoxColumn27.HeaderText = "TIME"
+        Me.DataGridViewTextBoxColumn27.Name = "DataGridViewTextBoxColumn27"
+        Me.DataGridViewTextBoxColumn27.ReadOnly = True
+        Me.DataGridViewTextBoxColumn27.Width = 57
+        '
+        'DataGridViewTextBoxColumn28
+        '
+        Me.DataGridViewTextBoxColumn28.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.DataGridViewTextBoxColumn28.DefaultCellStyle = DataGridViewCellStyle32
+        Me.DataGridViewTextBoxColumn28.HeaderText = "DATE"
+        Me.DataGridViewTextBoxColumn28.Name = "DataGridViewTextBoxColumn28"
+        Me.DataGridViewTextBoxColumn28.ReadOnly = True
+        Me.DataGridViewTextBoxColumn28.Width = 56
+        '
+        'Column18
+        '
+        Me.Column18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column18.DefaultCellStyle = DataGridViewCellStyle33
+        Me.Column18.HeaderText = "COLLECTION DATE"
+        Me.Column18.Name = "Column18"
+        Me.Column18.ReadOnly = True
+        Me.Column18.Width = 125
         '
         'TabPage4
         '
@@ -653,7 +741,7 @@ Partial Class FrmDailySales
         Me.TabPage4.Controls.Add(Me.dgvExpense)
         Me.TabPage4.Location = New System.Drawing.Point(4, 38)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(1195, 626)
+        Me.TabPage4.Size = New System.Drawing.Size(1117, 626)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "EXPENSE"
         '
@@ -663,7 +751,7 @@ Partial Class FrmDailySales
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel4.Controls.Add(Me.Label5)
         Me.Panel4.Controls.Add(Me.lblETotal)
-        Me.Panel4.Location = New System.Drawing.Point(1026, 40)
+        Me.Panel4.Location = New System.Drawing.Point(955, 40)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(161, 60)
         Me.Panel4.TabIndex = 79
@@ -740,7 +828,7 @@ Partial Class FrmDailySales
         Me.dgvExpense.RowsDefaultCellStyle = DataGridViewCellStyle45
         Me.dgvExpense.RowTemplate.Height = 25
         Me.dgvExpense.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvExpense.Size = New System.Drawing.Size(1013, 575)
+        Me.dgvExpense.Size = New System.Drawing.Size(945, 575)
         Me.dgvExpense.TabIndex = 78
         '
         'DataGridViewTextBoxColumn23
@@ -802,93 +890,12 @@ Partial Class FrmDailySales
         Me.DataGridViewTextBoxColumn35.ReadOnly = True
         Me.DataGridViewTextBoxColumn35.Width = 56
         '
-        'DataGridViewTextBoxColumn13
+        'DataGridViewImageColumn1
         '
-        Me.DataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.DataGridViewTextBoxColumn13.DefaultCellStyle = DataGridViewCellStyle25
-        Me.DataGridViewTextBoxColumn13.HeaderText = "TRANSNO"
-        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
-        Me.DataGridViewTextBoxColumn13.ReadOnly = True
-        Me.DataGridViewTextBoxColumn13.Width = 81
-        '
-        'DataGridViewTextBoxColumn24
-        '
-        Me.DataGridViewTextBoxColumn24.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.DataGridViewTextBoxColumn24.DefaultCellStyle = DataGridViewCellStyle26
-        Me.DataGridViewTextBoxColumn24.HeaderText = "NAME"
-        Me.DataGridViewTextBoxColumn24.Name = "DataGridViewTextBoxColumn24"
-        Me.DataGridViewTextBoxColumn24.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn25
-        '
-        Me.DataGridViewTextBoxColumn25.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.DataGridViewTextBoxColumn25.DefaultCellStyle = DataGridViewCellStyle27
-        Me.DataGridViewTextBoxColumn25.HeaderText = "CASHIER"
-        Me.DataGridViewTextBoxColumn25.Name = "DataGridViewTextBoxColumn25"
-        Me.DataGridViewTextBoxColumn25.ReadOnly = True
-        Me.DataGridViewTextBoxColumn25.Width = 75
-        '
-        'Column16
-        '
-        Me.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column16.DefaultCellStyle = DataGridViewCellStyle28
-        Me.Column16.HeaderText = "ADJUSTMENT"
-        Me.Column16.Name = "Column16"
-        Me.Column16.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn26
-        '
-        Me.DataGridViewTextBoxColumn26.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.DataGridViewTextBoxColumn26.DefaultCellStyle = DataGridViewCellStyle29
-        Me.DataGridViewTextBoxColumn26.HeaderText = "AMOUNT"
-        Me.DataGridViewTextBoxColumn26.Name = "DataGridViewTextBoxColumn26"
-        Me.DataGridViewTextBoxColumn26.ReadOnly = True
-        Me.DataGridViewTextBoxColumn26.Width = 79
-        '
-        'Column17
-        '
-        Me.Column17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column17.DefaultCellStyle = DataGridViewCellStyle30
-        Me.Column17.HeaderText = "TOTAL"
-        Me.Column17.Name = "Column17"
-        Me.Column17.ReadOnly = True
-        Me.Column17.Width = 62
-        '
-        'DataGridViewTextBoxColumn27
-        '
-        Me.DataGridViewTextBoxColumn27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn27.DefaultCellStyle = DataGridViewCellStyle31
-        Me.DataGridViewTextBoxColumn27.HeaderText = "TIME"
-        Me.DataGridViewTextBoxColumn27.Name = "DataGridViewTextBoxColumn27"
-        Me.DataGridViewTextBoxColumn27.ReadOnly = True
-        Me.DataGridViewTextBoxColumn27.Width = 57
-        '
-        'DataGridViewTextBoxColumn28
-        '
-        Me.DataGridViewTextBoxColumn28.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.DataGridViewTextBoxColumn28.DefaultCellStyle = DataGridViewCellStyle32
-        Me.DataGridViewTextBoxColumn28.HeaderText = "DATE"
-        Me.DataGridViewTextBoxColumn28.Name = "DataGridViewTextBoxColumn28"
-        Me.DataGridViewTextBoxColumn28.ReadOnly = True
-        Me.DataGridViewTextBoxColumn28.Width = 56
-        '
-        'Column18
-        '
-        Me.Column18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column18.DefaultCellStyle = DataGridViewCellStyle33
-        Me.Column18.HeaderText = "COLLECTION DATE"
-        Me.Column18.Name = "Column18"
-        Me.Column18.ReadOnly = True
-        Me.Column18.Width = 125
+        Me.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewImageColumn1.HeaderText = ""
+        Me.DataGridViewImageColumn1.Image = CType(resources.GetObject("DataGridViewImageColumn1.Image"), System.Drawing.Image)
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         '
         'DataGridViewTextBoxColumn1
         '
@@ -913,10 +920,10 @@ Partial Class FrmDailySales
         Me.Column19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         Me.Column19.DefaultCellStyle = DataGridViewCellStyle13
-        Me.Column19.HeaderText = "NAME"
+        Me.Column19.HeaderText = "CUSTOMER"
         Me.Column19.Name = "Column19"
         Me.Column19.ReadOnly = True
-        Me.Column19.Width = 62
+        Me.Column19.Width = 90
         '
         'DataGridViewTextBoxColumn3
         '
@@ -928,10 +935,11 @@ Partial Class FrmDailySales
         '
         'DataGridViewTextBoxColumn4
         '
-        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn4.HeaderText = "DESCRIPTION"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        Me.DataGridViewTextBoxColumn4.Width = 102
         '
         'DataGridViewTextBoxColumn5
         '
@@ -1023,7 +1031,7 @@ Partial Class FrmDailySales
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1203, 698)
+        Me.ClientSize = New System.Drawing.Size(1124, 698)
         Me.ControlBox = False
         Me.Controls.Add(Me.metrotab)
         Me.Controls.Add(Me.Panel1)
@@ -1101,12 +1109,13 @@ Partial Class FrmDailySales
     Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn24 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn25 As DataGridViewTextBoxColumn
-    Friend WithEvents Column16 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn26 As DataGridViewTextBoxColumn
+    Friend WithEvents Column16 As DataGridViewTextBoxColumn
     Friend WithEvents Column17 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn27 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn28 As DataGridViewTextBoxColumn
     Friend WithEvents Column18 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents Column19 As DataGridViewTextBoxColumn

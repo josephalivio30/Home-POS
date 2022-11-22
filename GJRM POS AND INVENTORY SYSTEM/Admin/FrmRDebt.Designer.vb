@@ -49,8 +49,8 @@ Partial Class FrmRDebt
         Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TOTAL = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -166,7 +166,7 @@ Partial Class FrmRDebt
         Me.dgvDebt.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvDebt.ColumnHeadersHeight = 30
         Me.dgvDebt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvDebt.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn25, Me.Column1, Me.DataGridViewTextBoxColumn26, Me.TOTAL, Me.DataGridViewTextBoxColumn27, Me.DataGridViewTextBoxColumn28, Me.Column2, Me.ColEdit})
+        Me.dgvDebt.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn25, Me.DataGridViewTextBoxColumn26, Me.Column1, Me.TOTAL, Me.DataGridViewTextBoxColumn27, Me.DataGridViewTextBoxColumn28, Me.Column2, Me.ColEdit})
         Me.dgvDebt.Cursor = System.Windows.Forms.Cursors.Hand
         DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
@@ -255,24 +255,24 @@ Partial Class FrmRDebt
         Me.DataGridViewTextBoxColumn25.ReadOnly = True
         Me.DataGridViewTextBoxColumn25.Width = 75
         '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle6
-        Me.Column1.HeaderText = "ADJUSTMENT"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        '
         'DataGridViewTextBoxColumn26
         '
         Me.DataGridViewTextBoxColumn26.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.DataGridViewTextBoxColumn26.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.DataGridViewTextBoxColumn26.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridViewTextBoxColumn26.HeaderText = "AMOUNT"
         Me.DataGridViewTextBoxColumn26.Name = "DataGridViewTextBoxColumn26"
         Me.DataGridViewTextBoxColumn26.ReadOnly = True
         Me.DataGridViewTextBoxColumn26.Width = 79
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle7
+        Me.Column1.HeaderText = "ADJUSTMENT"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
         '
         'TOTAL
         '
@@ -360,8 +360,8 @@ Partial Class FrmRDebt
     Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn24 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn25 As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn26 As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents TOTAL As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn27 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn28 As DataGridViewTextBoxColumn

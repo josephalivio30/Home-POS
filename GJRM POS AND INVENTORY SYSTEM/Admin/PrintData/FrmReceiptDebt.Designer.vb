@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FrmPrintReceipt
+Partial Class FrmReceiptDebt
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,6 +22,7 @@ Partial Class FrmPrintReceipt
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReceiptDebt))
         Me.rvReceipt = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.SuspendLayout()
         '
@@ -36,14 +37,15 @@ Partial Class FrmPrintReceipt
         Me.rvReceipt.TabIndex = 0
         Me.rvReceipt.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage
         '
-        'FrmPrintReceipt
+        'FrmReceiptDebt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.rvReceipt)
-        Me.Name = "FrmPrintReceipt"
-        Me.Text = "FrmPrintReceipt"
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "FrmReceiptDebt"
+        Me.Text = "Receipt"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 

@@ -24,9 +24,9 @@ Partial Class FrmRAgentSales
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmRAgentSales))
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -35,15 +35,15 @@ Partial Class FrmRAgentSales
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.dgvDailySales = New System.Windows.Forms.DataGridView()
-        Me.btnClose = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
         Me.cboAgent = New System.Windows.Forms.ComboBox()
-        Me.btnSPrint = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Adt2 = New System.Windows.Forms.DateTimePicker()
         Me.Adt1 = New System.Windows.Forms.DateTimePicker()
@@ -57,13 +57,21 @@ Partial Class FrmRAgentSales
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblQty = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblAdjustment = New System.Windows.Forms.Label()
+        Me.btnClose = New System.Windows.Forms.Button()
+        Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
+        Me.btnSPrint = New System.Windows.Forms.Button()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -72,9 +80,6 @@ Partial Class FrmRAgentSales
         Me.CASHIER = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.lblAdjustment = New System.Windows.Forms.Label()
         Me.Panel18.SuspendLayout()
         CType(Me.dgvDailySales, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -145,53 +150,37 @@ Partial Class FrmRAgentSales
         Me.dgvDailySales.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvDailySales.ColumnHeadersHeight = 30
         Me.dgvDailySales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvDailySales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column1, Me.Column5, Me.Column12, Me.Column2, Me.Column4, Me.Column8, Me.Column11, Me.Column3, Me.Column6, Me.Column9, Me.Column10, Me.CASHIER, Me.Column13, Me.Column14})
+        Me.dgvDailySales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column1, Me.Column5, Me.Column15, Me.Column12, Me.Column2, Me.Column4, Me.Column8, Me.Column16, Me.Column11, Me.Column3, Me.Column6, Me.Column9, Me.Column10, Me.CASHIER, Me.Column13, Me.Column14})
         Me.dgvDailySales.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(251, Byte), Integer))
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvDailySales.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle13.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvDailySales.DefaultCellStyle = DataGridViewCellStyle13
         Me.dgvDailySales.EnableHeadersVisualStyles = False
         Me.dgvDailySales.GridColor = System.Drawing.Color.LightSkyBlue
         Me.dgvDailySales.Location = New System.Drawing.Point(12, 67)
         Me.dgvDailySales.Name = "dgvDailySales"
         Me.dgvDailySales.ReadOnly = True
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(251, Byte), Integer))
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvDailySales.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvDailySales.RowHeadersDefaultCellStyle = DataGridViewCellStyle14
         Me.dgvDailySales.RowHeadersVisible = False
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(251, Byte), Integer))
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.dgvDailySales.RowsDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.dgvDailySales.RowsDefaultCellStyle = DataGridViewCellStyle15
         Me.dgvDailySales.RowTemplate.Height = 25
         Me.dgvDailySales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvDailySales.Size = New System.Drawing.Size(1012, 588)
         Me.dgvDailySales.TabIndex = 79
-        '
-        'btnClose
-        '
-        Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnClose.BackColor = System.Drawing.Color.Transparent
-        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnClose.FlatAppearance.BorderSize = 0
-        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Image = CType(resources.GetObject("btnClose.Image"), System.Drawing.Image)
-        Me.btnClose.Location = New System.Drawing.Point(1179, 0)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(26, 31)
-        Me.btnClose.TabIndex = 78
-        Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnClose.UseVisualStyleBackColor = False
         '
         'Panel1
         '
@@ -210,41 +199,6 @@ Partial Class FrmRAgentSales
         Me.Panel1.Size = New System.Drawing.Size(1205, 30)
         Me.Panel1.TabIndex = 77
         '
-        'txtSearch
-        '
-        Me.txtSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        '
-        '
-        '
-        Me.txtSearch.CustomButton.Image = Nothing
-        Me.txtSearch.CustomButton.Location = New System.Drawing.Point(117, 1)
-        Me.txtSearch.CustomButton.Name = ""
-        Me.txtSearch.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.txtSearch.CustomButton.TabIndex = 1
-        Me.txtSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.txtSearch.CustomButton.UseSelectable = True
-        Me.txtSearch.CustomButton.Visible = False
-        Me.txtSearch.DisplayIcon = True
-        Me.txtSearch.Icon = CType(resources.GetObject("txtSearch.Icon"), System.Drawing.Image)
-        Me.txtSearch.Lines = New String(-1) {}
-        Me.txtSearch.Location = New System.Drawing.Point(969, 4)
-        Me.txtSearch.MaxLength = 32767
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSearch.PromptText = "Search Description"
-        Me.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtSearch.SelectedText = ""
-        Me.txtSearch.SelectionLength = 0
-        Me.txtSearch.SelectionStart = 0
-        Me.txtSearch.ShortcutsEnabled = True
-        Me.txtSearch.Size = New System.Drawing.Size(139, 23)
-        Me.txtSearch.TabIndex = 7
-        Me.txtSearch.UseSelectable = True
-        Me.txtSearch.WaterMark = "Search Description"
-        Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.txtSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
-        '
         'cboAgent
         '
         Me.cboAgent.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -254,24 +208,6 @@ Partial Class FrmRAgentSales
         Me.cboAgent.Size = New System.Drawing.Size(121, 23)
         Me.cboAgent.TabIndex = 6
         Me.cboAgent.Text = "ALL AGENT"
-        '
-        'btnSPrint
-        '
-        Me.btnSPrint.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSPrint.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSPrint.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSPrint.FlatAppearance.BorderSize = 0
-        Me.btnSPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSPrint.ForeColor = System.Drawing.Color.White
-        Me.btnSPrint.Image = CType(resources.GetObject("btnSPrint.Image"), System.Drawing.Image)
-        Me.btnSPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSPrint.Location = New System.Drawing.Point(1114, 3)
-        Me.btnSPrint.Name = "btnSPrint"
-        Me.btnSPrint.Size = New System.Drawing.Size(78, 24)
-        Me.btnSPrint.TabIndex = 8
-        Me.btnSPrint.Text = "   PRINT"
-        Me.btnSPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSPrint.UseVisualStyleBackColor = False
         '
         'Label3
         '
@@ -414,6 +350,109 @@ Partial Class FrmRAgentSales
         Me.lblQty.Text = "0.00"
         Me.lblQty.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'Panel3
+        '
+        Me.Panel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Controls.Add(Me.lblAdjustment)
+        Me.Panel3.Location = New System.Drawing.Point(1031, 67)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(161, 60)
+        Me.Panel3.TabIndex = 87
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(3, 45)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(96, 13)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "TOTAL ADJUSTMENT"
+        '
+        'lblAdjustment
+        '
+        Me.lblAdjustment.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblAdjustment.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAdjustment.ForeColor = System.Drawing.Color.White
+        Me.lblAdjustment.Location = New System.Drawing.Point(0, 0)
+        Me.lblAdjustment.Name = "lblAdjustment"
+        Me.lblAdjustment.Size = New System.Drawing.Size(160, 45)
+        Me.lblAdjustment.TabIndex = 28
+        Me.lblAdjustment.Text = "0.00"
+        Me.lblAdjustment.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'btnClose
+        '
+        Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnClose.BackColor = System.Drawing.Color.Transparent
+        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClose.FlatAppearance.BorderSize = 0
+        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClose.ForeColor = System.Drawing.Color.White
+        Me.btnClose.Image = CType(resources.GetObject("btnClose.Image"), System.Drawing.Image)
+        Me.btnClose.Location = New System.Drawing.Point(1179, 0)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(26, 31)
+        Me.btnClose.TabIndex = 78
+        Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnClose.UseVisualStyleBackColor = False
+        '
+        'txtSearch
+        '
+        Me.txtSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        '
+        '
+        '
+        Me.txtSearch.CustomButton.Image = Nothing
+        Me.txtSearch.CustomButton.Location = New System.Drawing.Point(117, 1)
+        Me.txtSearch.CustomButton.Name = ""
+        Me.txtSearch.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtSearch.CustomButton.TabIndex = 1
+        Me.txtSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtSearch.CustomButton.UseSelectable = True
+        Me.txtSearch.CustomButton.Visible = False
+        Me.txtSearch.DisplayIcon = True
+        Me.txtSearch.Icon = CType(resources.GetObject("txtSearch.Icon"), System.Drawing.Image)
+        Me.txtSearch.Lines = New String(-1) {}
+        Me.txtSearch.Location = New System.Drawing.Point(969, 4)
+        Me.txtSearch.MaxLength = 32767
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSearch.PromptText = "Search Description"
+        Me.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtSearch.SelectedText = ""
+        Me.txtSearch.SelectionLength = 0
+        Me.txtSearch.SelectionStart = 0
+        Me.txtSearch.ShortcutsEnabled = True
+        Me.txtSearch.Size = New System.Drawing.Size(139, 23)
+        Me.txtSearch.TabIndex = 7
+        Me.txtSearch.UseSelectable = True
+        Me.txtSearch.WaterMark = "Search Description"
+        Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'btnSPrint
+        '
+        Me.btnSPrint.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSPrint.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSPrint.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSPrint.FlatAppearance.BorderSize = 0
+        Me.btnSPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSPrint.ForeColor = System.Drawing.Color.White
+        Me.btnSPrint.Image = CType(resources.GetObject("btnSPrint.Image"), System.Drawing.Image)
+        Me.btnSPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSPrint.Location = New System.Drawing.Point(1114, 3)
+        Me.btnSPrint.Name = "btnSPrint"
+        Me.btnSPrint.Size = New System.Drawing.Size(78, 24)
+        Me.btnSPrint.TabIndex = 8
+        Me.btnSPrint.Text = "   PRINT"
+        Me.btnSPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSPrint.UseVisualStyleBackColor = False
+        '
         'Column7
         '
         Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -438,24 +477,39 @@ Partial Class FrmRAgentSales
         Me.Column5.ReadOnly = True
         Me.Column5.Visible = False
         '
+        'Column15
+        '
+        Me.Column15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column15.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Column15.HeaderText = "CUSTOMER"
+        Me.Column15.Name = "Column15"
+        Me.Column15.ReadOnly = True
+        Me.Column15.Width = 90
+        '
         'Column12
         '
+        Me.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column12.DefaultCellStyle = DataGridViewCellStyle4
         Me.Column12.HeaderText = "TRANSNO"
         Me.Column12.Name = "Column12"
         Me.Column12.ReadOnly = True
+        Me.Column12.Width = 81
         '
         'Column2
         '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column2.HeaderText = "DESCRIPTION"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
+        Me.Column2.Width = 102
         '
         'Column4
         '
         Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle5
         Me.Column4.HeaderText = "PRICE"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
@@ -464,18 +518,28 @@ Partial Class FrmRAgentSales
         'Column8
         '
         Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column8.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column8.DefaultCellStyle = DataGridViewCellStyle6
         Me.Column8.HeaderText = "QTY"
         Me.Column8.Name = "Column8"
         Me.Column8.ReadOnly = True
         Me.Column8.Width = 51
         '
+        'Column16
+        '
+        Me.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column16.DefaultCellStyle = DataGridViewCellStyle7
+        Me.Column16.HeaderText = "SUB-TOTAL"
+        Me.Column16.Name = "Column16"
+        Me.Column16.ReadOnly = True
+        Me.Column16.Width = 87
+        '
         'Column11
         '
         Me.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column11.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column11.DefaultCellStyle = DataGridViewCellStyle8
         Me.Column11.HeaderText = "DISCOUNT"
         Me.Column11.Name = "Column11"
         Me.Column11.ReadOnly = True
@@ -484,8 +548,8 @@ Partial Class FrmRAgentSales
         'Column3
         '
         Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle9
         Me.Column3.HeaderText = "TOTAL"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
@@ -521,8 +585,8 @@ Partial Class FrmRAgentSales
         'CASHIER
         '
         Me.CASHIER.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.CASHIER.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.CASHIER.DefaultCellStyle = DataGridViewCellStyle10
         Me.CASHIER.HeaderText = "AGENT"
         Me.CASHIER.Name = "CASHIER"
         Me.CASHIER.ReadOnly = True
@@ -531,8 +595,8 @@ Partial Class FrmRAgentSales
         'Column13
         '
         Me.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column13.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column13.DefaultCellStyle = DataGridViewCellStyle11
         Me.Column13.HeaderText = "DATE"
         Me.Column13.Name = "Column13"
         Me.Column13.ReadOnly = True
@@ -541,46 +605,12 @@ Partial Class FrmRAgentSales
         'Column14
         '
         Me.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column14.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column14.DefaultCellStyle = DataGridViewCellStyle12
         Me.Column14.HeaderText = "REMARKS"
         Me.Column14.Name = "Column14"
         Me.Column14.ReadOnly = True
         Me.Column14.Width = 81
-        '
-        'Panel3
-        '
-        Me.Panel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Controls.Add(Me.lblAdjustment)
-        Me.Panel3.Location = New System.Drawing.Point(1031, 67)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(161, 60)
-        Me.Panel3.TabIndex = 87
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(3, 45)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(96, 13)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "TOTAL ADJUSTMENT"
-        '
-        'lblAdjustment
-        '
-        Me.lblAdjustment.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblAdjustment.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAdjustment.ForeColor = System.Drawing.Color.White
-        Me.lblAdjustment.Location = New System.Drawing.Point(0, 0)
-        Me.lblAdjustment.Name = "lblAdjustment"
-        Me.lblAdjustment.Size = New System.Drawing.Size(160, 45)
-        Me.lblAdjustment.TabIndex = 28
-        Me.lblAdjustment.Text = "0.00"
-        Me.lblAdjustment.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'FrmRAgentSales
         '
@@ -640,13 +670,18 @@ Partial Class FrmRAgentSales
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents lblQty As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents lblAdjustment As Label
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column15 As DataGridViewTextBoxColumn
     Friend WithEvents Column12 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column16 As DataGridViewTextBoxColumn
     Friend WithEvents Column11 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
@@ -655,7 +690,4 @@ Partial Class FrmRAgentSales
     Friend WithEvents CASHIER As DataGridViewTextBoxColumn
     Friend WithEvents Column13 As DataGridViewTextBoxColumn
     Friend WithEvents Column14 As DataGridViewTextBoxColumn
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents lblAdjustment As Label
 End Class

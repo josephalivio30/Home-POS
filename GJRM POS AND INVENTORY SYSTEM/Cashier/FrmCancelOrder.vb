@@ -14,8 +14,9 @@
                 If str_role = "Administrator" Then
                     If MsgBox("Cancel this item?", vbYesNo + vbQuestion) = vbYes Then
                         cn.Open()
-                        cm = New OleDb.OleDbCommand("insert into tblcancelorder(transno, pcode, price, qty, discount, total, sdate, stime, voidby, cancelledby, reason,saction, remarks)values(@transno, @pcode, @price, @qty, @discount, @total, @sdate, @stime, @voidby, @cancelledby, @reason, @saction, @remarks)", cn)
+                        cm = New OleDb.OleDbCommand("insert into tblcancelorder(cname, transno, pcode, price, qty, discount, total, sdate, stime, voidby, cancelledby, reason,saction, remarks)values(@cname, @transno, @pcode, @price, @qty, @discount, @total, @sdate, @stime, @voidby, @cancelledby, @reason, @saction, @remarks)", cn)
                         With cm.Parameters
+                            .AddWithValue("@cname", txtName.Text)
                             .AddWithValue("@transno", txtTransno.Text)
                             .AddWithValue("@pcode", txtPcode.Text)
                             .AddWithValue("@price", CDbl(txtPrice.Text))

@@ -43,7 +43,7 @@ Partial Class FrmPrintCancelledOrder
         Me.Controls.Add(Me.RvCancelledOrder)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmPrintCancelledOrder"
-        Me.Text = "FrmPrintCancelledOrder"
+        Me.Text = "Cancelled Order"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 

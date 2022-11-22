@@ -21,7 +21,7 @@ Public Class FrmPrintBestSelling
             Dim p1 As New ReportParameter("h1", _h1)
             Dim p2 As New ReportParameter("h2", _h2)
             Dim p3 As New ReportParameter("h3", _h3)
-            Dim pHeader As New ReportParameter("pHeader", "BEST SELLING REPORT DATE COVERED (" & FrmRBestSelling.Bdt1.Value.ToShortDateString & " - " & FrmRBestSelling.Bdt2.Value.ToShortDateString & ")")
+            Dim pHeader As New ReportParameter("pHeader", "BEST SELLING REPORT DATE COVERED (" & FrmBestSelling.Bdt1.Value.ToShortDateString & " - " & FrmBestSelling.Bdt2.Value.ToShortDateString & ")")
 
             RvBestSelling.LocalReport.SetParameters(shopname)
             RvBestSelling.LocalReport.SetParameters(p1)

@@ -128,7 +128,7 @@
 
                 'delete rows
                 cn.Open()
-                cm = New OleDb.OleDbCommand("delete from tbldebt where amount = 0", cn)
+                cm = New OleDb.OleDbCommand("delete from tbldebt where total = 0", cn)
                 cm.ExecuteNonQuery()
                 cn.Close()
 

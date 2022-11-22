@@ -27,6 +27,8 @@ Partial Class FrmCancelOrder
         Me.btnClose = New System.Windows.Forms.Button()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtRemarks = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtDiscount = New System.Windows.Forms.TextBox()
@@ -55,8 +57,8 @@ Partial Class FrmCancelOrder
         Me.txtVoidBy = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.txtRemarks = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -104,6 +106,8 @@ Partial Class FrmCancelOrder
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtName)
+        Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Controls.Add(Me.txtRemarks)
         Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.txtTotal)
@@ -123,17 +127,37 @@ Partial Class FrmCancelOrder
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 36)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(480, 279)
+        Me.GroupBox1.Size = New System.Drawing.Size(480, 304)
         Me.GroupBox1.TabIndex = 41
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "SOLD ITEM"
+        '
+        'txtRemarks
+        '
+        Me.txtRemarks.BackColor = System.Drawing.Color.White
+        Me.txtRemarks.Enabled = False
+        Me.txtRemarks.Location = New System.Drawing.Point(172, 274)
+        Me.txtRemarks.Name = "txtRemarks"
+        Me.txtRemarks.Size = New System.Drawing.Size(145, 23)
+        Me.txtRemarks.TabIndex = 126
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.Color.Transparent
+        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label13.Location = New System.Drawing.Point(33, 277)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(58, 15)
+        Me.Label13.TabIndex = 125
+        Me.Label13.Text = "REMARKS"
         '
         'txtTotal
         '
         Me.txtTotal.BackColor = System.Drawing.Color.White
         Me.txtTotal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtTotal.Enabled = False
-        Me.txtTotal.Location = New System.Drawing.Point(172, 216)
+        Me.txtTotal.Location = New System.Drawing.Point(172, 245)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.Size = New System.Drawing.Size(300, 23)
         Me.txtTotal.TabIndex = 124
@@ -143,7 +167,7 @@ Partial Class FrmCancelOrder
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(33, 219)
+        Me.Label7.Location = New System.Drawing.Point(33, 248)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(39, 15)
         Me.Label7.TabIndex = 123
@@ -154,7 +178,7 @@ Partial Class FrmCancelOrder
         Me.txtDiscount.BackColor = System.Drawing.Color.White
         Me.txtDiscount.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDiscount.Enabled = False
-        Me.txtDiscount.Location = New System.Drawing.Point(327, 187)
+        Me.txtDiscount.Location = New System.Drawing.Point(327, 216)
         Me.txtDiscount.Name = "txtDiscount"
         Me.txtDiscount.Size = New System.Drawing.Size(145, 23)
         Me.txtDiscount.TabIndex = 122
@@ -164,7 +188,7 @@ Partial Class FrmCancelOrder
         Me.txtSQty.BackColor = System.Drawing.Color.White
         Me.txtSQty.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtSQty.Enabled = False
-        Me.txtSQty.Location = New System.Drawing.Point(172, 187)
+        Me.txtSQty.Location = New System.Drawing.Point(172, 216)
         Me.txtSQty.Name = "txtSQty"
         Me.txtSQty.Size = New System.Drawing.Size(145, 23)
         Me.txtSQty.TabIndex = 121
@@ -174,7 +198,7 @@ Partial Class FrmCancelOrder
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(33, 190)
+        Me.Label4.Location = New System.Drawing.Point(33, 219)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(95, 15)
         Me.Label4.TabIndex = 120
@@ -185,7 +209,7 @@ Partial Class FrmCancelOrder
         Me.txtPrice.BackColor = System.Drawing.Color.White
         Me.txtPrice.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtPrice.Enabled = False
-        Me.txtPrice.Location = New System.Drawing.Point(172, 158)
+        Me.txtPrice.Location = New System.Drawing.Point(172, 187)
         Me.txtPrice.Name = "txtPrice"
         Me.txtPrice.Size = New System.Drawing.Size(300, 23)
         Me.txtPrice.TabIndex = 119
@@ -195,7 +219,7 @@ Partial Class FrmCancelOrder
         Me.txtTransno.BackColor = System.Drawing.Color.White
         Me.txtTransno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtTransno.Enabled = False
-        Me.txtTransno.Location = New System.Drawing.Point(172, 130)
+        Me.txtTransno.Location = New System.Drawing.Point(172, 159)
         Me.txtTransno.Name = "txtTransno"
         Me.txtTransno.Size = New System.Drawing.Size(300, 23)
         Me.txtTransno.TabIndex = 118
@@ -257,7 +281,7 @@ Partial Class FrmCancelOrder
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(33, 161)
+        Me.Label1.Location = New System.Drawing.Point(33, 190)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(38, 15)
         Me.Label1.TabIndex = 113
@@ -268,11 +292,11 @@ Partial Class FrmCancelOrder
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(33, 133)
+        Me.Label5.Location = New System.Drawing.Point(33, 162)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(91, 15)
+        Me.Label5.Size = New System.Drawing.Size(102, 15)
         Me.Label5.TabIndex = 112
-        Me.Label5.Text = "TRANSACTION #"
+        Me.Label5.Text = "TRANSACTION NO"
         '
         'Label3
         '
@@ -299,7 +323,7 @@ Partial Class FrmCancelOrder
         Me.GroupBox2.Controls.Add(Me.txtVoidBy)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.Label12)
-        Me.GroupBox2.Location = New System.Drawing.Point(16, 321)
+        Me.GroupBox2.Location = New System.Drawing.Point(16, 346)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(480, 235)
         Me.GroupBox2.TabIndex = 125
@@ -437,32 +461,33 @@ Partial Class FrmCancelOrder
         Me.Label12.TabIndex = 113
         Me.Label12.Text = "ADD TO INVENTORY?"
         '
-        'txtRemarks
+        'txtName
         '
-        Me.txtRemarks.BackColor = System.Drawing.Color.White
-        Me.txtRemarks.Enabled = False
-        Me.txtRemarks.Location = New System.Drawing.Point(172, 245)
-        Me.txtRemarks.Name = "txtRemarks"
-        Me.txtRemarks.Size = New System.Drawing.Size(145, 23)
-        Me.txtRemarks.TabIndex = 126
+        Me.txtName.BackColor = System.Drawing.Color.White
+        Me.txtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtName.Enabled = False
+        Me.txtName.Location = New System.Drawing.Point(172, 130)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(300, 23)
+        Me.txtName.TabIndex = 128
         '
-        'Label13
+        'Label14
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.Color.Transparent
-        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label13.Location = New System.Drawing.Point(33, 248)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(58, 15)
-        Me.Label13.TabIndex = 125
-        Me.Label13.Text = "REMARKS"
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.Transparent
+        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label14.Location = New System.Drawing.Point(33, 133)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(67, 15)
+        Me.Label14.TabIndex = 127
+        Me.Label14.Text = "CUSTOMER"
         '
         'FrmCancelOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(515, 565)
+        Me.ClientSize = New System.Drawing.Size(515, 592)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -516,4 +541,6 @@ Partial Class FrmCancelOrder
     Friend WithEvents txtCQty As TextBox
     Friend WithEvents txtRemarks As TextBox
     Friend WithEvents Label13 As Label
+    Friend WithEvents txtName As TextBox
+    Friend WithEvents Label14 As Label
 End Class

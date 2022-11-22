@@ -59,10 +59,10 @@
             cm.ExecuteNonQuery()
             cn.Close()
 
-            If MsgBox("Do you want to print bill", vbYesNo + vbQuestion) = vbYes Then
+            If MsgBox("Do you want to print the receipt?", vbYesNo + vbQuestion) = vbYes Then
                 Dim sql As String
                 sql = "select * from ComputeTotal where transno like '" & FrmPOS.lblTransNo.Text & "'"
-                With FrmPrintReceipt
+                With FrmReceiptDebt
                     .PrintPreview(sql)
                     .ShowDialog()
                 End With

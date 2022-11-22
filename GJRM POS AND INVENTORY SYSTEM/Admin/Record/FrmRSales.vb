@@ -28,9 +28,9 @@
             sdate2 = Sdt2.Value.ToString("yyyy-MM-dd")
             cn.Open()
             If cboCashier.Text = "ALL CASHIER" Then
-                cm = New OleDb.OleDbCommand("select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cname like '" & txtSearch.Text & "%' order by transno, sdate desc", cn)
+                cm = New OleDb.OleDbCommand("select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cname like '" & txtSearch.Text & "%' order by sdate, transno desc", cn)
             Else
-                cm = New OleDb.OleDbCommand("select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cashier like '" & cboCashier.Text & "' and cname like '" & txtSearch.Text & "%' order by transno, sdate desc", cn)
+                cm = New OleDb.OleDbCommand("select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cashier like '" & cboCashier.Text & "' and cname like '" & txtSearch.Text & "%' order by sdate, transno desc", cn)
             End If
 
             dr = cm.ExecuteReader
@@ -39,7 +39,7 @@
                 _total += CDbl(dr.Item("total").ToString)
                 _discount += CDbl(dr.Item("discount").ToString)
                 _net += ((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString))
-                dgvDailySales.Rows.Add(i, dr.Item("id").ToString, dr.Item("pcode").ToString, dr.Item("cname").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("discount").ToString), "#,##0.00"), Format(CDbl((dr.Item("qty")) * CDbl(dr.Item("price")) - CDbl(dr.Item("discount")).ToString), "#,##0.00"), Format(CDbl(dr.Item("bprice").ToString), "#,##0.00"), Format(CDbl(dr.Item("sprice").ToString), "#,##0.00"), Format(((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString)) - CDbl(dr.Item("discount").ToString), "#,##0.00"), dr.Item("cashier").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString), dr.Item("remarks").ToString)
+                dgvDailySales.Rows.Add(i, dr.Item("id").ToString, dr.Item("pcode").ToString, dr.Item("cname").ToString, dr.Item("transno").ToString, dr.Item("pdesc").ToString, Format(CDbl(dr.Item("price").ToString), "#,##0.00"), Format(CDbl(dr.Item("qty").ToString), "#,##0.0"), Format(CDbl(dr.Item("qty") * CDbl(dr.Item("price").ToString)), "#,##0.0"), Format(CDbl(dr.Item("discount").ToString), "#,##0.00"), Format(CDbl((dr.Item("qty")) * CDbl(dr.Item("price")) - CDbl(dr.Item("discount")).ToString), "#,##0.00"), Format(CDbl(dr.Item("bprice").ToString), "#,##0.00"), Format(CDbl(dr.Item("sprice").ToString), "#,##0.00"), Format(((CDbl(dr.Item("sprice").ToString) - CDbl(dr.Item("bprice").ToString)) * CDbl(dr.Item("qty").ToString)) - CDbl(dr.Item("discount").ToString), "#,##0.00"), dr.Item("cashier").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString), dr.Item("remarks").ToString)
             End While
             dr.Close()
             cn.Close()
@@ -87,14 +87,14 @@
             cn.Close()
 
             lblStartAmount.Text = Format(RstartAmount, currencysymbol & "#,##0.00")
-            lblTotal.Text = Format(_total, currencysymbol & "#,##0.00")
+            lblTotal.Text = Format(_total + adjustment, currencysymbol & "#,##0.00")
             lblExpense.Text = Format(Rexpense, currencysymbol & "#,##0.00")
             lblDiscount.Text = Format(_discount, currencysymbol & "#,##0.00")
             lblSRefund.Text = Format(Rrefund, currencysymbol & "#,##0.00")
             lblAdjustment.Text = Format(adjustment, currencysymbol & "#,##0.00")
             lblDebt.Text = Format(Rdebt, currencysymbol & "#,##0.00")
             lblPaidDebt.Text = Format(Rdebtpaid, currencysymbol & "#,##0.00")
-            lblGrandSales.Text = Format((_total + startAmount + Rdebtpaid) - (Rrefund + Rdebt + Rexpense + adjustment), currencysymbol & "#,##0.00")
+            lblGrandSales.Text = Format((_total + startAmount + Rdebtpaid + adjustment) - (Rrefund + Rdebt + Rexpense + adjustment), currencysymbol & "#,##0.00")
             lblTotalNet.Text = Format(_net, currencysymbol & "#,##0.00")
 
             lblbt.Text = Format(banktransfer, currencysymbol & "#,##0.00")
@@ -160,14 +160,15 @@
                     .txtID.Text = dgvDailySales.Rows(e.RowIndex).Cells(1).Value.ToString
                     .txtPcode.Text = dgvDailySales.Rows(e.RowIndex).Cells(2).Value.ToString
                     .txtDesc.Text = dgvDailySales.Rows(e.RowIndex).Cells(5).Value.ToString
+                    .txtName.Text = dgvDailySales.Rows(e.RowIndex).Cells(3).Value.ToString
                     .txtTransno.Text = dgvDailySales.Rows(e.RowIndex).Cells(4).Value.ToString
                     .txtPrice.Text = dgvDailySales.Rows(e.RowIndex).Cells(6).Value.ToString
                     .txtSQty.Text = dgvDailySales.Rows(e.RowIndex).Cells(7).Value.ToString
-                    .txtDiscount.Text = dgvDailySales.Rows(e.RowIndex).Cells(8).Value.ToString
-                    .txtTotal.Text = dgvDailySales.Rows(e.RowIndex).Cells(9).Value.ToString
+                    .txtDiscount.Text = dgvDailySales.Rows(e.RowIndex).Cells(9).Value.ToString
+                    .txtTotal.Text = dgvDailySales.Rows(e.RowIndex).Cells(10).Value.ToString
                     .txtVoidBy.Text = str_name
                     .txtCancelBy.Text = str_user
-                    .txtRemarks.Text = dgvDailySales.Rows(e.RowIndex).Cells(15).Value.ToString
+                    .txtRemarks.Text = dgvDailySales.Rows(e.RowIndex).Cells(16).Value.ToString
                     .ShowDialog()
                 End With
             End If
@@ -179,9 +180,9 @@
 
     Private Sub btnSPrint_Click(sender As Object, e As EventArgs) Handles btnSPrint.Click
         If cboCashier.Text = "ALL CASHIER" Then
-            sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cname like '" & txtSearch.Text & "%' order by transno, sdate desc"
+            sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cname like '" & txtSearch.Text & "%' order by sdate, transno desc"
         Else
-            sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cashier like '" & cboCashier.Text & "' and cname like '" & txtSearch.Text & "%' order by transno, sdate desc"
+            sql = "select * from SalesRecord where sdate between #" & sdate1 & "# and #" & sdate2 & "# and status like 'Completed' and cashier like '" & cboCashier.Text & "' and cname like '" & txtSearch.Text & "%' order by sdate, transno desc"
         End If
         With FrmPrintSales
             .PrintPreview(sql)

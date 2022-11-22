@@ -36,7 +36,6 @@ Partial Class FrmRCancelledOrder
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvCancelOrder = New System.Windows.Forms.DataGridView()
-        Me.btnClose = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -49,6 +48,7 @@ Partial Class FrmRCancelledOrder
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -126,22 +126,6 @@ Partial Class FrmRCancelledOrder
         Me.dgvCancelOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvCancelOrder.Size = New System.Drawing.Size(1012, 588)
         Me.dgvCancelOrder.TabIndex = 78
-        '
-        'btnClose
-        '
-        Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnClose.BackColor = System.Drawing.Color.Transparent
-        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnClose.FlatAppearance.BorderSize = 0
-        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Image = CType(resources.GetObject("btnClose.Image"), System.Drawing.Image)
-        Me.btnClose.Location = New System.Drawing.Point(1179, 0)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(26, 31)
-        Me.btnClose.TabIndex = 77
-        Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnClose.UseVisualStyleBackColor = False
         '
         'Panel1
         '
@@ -307,6 +291,22 @@ Partial Class FrmRCancelledOrder
         Me.lblTotal.Text = "0.00"
         Me.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'btnClose
+        '
+        Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnClose.BackColor = System.Drawing.Color.Transparent
+        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClose.FlatAppearance.BorderSize = 0
+        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClose.ForeColor = System.Drawing.Color.White
+        Me.btnClose.Image = CType(resources.GetObject("btnClose.Image"), System.Drawing.Image)
+        Me.btnClose.Location = New System.Drawing.Point(1179, 0)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(26, 31)
+        Me.btnClose.TabIndex = 77
+        Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnClose.UseVisualStyleBackColor = False
+        '
         'Column7
         '
         Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -330,10 +330,10 @@ Partial Class FrmRCancelledOrder
         Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         Me.Column1.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Column1.HeaderText = "NAME"
+        Me.Column1.HeaderText = "CUSTOMER"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
-        Me.Column1.Width = 62
+        Me.Column1.Width = 90
         '
         'Column12
         '
@@ -345,10 +345,11 @@ Partial Class FrmRCancelledOrder
         '
         'Column2
         '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column2.HeaderText = "DESCRIPTION"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
+        Me.Column2.Width = 102
         '
         'Column4
         '

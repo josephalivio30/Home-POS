@@ -52,8 +52,8 @@
             If MsgBox("Do you want to print bill", vbYesNo + vbQuestion) = vbYes Then
                 Dim sql As String
                 sql = "select * from ComputeTotal where transno like '" & FrmPOS.lblTransNo.Text & "'"
-                With frmPrintReceipt1
-                    .PrintPreview(Sql)
+                With FrmReceiptPaid
+                    .PrintPreview(sql)
                     .ShowDialog()
                 End With
             End If
@@ -95,10 +95,6 @@
             If change < 0 Then
                 MsgBox("Insufficient Cash! Plase enter correct amount.", vbExclamation)
                 Return
-                'Else
-                '    If MsgBox("Do you want to print bill", vbYesNo + vbQuestion) = vbYes Then
-                '        PrintReceipt()
-                '    End If
             End If
             savepayment()
 

@@ -51,6 +51,7 @@
         Timer1.Enabled = True
         LoadProducts()
         NotifyCriticalItems()
+        NotifyCollection()
         If CheckStatus() = True Then
             btnExpense.Enabled = True
             btnDailySales.Enabled = True
