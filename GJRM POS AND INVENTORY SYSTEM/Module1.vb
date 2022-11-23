@@ -120,7 +120,7 @@ Module Module1
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
-                collection += i & ". " & dr.Item("cname").ToString & " with the amount of " & currencysymbol & Format(CDbl(dr.Item("total").ToString), "#,##0.00") & Environment.NewLine
+                collection += i & ". " & dr.Item("cname").ToString & " with the amount of " & currencysymbol & Format(CDbl(dr.Item("total").ToString), "#,##0.00") & ". Due Date : " & CDate(dr.Item("datetocollect")).ToString("MM-dd-yyyy") & Environment.NewLine
             End While
             cn.Close()
             dr.Close()
@@ -162,7 +162,7 @@ Module Module1
                 adjustment = CDbl(dr.Item("adjustment").ToString)
                 banktransfer = CDbl(dr.Item("banktransfer").ToString)
                 gcash = CDbl(dr.Item("gcash").ToString)
-                cash = CDbl(dr.Item("cash") - CDbl(dr.Item("schange")).ToString)
+                cash = CDbl(dr.Item("cash"))
                 cheque = CDbl(dr.Item("cheque").ToString)
             End While
             cn.Close()

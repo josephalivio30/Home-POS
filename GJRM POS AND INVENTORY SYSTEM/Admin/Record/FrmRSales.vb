@@ -50,7 +50,7 @@
             While dr.Read
                 banktransfer = CDbl(dr.Item("banktransfer").ToString)
                 gcash = CDbl(dr.Item("gcash").ToString)
-                cash = CDbl(dr.Item("cash") - CDbl(dr.Item("schange")).ToString)
+                cash = CDbl(dr.Item("cash"))
                 cheque = CDbl(dr.Item("cheque").ToString)
             End While
             cn.Close()
@@ -87,14 +87,14 @@
             cn.Close()
 
             lblStartAmount.Text = Format(RstartAmount, currencysymbol & "#,##0.00")
-            lblTotal.Text = Format(_total + adjustment, currencysymbol & "#,##0.00")
+            lblTotal.Text = Format(_total + adjustment, currencysymbol & "#,##0.00") '- refund, - discount
             lblExpense.Text = Format(Rexpense, currencysymbol & "#,##0.00")
             lblDiscount.Text = Format(_discount, currencysymbol & "#,##0.00")
             lblSRefund.Text = Format(Rrefund, currencysymbol & "#,##0.00")
             lblAdjustment.Text = Format(adjustment, currencysymbol & "#,##0.00")
             lblDebt.Text = Format(Rdebt, currencysymbol & "#,##0.00")
             lblPaidDebt.Text = Format(Rdebtpaid, currencysymbol & "#,##0.00")
-            lblGrandSales.Text = Format((_total + startAmount + Rdebtpaid + adjustment) - (Rrefund + Rdebt + Rexpense + adjustment), currencysymbol & "#,##0.00")
+            lblGrandSales.Text = Format((_total + startAmount + Rdebtpaid + adjustment) - (Rdebt + Rexpense + adjustment), currencysymbol & "#,##0.00")
             lblTotalNet.Text = Format(_net, currencysymbol & "#,##0.00")
 
             lblbt.Text = Format(banktransfer, currencysymbol & "#,##0.00")

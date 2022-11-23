@@ -111,4 +111,24 @@
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Dispose()
     End Sub
+
+    Private Sub dgvCancelOrder_SortCompare(sender As Object, e As DataGridViewSortCompareEventArgs) Handles dgvCancelOrder.SortCompare
+        Try
+            Dim dval1, dval2 As Double
+
+            If Not Double.TryParse(e.CellValue1.ToString, dval1) Then Return
+            If Not Double.TryParse(e.CellValue2.ToString, dval2) Then Return
+
+            If dval1 = dval2 Then
+                e.SortResult = 0
+            ElseIf dval2 > dval1 Then
+                e.SortResult = -1
+            ElseIf dval1 > dval2 Then
+                e.SortResult = 1
+            End If
+            e.Handled = True
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
+    End Sub
 End Class

@@ -6,9 +6,17 @@
         Try
             Dim sdate As String = Now.ToString("MM-dd-yyyy")
             Dim stime As String = Now.ToString("hh:mm:ss")
-
+            If CDbl(txtGcash.Text) > CDbl(txtBill.Text) Then
+                MsgBox("Gcash must not be higher than the bill.", vbExclamation)
+                Return
+            ElseIf CDbl(txtBankTransfer.Text) > CDbl(txtBill.Text) Then
+                MsgBox("Banktransfer must not be higher than the bill.", vbExclamation)
+                Return
+            ElseIf CDbl(txtCheque.Text) > CDbl(txtBill.Text) Then
+                MsgBox("Cheque must not be higher than the bill.", vbExclamation)
+                Return
+            End If
             cn.Open()
-
             cm = New OleDb.OleDbCommand("insert into tblsales(cname, agent, transno, sdate, stime, cashier, total, discount, adjustment, totalbill, banktransfer, gcash, cheque, cash, schange)values(@cname, @agent, @transno, @sdate, @stime, @cashier, @total, @discount, @adjustment, @totalbill, @banktransfer, @gcash, @cheque, @cash, @schange)", cn)
             With cm
                 .Parameters.AddWithValue("@cname", "" + txtName.Text)
@@ -24,7 +32,7 @@
                 .Parameters.AddWithValue("@banktransfer", CDbl("" + txtBankTransfer.Text))
                 .Parameters.AddWithValue("@gcash", CDbl("" + txtGcash.Text))
                 .Parameters.AddWithValue("@cheque", CDbl("" + txtCheque.Text))
-                .Parameters.AddWithValue("@cash", CDbl("" + txtCash.Text))
+                .Parameters.AddWithValue("@cash", CDbl("" + txtCash.Text) - CDbl(txtChange.Text))
                 .Parameters.AddWithValue("@schange", CDbl("" + txtChange.Text))
                 .ExecuteNonQuery()
             End With
