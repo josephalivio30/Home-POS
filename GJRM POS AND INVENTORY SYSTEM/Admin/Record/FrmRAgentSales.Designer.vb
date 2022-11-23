@@ -76,9 +76,6 @@ Partial Class FrmRAgentSales
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblQty = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.lblAdjustment = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.Panel18.SuspendLayout()
         CType(Me.dgvDailySales, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,7 +83,6 @@ Partial Class FrmRAgentSales
         Me.Panel14.SuspendLayout()
         Me.Panel13.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel18
@@ -95,7 +91,7 @@ Partial Class FrmRAgentSales
         Me.Panel18.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel18.Controls.Add(Me.Label18)
         Me.Panel18.Controls.Add(Me.lblTotal)
-        Me.Panel18.Location = New System.Drawing.Point(1031, 199)
+        Me.Panel18.Location = New System.Drawing.Point(1031, 70)
         Me.Panel18.Name = "Panel18"
         Me.Panel18.Size = New System.Drawing.Size(161, 60)
         Me.Panel18.TabIndex = 80
@@ -466,7 +462,7 @@ Partial Class FrmRAgentSales
         Me.Panel14.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel14.Controls.Add(Me.Label20)
         Me.Panel14.Controls.Add(Me.lblTotalNet)
-        Me.Panel14.Location = New System.Drawing.Point(1030, 265)
+        Me.Panel14.Location = New System.Drawing.Point(1031, 199)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(161, 60)
         Me.Panel14.TabIndex = 87
@@ -534,7 +530,7 @@ Partial Class FrmRAgentSales
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.lblQty)
-        Me.Panel2.Location = New System.Drawing.Point(1030, 331)
+        Me.Panel2.Location = New System.Drawing.Point(1031, 265)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(161, 60)
         Me.Panel2.TabIndex = 88
@@ -562,40 +558,6 @@ Partial Class FrmRAgentSales
         Me.lblQty.Text = "0.00"
         Me.lblQty.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'Panel3
-        '
-        Me.Panel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Controls.Add(Me.lblAdjustment)
-        Me.Panel3.Location = New System.Drawing.Point(1031, 67)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(161, 60)
-        Me.Panel3.TabIndex = 87
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(3, 45)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(96, 13)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "TOTAL ADJUSTMENT"
-        '
-        'lblAdjustment
-        '
-        Me.lblAdjustment.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblAdjustment.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAdjustment.ForeColor = System.Drawing.Color.White
-        Me.lblAdjustment.Location = New System.Drawing.Point(0, 0)
-        Me.lblAdjustment.Name = "lblAdjustment"
-        Me.lblAdjustment.Size = New System.Drawing.Size(160, 45)
-        Me.lblAdjustment.TabIndex = 28
-        Me.lblAdjustment.Text = "0.00"
-        Me.lblAdjustment.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
         'btnClose
         '
         Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -619,7 +581,6 @@ Partial Class FrmRAgentSales
         Me.BackColor = System.Drawing.Color.Silver
         Me.ClientSize = New System.Drawing.Size(1204, 673)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel14)
         Me.Controls.Add(Me.Panel13)
@@ -642,8 +603,6 @@ Partial Class FrmRAgentSales
         Me.Panel13.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -670,9 +629,6 @@ Partial Class FrmRAgentSales
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents lblQty As Label
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents lblAdjustment As Label
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn

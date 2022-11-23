@@ -41,7 +41,6 @@
             adjustment = CDbl(cm.ExecuteScalar)
             cn.Close()
 
-            lblAdjustment.Text = Format(adjustment, currencysymbol & "#,##0.00")
             lblTotal.Text = Format(_total + adjustment, currencysymbol & "#,##0.00")
             lblQty.Text = Format(_qty, currencysymbol & "#,##0.0")
             lblDiscount.Text = Format(_discount, currencysymbol & "#,##0.00")
