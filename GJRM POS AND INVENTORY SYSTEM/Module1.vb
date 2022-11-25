@@ -5,6 +5,7 @@ Module Module1
     Public cm As New OleDbCommand
     Public dr As OleDbDataReader
     Public da As OleDbDataAdapter
+    Public dt As New DataSet
     Public roundT As String = ".0"
     Public str_user, str_pass, str_name, str_role As String
     Public startid As String
@@ -29,6 +30,26 @@ Module Module1
     Public cash As Double = 0
 
 
+    Function CheckCustomer(ByVal sql As String) As Boolean
+        Try
+            Dim found As Boolean
+            cn.Open()
+            cm = New OleDbCommand(sql, cn)
+            dr = cm.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then
+                found = True
+            Else
+                found = False
+            End If
+            dr.Close()
+            cn.Close()
+            Return found
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
+    End Function
     Function CheckClose() As Boolean
         Try
             Dim found As Boolean

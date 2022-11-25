@@ -31,6 +31,8 @@ Partial Class FrmDebt
         Me.btnSave = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtNo = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.dtCollection = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtAddress = New System.Windows.Forms.RichTextBox()
@@ -69,7 +71,7 @@ Partial Class FrmDebt
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(269, 30)
+        Me.Panel1.Size = New System.Drawing.Size(527, 30)
         Me.Panel1.TabIndex = 71
         '
         'btnClose
@@ -80,7 +82,7 @@ Partial Class FrmDebt
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.ForeColor = System.Drawing.Color.White
         Me.btnClose.Image = CType(resources.GetObject("btnClose.Image"), System.Drawing.Image)
-        Me.btnClose.Location = New System.Drawing.Point(198, 3)
+        Me.btnClose.Location = New System.Drawing.Point(458, 2)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(69, 27)
         Me.btnClose.TabIndex = 3
@@ -124,9 +126,9 @@ Partial Class FrmDebt
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.Image = CType(resources.GetObject("btnSave.Image"), System.Drawing.Image)
-        Me.btnSave.Location = New System.Drawing.Point(12, 524)
+        Me.btnSave.Location = New System.Drawing.Point(266, 262)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(241, 37)
+        Me.btnSave.Size = New System.Drawing.Size(253, 37)
         Me.btnSave.TabIndex = 2
         Me.btnSave.Text = "   &SAVE DEBT"
         Me.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -146,6 +148,8 @@ Partial Class FrmDebt
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.txtNo)
+        Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.dtCollection)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.txtAddress)
@@ -154,18 +158,38 @@ Partial Class FrmDebt
         Me.GroupBox2.Controls.Add(Me.txtTinNumber)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.txtName)
+        Me.GroupBox2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(7, 46)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(253, 256)
+        Me.GroupBox2.Size = New System.Drawing.Size(253, 317)
         Me.GroupBox2.TabIndex = 78
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Customer's Information"
+        '
+        'txtNo
+        '
+        Me.txtNo.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold)
+        Me.txtNo.Location = New System.Drawing.Point(6, 162)
+        Me.txtNo.Name = "txtNo"
+        Me.txtNo.Size = New System.Drawing.Size(241, 40)
+        Me.txtNo.TabIndex = 64
+        Me.txtNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Location = New System.Drawing.Point(6, 144)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(106, 15)
+        Me.Label9.TabIndex = 63
+        Me.Label9.Text = "CONTACT NUMBER"
         '
         'dtCollection
         '
         Me.dtCollection.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtCollection.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtCollection.Location = New System.Drawing.Point(6, 223)
+        Me.dtCollection.Location = New System.Drawing.Point(6, 284)
         Me.dtCollection.Name = "dtCollection"
         Me.dtCollection.Size = New System.Drawing.Size(240, 23)
         Me.dtCollection.TabIndex = 62
@@ -174,7 +198,7 @@ Partial Class FrmDebt
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Location = New System.Drawing.Point(8, 205)
+        Me.Label5.Location = New System.Drawing.Point(6, 266)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(120, 15)
         Me.Label5.TabIndex = 61
@@ -183,7 +207,7 @@ Partial Class FrmDebt
         'txtAddress
         '
         Me.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtAddress.Location = New System.Drawing.Point(6, 162)
+        Me.txtAddress.Location = New System.Drawing.Point(5, 223)
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(240, 40)
         Me.txtAddress.TabIndex = 60
@@ -193,7 +217,7 @@ Partial Class FrmDebt
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Location = New System.Drawing.Point(6, 144)
+        Me.Label8.Location = New System.Drawing.Point(5, 205)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(127, 15)
         Me.Label8.TabIndex = 59
@@ -245,7 +269,7 @@ Partial Class FrmDebt
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtDiscount)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Location = New System.Drawing.Point(7, 308)
+        Me.GroupBox1.Location = New System.Drawing.Point(266, 46)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(253, 210)
         Me.GroupBox1.TabIndex = 79
@@ -299,7 +323,7 @@ Partial Class FrmDebt
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(269, 570)
+        Me.ClientSize = New System.Drawing.Size(527, 370)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
@@ -341,4 +365,6 @@ Partial Class FrmDebt
     Public WithEvents txtDiscount As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents dtCollection As DateTimePicker
+    Public WithEvents txtNo As TextBox
+    Friend WithEvents Label9 As Label
 End Class

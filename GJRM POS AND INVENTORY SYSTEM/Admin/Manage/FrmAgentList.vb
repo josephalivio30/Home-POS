@@ -5,7 +5,7 @@
             Dim i As Integer
             dgvAgent.Rows.Clear()
             cn.Open()
-            cm = New OleDb.OleDbCommand("select * from tblagent where agent like '" & txtSearch.Text & "%'", cn)
+            cm = New OleDb.OleDbCommand("select * from tblagent where agent like '" & txtSearch.Text & "%' order by agent asc", cn)
             dr = cm.ExecuteReader
             While dr.Read
                 i = i + 1

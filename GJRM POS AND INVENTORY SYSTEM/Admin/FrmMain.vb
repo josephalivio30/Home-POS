@@ -314,4 +314,15 @@ Public Class FrmMain
             e.Cancel = True
         End If
     End Sub
+
+    Private Sub btnCustomer_Click(sender As Object, e As EventArgs) Handles btnCustomer.Click
+        With FrmCustomerList
+            .WindowState = FormWindowState.Maximized
+            .TopLevel = False
+            panelOutput.Controls.Add(FrmCustomerList)
+            .BringToFront()
+            .LoadCustomer()
+            .Show()
+        End With
+    End Sub
 End Class

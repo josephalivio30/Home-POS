@@ -72,7 +72,7 @@
             cn.Close()
 
             cn.Open()
-            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(amount)), '0', sum(amount)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
+            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(total)), '0', sum(total)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
             Rdebt = CDbl(cm.ExecuteScalar)
             cn.Close()
 
@@ -91,10 +91,9 @@
             lblExpense.Text = Format(Rexpense, currencysymbol & "#,##0.00")
             lblDiscount.Text = Format(_discount, currencysymbol & "#,##0.00")
             lblSRefund.Text = Format(Rrefund, currencysymbol & "#,##0.00")
-            lblAdjustment.Text = Format(adjustment, currencysymbol & "#,##0.00")
             lblDebt.Text = Format(Rdebt, currencysymbol & "#,##0.00")
             lblPaidDebt.Text = Format(Rdebtpaid, currencysymbol & "#,##0.00")
-            lblGrandSales.Text = Format((_total + startAmount + Rdebtpaid + adjustment) - (Rdebt + Rexpense + adjustment), currencysymbol & "#,##0.00")
+            lblGrandSales.Text = Format((_total + startAmount + Rdebtpaid + adjustment) - (Rdebt + Rexpense), currencysymbol & "#,##0.00")
             lblTotalNet.Text = Format(_net, currencysymbol & "#,##0.00")
 
             lblbt.Text = Format(banktransfer, currencysymbol & "#,##0.00")

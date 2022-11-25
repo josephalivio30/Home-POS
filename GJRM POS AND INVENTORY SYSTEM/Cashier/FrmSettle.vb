@@ -38,9 +38,25 @@
             End With
             cn.Close()
 
+            'check customer if already have account
+            If CheckCustomer("select cname, tin from tblcustomer where cname like '" & txtName.Text & "' and tin like '" & txtTinNumber.Text & "'") = False Then
+                cn.Open()
+                cm = New OleDb.OleDbCommand("insert into tblcustomer(cname, tin, contact, address, datecreated)values(@cname, @tin, @contact, @address, @datecreated)", cn)
+                With cm
+                    .Parameters.AddWithValue("@cname", "" + txtName.Text)
+                    .Parameters.AddWithValue("@tin", txtTinNumber.Text)
+                    .Parameters.AddWithValue("@contact", txtNo.Text)
+                    .Parameters.AddWithValue("@address", txtAddress.Text)
+                    .Parameters.AddWithValue("@datecreated", sdate)
+                    .ExecuteNonQuery()
+                End With
+                cn.Close()
+                MsgBox("Created new account of the customer", vbInformation)
+            End If
+
             'Updates the status of the tblcart
             cn.Open()
-            cm = New OleDb.OleDbCommand("update tblcart set status = 'Completed', remarks = 'Paid', cname = '" & txtName.Text & "', tin = '" & txtTinNumber.Text & "', address = '" & txtAddress.Text & "', agent = '" & FrmPOS.cboAgent.Text & "' where transno like '" & FrmPOS.lblTransNo.Text & "' and status like 'Pending'", cn)
+            cm = New OleDb.OleDbCommand("update tblcart set status = 'Completed', remarks = 'Paid', cname = '" & txtName.Text & "', tin = '" & txtTinNumber.Text & "', agent = '" & FrmPOS.cboAgent.Text & "' where transno like '" & FrmPOS.lblTransNo.Text & "' and status like 'Pending'", cn)
             cm.ExecuteNonQuery()
             cn.Close()
 
@@ -83,6 +99,9 @@
 
     Private Sub btnAccept_Click(sender As Object, e As EventArgs) Handles btnAccept.Click
         Try
+            If CDbl(txtCash.Text) + CDbl(txtCheque.Text) + CDbl(txtGcash.Text) + CDbl(txtBankTransfer.Text) = 0 Then
+                Return
+            End If
             If txtCash.Text = String.Empty Then
                 txtCash.Text = "0.00"
             End If
@@ -112,6 +131,27 @@
     End Sub
     Private Sub FrmSettle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.KeyPreview = True
+        AutoComplete()
+    End Sub
+    Sub AutoComplete()
+        Try
+            Dim sql As String = "select distinct cname from tblcustomer"
+            cm = New OleDb.OleDbCommand(sql, cn)
+            da = New OleDb.OleDbDataAdapter(cm)
+            Dim ds As New DataSet
+            da.Fill(ds)
+            Dim col As New AutoCompleteStringCollection
+            Dim i As Integer
+            For i = 0 To ds.Tables(0).Rows.Count - 1
+                col.Add(ds.Tables(0).Rows(i)("cname").ToString())
+            Next
+            txtName.AutoCompleteSource = AutoCompleteSource.CustomSource
+            txtName.AutoCompleteCustomSource = col
+            txtName.AutoCompleteMode = AutoCompleteMode.Suggest
+        Catch ex As Exception
+            cn.Close()
+        MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
     Private Sub FrmSettle_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.Escape Then
@@ -120,7 +160,7 @@
             btnAccept_Click(sender, e)
         End If
     End Sub
-    Private Sub txtBankTransfer_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtGcash.KeyPress, txtCash.KeyPress, txtBankTransfer.KeyPress, txtCheque.KeyPress, txtTinNumber.KeyPress
+    Private Sub txtBankTransfer_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtGcash.KeyPress, txtCash.KeyPress, txtBankTransfer.KeyPress, txtCheque.KeyPress
         Dim DecimalSeparator As String = Application.CurrentCulture.NumberFormat.NumberDecimalSeparator
         e.Handled = Not (Char.IsDigit(e.KeyChar) Or
                      Asc(e.KeyChar) = 8 Or
@@ -142,5 +182,35 @@
     End Sub
     Private Sub txtGcash_TextChanged(sender As Object, e As EventArgs) Handles txtGcash.TextChanged, txtCash.TextChanged, txtBankTransfer.TextChanged, txtCheque.TextChanged
         calculateMoney()
+    End Sub
+
+    Private Sub txtTinNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTinNumber.KeyPress, txtNo.KeyPress
+        Select Case Asc(e.KeyChar)
+            Case 48 To 57
+            'Case 46 period
+            Case 8
+            Case 13
+            Case Else
+                e.Handled = True
+        End Select
+    End Sub
+
+    Private Sub txtName_TextChanged(sender As Object, e As EventArgs) Handles txtName.TextChanged
+        Try
+            cn.Open()
+            cm = New OleDb.OleDbCommand("select * from tblcustomer where cname like '" & txtName.Text & "'", cn)
+            dr = cm.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then
+                txtTinNumber.Text = dr.Item("tin").ToString
+                txtNo.Text = dr.Item("contact").ToString
+                txtAddress.Text = dr.Item("address").ToString
+            End If
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 End Class

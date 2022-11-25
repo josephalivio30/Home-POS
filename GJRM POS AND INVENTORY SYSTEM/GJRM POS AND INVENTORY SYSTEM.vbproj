@@ -136,6 +136,18 @@
     <Compile Include="Admin\Manage\FrmAgent.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Admin\Manage\FrmCustomer.Designer.vb">
+      <DependentUpon>FrmCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Manage\FrmCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Manage\FrmCustomerList.Designer.vb">
+      <DependentUpon>FrmCustomerList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Manage\FrmCustomerList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Admin\Manage\FrmVendorList.Designer.vb">
       <DependentUpon>FrmVendorList.vb</DependentUpon>
     </Compile>
@@ -486,6 +498,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\Manage\FrmAgentList.resx">
       <DependentUpon>FrmAgentList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Manage\FrmCustomer.resx">
+      <DependentUpon>FrmCustomer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Manage\FrmCustomerList.resx">
+      <DependentUpon>FrmCustomerList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\PrintData\FrmReceiptDebt.resx">
       <DependentUpon>FrmReceiptDebt.vb</DependentUpon>

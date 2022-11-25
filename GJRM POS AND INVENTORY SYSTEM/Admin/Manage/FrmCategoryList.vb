@@ -8,7 +8,7 @@
             Dim i As Integer
             dgvCategory.Rows.Clear()
             cn.Open()
-            cm = New OleDb.OleDbCommand("select * from tblcategory", cn)
+            cm = New OleDb.OleDbCommand("select * from tblcategory order by category asc", cn)
             dr = cm.ExecuteReader
             While dr.Read
                 i = i + 1

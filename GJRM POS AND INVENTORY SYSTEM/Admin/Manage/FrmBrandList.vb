@@ -43,7 +43,7 @@
             dgvBrand.Rows.Clear()
             Dim i As Integer
             cn.Open()
-            cm = New OleDb.OleDbCommand("select * from tblbrand", cn)
+            cm = New OleDb.OleDbCommand("select * from tblbrand order by brand asc", cn)
             dr = cm.ExecuteReader
             While dr.Read
                 i = i + 1

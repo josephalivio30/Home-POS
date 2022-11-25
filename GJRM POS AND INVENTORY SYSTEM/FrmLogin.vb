@@ -76,6 +76,12 @@
                 txtUser.Focus()
             Else
                 With FrmPOS
+                    'dont use this on generic POS
+                    cn.Open()
+                    cm = New OleDb.OleDbCommand("delete from tblcart where status = 'Pending'", cn)
+                    cm.ExecuteNonQuery()
+                    cn.Close()
+
                     If CheckStatus() = True Then
                         .btnNewOrder.Enabled = True
                     End If

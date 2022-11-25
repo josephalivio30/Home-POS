@@ -4,7 +4,7 @@
             Dim i As Integer
             dgvVendor.Rows.Clear()
             cn.Open()
-            cm = New OleDb.OleDbCommand("select * from tblvendor where vendor like '" & txtSearch.Text & "%'", cn)
+            cm = New OleDb.OleDbCommand("select * from tblvendor where vendor like '" & txtSearch.Text & "%' order by vendor asc", cn)
 
             dr = cm.ExecuteReader
             While dr.Read

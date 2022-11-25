@@ -32,11 +32,11 @@ Partial Class FrmAgentList
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAgentList))
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvAgent = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -44,14 +44,14 @@ Partial Class FrmAgentList
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColEdit = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ColDelete = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
         Me.btnCreateNew = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.ColEdit = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ColDelete = New System.Windows.Forms.DataGridViewImageColumn()
         CType(Me.dgvAgent, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -166,30 +166,6 @@ Partial Class FrmAgentList
         Me.Column3.ReadOnly = True
         Me.Column3.Width = 63
         '
-        'ColEdit
-        '
-        Me.ColEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle9.NullValue = CType(resources.GetObject("DataGridViewCellStyle9.NullValue"), Object)
-        Me.ColEdit.DefaultCellStyle = DataGridViewCellStyle9
-        Me.ColEdit.HeaderText = ""
-        Me.ColEdit.Image = CType(resources.GetObject("ColEdit.Image"), System.Drawing.Image)
-        Me.ColEdit.Name = "ColEdit"
-        Me.ColEdit.ReadOnly = True
-        Me.ColEdit.Width = 5
-        '
-        'ColDelete
-        '
-        Me.ColDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle10.NullValue = CType(resources.GetObject("DataGridViewCellStyle10.NullValue"), Object)
-        Me.ColDelete.DefaultCellStyle = DataGridViewCellStyle10
-        Me.ColDelete.HeaderText = ""
-        Me.ColDelete.Image = CType(resources.GetObject("ColDelete.Image"), System.Drawing.Image)
-        Me.ColDelete.Name = "ColDelete"
-        Me.ColDelete.ReadOnly = True
-        Me.ColDelete.Width = 5
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -210,6 +186,7 @@ Partial Class FrmAgentList
         Me.DataGridViewImageColumn1.HeaderText = ""
         Me.DataGridViewImageColumn1.Image = CType(resources.GetObject("DataGridViewImageColumn1.Image"), System.Drawing.Image)
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        Me.DataGridViewImageColumn1.Width = 5
         '
         'DataGridViewImageColumn2
         '
@@ -220,6 +197,7 @@ Partial Class FrmAgentList
         Me.DataGridViewImageColumn2.HeaderText = ""
         Me.DataGridViewImageColumn2.Image = CType(resources.GetObject("DataGridViewImageColumn2.Image"), System.Drawing.Image)
         Me.DataGridViewImageColumn2.Name = "DataGridViewImageColumn2"
+        Me.DataGridViewImageColumn2.Width = 5
         '
         'txtSearch
         '
@@ -265,7 +243,7 @@ Partial Class FrmAgentList
         Me.btnCreateNew.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCreateNew.ForeColor = System.Drawing.Color.White
         Me.btnCreateNew.Image = CType(resources.GetObject("btnCreateNew.Image"), System.Drawing.Image)
-        Me.btnCreateNew.Location = New System.Drawing.Point(189, 40)
+        Me.btnCreateNew.Location = New System.Drawing.Point(199, 40)
         Me.btnCreateNew.Name = "btnCreateNew"
         Me.btnCreateNew.Size = New System.Drawing.Size(119, 29)
         Me.btnCreateNew.TabIndex = 2
@@ -288,6 +266,30 @@ Partial Class FrmAgentList
         Me.btnClose.TabIndex = 3
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
+        '
+        'ColEdit
+        '
+        Me.ColEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle9.NullValue = CType(resources.GetObject("DataGridViewCellStyle9.NullValue"), Object)
+        Me.ColEdit.DefaultCellStyle = DataGridViewCellStyle9
+        Me.ColEdit.HeaderText = ""
+        Me.ColEdit.Image = CType(resources.GetObject("ColEdit.Image"), System.Drawing.Image)
+        Me.ColEdit.Name = "ColEdit"
+        Me.ColEdit.ReadOnly = True
+        Me.ColEdit.Width = 5
+        '
+        'ColDelete
+        '
+        Me.ColDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle10.NullValue = CType(resources.GetObject("DataGridViewCellStyle10.NullValue"), Object)
+        Me.ColDelete.DefaultCellStyle = DataGridViewCellStyle10
+        Me.ColDelete.HeaderText = ""
+        Me.ColDelete.Image = CType(resources.GetObject("ColDelete.Image"), System.Drawing.Image)
+        Me.ColDelete.Name = "ColDelete"
+        Me.ColDelete.ReadOnly = True
+        Me.ColDelete.Width = 5
         '
         'FrmAgentList
         '

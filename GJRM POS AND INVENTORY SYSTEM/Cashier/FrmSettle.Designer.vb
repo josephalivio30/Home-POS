@@ -45,6 +45,8 @@ Partial Class FrmSettle
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtNo = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.txtAddress = New System.Windows.Forms.RichTextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -206,9 +208,9 @@ Partial Class FrmSettle
         Me.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAccept.ForeColor = System.Drawing.Color.White
         Me.btnAccept.Image = CType(resources.GetObject("btnAccept.Image"), System.Drawing.Image)
-        Me.btnAccept.Location = New System.Drawing.Point(287, 443)
+        Me.btnAccept.Location = New System.Drawing.Point(277, 443)
         Me.btnAccept.Name = "btnAccept"
-        Me.btnAccept.Size = New System.Drawing.Size(232, 36)
+        Me.btnAccept.Size = New System.Drawing.Size(254, 36)
         Me.btnAccept.TabIndex = 6
         Me.btnAccept.Text = "   A&CCEPT PAYMENT"
         Me.btnAccept.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -248,6 +250,7 @@ Partial Class FrmSettle
         '
         'txtName
         '
+        Me.txtName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtName.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold)
         Me.txtName.Location = New System.Drawing.Point(5, 37)
         Me.txtName.Name = "txtName"
@@ -308,6 +311,8 @@ Partial Class FrmSettle
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.txtNo)
+        Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.txtAddress)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.Label6)
@@ -316,15 +321,34 @@ Partial Class FrmSettle
         Me.GroupBox2.Controls.Add(Me.txtName)
         Me.GroupBox2.Location = New System.Drawing.Point(7, 46)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(253, 210)
+        Me.GroupBox2.Size = New System.Drawing.Size(253, 271)
         Me.GroupBox2.TabIndex = 60
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Customer's Information"
         '
+        'txtNo
+        '
+        Me.txtNo.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold)
+        Me.txtNo.Location = New System.Drawing.Point(6, 162)
+        Me.txtNo.Name = "txtNo"
+        Me.txtNo.Size = New System.Drawing.Size(241, 40)
+        Me.txtNo.TabIndex = 62
+        Me.txtNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Location = New System.Drawing.Point(6, 144)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(106, 15)
+        Me.Label9.TabIndex = 61
+        Me.Label9.Text = "CONTACT NUMBER"
+        '
         'txtAddress
         '
         Me.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtAddress.Location = New System.Drawing.Point(6, 162)
+        Me.txtAddress.Location = New System.Drawing.Point(6, 223)
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(240, 40)
         Me.txtAddress.TabIndex = 60
@@ -334,11 +358,11 @@ Partial Class FrmSettle
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Location = New System.Drawing.Point(6, 144)
+        Me.Label8.Location = New System.Drawing.Point(6, 205)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(127, 15)
+        Me.Label8.Size = New System.Drawing.Size(55, 15)
         Me.Label8.TabIndex = 59
-        Me.Label8.Text = "CUSTOMER'S ADDRESS"
+        Me.Label8.Text = "ADDRESS"
         '
         'Label6
         '
@@ -346,9 +370,9 @@ Partial Class FrmSettle
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Location = New System.Drawing.Point(5, 83)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(147, 15)
+        Me.Label6.Size = New System.Drawing.Size(75, 15)
         Me.Label6.TabIndex = 57
-        Me.Label6.Text = "CUSTOMER'S TIN NUMBER"
+        Me.Label6.Text = "TIN NUMBER"
         '
         'txtTinNumber
         '
@@ -410,4 +434,6 @@ Partial Class FrmSettle
     Friend WithEvents Label8 As Label
     Friend WithEvents Label6 As Label
     Public WithEvents txtTinNumber As TextBox
+    Friend WithEvents Label9 As Label
+    Public WithEvents txtNo As TextBox
 End Class

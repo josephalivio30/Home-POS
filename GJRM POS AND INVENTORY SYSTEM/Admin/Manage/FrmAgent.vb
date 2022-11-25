@@ -16,7 +16,7 @@
                 cn.Open()
                 cm = New OleDb.OleDbCommand("insert into tblagent(agent,address, contact, email)values(@agent,@address, @contact, @email)", cn)
                 With cm.Parameters
-                    .AddWithValue("@vendor", txtAgent.Text)
+                    .AddWithValue("@agent", txtAgent.Text)
                     .AddWithValue("@address", txtAddress.Text)
                     .AddWithValue("@contact", txtNo.Text)
                     .AddWithValue("@email", txtEmail.Text)
@@ -45,7 +45,7 @@
                 cn.Open()
                 cm = New OleDb.OleDbCommand("update tblagent set agent = @agent ,address = @address , contact = @contact, email = @email where ID like '" & lblID.Text & "'", cn)
                 With cm.Parameters
-                    .AddWithValue("@vendor", txtAgent.Text)
+                    .AddWithValue("@agent", txtAgent.Text)
                     .AddWithValue("@address", txtAddress.Text)
                     .AddWithValue("@contact", txtNo.Text)
                     .AddWithValue("@email", txtEmail.Text)
