@@ -99,8 +99,6 @@ Partial Class FrmPOS
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.cboAgent = New System.Windows.Forms.ComboBox()
         Me.pTop.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
@@ -832,25 +830,6 @@ Partial Class FrmPOS
         'Timer1
         '
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(966, 51)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(42, 15)
-        Me.Label6.TabIndex = 84
-        Me.Label6.Text = "AGENT"
-        '
-        'cboAgent
-        '
-        Me.cboAgent.FormattingEnabled = True
-        Me.cboAgent.ItemHeight = 15
-        Me.cboAgent.Location = New System.Drawing.Point(1014, 46)
-        Me.cboAgent.Name = "cboAgent"
-        Me.cboAgent.Size = New System.Drawing.Size(121, 23)
-        Me.cboAgent.TabIndex = 83
-        Me.cboAgent.Text = "NO AGENT"
-        '
         'FrmPOS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -858,8 +837,6 @@ Partial Class FrmPOS
         Me.BackColor = System.Drawing.Color.Silver
         Me.ClientSize = New System.Drawing.Size(1370, 683)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.cboAgent)
         Me.Controls.Add(Me.dgvCart)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.txtSearch)
@@ -882,7 +859,6 @@ Partial Class FrmPOS
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -926,8 +902,6 @@ Partial Class FrmPOS
     Friend WithEvents btnStartMenu As Button
     Friend WithEvents btnDebtPayment As Button
     Friend WithEvents txtQty As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents cboAgent As ComboBox
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column12 As DataGridViewTextBoxColumn

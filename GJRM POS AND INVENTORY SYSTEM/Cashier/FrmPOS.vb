@@ -390,27 +390,6 @@
             .ShowDialog()
         End With
     End Sub
-    Sub LoadAgent()
-        Try
-            cboAgent.Items.Clear()
-            cboAgent.Items.Add("NO AGENT")
-            cn.Open()
-            cm = New OleDb.OleDbCommand("select agent from tblagent", cn)
-            dr = cm.ExecuteReader
-            While dr.Read
-                cboAgent.Items.Add(UCase(dr.Item("agent").ToString))
-            End While
-            dr.Close()
-            cn.Close()
-        Catch ex As Exception
-            cn.Close()
-            MsgBox(ex.Message, vbCritical)
-        End Try
-    End Sub
-
-    Private Sub cboAgent_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboAgent.KeyPress
-        e.Handled = True
-    End Sub
 
     Private Sub FrmPOS_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If e.KeyCode = Keys.F1 Then

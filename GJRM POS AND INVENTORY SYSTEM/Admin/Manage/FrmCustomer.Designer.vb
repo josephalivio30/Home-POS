@@ -24,17 +24,11 @@ Partial Class FrmCustomer
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmCustomer))
         Me.lblID = New System.Windows.Forms.Label()
-        Me.txtTin = New System.Windows.Forms.TextBox()
-        Me.txtNo = New System.Windows.Forms.TextBox()
-        Me.txtAddress = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.txtCustomer = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.lblTitle = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
@@ -49,53 +43,6 @@ Partial Class FrmCustomer
         Me.lblID.Size = New System.Drawing.Size(0, 15)
         Me.lblID.TabIndex = 161
         Me.lblID.Visible = False
-        '
-        'txtTin
-        '
-        Me.txtTin.BackColor = System.Drawing.Color.White
-        Me.txtTin.Location = New System.Drawing.Point(128, 119)
-        Me.txtTin.Name = "txtTin"
-        Me.txtTin.Size = New System.Drawing.Size(307, 23)
-        Me.txtTin.TabIndex = 3
-        '
-        'txtNo
-        '
-        Me.txtNo.BackColor = System.Drawing.Color.White
-        Me.txtNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtNo.Location = New System.Drawing.Point(128, 90)
-        Me.txtNo.Name = "txtNo"
-        Me.txtNo.Size = New System.Drawing.Size(307, 23)
-        Me.txtNo.TabIndex = 2
-        '
-        'txtAddress
-        '
-        Me.txtAddress.BackColor = System.Drawing.Color.White
-        Me.txtAddress.Location = New System.Drawing.Point(128, 148)
-        Me.txtAddress.Name = "txtAddress"
-        Me.txtAddress.Size = New System.Drawing.Size(307, 23)
-        Me.txtAddress.TabIndex = 4
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(19, 151)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(55, 15)
-        Me.Label6.TabIndex = 160
-        Me.Label6.Text = "ADDRESS"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(18, 93)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(79, 15)
-        Me.Label7.TabIndex = 159
-        Me.Label7.Text = "CONTACT NO."
         '
         'txtCustomer
         '
@@ -155,17 +102,6 @@ Partial Class FrmCustomer
         Me.lblTitle.TabIndex = 21
         Me.lblTitle.Text = "ADD CUSTOMER"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(18, 122)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(75, 15)
-        Me.Label4.TabIndex = 156
-        Me.Label4.Text = "TIN NUMBER"
-        '
         'btnCancel
         '
         Me.btnCancel.BackColor = System.Drawing.SystemColors.Control
@@ -174,7 +110,7 @@ Partial Class FrmCustomer
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnCancel.Image = CType(resources.GetObject("btnCancel.Image"), System.Drawing.Image)
-        Me.btnCancel.Location = New System.Drawing.Point(340, 177)
+        Me.btnCancel.Location = New System.Drawing.Point(340, 90)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(95, 37)
         Me.btnCancel.TabIndex = 7
@@ -191,7 +127,7 @@ Partial Class FrmCustomer
         Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdate.ForeColor = System.Drawing.Color.White
         Me.btnUpdate.Image = CType(resources.GetObject("btnUpdate.Image"), System.Drawing.Image)
-        Me.btnUpdate.Location = New System.Drawing.Point(239, 177)
+        Me.btnUpdate.Location = New System.Drawing.Point(239, 90)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(95, 37)
         Me.btnUpdate.TabIndex = 6
@@ -207,7 +143,7 @@ Partial Class FrmCustomer
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.Image = CType(resources.GetObject("btnSave.Image"), System.Drawing.Image)
-        Me.btnSave.Location = New System.Drawing.Point(138, 177)
+        Me.btnSave.Location = New System.Drawing.Point(138, 90)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(95, 37)
         Me.btnSave.TabIndex = 5
@@ -220,21 +156,15 @@ Partial Class FrmCustomer
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(447, 219)
+        Me.ClientSize = New System.Drawing.Size(447, 137)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblID)
-        Me.Controls.Add(Me.txtTin)
-        Me.Controls.Add(Me.txtNo)
-        Me.Controls.Add(Me.txtAddress)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtCustomer)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.btnSave)
-        Me.Controls.Add(Me.Label4)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -248,11 +178,6 @@ Partial Class FrmCustomer
     End Sub
 
     Friend WithEvents lblID As Label
-    Friend WithEvents txtTin As TextBox
-    Friend WithEvents txtNo As TextBox
-    Friend WithEvents txtAddress As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
     Friend WithEvents txtCustomer As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel1 As Panel
@@ -261,5 +186,4 @@ Partial Class FrmCustomer
     Friend WithEvents btnCancel As Button
     Friend WithEvents btnUpdate As Button
     Friend WithEvents btnSave As Button
-    Friend WithEvents Label4 As Label
 End Class

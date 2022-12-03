@@ -4,7 +4,7 @@
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Dispose()
     End Sub
-    Private Sub txtBt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBT.KeyPress, txtCASH.KeyPress, txtGcash.KeyPress, txtCheque.KeyPress
+    Private Sub txtBt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBT.KeyPress, txtCASH.KeyPress, txtGcash.KeyPress
         Dim DecimalSeparator As String = Application.CurrentCulture.NumberFormat.NumberDecimalSeparator
         e.Handled = Not (Char.IsDigit(e.KeyChar) Or
                      Asc(e.KeyChar) = 8 Or
@@ -17,8 +17,6 @@
             txtCASH.Text = "0.00"
         ElseIf txtGcash.Text = String.Empty Then
             txtGcash.Text = "0.00"
-        ElseIf txtCheque.Text = String.Empty Then
-            txtCheque.Text = "0.00"
         End If
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -39,7 +37,7 @@
     End Sub
     Sub SaveDebtPayment()
         Try
-            Dim total As Double = CDbl(txtBT.Text) + CDbl(txtCASH.Text) + CDbl(txtGcash.Text) + CDbl(txtCheque.Text)
+            Dim total As Double = CDbl(txtBT.Text) + CDbl(txtCASH.Text) + CDbl(txtGcash.Text)
             If total > CDbl(txtTAmount.Text) Then
                 MsgBox("Cash is over the amount needed! Please enter correct amount.", vbCritical)
                 Return
@@ -109,7 +107,7 @@
                     End If
 
                     cn.Open()
-                    cm = New OleDb.OleDbCommand("insert into tbldebthistory (transno, cname, cuser, amount, banktransfer, gcash, cheque, cash, stime, sdate)values(@transno, @cname, @cuser, @amount, @banktransfer, @gcash, @cheque, @cash, @stime, @sdate)", cn)
+                    cm = New OleDb.OleDbCommand("insert into tbldebthistory (transno, cname, cuser, amount, banktransfer, gcash, cash, stime, sdate)values(@transno, @cname, @cuser, @amount, @banktransfer, @gcash, @cash, @stime, @sdate)", cn)
                     With cm
                         .Parameters.AddWithValue("@transno", txtTransno.Text)
                         .Parameters.AddWithValue("@cname", txtName.Text)
@@ -117,7 +115,6 @@
                         .Parameters.AddWithValue("@amount", CDbl("" + txtTAmount.Text))
                         .Parameters.AddWithValue("@banktransfer", CDbl("" + txtBT.Text))
                         .Parameters.AddWithValue("@gcash", CDbl("" + txtCASH.Text))
-                        .Parameters.AddWithValue("@cheque", CDbl("" + txtCheque.Text))
                         .Parameters.AddWithValue("@cash", CDbl("" + txtGcash.Text))
                         .Parameters.AddWithValue("@stime", Now.ToShortTimeString)
                         .Parameters.AddWithValue("@sdate", sdate)

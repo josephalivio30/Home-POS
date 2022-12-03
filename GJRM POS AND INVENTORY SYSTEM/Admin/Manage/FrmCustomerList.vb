@@ -11,7 +11,7 @@
             dr = cm.ExecuteReader
             While dr.Read
                 i = i + 1
-                dgvCustomer.Rows.Add(i, dr.Item("id"), dr.Item("cname").ToString, dr.Item("tin").ToString, dr.Item("contact").ToString, dr.Item("address").ToString, Format(CDate(dr.Item("datecreated").ToString).ToShortDateString))
+                dgvCustomer.Rows.Add(i, dr.Item("id"), dr.Item("cname").ToString, Format(CDate(dr.Item("datecreated").ToString).ToShortDateString))
             End While
             dr.Close()
             cn.Close()
@@ -38,9 +38,6 @@
                 With FrmCustomer
                     .lblID.Text = dgvCustomer.Rows(e.RowIndex).Cells(1).Value.ToString
                     .txtCustomer.Text = dgvCustomer.Rows(e.RowIndex).Cells(2).Value.ToString
-                    .txtAddress.Text = dgvCustomer.Rows(e.RowIndex).Cells(5).Value.ToString
-                    .txtNo.Text = dgvCustomer.Rows(e.RowIndex).Cells(4).Value.ToString
-                    .txtTin.Text = dgvCustomer.Rows(e.RowIndex).Cells(3).Value.ToString
                     .btnSave.Enabled = False
                     .btnUpdate.Enabled = True
                     .ShowDialog()

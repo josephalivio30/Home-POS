@@ -31,70 +31,72 @@ Partial Class FrmMain
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.lblStockOnHand = New System.Windows.Forms.Label()
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.lblTotalProduct = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lblCriticalItem = New System.Windows.Forms.Label()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lblDailySales = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.panelDebt = New System.Windows.Forms.Panel()
-        Me.panelSales = New System.Windows.Forms.Panel()
-        Me.panelStock = New System.Windows.Forms.Panel()
-        Me.panelManage = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.lblName = New System.Windows.Forms.Label()
-        Me.lblShopName = New System.Windows.Forms.Label()
         Me.btnAccount = New System.Windows.Forms.Button()
         Me.btnSetting = New System.Windows.Forms.Button()
+        Me.panelDebt = New System.Windows.Forms.Panel()
         Me.btnHDebt = New System.Windows.Forms.Button()
         Me.btnRDebt = New System.Windows.Forms.Button()
         Me.btnDebt = New System.Windows.Forms.Button()
+        Me.panelSales = New System.Windows.Forms.Panel()
         Me.btnAuditTrail = New System.Windows.Forms.Button()
         Me.btnLogHistory = New System.Windows.Forms.Button()
         Me.btnExpense = New System.Windows.Forms.Button()
         Me.btnBestSelling = New System.Windows.Forms.Button()
         Me.btnRefund = New System.Windows.Forms.Button()
-        Me.btnAgentSales = New System.Windows.Forms.Button()
         Me.btnSales = New System.Windows.Forms.Button()
         Me.btnRecord = New System.Windows.Forms.Button()
+        Me.panelStock = New System.Windows.Forms.Panel()
         Me.btnInventoryList = New System.Windows.Forms.Button()
         Me.btnStockAdjustment = New System.Windows.Forms.Button()
         Me.btnStockInHistory = New System.Windows.Forms.Button()
         Me.btnStockEntry = New System.Windows.Forms.Button()
         Me.btnStock = New System.Windows.Forms.Button()
         Me.btnLogout = New System.Windows.Forms.Button()
+        Me.panelManage = New System.Windows.Forms.Panel()
         Me.btnCustomer = New System.Windows.Forms.Button()
-        Me.btnAgent = New System.Windows.Forms.Button()
         Me.btnVendor = New System.Windows.Forms.Button()
         Me.btnBrand = New System.Windows.Forms.Button()
         Me.btnCategory = New System.Windows.Forms.Button()
         Me.btnProducts = New System.Windows.Forms.Button()
         Me.btnManage = New System.Windows.Forms.Button()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.lblName = New System.Windows.Forms.Label()
+        Me.lblShopName = New System.Windows.Forms.Label()
         Me.panelOutput.SuspendLayout()
         Me.pDashBoard.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel17.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel16.SuspendLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel18.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.panelDebt.SuspendLayout()
         Me.panelSales.SuspendLayout()
@@ -102,10 +104,6 @@ Partial Class FrmMain
         Me.panelManage.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panelOutput
@@ -178,6 +176,15 @@ Partial Class FrmMain
         Me.GroupBox3.TabIndex = 11
         Me.GroupBox3.TabStop = False
         '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+        Me.PictureBox4.Location = New System.Drawing.Point(14, 26)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(34, 35)
+        Me.PictureBox4.TabIndex = 9
+        Me.PictureBox4.TabStop = False
+        '
         'Label3
         '
         Me.Label3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -241,6 +248,15 @@ Partial Class FrmMain
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Total product line recorded in the database"
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(13, 26)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(34, 35)
+        Me.PictureBox2.TabIndex = 4
+        Me.PictureBox2.TabStop = False
+        '
         'lblTotalProduct
         '
         Me.lblTotalProduct.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -283,6 +299,15 @@ Partial Class FrmMain
         Me.GroupBox4.Size = New System.Drawing.Size(1, 90)
         Me.GroupBox4.TabIndex = 11
         Me.GroupBox4.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
+        Me.PictureBox5.Location = New System.Drawing.Point(13, 26)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(34, 35)
+        Me.PictureBox5.TabIndex = 9
+        Me.PictureBox5.TabStop = False
         '
         'Label6
         '
@@ -336,6 +361,15 @@ Partial Class FrmMain
         Me.GroupBox1.Size = New System.Drawing.Size(1, 90)
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(13, 26)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(34, 35)
+        Me.PictureBox3.TabIndex = 9
+        Me.PictureBox3.TabStop = False
         '
         'Label2
         '
@@ -391,94 +425,6 @@ Partial Class FrmMain
         Me.Panel1.Size = New System.Drawing.Size(297, 772)
         Me.Panel1.TabIndex = 20
         '
-        'panelDebt
-        '
-        Me.panelDebt.Controls.Add(Me.btnHDebt)
-        Me.panelDebt.Controls.Add(Me.btnRDebt)
-        Me.panelDebt.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelDebt.Location = New System.Drawing.Point(0, 1018)
-        Me.panelDebt.Name = "panelDebt"
-        Me.panelDebt.Size = New System.Drawing.Size(280, 91)
-        Me.panelDebt.TabIndex = 45
-        '
-        'panelSales
-        '
-        Me.panelSales.BackColor = System.Drawing.Color.Gray
-        Me.panelSales.Controls.Add(Me.btnAuditTrail)
-        Me.panelSales.Controls.Add(Me.btnLogHistory)
-        Me.panelSales.Controls.Add(Me.btnExpense)
-        Me.panelSales.Controls.Add(Me.btnBestSelling)
-        Me.panelSales.Controls.Add(Me.btnRefund)
-        Me.panelSales.Controls.Add(Me.btnAgentSales)
-        Me.panelSales.Controls.Add(Me.btnSales)
-        Me.panelSales.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelSales.Location = New System.Drawing.Point(0, 658)
-        Me.panelSales.Name = "panelSales"
-        Me.panelSales.Size = New System.Drawing.Size(280, 315)
-        Me.panelSales.TabIndex = 39
-        '
-        'panelStock
-        '
-        Me.panelStock.BackColor = System.Drawing.Color.Gray
-        Me.panelStock.Controls.Add(Me.btnInventoryList)
-        Me.panelStock.Controls.Add(Me.btnStockAdjustment)
-        Me.panelStock.Controls.Add(Me.btnStockInHistory)
-        Me.panelStock.Controls.Add(Me.btnStockEntry)
-        Me.panelStock.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelStock.Location = New System.Drawing.Point(0, 426)
-        Me.panelStock.Name = "panelStock"
-        Me.panelStock.Size = New System.Drawing.Size(280, 187)
-        Me.panelStock.TabIndex = 37
-        '
-        'panelManage
-        '
-        Me.panelManage.BackColor = System.Drawing.Color.Transparent
-        Me.panelManage.Controls.Add(Me.btnCustomer)
-        Me.panelManage.Controls.Add(Me.btnAgent)
-        Me.panelManage.Controls.Add(Me.btnVendor)
-        Me.panelManage.Controls.Add(Me.btnBrand)
-        Me.panelManage.Controls.Add(Me.btnCategory)
-        Me.panelManage.Controls.Add(Me.btnProducts)
-        Me.panelManage.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelManage.Location = New System.Drawing.Point(0, 111)
-        Me.panelManage.Name = "panelManage"
-        Me.panelManage.Size = New System.Drawing.Size(280, 270)
-        Me.panelManage.TabIndex = 35
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.Gray
-        Me.Panel4.Controls.Add(Me.PictureBox1)
-        Me.Panel4.Controls.Add(Me.lblName)
-        Me.Panel4.Controls.Add(Me.lblShopName)
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(280, 66)
-        Me.Panel4.TabIndex = 3
-        '
-        'lblName
-        '
-        Me.lblName.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lblName.ForeColor = System.Drawing.Color.White
-        Me.lblName.Location = New System.Drawing.Point(100, 40)
-        Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(234, 15)
-        Me.lblName.TabIndex = 28
-        Me.lblName.Text = "Name"
-        Me.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lblShopName
-        '
-        Me.lblShopName.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblShopName.ForeColor = System.Drawing.Color.White
-        Me.lblShopName.Location = New System.Drawing.Point(100, 17)
-        Me.lblShopName.Name = "lblShopName"
-        Me.lblShopName.Size = New System.Drawing.Size(197, 23)
-        Me.lblShopName.TabIndex = 0
-        Me.lblShopName.Text = "SHOP NAME"
-        Me.lblShopName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'btnAccount
         '
         Me.btnAccount.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
@@ -490,7 +436,7 @@ Partial Class FrmMain
         Me.btnAccount.ForeColor = System.Drawing.Color.White
         Me.btnAccount.Image = CType(resources.GetObject("btnAccount.Image"), System.Drawing.Image)
         Me.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAccount.Location = New System.Drawing.Point(0, 1154)
+        Me.btnAccount.Location = New System.Drawing.Point(0, 1073)
         Me.btnAccount.Name = "btnAccount"
         Me.btnAccount.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnAccount.Size = New System.Drawing.Size(280, 45)
@@ -511,7 +457,7 @@ Partial Class FrmMain
         Me.btnSetting.ForeColor = System.Drawing.Color.White
         Me.btnSetting.Image = CType(resources.GetObject("btnSetting.Image"), System.Drawing.Image)
         Me.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSetting.Location = New System.Drawing.Point(0, 1109)
+        Me.btnSetting.Location = New System.Drawing.Point(0, 1028)
         Me.btnSetting.Name = "btnSetting"
         Me.btnSetting.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnSetting.Size = New System.Drawing.Size(280, 45)
@@ -520,6 +466,16 @@ Partial Class FrmMain
         Me.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSetting.UseVisualStyleBackColor = False
+        '
+        'panelDebt
+        '
+        Me.panelDebt.Controls.Add(Me.btnHDebt)
+        Me.panelDebt.Controls.Add(Me.btnRDebt)
+        Me.panelDebt.Dock = System.Windows.Forms.DockStyle.Top
+        Me.panelDebt.Location = New System.Drawing.Point(0, 937)
+        Me.panelDebt.Name = "panelDebt"
+        Me.panelDebt.Size = New System.Drawing.Size(280, 91)
+        Me.panelDebt.TabIndex = 45
         '
         'btnHDebt
         '
@@ -574,7 +530,7 @@ Partial Class FrmMain
         Me.btnDebt.ForeColor = System.Drawing.Color.White
         Me.btnDebt.Image = CType(resources.GetObject("btnDebt.Image"), System.Drawing.Image)
         Me.btnDebt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDebt.Location = New System.Drawing.Point(0, 973)
+        Me.btnDebt.Location = New System.Drawing.Point(0, 892)
         Me.btnDebt.Name = "btnDebt"
         Me.btnDebt.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnDebt.Size = New System.Drawing.Size(280, 45)
@@ -583,6 +539,21 @@ Partial Class FrmMain
         Me.btnDebt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnDebt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnDebt.UseVisualStyleBackColor = False
+        '
+        'panelSales
+        '
+        Me.panelSales.BackColor = System.Drawing.Color.Gray
+        Me.panelSales.Controls.Add(Me.btnAuditTrail)
+        Me.panelSales.Controls.Add(Me.btnLogHistory)
+        Me.panelSales.Controls.Add(Me.btnExpense)
+        Me.panelSales.Controls.Add(Me.btnBestSelling)
+        Me.panelSales.Controls.Add(Me.btnRefund)
+        Me.panelSales.Controls.Add(Me.btnSales)
+        Me.panelSales.Dock = System.Windows.Forms.DockStyle.Top
+        Me.panelSales.Location = New System.Drawing.Point(0, 617)
+        Me.panelSales.Name = "panelSales"
+        Me.panelSales.Size = New System.Drawing.Size(280, 275)
+        Me.panelSales.TabIndex = 39
         '
         'btnAuditTrail
         '
@@ -595,7 +566,7 @@ Partial Class FrmMain
         Me.btnAuditTrail.ForeColor = System.Drawing.Color.White
         Me.btnAuditTrail.Image = CType(resources.GetObject("btnAuditTrail.Image"), System.Drawing.Image)
         Me.btnAuditTrail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAuditTrail.Location = New System.Drawing.Point(0, 270)
+        Me.btnAuditTrail.Location = New System.Drawing.Point(0, 225)
         Me.btnAuditTrail.Name = "btnAuditTrail"
         Me.btnAuditTrail.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnAuditTrail.Size = New System.Drawing.Size(280, 45)
@@ -616,7 +587,7 @@ Partial Class FrmMain
         Me.btnLogHistory.ForeColor = System.Drawing.Color.White
         Me.btnLogHistory.Image = CType(resources.GetObject("btnLogHistory.Image"), System.Drawing.Image)
         Me.btnLogHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLogHistory.Location = New System.Drawing.Point(0, 225)
+        Me.btnLogHistory.Location = New System.Drawing.Point(0, 180)
         Me.btnLogHistory.Name = "btnLogHistory"
         Me.btnLogHistory.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnLogHistory.Size = New System.Drawing.Size(280, 45)
@@ -637,7 +608,7 @@ Partial Class FrmMain
         Me.btnExpense.ForeColor = System.Drawing.Color.White
         Me.btnExpense.Image = CType(resources.GetObject("btnExpense.Image"), System.Drawing.Image)
         Me.btnExpense.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExpense.Location = New System.Drawing.Point(0, 180)
+        Me.btnExpense.Location = New System.Drawing.Point(0, 135)
         Me.btnExpense.Name = "btnExpense"
         Me.btnExpense.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnExpense.Size = New System.Drawing.Size(280, 45)
@@ -658,7 +629,7 @@ Partial Class FrmMain
         Me.btnBestSelling.ForeColor = System.Drawing.Color.White
         Me.btnBestSelling.Image = CType(resources.GetObject("btnBestSelling.Image"), System.Drawing.Image)
         Me.btnBestSelling.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBestSelling.Location = New System.Drawing.Point(0, 135)
+        Me.btnBestSelling.Location = New System.Drawing.Point(0, 90)
         Me.btnBestSelling.Name = "btnBestSelling"
         Me.btnBestSelling.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnBestSelling.Size = New System.Drawing.Size(280, 45)
@@ -679,7 +650,7 @@ Partial Class FrmMain
         Me.btnRefund.ForeColor = System.Drawing.Color.White
         Me.btnRefund.Image = CType(resources.GetObject("btnRefund.Image"), System.Drawing.Image)
         Me.btnRefund.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnRefund.Location = New System.Drawing.Point(0, 90)
+        Me.btnRefund.Location = New System.Drawing.Point(0, 45)
         Me.btnRefund.Name = "btnRefund"
         Me.btnRefund.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnRefund.Size = New System.Drawing.Size(280, 45)
@@ -688,27 +659,6 @@ Partial Class FrmMain
         Me.btnRefund.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnRefund.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnRefund.UseVisualStyleBackColor = False
-        '
-        'btnAgentSales
-        '
-        Me.btnAgentSales.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnAgentSales.BackColor = System.Drawing.Color.Gray
-        Me.btnAgentSales.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAgentSales.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnAgentSales.FlatAppearance.BorderSize = 0
-        Me.btnAgentSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgentSales.ForeColor = System.Drawing.Color.White
-        Me.btnAgentSales.Image = CType(resources.GetObject("btnAgentSales.Image"), System.Drawing.Image)
-        Me.btnAgentSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAgentSales.Location = New System.Drawing.Point(0, 45)
-        Me.btnAgentSales.Name = "btnAgentSales"
-        Me.btnAgentSales.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnAgentSales.Size = New System.Drawing.Size(280, 45)
-        Me.btnAgentSales.TabIndex = 14
-        Me.btnAgentSales.Text = "   AGENT SALES"
-        Me.btnAgentSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAgentSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnAgentSales.UseVisualStyleBackColor = False
         '
         'btnSales
         '
@@ -742,7 +692,7 @@ Partial Class FrmMain
         Me.btnRecord.ForeColor = System.Drawing.Color.White
         Me.btnRecord.Image = CType(resources.GetObject("btnRecord.Image"), System.Drawing.Image)
         Me.btnRecord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnRecord.Location = New System.Drawing.Point(0, 613)
+        Me.btnRecord.Location = New System.Drawing.Point(0, 572)
         Me.btnRecord.Name = "btnRecord"
         Me.btnRecord.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnRecord.Size = New System.Drawing.Size(280, 45)
@@ -751,6 +701,19 @@ Partial Class FrmMain
         Me.btnRecord.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnRecord.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnRecord.UseVisualStyleBackColor = False
+        '
+        'panelStock
+        '
+        Me.panelStock.BackColor = System.Drawing.Color.Gray
+        Me.panelStock.Controls.Add(Me.btnInventoryList)
+        Me.panelStock.Controls.Add(Me.btnStockAdjustment)
+        Me.panelStock.Controls.Add(Me.btnStockInHistory)
+        Me.panelStock.Controls.Add(Me.btnStockEntry)
+        Me.panelStock.Dock = System.Windows.Forms.DockStyle.Top
+        Me.panelStock.Location = New System.Drawing.Point(0, 385)
+        Me.panelStock.Name = "panelStock"
+        Me.panelStock.Size = New System.Drawing.Size(280, 187)
+        Me.panelStock.TabIndex = 37
         '
         'btnInventoryList
         '
@@ -847,7 +810,7 @@ Partial Class FrmMain
         Me.btnStock.ForeColor = System.Drawing.Color.White
         Me.btnStock.Image = CType(resources.GetObject("btnStock.Image"), System.Drawing.Image)
         Me.btnStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnStock.Location = New System.Drawing.Point(0, 381)
+        Me.btnStock.Location = New System.Drawing.Point(0, 340)
         Me.btnStock.Name = "btnStock"
         Me.btnStock.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnStock.Size = New System.Drawing.Size(280, 45)
@@ -868,7 +831,7 @@ Partial Class FrmMain
         Me.btnLogout.ForeColor = System.Drawing.Color.White
         Me.btnLogout.Image = CType(resources.GetObject("btnLogout.Image"), System.Drawing.Image)
         Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLogout.Location = New System.Drawing.Point(0, 1199)
+        Me.btnLogout.Location = New System.Drawing.Point(0, 1118)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnLogout.Size = New System.Drawing.Size(280, 45)
@@ -876,6 +839,20 @@ Partial Class FrmMain
         Me.btnLogout.Text = "   LOGOUT"
         Me.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnLogout.UseVisualStyleBackColor = False
+        '
+        'panelManage
+        '
+        Me.panelManage.BackColor = System.Drawing.Color.Transparent
+        Me.panelManage.Controls.Add(Me.btnCustomer)
+        Me.panelManage.Controls.Add(Me.btnVendor)
+        Me.panelManage.Controls.Add(Me.btnBrand)
+        Me.panelManage.Controls.Add(Me.btnCategory)
+        Me.panelManage.Controls.Add(Me.btnProducts)
+        Me.panelManage.Dock = System.Windows.Forms.DockStyle.Top
+        Me.panelManage.Location = New System.Drawing.Point(0, 111)
+        Me.panelManage.Name = "panelManage"
+        Me.panelManage.Size = New System.Drawing.Size(280, 229)
+        Me.panelManage.TabIndex = 35
         '
         'btnCustomer
         '
@@ -888,7 +865,7 @@ Partial Class FrmMain
         Me.btnCustomer.ForeColor = System.Drawing.Color.White
         Me.btnCustomer.Image = CType(resources.GetObject("btnCustomer.Image"), System.Drawing.Image)
         Me.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCustomer.Location = New System.Drawing.Point(0, 225)
+        Me.btnCustomer.Location = New System.Drawing.Point(0, 180)
         Me.btnCustomer.Name = "btnCustomer"
         Me.btnCustomer.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnCustomer.Size = New System.Drawing.Size(280, 45)
@@ -897,27 +874,6 @@ Partial Class FrmMain
         Me.btnCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCustomer.UseVisualStyleBackColor = False
-        '
-        'btnAgent
-        '
-        Me.btnAgent.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnAgent.BackColor = System.Drawing.Color.Gray
-        Me.btnAgent.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAgent.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnAgent.FlatAppearance.BorderSize = 0
-        Me.btnAgent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgent.ForeColor = System.Drawing.Color.White
-        Me.btnAgent.Image = CType(resources.GetObject("btnAgent.Image"), System.Drawing.Image)
-        Me.btnAgent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAgent.Location = New System.Drawing.Point(0, 180)
-        Me.btnAgent.Name = "btnAgent"
-        Me.btnAgent.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnAgent.Size = New System.Drawing.Size(280, 45)
-        Me.btnAgent.TabIndex = 6
-        Me.btnAgent.Text = "   AGENT"
-        Me.btnAgent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAgent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnAgent.UseVisualStyleBackColor = False
         '
         'btnVendor
         '
@@ -1024,6 +980,18 @@ Partial Class FrmMain
         Me.btnManage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnManage.UseVisualStyleBackColor = False
         '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.Gray
+        Me.Panel4.Controls.Add(Me.PictureBox1)
+        Me.Panel4.Controls.Add(Me.lblName)
+        Me.Panel4.Controls.Add(Me.lblShopName)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel4.Location = New System.Drawing.Point(0, 0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(280, 66)
+        Me.Panel4.TabIndex = 3
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -1033,41 +1001,27 @@ Partial Class FrmMain
         Me.PictureBox1.TabIndex = 34
         Me.PictureBox1.TabStop = False
         '
-        'PictureBox4
+        'lblName
         '
-        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(14, 26)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(34, 35)
-        Me.PictureBox4.TabIndex = 9
-        Me.PictureBox4.TabStop = False
+        Me.lblName.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblName.ForeColor = System.Drawing.Color.White
+        Me.lblName.Location = New System.Drawing.Point(100, 40)
+        Me.lblName.Name = "lblName"
+        Me.lblName.Size = New System.Drawing.Size(234, 15)
+        Me.lblName.TabIndex = 28
+        Me.lblName.Text = "Name"
+        Me.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'PictureBox2
+        'lblShopName
         '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(13, 26)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(34, 35)
-        Me.PictureBox2.TabIndex = 4
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(13, 26)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(34, 35)
-        Me.PictureBox5.TabIndex = 9
-        Me.PictureBox5.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(13, 26)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(34, 35)
-        Me.PictureBox3.TabIndex = 9
-        Me.PictureBox3.TabStop = False
+        Me.lblShopName.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblShopName.ForeColor = System.Drawing.Color.White
+        Me.lblShopName.Location = New System.Drawing.Point(100, 17)
+        Me.lblShopName.Name = "lblShopName"
+        Me.lblShopName.Size = New System.Drawing.Size(197, 23)
+        Me.lblShopName.TabIndex = 0
+        Me.lblShopName.Text = "SHOP NAME"
+        Me.lblShopName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'FrmMain
         '
@@ -1087,12 +1041,16 @@ Partial Class FrmMain
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel17.ResumeLayout(False)
         Me.Panel17.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel16.ResumeLayout(False)
         Me.Panel16.PerformLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel18.ResumeLayout(False)
         Me.Panel18.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.panelDebt.ResumeLayout(False)
         Me.panelSales.ResumeLayout(False)
@@ -1100,10 +1058,6 @@ Partial Class FrmMain
         Me.panelManage.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1132,7 +1086,6 @@ Partial Class FrmMain
     Friend WithEvents btnExpense As Button
     Friend WithEvents btnBestSelling As Button
     Friend WithEvents btnRefund As Button
-    Friend WithEvents btnAgentSales As Button
     Friend WithEvents btnSales As Button
     Friend WithEvents btnRecord As Button
     Friend WithEvents panelStock As Panel
@@ -1151,7 +1104,6 @@ Partial Class FrmMain
     Friend WithEvents lblName As Label
     Friend WithEvents lblShopName As Label
     Friend WithEvents btnStockAdjustment As Button
-    Friend WithEvents btnAgent As Button
     Friend WithEvents btnInventoryList As Button
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents Label3 As Label

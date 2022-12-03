@@ -56,9 +56,6 @@ Partial Class FrmRDebtHistory
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblBt = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblCheque = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.lblGcash = New System.Windows.Forms.Label()
@@ -69,7 +66,6 @@ Partial Class FrmRDebtHistory
         Me.Panel1.SuspendLayout()
         CType(Me.dgvDebtHistory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
@@ -369,40 +365,6 @@ Partial Class FrmRDebtHistory
         Me.lblBt.Text = "0.00"
         Me.lblBt.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'Panel3
-        '
-        Me.Panel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(131, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(117, Byte), Integer))
-        Me.Panel3.Controls.Add(Me.Label5)
-        Me.Panel3.Controls.Add(Me.lblCheque)
-        Me.Panel3.Location = New System.Drawing.Point(1031, 265)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(161, 60)
-        Me.Panel3.TabIndex = 99
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(3, 45)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(44, 13)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "CHEQUE"
-        '
-        'lblCheque
-        '
-        Me.lblCheque.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblCheque.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCheque.ForeColor = System.Drawing.Color.White
-        Me.lblCheque.Location = New System.Drawing.Point(2, 0)
-        Me.lblCheque.Name = "lblCheque"
-        Me.lblCheque.Size = New System.Drawing.Size(158, 45)
-        Me.lblCheque.TabIndex = 25
-        Me.lblCheque.Text = "0.00"
-        Me.lblCheque.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
         'Panel4
         '
         Me.Panel4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -443,7 +405,7 @@ Partial Class FrmRDebtHistory
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(131, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.Panel5.Controls.Add(Me.Label9)
         Me.Panel5.Controls.Add(Me.lblCash)
-        Me.Panel5.Location = New System.Drawing.Point(1031, 331)
+        Me.Panel5.Location = New System.Drawing.Point(1031, 265)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(161, 60)
         Me.Panel5.TabIndex = 100
@@ -480,7 +442,6 @@ Partial Class FrmRDebtHistory
         Me.ClientSize = New System.Drawing.Size(1204, 673)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel5)
-        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.dgvDebtHistory)
@@ -498,8 +459,6 @@ Partial Class FrmRDebtHistory
         CType(Me.dgvDebtHistory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Panel5.ResumeLayout(False)
@@ -524,9 +483,6 @@ Partial Class FrmRDebtHistory
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents lblBt As Label
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label5 As Label
-    Friend WithEvents lblCheque As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label7 As Label
     Friend WithEvents lblGcash As Label

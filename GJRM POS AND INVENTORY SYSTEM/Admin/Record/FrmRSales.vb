@@ -6,13 +6,11 @@
     Dim sql As String
     Dim banktransfer As Double = 0
     Dim gcash As Double = 0
-    Dim cheque As Double = 0
     Dim cash As Double = 0
     Dim RstartAmount As Double = 0
     Dim Rrefund As Double = 0
     Dim Rexpense As Double = 0
     Dim Rdebt As Double = 0
-    Dim adjustment As Double = 0
     Dim Rdebtpaid As Double = 0
     Private Sub FrmRSales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         KeyPreview = True
@@ -45,13 +43,12 @@
             cn.Close()
 
             cn.Open()
-            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(banktransfer)), '0', sum(banktransfer)) as banktransfer, IIf(IsNull(sum(gcash)), '0', sum(gcash)) as gcash, IIf(IsNull(sum(cheque)), '0', sum(cheque)) as cheque, IIf(IsNull(sum(cash)), '0', sum(cash)) as cash, IIf(IsNull(sum(schange)), '0', sum(schange)) as schange from tblsales where sdate between #" & sdate1 & "# and #" & sdate2 & "# and remarks like 'Paid'", cn)
+            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(banktransfer)), '0', sum(banktransfer)) as banktransfer, IIf(IsNull(sum(gcash)), '0', sum(gcash)) as gcash, IIf(IsNull(sum(cash)), '0', sum(cash)) as cash, IIf(IsNull(sum(schange)), '0', sum(schange)) as schange from tblsales where sdate between #" & sdate1 & "# and #" & sdate2 & "# and remarks like 'Paid'", cn)
             dr = cm.ExecuteReader
             While dr.Read
                 banktransfer = CDbl(dr.Item("banktransfer").ToString)
                 gcash = CDbl(dr.Item("gcash").ToString)
                 cash = CDbl(dr.Item("cash"))
-                cheque = CDbl(dr.Item("cheque").ToString)
             End While
             cn.Close()
             dr.Close()
@@ -67,17 +64,12 @@
             cn.Close()
 
             cn.Open()
-            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(adjustment)), '0', sum(adjustment)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
-            adjustment = CDbl(cm.ExecuteScalar)
-            cn.Close()
-
-            cn.Open()
-            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(total)), '0', sum(total)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
+            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(amount)), '0', sum(amount)) as debt from tbldebt where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
             Rdebt = CDbl(cm.ExecuteScalar)
             cn.Close()
 
             cn.Open()
-            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(gcash + banktransfer + cash + cheque)), '0', sum(gcash + banktransfer + cash + cheque)) as debt from tbldebthistory where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
+            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(gcash + banktransfer + cash)), '0', sum(gcash + banktransfer + cash)) as debt from tbldebthistory where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
             Rdebtpaid = CDbl(cm.ExecuteScalar)
             cn.Close()
 
@@ -87,18 +79,17 @@
             cn.Close()
 
             lblStartAmount.Text = Format(RstartAmount, currencysymbol & "#,##0.00")
-            lblTotal.Text = Format(_total + adjustment, currencysymbol & "#,##0.00") '- refund, - discount
+            lblTotal.Text = Format(_total, currencysymbol & "#,##0.00") '- refund, - discount
             lblExpense.Text = Format(Rexpense, currencysymbol & "#,##0.00")
             lblDiscount.Text = Format(_discount, currencysymbol & "#,##0.00")
             lblSRefund.Text = Format(Rrefund, currencysymbol & "#,##0.00")
             lblDebt.Text = Format(Rdebt, currencysymbol & "#,##0.00")
             lblPaidDebt.Text = Format(Rdebtpaid, currencysymbol & "#,##0.00")
-            lblGrandSales.Text = Format((_total + startAmount + Rdebtpaid + adjustment) - (Rdebt + Rexpense), currencysymbol & "#,##0.00")
+            lblGrandSales.Text = Format((_total + startAmount + Rdebtpaid) - (Rdebt + Rexpense), currencysymbol & "#,##0.00")
             lblTotalNet.Text = Format(_net, currencysymbol & "#,##0.00")
 
             lblbt.Text = Format(banktransfer, currencysymbol & "#,##0.00")
             lblgcash.Text = Format(gcash, currencysymbol & "#,##0.00")
-            lblcheque.Text = Format(cheque, currencysymbol & "#,##0.00")
             lblcash.Text = Format(cash, currencysymbol & "#,##0.00")
 
         Catch ex As Exception
@@ -145,10 +136,6 @@
 
     Private Sub cboCashier_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboCashier.KeyPress
         e.Handled = True
-    End Sub
-
-    Private Sub txtSearchAgent_TextChanged(sender As Object, e As EventArgs) 
-        LoadSale()
     End Sub
 
     Private Sub dgvDailySales_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDailySales.CellContentClick

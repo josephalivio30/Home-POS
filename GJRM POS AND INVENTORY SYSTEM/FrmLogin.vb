@@ -85,7 +85,6 @@
                     If CheckStatus() = True Then
                         .btnNewOrder.Enabled = True
                     End If
-                    .LoadAgent()
                     .lblShopname.Text = _shopname
                     .lblName.Text = str_name & " | " & str_role
 

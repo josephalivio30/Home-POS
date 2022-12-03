@@ -103,8 +103,8 @@
             cm = New OleDb.OleDbCommand("select * from tbldebt where sdate between #" & sdate & "# and #" & sdate & "#", cn)
             dr = cm.ExecuteReader
             While dr.Read
-                total += CDbl(dr.Item("total"))
-                dgvDebt.Rows.Add(dr.Item("transno").ToString, dr.Item("cname").ToString, dr.Item("cuser").ToString, Format(dr.Item("amount"), "#,##0.00").ToString, Format(dr.Item("adjustment"), "#,##0.00").ToString, Format(dr.Item("total"), "#,##0.00").ToString, dr.Item("stime").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString), Format(CDate(dr.Item("datetocollect").ToString).ToShortDateString))
+                total += CDbl(dr.Item("amount"))
+                dgvDebt.Rows.Add(dr.Item("transno").ToString, dr.Item("cname").ToString, dr.Item("cuser").ToString, Format(dr.Item("amount"), "#,##0.00").ToString, dr.Item("stime").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString), Format(CDate(dr.Item("datetocollect").ToString).ToShortDateString))
             End While
             cn.Close()
             dr.Close()

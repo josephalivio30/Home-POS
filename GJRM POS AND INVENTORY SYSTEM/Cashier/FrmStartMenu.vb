@@ -13,16 +13,14 @@
         txtCashier.Text = str_name
         txtSales.Text = Format(CDbl(sales), "#,#0.00") 'sales = totalbill from tblsales including +adjustment, -discount, -refund
         txtDebtPaid.Text = Format(CDbl(debtpaid), "#,#0.00")
-        txtAdjustment.Text = Format(CDbl(adjustment), "#,#0.00")
         txtDebt.Text = Format(CDbl(debt), "#,#0.00")
         txtExpense.Text = Format(CDbl(expense), "#,#0.00")
         txtDiscount.Text = Format(CDbl(discount), "#,#0.00")
         txtRefund.Text = Format(CDbl(refund), "#,#0.00")
-        txtNet.Text = Format(CDbl((sales + startAmount + debtpaid) - (expense + debt + adjustment)), "#,#0.00")
+        txtNet.Text = Format(CDbl((sales + startAmount + debtpaid) - (expense + debt)), "#,#0.00")
 
         txtBt.Text = Format(CDbl(banktransfer), "#,#0.00")
         txtGcash.Text = Format(CDbl(gcash), "#,#0.00")
-        txtCheque.Text = Format(CDbl(cheque), "#,#0.00")
         txtCash.Text = Format(CDbl(cash), "#,#0.00")
 
         If CheckTransaction() = True Then

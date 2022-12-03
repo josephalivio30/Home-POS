@@ -5,7 +5,6 @@
 
     Dim banktransfer As Double = 0
     Dim gcash As Double = 0
-    Dim cheque As Double = 0
     Dim cash As Double = 0
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Dispose()
@@ -28,8 +27,8 @@
             End If
             dr = cm.ExecuteReader
             While dr.Read
-                total += Format(CDbl(dr.Item("banktransfer")) + CDbl(dr.Item("gcash")) + CDbl(dr.Item("cash")) + CDbl(dr.Item("cheque")), "#,##0.00")
-                dgvDebtHistory.Rows.Add(dr.Item("transno").ToString, dr.Item("cname").ToString, dr.Item("cuser").ToString, Format(CDbl(dr.Item("amount").ToString), "#,##0.00"), Format(CDbl(dr.Item("banktransfer")) + CDbl(dr.Item("gcash")) + CDbl(dr.Item("cash")) + CDbl(dr.Item("cheque")), "#,##0.00"), dr.Item("stime").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString))
+                total += Format(CDbl(dr.Item("banktransfer")) + CDbl(dr.Item("gcash")) + CDbl(dr.Item("cash")), "#,##0.00")
+                dgvDebtHistory.Rows.Add(dr.Item("transno").ToString, dr.Item("cname").ToString, dr.Item("cuser").ToString, Format(CDbl(dr.Item("amount").ToString), "#,##0.00"), Format(CDbl(dr.Item("banktransfer")) + CDbl(dr.Item("gcash")) + CDbl(dr.Item("cash"))), dr.Item("stime").ToString, Format(CDate(dr.Item("sdate").ToString).ToShortDateString))
             End While
             cn.Close()
             dr.Close()
@@ -37,20 +36,18 @@
             lblTotal.Text = Format(total, currencysymbol & "#,##0.00")
 
             cn.Open()
-            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(banktransfer)), '0', sum(banktransfer)) as banktransfer, IIf(IsNull(sum(gcash)), '0', sum(gcash)) as gcash, IIf(IsNull(sum(cheque)), '0', sum(cheque)) as cheque, IIf(IsNull(sum(cash)), '0', sum(cash)) as cash from tbldebthistory where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cuser like '" & str_user & "'", cn)
+            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(banktransfer)), '0', sum(banktransfer)) as banktransfer, IIf(IsNull(sum(gcash)), '0', sum(gcash)) as gcash, IIf(IsNull(sum(cash)), '0', sum(cash)) as cash from tbldebthistory where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cuser like '" & str_user & "'", cn)
             dr = cm.ExecuteReader
             While dr.Read
                 banktransfer = CDbl(dr.Item("banktransfer").ToString)
                 gcash = CDbl(dr.Item("gcash").ToString)
                 cash = CDbl(dr.Item("cash").ToString)
-                cheque = CDbl(dr.Item("cheque").ToString)
             End While
             cn.Close()
             dr.Close()
 
             lblBt.Text = Format(banktransfer, currencysymbol & "#,##0.00")
             lblGcash.Text = Format(gcash, currencysymbol & "#,##0.00")
-            lblCheque.Text = Format(cheque, currencysymbol & "#,##0.00")
             lblCash.Text = Format(cash, currencysymbol & "#,##0.00")
 
         Catch ex As Exception

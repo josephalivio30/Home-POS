@@ -75,7 +75,6 @@
                     Dim cash As Double
                     Dim gcash As Double
                     Dim bt As Double
-                    Dim cheque As Double
                     cn.Open()
                     cm = New OleDb.OleDbCommand("select * from tblsales where transno like '" & FrmCancelOrder.txtTransno.Text & "'", cn)
                     dr = cm.ExecuteReader
@@ -84,7 +83,6 @@
                         cash = CDbl(dr.Item("cash").ToString)
                         gcash = CDbl(dr.Item("gcash").ToString)
                         bt = CDbl(dr.Item("banktransfer").ToString)
-                        cheque = CDbl(dr.Item("cheque").ToString)
                         If _total > 0 Then
                             remain1 = cash - _total
                         End If
@@ -94,11 +92,9 @@
                         If remain2 < 0 Then
                             remain3 = bt + remain2
                         End If
-                        If remain3 < 0 Then
-                            remain4 = cheque + remain3
-                        End If
                     End If
                     cn.Close()
+
                     If remain1 = 0 Then
                         UpdateData("Update tblsales set cash = cash + '" & remain1 & "'where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
                     Else
@@ -123,19 +119,9 @@
                         End If
                         UpdateData("Update tblsales set banktransfer = '" & remain3 & "'where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
                     End If
-                    If remain4 = 0 Then
-                        UpdateData("Update tblsales set cheque = cheque + '" & remain4 & "'where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
-                    Else
-                        If remain4 < 0 Then
-                            remain4 = 0
-                        End If
-                        UpdateData("Update tblsales set cheque = '" & remain4 & "'where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
-                    End If
 
                     'update total in tbldebt 
                     UpdateData("update tbldebt set amount = amount - '" & _total & "' where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
-
-                    UpdateData("update tbldebt set total = adjustment + amount where transno like '" & FrmCancelOrder.txtTransno.Text & "'")
 
                     'update total in tblcart
                     UpdateData("update tblcart set total = price * qty where transno like '" & FrmCancelOrder.txtTransno.Text & "' and pcode like '" & FrmCancelOrder.txtPcode.Text & "'")

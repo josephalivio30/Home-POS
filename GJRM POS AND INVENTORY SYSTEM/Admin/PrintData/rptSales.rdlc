@@ -53,10 +53,6 @@
           <DataField>cashier</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="agent">
-          <DataField>agent</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="sdate">
           <DataField>sdate</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
@@ -84,7 +80,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\User\source\repos\GJRM POS AND INVENTORY SYSTEM\GJRM POS AND INVENTORY SYSTEM\DataSet1.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\JOJO GWAPO\source\repos\Generic-JJA-POS\GJRM POS AND INVENTORY SYSTEM\DataSet1.xsd</rd:SchemaPath>
         <rd:TableName>dtSalesRecord</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

@@ -8,7 +8,7 @@ Public Class FrmMain
         panelDebt.Visible = False
         NotifyCriticalItems()
         NotifyCollection()
-        LoadChart()
+        'LoadChart()
     End Sub
     Private Sub Main_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         Dim intX As Integer = Screen.PrimaryScreen.Bounds.Width
@@ -225,29 +225,6 @@ Public Class FrmMain
         End With
     End Sub
 
-    Private Sub btnAgent_Click(sender As Object, e As EventArgs) Handles btnAgent.Click
-        With FrmAgentList
-            .WindowState = FormWindowState.Maximized
-            .TopLevel = False
-            panelOutput.Controls.Add(FrmAgentList)
-            .BringToFront()
-            .LoadAgent()
-            .Show()
-        End With
-    End Sub
-
-    Private Sub btnAgentSales_Click(sender As Object, e As EventArgs) Handles btnAgentSales.Click
-        With FrmRAgentSales
-            .WindowState = FormWindowState.Maximized
-            .TopLevel = False
-            panelOutput.Controls.Add(FrmRAgentSales)
-            .BringToFront()
-            .LoadAgent()
-            .LoadAgentSales()
-            .Show()
-        End With
-    End Sub
-
     Private Sub btnHDebt_Click(sender As Object, e As EventArgs) Handles btnHDebt.Click
         With FrmRDebtHistory
             .WindowState = FormWindowState.Maximized
@@ -270,31 +247,31 @@ Public Class FrmMain
             .Show()
         End With
     End Sub
-    Sub LoadChart()
-        Try
-            cn.Open()
-            Dim sql As String = "Select Year([sdate]) As sYear, IIf(IsNull(sum(totalbill)), '0.00', sum(totalbill)) as total FROM tblsales where remarks Like 'Paid' GROUP BY Year([sdate])"
-            da = New OleDb.OleDbDataAdapter(sql, cn)
-            Dim ds As New DataSet
+    'Sub LoadChart()
+    '    Try
+    '        cn.Open()
+    '        Dim sql As String = "Select Year([sdate]) As sYear, IIf(IsNull(sum(totalbill)), '0.00', sum(totalbill)) as total FROM tblsales where remarks Like 'Paid' GROUP BY Year([sdate])"
+    '        da = New OleDb.OleDbDataAdapter(sql, cn)
+    '        Dim ds As New DataSet
 
-            da.Fill(ds, "Sales")
-            Chart1.DataSource = ds.Tables("Sales")
-            Dim series1 As Series
-            series1 = Chart1.Series("Series1")
-            series1.ChartType = SeriesChartType.Doughnut
+    '        da.Fill(ds, "Sales")
+    '        Chart1.DataSource = ds.Tables("Sales")
+    '        Dim series1 As Series
+    '        series1 = Chart1.Series("Series1")
+    '        series1.ChartType = SeriesChartType.Doughnut
 
-            series1.Name = "SALES"
+    '        series1.Name = "SALES"
 
-            Dim chart = Chart1
-            chart.Series(series1.Name).XValueMember = "sYear"
-            chart.Series(series1.Name).YValueMembers = "total"
-            chart.Series(0).IsValueShownAsLabel = True
-            cn.Close()
-        Catch ex As Exception
-            cn.Close()
-            MsgBox(ex.Message, vbCritical)
-        End Try
-    End Sub
+    '        Dim chart = Chart1
+    '        chart.Series(series1.Name).XValueMember = "sYear"
+    '        chart.Series(series1.Name).YValueMembers = "total"
+    '        chart.Series(0).IsValueShownAsLabel = True
+    '        cn.Close()
+    '    Catch ex As Exception
+    '        cn.Close()
+    '        MsgBox(ex.Message, vbCritical)
+    '    End Try
+    'End Sub
 
     Private Sub btnStockAdjustment_Click(sender As Object, e As EventArgs) Handles btnStockAdjustment.Click
         With FrmAdjustment

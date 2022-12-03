@@ -11,12 +11,9 @@
             End If
             If MsgBox("Update this record?", vbYesNo + vbQuestion) = vbYes Then
                 cn.Open()
-                cm = New OleDb.OleDbCommand("update tblcustomer set cname = @cname ,address = @address , contact = @contact, tin = @tin where ID like '" & lblID.Text & "'", cn)
+                cm = New OleDb.OleDbCommand("update tblcustomer set cname = @cname where ID like '" & lblID.Text & "'", cn)
                 With cm.Parameters
                     .AddWithValue("@cname", txtCustomer.Text)
-                    .AddWithValue("@address", txtAddress.Text)
-                    .AddWithValue("@contact", txtNo.Text)
-                    .AddWithValue("@tin", txtTin.Text)
                 End With
                 cm.ExecuteNonQuery()
                 cn.Close()
@@ -35,9 +32,6 @@
     End Sub
     Sub Clear()
         txtCustomer.Clear()
-        txtAddress.Clear()
-        txtNo.Clear()
-        txtTin.Clear()
         btnSave.Enabled = True
         btnUpdate.Enabled = False
     End Sub
@@ -50,12 +44,9 @@
             End If
             If MsgBox("Save this record?", vbYesNo + vbQuestion) = vbYes Then
                 cn.Open()
-                cm = New OleDb.OleDbCommand("insert into tblcustomer(cname, tin, contact, address, datecreated)values(@cname, @tin, @contact, @address, @datecreated)", cn)
+                cm = New OleDb.OleDbCommand("insert into tblcustomer(cname, datecreated)values(@cname, @datecreated)", cn)
                 With cm
                     .Parameters.AddWithValue("@cname", "" + txtCustomer.Text)
-                    .Parameters.AddWithValue("@tin", txtTin.Text)
-                    .Parameters.AddWithValue("@contact", txtNo.Text)
-                    .Parameters.AddWithValue("@address", txtAddress.Text)
                     .Parameters.AddWithValue("@datecreated", sdate)
                     .ExecuteNonQuery()
                 End With
@@ -84,7 +75,7 @@
         Clear()
     End Sub
 
-    Private Sub txtTin_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTin.KeyPress, txtNo.KeyPress
+    Private Sub txtTin_KeyPress(sender As Object, e As KeyPressEventArgs) 
         Select Case Asc(e.KeyChar)
             Case 48 To 57
             Case 8

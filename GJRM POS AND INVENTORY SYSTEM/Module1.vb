@@ -21,12 +21,10 @@ Module Module1
     Public discount As Double = 0
     Public refund As Double = 0
     Public expense As Double = 0
-    Public adjustment As Double = 0
     Public debt As Double = 0
     Public debtpaid As Double = 0
     Public banktransfer As Double = 0
     Public gcash As Double = 0
-    Public cheque As Double = 0
     Public cash As Double = 0
 
 
@@ -141,7 +139,7 @@ Module Module1
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
-                collection += i & ". " & dr.Item("cname").ToString & " with the amount of " & currencysymbol & Format(CDbl(dr.Item("total").ToString), "#,##0.00") & ". Due Date : " & CDate(dr.Item("datetocollect")).ToString("MM-dd-yyyy") & Environment.NewLine
+                collection += i & ". " & dr.Item("cname").ToString & " with the amount of " & currencysymbol & Format(CDbl(dr.Item("amount").ToString), "#,##0.00") & ". Due Date : " & CDate(dr.Item("datetocollect")).ToString("MM-dd-yyyy") & Environment.NewLine
             End While
             cn.Close()
             dr.Close()
@@ -177,14 +175,12 @@ Module Module1
             dr.Close()
 
             cn.Open()
-            cm = New OleDbCommand("select IIf(IsNull(sum(adjustment)), '0', sum(adjustment)) as adjustment, IIf(IsNull(sum(banktransfer)), '0', sum(banktransfer)) as banktransfer, IIf(IsNull(sum(gcash)), '0', sum(gcash)) as gcash, IIf(IsNull(sum(cheque)), '0', sum(cheque)) as cheque, IIf(IsNull(sum(cash)), '0', sum(cash)) as cash, IIf(IsNull(sum(schange)), '0', sum(schange)) as schange from tblsales where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cashier like '" & str_user & "'", cn)
+            cm = New OleDbCommand("select IIf(IsNull(sum(banktransfer)), '0', sum(banktransfer)) as banktransfer, IIf(IsNull(sum(gcash)), '0', sum(gcash)) as gcash, IIf(IsNull(sum(cash)), '0', sum(cash)) as cash, IIf(IsNull(sum(schange)), '0', sum(schange)) as schange from tblsales where sdate between #" & sdate1 & "# and #" & sdate2 & "# and cashier like '" & str_user & "'", cn)
             dr = cm.ExecuteReader
             While dr.Read
-                adjustment = CDbl(dr.Item("adjustment").ToString)
                 banktransfer = CDbl(dr.Item("banktransfer").ToString)
                 gcash = CDbl(dr.Item("gcash").ToString)
                 cash = CDbl(dr.Item("cash"))
-                cheque = CDbl(dr.Item("cheque").ToString)
             End While
             cn.Close()
             dr.Close()
@@ -210,7 +206,7 @@ Module Module1
             cn.Close()
 
             cn.Open()
-            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(gcash + banktransfer + cash + cheque)), '0', sum(gcash + banktransfer + cash + cheque)) as debt from tbldebthistory where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
+            cm = New OleDb.OleDbCommand("select IIf(IsNull(sum(gcash + banktransfer + cash)), '0', sum(gcash + banktransfer + cash)) as debt from tbldebthistory where sdate between #" & sdate1 & "# and #" & sdate2 & "#", cn)
             debtpaid = CDbl(cm.ExecuteScalar)
             cn.Close()
 
@@ -359,13 +355,13 @@ Module Module1
                 cn.Close()
 
                 cn.Open()
-                cm = New OleDbCommand("Select IIf(IsNull(sum(totalbill)), '0', sum(totalbill)) as total from tblsales where sdate between #" & sdate & "# and #" & sdate & "#", cn)
+                cm = New OleDbCommand("Select IIf(IsNull(sum(totalbill)), '0', sum(totalbill)) from tblsales where sdate between #" & sdate & "# and #" & sdate & "#", cn)
                 Dim daily As Double = CDbl(cm.ExecuteScalar)
                 .lblDailySales.Text = Format(daily, currencysymbol & "#,##0.00")
                 cn.Close()
 
                 cn.Open()
-                cm = New OleDbCommand("select IIf(IsNull(sum(qty)), '0', sum(qty)) as total from tblproduct", cn)
+                cm = New OleDbCommand("select IIf(IsNull(sum(qty)), '0', sum(qty)) as qty from tblproduct", cn)
                 Dim stockonhand As Double = CDbl(cm.ExecuteScalar)
                 .lblStockOnHand.Text = Format(stockonhand, "#,##0.0")
                 cn.Close()
@@ -375,7 +371,6 @@ Module Module1
                 Dim critical As Double = CDbl(cm.ExecuteScalar)
                 .lblCriticalItem.Text = Format(critical, "#,##0.0")
                 cn.Close()
-
             End With
 
         Catch ex As Exception

@@ -1306,8 +1306,6 @@ Partial Public Class DataSet1
         
         Private columncashier As Global.System.Data.DataColumn
         
-        Private columnagent As Global.System.Data.DataColumn
-        
         Private columnsdate As Global.System.Data.DataColumn
         
         Private columnbprice As Global.System.Data.DataColumn
@@ -1429,14 +1427,6 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property agentColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnagent
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property sdateColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnsdate
@@ -1520,25 +1510,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AdddtSalesRecordRow( _
-                    ByVal ID As String,  _
-                    ByVal transno As String,  _
-                    ByVal pcode As String,  _
-                    ByVal pdesc As String,  _
-                    ByVal price As Double,  _
-                    ByVal qty As Double,  _
-                    ByVal discount As Double,  _
-                    ByVal total As Double,  _
-                    ByVal cashier As String,  _
-                    ByVal agent As String,  _
-                    ByVal sdate As Date,  _
-                    ByVal bprice As Double,  _
-                    ByVal sprice As Double,  _
-                    ByVal status As String,  _
-                    ByVal cname As String,  _
-                    ByVal remarks As String) As dtSalesRecordRow
+        Public Overloads Function AdddtSalesRecordRow(ByVal ID As String, ByVal transno As String, ByVal pcode As String, ByVal pdesc As String, ByVal price As Double, ByVal qty As Double, ByVal discount As Double, ByVal total As Double, ByVal cashier As String, ByVal sdate As Date, ByVal bprice As Double, ByVal sprice As Double, ByVal status As String, ByVal cname As String, ByVal remarks As String) As dtSalesRecordRow
             Dim rowdtSalesRecordRow As dtSalesRecordRow = CType(Me.NewRow,dtSalesRecordRow)
-            Dim columnValuesArray() As Object = New Object() {ID, transno, pcode, pdesc, price, qty, discount, total, cashier, agent, sdate, bprice, sprice, status, cname, remarks}
+            Dim columnValuesArray() As Object = New Object() {ID, transno, pcode, pdesc, price, qty, discount, total, cashier, sdate, bprice, sprice, status, cname, remarks}
             rowdtSalesRecordRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowdtSalesRecordRow)
             Return rowdtSalesRecordRow
@@ -1570,7 +1544,6 @@ Partial Public Class DataSet1
             Me.columndiscount = MyBase.Columns("discount")
             Me.columntotal = MyBase.Columns("total")
             Me.columncashier = MyBase.Columns("cashier")
-            Me.columnagent = MyBase.Columns("agent")
             Me.columnsdate = MyBase.Columns("sdate")
             Me.columnbprice = MyBase.Columns("bprice")
             Me.columnsprice = MyBase.Columns("sprice")
@@ -1600,8 +1573,6 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columntotal)
             Me.columncashier = New Global.System.Data.DataColumn("cashier", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncashier)
-            Me.columnagent = New Global.System.Data.DataColumn("agent", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnagent)
             Me.columnsdate = New Global.System.Data.DataColumn("sdate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnsdate)
             Me.columnbprice = New Global.System.Data.DataColumn("bprice", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
@@ -4459,21 +4430,6 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property agent() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tabledtSalesRecord.agentColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'agent' in table 'dtSalesRecord' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tabledtSalesRecord.agentColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property sdate() As Date
             Get
                 Try 
@@ -4668,18 +4624,6 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetcashierNull()
             Me(Me.tabledtSalesRecord.cashierColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsagentNull() As Boolean
-            Return Me.IsNull(Me.tabledtSalesRecord.agentColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetagentNull()
-            Me(Me.tabledtSalesRecord.agentColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
