@@ -135,7 +135,7 @@ Partial Class FrmCategoryList
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.Gray
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Panel2.Controls.Add(Me.btnClose)
         Me.Panel2.Controls.Add(Me.lblTitle)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
@@ -146,7 +146,7 @@ Partial Class FrmCategoryList
         '
         'btnClose
         '
-        Me.btnClose.BackColor = System.Drawing.Color.Gray
+        Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnClose.FlatAppearance.BorderSize = 0
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -163,7 +163,7 @@ Partial Class FrmCategoryList
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
-        Me.lblTitle.BackColor = System.Drawing.Color.Gray
+        Me.lblTitle.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lblTitle.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitle.ForeColor = System.Drawing.Color.White
         Me.lblTitle.Location = New System.Drawing.Point(4, 8)
@@ -279,7 +279,7 @@ Partial Class FrmCategoryList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Silver
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(262, 562)
         Me.ControlBox = False
         Me.Controls.Add(Me.txtCategory)

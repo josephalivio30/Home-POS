@@ -27,6 +27,8 @@ Partial Class FrmCancelOrder
         Me.btnClose = New System.Windows.Forms.Button()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.txtRemarks = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txtTotal = New System.Windows.Forms.TextBox()
@@ -57,8 +59,6 @@ Partial Class FrmCancelOrder
         Me.txtVoidBy = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.txtName = New System.Windows.Forms.TextBox()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -66,7 +66,7 @@ Partial Class FrmCancelOrder
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Gray
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnClose)
         Me.Panel1.Controls.Add(Me.lblTitle)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -77,7 +77,7 @@ Partial Class FrmCancelOrder
         '
         'btnClose
         '
-        Me.btnClose.BackColor = System.Drawing.Color.Gray
+        Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnClose.FlatAppearance.BorderSize = 0
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -94,7 +94,7 @@ Partial Class FrmCancelOrder
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
-        Me.lblTitle.BackColor = System.Drawing.Color.Gray
+        Me.lblTitle.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lblTitle.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitle.ForeColor = System.Drawing.Color.White
         Me.lblTitle.Location = New System.Drawing.Point(12, 7)
@@ -131,6 +131,27 @@ Partial Class FrmCancelOrder
         Me.GroupBox1.TabIndex = 41
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "SOLD ITEM"
+        '
+        'txtName
+        '
+        Me.txtName.BackColor = System.Drawing.Color.White
+        Me.txtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtName.Enabled = False
+        Me.txtName.Location = New System.Drawing.Point(172, 130)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(300, 23)
+        Me.txtName.TabIndex = 128
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.Transparent
+        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label14.Location = New System.Drawing.Point(33, 133)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(67, 15)
+        Me.Label14.TabIndex = 127
+        Me.Label14.Text = "CUSTOMER"
         '
         'txtRemarks
         '
@@ -461,32 +482,11 @@ Partial Class FrmCancelOrder
         Me.Label12.TabIndex = 113
         Me.Label12.Text = "ADD TO INVENTORY?"
         '
-        'txtName
-        '
-        Me.txtName.BackColor = System.Drawing.Color.White
-        Me.txtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtName.Enabled = False
-        Me.txtName.Location = New System.Drawing.Point(172, 130)
-        Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(300, 23)
-        Me.txtName.TabIndex = 128
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.BackColor = System.Drawing.Color.Transparent
-        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(33, 133)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(67, 15)
-        Me.Label14.TabIndex = 127
-        Me.Label14.Text = "CUSTOMER"
-        '
         'FrmCancelOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Silver
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(515, 592)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox2)

@@ -32,11 +32,11 @@ Partial Class FrmDebt
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dtCollection = New System.Windows.Forms.DateTimePicker()
+        Me.txtAmount = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtName = New System.Windows.Forms.TextBox()
-        Me.txtAmount = New System.Windows.Forms.TextBox()
         Me.txtDiscount = New System.Windows.Forms.TextBox()
+        Me.txtName = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -54,7 +54,7 @@ Partial Class FrmDebt
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Gray
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnClose)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.lblTitle)
@@ -66,7 +66,7 @@ Partial Class FrmDebt
         '
         'btnClose
         '
-        Me.btnClose.BackColor = System.Drawing.Color.Gray
+        Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnClose.FlatAppearance.BorderSize = 0
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -99,7 +99,7 @@ Partial Class FrmDebt
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
-        Me.lblTitle.BackColor = System.Drawing.Color.Gray
+        Me.lblTitle.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lblTitle.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitle.ForeColor = System.Drawing.Color.White
         Me.lblTitle.Location = New System.Drawing.Point(12, 7)
@@ -163,6 +163,17 @@ Partial Class FrmDebt
         Me.dtCollection.Size = New System.Drawing.Size(240, 23)
         Me.dtCollection.TabIndex = 62
         '
+        'txtAmount
+        '
+        Me.txtAmount.Enabled = False
+        Me.txtAmount.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold)
+        Me.txtAmount.Location = New System.Drawing.Point(3, 159)
+        Me.txtAmount.Name = "txtAmount"
+        Me.txtAmount.Size = New System.Drawing.Size(241, 40)
+        Me.txtAmount.TabIndex = 56
+        Me.txtAmount.Text = "0.00"
+        Me.txtAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -183,26 +194,6 @@ Partial Class FrmDebt
         Me.Label3.TabIndex = 55
         Me.Label3.Text = "CUSTOMER'S NAME"
         '
-        'txtName
-        '
-        Me.txtName.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.txtName.Location = New System.Drawing.Point(5, 37)
-        Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(241, 40)
-        Me.txtName.TabIndex = 1
-        Me.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txtAmount
-        '
-        Me.txtAmount.Enabled = False
-        Me.txtAmount.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.txtAmount.Location = New System.Drawing.Point(3, 159)
-        Me.txtAmount.Name = "txtAmount"
-        Me.txtAmount.Size = New System.Drawing.Size(241, 40)
-        Me.txtAmount.TabIndex = 56
-        Me.txtAmount.Text = "0.00"
-        Me.txtAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'txtDiscount
         '
         Me.txtDiscount.Enabled = False
@@ -214,11 +205,20 @@ Partial Class FrmDebt
         Me.txtDiscount.Text = "0.00"
         Me.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'txtName
+        '
+        Me.txtName.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold)
+        Me.txtName.Location = New System.Drawing.Point(5, 37)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(241, 40)
+        Me.txtName.TabIndex = 1
+        Me.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'FrmDebt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Silver
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(269, 351)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox2)

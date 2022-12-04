@@ -60,13 +60,6 @@ Partial Class FrmMain
         Me.btnHDebt = New System.Windows.Forms.Button()
         Me.btnRDebt = New System.Windows.Forms.Button()
         Me.btnDebt = New System.Windows.Forms.Button()
-        Me.panelSales = New System.Windows.Forms.Panel()
-        Me.btnAuditTrail = New System.Windows.Forms.Button()
-        Me.btnLogHistory = New System.Windows.Forms.Button()
-        Me.btnExpense = New System.Windows.Forms.Button()
-        Me.btnBestSelling = New System.Windows.Forms.Button()
-        Me.btnRefund = New System.Windows.Forms.Button()
-        Me.btnSales = New System.Windows.Forms.Button()
         Me.btnRecord = New System.Windows.Forms.Button()
         Me.panelStock = New System.Windows.Forms.Panel()
         Me.btnInventoryList = New System.Windows.Forms.Button()
@@ -86,6 +79,13 @@ Partial Class FrmMain
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblName = New System.Windows.Forms.Label()
         Me.lblShopName = New System.Windows.Forms.Label()
+        Me.btnSales = New System.Windows.Forms.Button()
+        Me.btnRefund = New System.Windows.Forms.Button()
+        Me.btnBestSelling = New System.Windows.Forms.Button()
+        Me.btnExpense = New System.Windows.Forms.Button()
+        Me.btnLogHistory = New System.Windows.Forms.Button()
+        Me.panelSales = New System.Windows.Forms.Panel()
+        Me.btnAuditTrail = New System.Windows.Forms.Button()
         Me.panelOutput.SuspendLayout()
         Me.pDashBoard.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,11 +99,11 @@ Partial Class FrmMain
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.panelDebt.SuspendLayout()
-        Me.panelSales.SuspendLayout()
         Me.panelStock.SuspendLayout()
         Me.panelManage.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panelSales.SuspendLayout()
         Me.SuspendLayout()
         '
         'panelOutput
@@ -111,16 +111,16 @@ Partial Class FrmMain
         Me.panelOutput.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.panelOutput.BackColor = System.Drawing.Color.Silver
+        Me.panelOutput.BackColor = System.Drawing.Color.White
         Me.panelOutput.Controls.Add(Me.pDashBoard)
         Me.panelOutput.Location = New System.Drawing.Point(296, 0)
         Me.panelOutput.Name = "panelOutput"
-        Me.panelOutput.Size = New System.Drawing.Size(1076, 772)
+        Me.panelOutput.Size = New System.Drawing.Size(1076, 838)
         Me.panelOutput.TabIndex = 19
         '
         'pDashBoard
         '
-        Me.pDashBoard.BackColor = System.Drawing.Color.Silver
+        Me.pDashBoard.BackColor = System.Drawing.Color.White
         Me.pDashBoard.Controls.Add(Me.Chart1)
         Me.pDashBoard.Controls.Add(Me.Panel3)
         Me.pDashBoard.Controls.Add(Me.Panel17)
@@ -406,29 +406,29 @@ Partial Class FrmMain
         'Panel1
         '
         Me.Panel1.AutoScroll = True
-        Me.Panel1.BackColor = System.Drawing.Color.Gray
-        Me.Panel1.Controls.Add(Me.btnAccount)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnSetting)
+        Me.Panel1.Controls.Add(Me.btnAccount)
         Me.Panel1.Controls.Add(Me.panelDebt)
         Me.Panel1.Controls.Add(Me.btnDebt)
         Me.Panel1.Controls.Add(Me.panelSales)
         Me.Panel1.Controls.Add(Me.btnRecord)
+        Me.Panel1.Controls.Add(Me.btnLogout)
         Me.Panel1.Controls.Add(Me.panelStock)
         Me.Panel1.Controls.Add(Me.btnStock)
-        Me.Panel1.Controls.Add(Me.btnLogout)
         Me.Panel1.Controls.Add(Me.panelManage)
         Me.Panel1.Controls.Add(Me.btnManage)
         Me.Panel1.Controls.Add(Me.Panel4)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(297, 772)
+        Me.Panel1.Size = New System.Drawing.Size(297, 838)
         Me.Panel1.TabIndex = 20
         '
         'btnAccount
         '
         Me.btnAccount.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnAccount.BackColor = System.Drawing.Color.Gray
+        Me.btnAccount.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnAccount.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnAccount.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnAccount.FlatAppearance.BorderSize = 0
@@ -436,7 +436,7 @@ Partial Class FrmMain
         Me.btnAccount.ForeColor = System.Drawing.Color.White
         Me.btnAccount.Image = CType(resources.GetObject("btnAccount.Image"), System.Drawing.Image)
         Me.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAccount.Location = New System.Drawing.Point(0, 1073)
+        Me.btnAccount.Location = New System.Drawing.Point(0, 1011)
         Me.btnAccount.Name = "btnAccount"
         Me.btnAccount.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnAccount.Size = New System.Drawing.Size(280, 45)
@@ -449,7 +449,7 @@ Partial Class FrmMain
         'btnSetting
         '
         Me.btnSetting.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnSetting.BackColor = System.Drawing.Color.Gray
+        Me.btnSetting.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnSetting.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSetting.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnSetting.FlatAppearance.BorderSize = 0
@@ -457,7 +457,7 @@ Partial Class FrmMain
         Me.btnSetting.ForeColor = System.Drawing.Color.White
         Me.btnSetting.Image = CType(resources.GetObject("btnSetting.Image"), System.Drawing.Image)
         Me.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSetting.Location = New System.Drawing.Point(0, 1028)
+        Me.btnSetting.Location = New System.Drawing.Point(0, 1056)
         Me.btnSetting.Name = "btnSetting"
         Me.btnSetting.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnSetting.Size = New System.Drawing.Size(280, 45)
@@ -472,15 +472,15 @@ Partial Class FrmMain
         Me.panelDebt.Controls.Add(Me.btnHDebt)
         Me.panelDebt.Controls.Add(Me.btnRDebt)
         Me.panelDebt.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelDebt.Location = New System.Drawing.Point(0, 937)
+        Me.panelDebt.Location = New System.Drawing.Point(0, 919)
         Me.panelDebt.Name = "panelDebt"
-        Me.panelDebt.Size = New System.Drawing.Size(280, 91)
+        Me.panelDebt.Size = New System.Drawing.Size(280, 92)
         Me.panelDebt.TabIndex = 45
         '
         'btnHDebt
         '
         Me.btnHDebt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnHDebt.BackColor = System.Drawing.Color.Gray
+        Me.btnHDebt.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnHDebt.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnHDebt.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnHDebt.FlatAppearance.BorderSize = 0
@@ -501,7 +501,7 @@ Partial Class FrmMain
         'btnRDebt
         '
         Me.btnRDebt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnRDebt.BackColor = System.Drawing.Color.Gray
+        Me.btnRDebt.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnRDebt.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRDebt.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnRDebt.FlatAppearance.BorderSize = 0
@@ -522,7 +522,7 @@ Partial Class FrmMain
         'btnDebt
         '
         Me.btnDebt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnDebt.BackColor = System.Drawing.Color.Gray
+        Me.btnDebt.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnDebt.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnDebt.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnDebt.FlatAppearance.BorderSize = 0
@@ -530,7 +530,7 @@ Partial Class FrmMain
         Me.btnDebt.ForeColor = System.Drawing.Color.White
         Me.btnDebt.Image = CType(resources.GetObject("btnDebt.Image"), System.Drawing.Image)
         Me.btnDebt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDebt.Location = New System.Drawing.Point(0, 892)
+        Me.btnDebt.Location = New System.Drawing.Point(0, 874)
         Me.btnDebt.Name = "btnDebt"
         Me.btnDebt.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnDebt.Size = New System.Drawing.Size(280, 45)
@@ -540,151 +540,10 @@ Partial Class FrmMain
         Me.btnDebt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnDebt.UseVisualStyleBackColor = False
         '
-        'panelSales
-        '
-        Me.panelSales.BackColor = System.Drawing.Color.Gray
-        Me.panelSales.Controls.Add(Me.btnAuditTrail)
-        Me.panelSales.Controls.Add(Me.btnLogHistory)
-        Me.panelSales.Controls.Add(Me.btnExpense)
-        Me.panelSales.Controls.Add(Me.btnBestSelling)
-        Me.panelSales.Controls.Add(Me.btnRefund)
-        Me.panelSales.Controls.Add(Me.btnSales)
-        Me.panelSales.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelSales.Location = New System.Drawing.Point(0, 617)
-        Me.panelSales.Name = "panelSales"
-        Me.panelSales.Size = New System.Drawing.Size(280, 275)
-        Me.panelSales.TabIndex = 39
-        '
-        'btnAuditTrail
-        '
-        Me.btnAuditTrail.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnAuditTrail.BackColor = System.Drawing.Color.Gray
-        Me.btnAuditTrail.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAuditTrail.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnAuditTrail.FlatAppearance.BorderSize = 0
-        Me.btnAuditTrail.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAuditTrail.ForeColor = System.Drawing.Color.White
-        Me.btnAuditTrail.Image = CType(resources.GetObject("btnAuditTrail.Image"), System.Drawing.Image)
-        Me.btnAuditTrail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAuditTrail.Location = New System.Drawing.Point(0, 225)
-        Me.btnAuditTrail.Name = "btnAuditTrail"
-        Me.btnAuditTrail.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnAuditTrail.Size = New System.Drawing.Size(280, 45)
-        Me.btnAuditTrail.TabIndex = 19
-        Me.btnAuditTrail.Text = "   AUDIT TRAIL"
-        Me.btnAuditTrail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAuditTrail.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnAuditTrail.UseVisualStyleBackColor = False
-        '
-        'btnLogHistory
-        '
-        Me.btnLogHistory.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnLogHistory.BackColor = System.Drawing.Color.Gray
-        Me.btnLogHistory.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnLogHistory.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnLogHistory.FlatAppearance.BorderSize = 0
-        Me.btnLogHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogHistory.ForeColor = System.Drawing.Color.White
-        Me.btnLogHistory.Image = CType(resources.GetObject("btnLogHistory.Image"), System.Drawing.Image)
-        Me.btnLogHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLogHistory.Location = New System.Drawing.Point(0, 180)
-        Me.btnLogHistory.Name = "btnLogHistory"
-        Me.btnLogHistory.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnLogHistory.Size = New System.Drawing.Size(280, 45)
-        Me.btnLogHistory.TabIndex = 18
-        Me.btnLogHistory.Text = "   LOG HISTORY"
-        Me.btnLogHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLogHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnLogHistory.UseVisualStyleBackColor = False
-        '
-        'btnExpense
-        '
-        Me.btnExpense.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnExpense.BackColor = System.Drawing.Color.Gray
-        Me.btnExpense.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnExpense.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnExpense.FlatAppearance.BorderSize = 0
-        Me.btnExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExpense.ForeColor = System.Drawing.Color.White
-        Me.btnExpense.Image = CType(resources.GetObject("btnExpense.Image"), System.Drawing.Image)
-        Me.btnExpense.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExpense.Location = New System.Drawing.Point(0, 135)
-        Me.btnExpense.Name = "btnExpense"
-        Me.btnExpense.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnExpense.Size = New System.Drawing.Size(280, 45)
-        Me.btnExpense.TabIndex = 17
-        Me.btnExpense.Text = "   EXPENSES"
-        Me.btnExpense.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExpense.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnExpense.UseVisualStyleBackColor = False
-        '
-        'btnBestSelling
-        '
-        Me.btnBestSelling.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnBestSelling.BackColor = System.Drawing.Color.Gray
-        Me.btnBestSelling.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBestSelling.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnBestSelling.FlatAppearance.BorderSize = 0
-        Me.btnBestSelling.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBestSelling.ForeColor = System.Drawing.Color.White
-        Me.btnBestSelling.Image = CType(resources.GetObject("btnBestSelling.Image"), System.Drawing.Image)
-        Me.btnBestSelling.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBestSelling.Location = New System.Drawing.Point(0, 90)
-        Me.btnBestSelling.Name = "btnBestSelling"
-        Me.btnBestSelling.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnBestSelling.Size = New System.Drawing.Size(280, 45)
-        Me.btnBestSelling.TabIndex = 16
-        Me.btnBestSelling.Text = "   BEST SELLING"
-        Me.btnBestSelling.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBestSelling.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnBestSelling.UseVisualStyleBackColor = False
-        '
-        'btnRefund
-        '
-        Me.btnRefund.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnRefund.BackColor = System.Drawing.Color.Gray
-        Me.btnRefund.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnRefund.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnRefund.FlatAppearance.BorderSize = 0
-        Me.btnRefund.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRefund.ForeColor = System.Drawing.Color.White
-        Me.btnRefund.Image = CType(resources.GetObject("btnRefund.Image"), System.Drawing.Image)
-        Me.btnRefund.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnRefund.Location = New System.Drawing.Point(0, 45)
-        Me.btnRefund.Name = "btnRefund"
-        Me.btnRefund.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnRefund.Size = New System.Drawing.Size(280, 45)
-        Me.btnRefund.TabIndex = 15
-        Me.btnRefund.Text = "   CANCELLED ORDER"
-        Me.btnRefund.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnRefund.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnRefund.UseVisualStyleBackColor = False
-        '
-        'btnSales
-        '
-        Me.btnSales.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnSales.BackColor = System.Drawing.Color.Gray
-        Me.btnSales.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSales.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnSales.FlatAppearance.BorderSize = 0
-        Me.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSales.ForeColor = System.Drawing.Color.White
-        Me.btnSales.Image = CType(resources.GetObject("btnSales.Image"), System.Drawing.Image)
-        Me.btnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSales.Location = New System.Drawing.Point(0, 0)
-        Me.btnSales.Name = "btnSales"
-        Me.btnSales.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnSales.Size = New System.Drawing.Size(280, 45)
-        Me.btnSales.TabIndex = 13
-        Me.btnSales.Text = "   SALES "
-        Me.btnSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSales.UseVisualStyleBackColor = False
-        '
         'btnRecord
         '
         Me.btnRecord.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnRecord.BackColor = System.Drawing.Color.Gray
+        Me.btnRecord.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnRecord.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRecord.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnRecord.FlatAppearance.BorderSize = 0
@@ -692,7 +551,7 @@ Partial Class FrmMain
         Me.btnRecord.ForeColor = System.Drawing.Color.White
         Me.btnRecord.Image = CType(resources.GetObject("btnRecord.Image"), System.Drawing.Image)
         Me.btnRecord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnRecord.Location = New System.Drawing.Point(0, 572)
+        Me.btnRecord.Location = New System.Drawing.Point(0, 560)
         Me.btnRecord.Name = "btnRecord"
         Me.btnRecord.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnRecord.Size = New System.Drawing.Size(280, 45)
@@ -710,15 +569,15 @@ Partial Class FrmMain
         Me.panelStock.Controls.Add(Me.btnStockInHistory)
         Me.panelStock.Controls.Add(Me.btnStockEntry)
         Me.panelStock.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelStock.Location = New System.Drawing.Point(0, 385)
+        Me.panelStock.Location = New System.Drawing.Point(0, 379)
         Me.panelStock.Name = "panelStock"
-        Me.panelStock.Size = New System.Drawing.Size(280, 187)
+        Me.panelStock.Size = New System.Drawing.Size(280, 181)
         Me.panelStock.TabIndex = 37
         '
         'btnInventoryList
         '
         Me.btnInventoryList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnInventoryList.BackColor = System.Drawing.Color.Gray
+        Me.btnInventoryList.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnInventoryList.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnInventoryList.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnInventoryList.FlatAppearance.BorderSize = 0
@@ -739,13 +598,12 @@ Partial Class FrmMain
         'btnStockAdjustment
         '
         Me.btnStockAdjustment.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnStockAdjustment.BackColor = System.Drawing.Color.Gray
+        Me.btnStockAdjustment.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnStockAdjustment.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnStockAdjustment.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnStockAdjustment.FlatAppearance.BorderSize = 0
         Me.btnStockAdjustment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnStockAdjustment.ForeColor = System.Drawing.Color.White
-        Me.btnStockAdjustment.Image = CType(resources.GetObject("btnStockAdjustment.Image"), System.Drawing.Image)
         Me.btnStockAdjustment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnStockAdjustment.Location = New System.Drawing.Point(0, 90)
         Me.btnStockAdjustment.Name = "btnStockAdjustment"
@@ -760,7 +618,7 @@ Partial Class FrmMain
         'btnStockInHistory
         '
         Me.btnStockInHistory.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnStockInHistory.BackColor = System.Drawing.Color.Gray
+        Me.btnStockInHistory.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnStockInHistory.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnStockInHistory.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnStockInHistory.FlatAppearance.BorderSize = 0
@@ -781,7 +639,7 @@ Partial Class FrmMain
         'btnStockEntry
         '
         Me.btnStockEntry.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnStockEntry.BackColor = System.Drawing.Color.Gray
+        Me.btnStockEntry.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnStockEntry.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnStockEntry.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnStockEntry.FlatAppearance.BorderSize = 0
@@ -802,7 +660,7 @@ Partial Class FrmMain
         'btnStock
         '
         Me.btnStock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnStock.BackColor = System.Drawing.Color.Gray
+        Me.btnStock.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnStock.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnStock.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnStock.FlatAppearance.BorderSize = 0
@@ -810,7 +668,7 @@ Partial Class FrmMain
         Me.btnStock.ForeColor = System.Drawing.Color.White
         Me.btnStock.Image = CType(resources.GetObject("btnStock.Image"), System.Drawing.Image)
         Me.btnStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnStock.Location = New System.Drawing.Point(0, 340)
+        Me.btnStock.Location = New System.Drawing.Point(0, 334)
         Me.btnStock.Name = "btnStock"
         Me.btnStock.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnStock.Size = New System.Drawing.Size(280, 45)
@@ -823,7 +681,7 @@ Partial Class FrmMain
         'btnLogout
         '
         Me.btnLogout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnLogout.BackColor = System.Drawing.Color.Gray
+        Me.btnLogout.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.btnLogout.FlatAppearance.BorderSize = 0
@@ -831,7 +689,7 @@ Partial Class FrmMain
         Me.btnLogout.ForeColor = System.Drawing.Color.White
         Me.btnLogout.Image = CType(resources.GetObject("btnLogout.Image"), System.Drawing.Image)
         Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLogout.Location = New System.Drawing.Point(0, 1118)
+        Me.btnLogout.Location = New System.Drawing.Point(0, 1101)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnLogout.Size = New System.Drawing.Size(280, 45)
@@ -851,13 +709,13 @@ Partial Class FrmMain
         Me.panelManage.Dock = System.Windows.Forms.DockStyle.Top
         Me.panelManage.Location = New System.Drawing.Point(0, 111)
         Me.panelManage.Name = "panelManage"
-        Me.panelManage.Size = New System.Drawing.Size(280, 229)
+        Me.panelManage.Size = New System.Drawing.Size(280, 223)
         Me.panelManage.TabIndex = 35
         '
         'btnCustomer
         '
         Me.btnCustomer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnCustomer.BackColor = System.Drawing.Color.Gray
+        Me.btnCustomer.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnCustomer.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCustomer.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnCustomer.FlatAppearance.BorderSize = 0
@@ -878,7 +736,7 @@ Partial Class FrmMain
         'btnVendor
         '
         Me.btnVendor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnVendor.BackColor = System.Drawing.Color.Gray
+        Me.btnVendor.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnVendor.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnVendor.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnVendor.FlatAppearance.BorderSize = 0
@@ -899,7 +757,7 @@ Partial Class FrmMain
         'btnBrand
         '
         Me.btnBrand.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnBrand.BackColor = System.Drawing.Color.Gray
+        Me.btnBrand.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnBrand.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBrand.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnBrand.FlatAppearance.BorderSize = 0
@@ -920,7 +778,7 @@ Partial Class FrmMain
         'btnCategory
         '
         Me.btnCategory.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnCategory.BackColor = System.Drawing.Color.Gray
+        Me.btnCategory.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnCategory.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCategory.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnCategory.FlatAppearance.BorderSize = 0
@@ -941,7 +799,7 @@ Partial Class FrmMain
         'btnProducts
         '
         Me.btnProducts.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnProducts.BackColor = System.Drawing.Color.Gray
+        Me.btnProducts.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnProducts.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnProducts.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnProducts.FlatAppearance.BorderSize = 0
@@ -962,7 +820,7 @@ Partial Class FrmMain
         'btnManage
         '
         Me.btnManage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnManage.BackColor = System.Drawing.Color.Gray
+        Me.btnManage.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnManage.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnManage.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnManage.FlatAppearance.BorderSize = 0
@@ -982,7 +840,7 @@ Partial Class FrmMain
         '
         'Panel4
         '
-        Me.Panel4.BackColor = System.Drawing.Color.Gray
+        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Panel4.Controls.Add(Me.PictureBox1)
         Me.Panel4.Controls.Add(Me.lblName)
         Me.Panel4.Controls.Add(Me.lblShopName)
@@ -1023,11 +881,152 @@ Partial Class FrmMain
         Me.lblShopName.Text = "SHOP NAME"
         Me.lblShopName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'btnSales
+        '
+        Me.btnSales.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btnSales.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.btnSales.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSales.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnSales.FlatAppearance.BorderSize = 0
+        Me.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSales.ForeColor = System.Drawing.Color.White
+        Me.btnSales.Image = CType(resources.GetObject("btnSales.Image"), System.Drawing.Image)
+        Me.btnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSales.Location = New System.Drawing.Point(0, 0)
+        Me.btnSales.Name = "btnSales"
+        Me.btnSales.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.btnSales.Size = New System.Drawing.Size(280, 45)
+        Me.btnSales.TabIndex = 13
+        Me.btnSales.Text = "   SALES "
+        Me.btnSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSales.UseVisualStyleBackColor = False
+        '
+        'btnRefund
+        '
+        Me.btnRefund.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btnRefund.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.btnRefund.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRefund.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnRefund.FlatAppearance.BorderSize = 0
+        Me.btnRefund.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRefund.ForeColor = System.Drawing.Color.White
+        Me.btnRefund.Image = CType(resources.GetObject("btnRefund.Image"), System.Drawing.Image)
+        Me.btnRefund.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnRefund.Location = New System.Drawing.Point(0, 45)
+        Me.btnRefund.Name = "btnRefund"
+        Me.btnRefund.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.btnRefund.Size = New System.Drawing.Size(280, 45)
+        Me.btnRefund.TabIndex = 15
+        Me.btnRefund.Text = "   CANCELLED ORDER"
+        Me.btnRefund.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnRefund.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnRefund.UseVisualStyleBackColor = False
+        '
+        'btnBestSelling
+        '
+        Me.btnBestSelling.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btnBestSelling.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.btnBestSelling.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBestSelling.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnBestSelling.FlatAppearance.BorderSize = 0
+        Me.btnBestSelling.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBestSelling.ForeColor = System.Drawing.Color.White
+        Me.btnBestSelling.Image = CType(resources.GetObject("btnBestSelling.Image"), System.Drawing.Image)
+        Me.btnBestSelling.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBestSelling.Location = New System.Drawing.Point(0, 90)
+        Me.btnBestSelling.Name = "btnBestSelling"
+        Me.btnBestSelling.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.btnBestSelling.Size = New System.Drawing.Size(280, 45)
+        Me.btnBestSelling.TabIndex = 16
+        Me.btnBestSelling.Text = "   BEST SELLING"
+        Me.btnBestSelling.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBestSelling.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBestSelling.UseVisualStyleBackColor = False
+        '
+        'btnExpense
+        '
+        Me.btnExpense.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btnExpense.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.btnExpense.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnExpense.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnExpense.FlatAppearance.BorderSize = 0
+        Me.btnExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExpense.ForeColor = System.Drawing.Color.White
+        Me.btnExpense.Image = CType(resources.GetObject("btnExpense.Image"), System.Drawing.Image)
+        Me.btnExpense.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnExpense.Location = New System.Drawing.Point(0, 135)
+        Me.btnExpense.Name = "btnExpense"
+        Me.btnExpense.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.btnExpense.Size = New System.Drawing.Size(280, 45)
+        Me.btnExpense.TabIndex = 17
+        Me.btnExpense.Text = "   EXPENSES"
+        Me.btnExpense.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnExpense.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnExpense.UseVisualStyleBackColor = False
+        '
+        'btnLogHistory
+        '
+        Me.btnLogHistory.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btnLogHistory.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.btnLogHistory.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLogHistory.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnLogHistory.FlatAppearance.BorderSize = 0
+        Me.btnLogHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogHistory.ForeColor = System.Drawing.Color.White
+        Me.btnLogHistory.Image = CType(resources.GetObject("btnLogHistory.Image"), System.Drawing.Image)
+        Me.btnLogHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLogHistory.Location = New System.Drawing.Point(0, 180)
+        Me.btnLogHistory.Name = "btnLogHistory"
+        Me.btnLogHistory.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.btnLogHistory.Size = New System.Drawing.Size(280, 45)
+        Me.btnLogHistory.TabIndex = 18
+        Me.btnLogHistory.Text = "   LOG HISTORY"
+        Me.btnLogHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLogHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnLogHistory.UseVisualStyleBackColor = False
+        '
+        'panelSales
+        '
+        Me.panelSales.BackColor = System.Drawing.Color.Gray
+        Me.panelSales.Controls.Add(Me.btnAuditTrail)
+        Me.panelSales.Controls.Add(Me.btnLogHistory)
+        Me.panelSales.Controls.Add(Me.btnExpense)
+        Me.panelSales.Controls.Add(Me.btnBestSelling)
+        Me.panelSales.Controls.Add(Me.btnRefund)
+        Me.panelSales.Controls.Add(Me.btnSales)
+        Me.panelSales.Dock = System.Windows.Forms.DockStyle.Top
+        Me.panelSales.Location = New System.Drawing.Point(0, 605)
+        Me.panelSales.Name = "panelSales"
+        Me.panelSales.Size = New System.Drawing.Size(280, 269)
+        Me.panelSales.TabIndex = 39
+        '
+        'btnAuditTrail
+        '
+        Me.btnAuditTrail.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btnAuditTrail.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.btnAuditTrail.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAuditTrail.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnAuditTrail.FlatAppearance.BorderSize = 0
+        Me.btnAuditTrail.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAuditTrail.ForeColor = System.Drawing.Color.White
+        Me.btnAuditTrail.Image = CType(resources.GetObject("btnAuditTrail.Image"), System.Drawing.Image)
+        Me.btnAuditTrail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAuditTrail.Location = New System.Drawing.Point(0, 225)
+        Me.btnAuditTrail.Name = "btnAuditTrail"
+        Me.btnAuditTrail.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.btnAuditTrail.Size = New System.Drawing.Size(280, 45)
+        Me.btnAuditTrail.TabIndex = 19
+        Me.btnAuditTrail.Text = "   AUDIT TRAIL"
+        Me.btnAuditTrail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAuditTrail.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAuditTrail.UseVisualStyleBackColor = False
+        '
         'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1370, 772)
+        Me.ClientSize = New System.Drawing.Size(1370, 838)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.panelOutput)
@@ -1053,11 +1052,11 @@ Partial Class FrmMain
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.panelDebt.ResumeLayout(False)
-        Me.panelSales.ResumeLayout(False)
         Me.panelStock.ResumeLayout(False)
         Me.panelManage.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.panelSales.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1080,13 +1079,6 @@ Partial Class FrmMain
     Friend WithEvents btnHDebt As Button
     Friend WithEvents btnRDebt As Button
     Friend WithEvents btnDebt As Button
-    Friend WithEvents panelSales As Panel
-    Friend WithEvents btnAuditTrail As Button
-    Friend WithEvents btnLogHistory As Button
-    Friend WithEvents btnExpense As Button
-    Friend WithEvents btnBestSelling As Button
-    Friend WithEvents btnRefund As Button
-    Friend WithEvents btnSales As Button
     Friend WithEvents btnRecord As Button
     Friend WithEvents panelStock As Panel
     Friend WithEvents btnStockInHistory As Button
@@ -1122,4 +1114,11 @@ Partial Class FrmMain
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents btnCustomer As Button
+    Friend WithEvents panelSales As Panel
+    Friend WithEvents btnAuditTrail As Button
+    Friend WithEvents btnLogHistory As Button
+    Friend WithEvents btnExpense As Button
+    Friend WithEvents btnBestSelling As Button
+    Friend WithEvents btnRefund As Button
+    Friend WithEvents btnSales As Button
 End Class
